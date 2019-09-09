@@ -1,0 +1,5 @@
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Helper\bin\Debug\Helper.dll
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Helper\bin\Debug\Helper.pdb
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Helper\obj\Debug\Helper.csprojResolveAssemblyReference.cache
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Helper\obj\Debug\Helper.dll
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Helper\obj\Debug\Helper.pdb

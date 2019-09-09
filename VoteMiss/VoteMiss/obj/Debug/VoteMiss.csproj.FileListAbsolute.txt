@@ -1,0 +1,47 @@
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\bin\Debug\VoteMiss.exe.config
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\obj\Debug\VoteMiss.csprojResolveAssemblyReference.cache
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\obj\Debug\VoteMiss.Form1.resources
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\obj\Debug\VoteMiss.Properties.Resources.resources
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\obj\Debug\VoteMiss.csproj.GenerateResource.Cache
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\bin\Debug\VoteMiss.exe
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\bin\Debug\VoteMiss.pdb
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\bin\Debug\Model.dll
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\bin\Debug\Service.dll
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\bin\Debug\EntityFramework.dll
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\bin\Debug\Repository.dll
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\bin\Debug\Model.pdb
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\bin\Debug\Service.pdb
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\bin\Debug\EntityFramework.xml
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\bin\Debug\Repository.pdb
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\obj\Debug\VoteMiss.exe
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\obj\Debug\VoteMiss.pdb
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\obj\Debug\VoteMiss.EditForm.resources
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\obj\Debug\VoteMiss.AddForm.resources
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\VoteMiss\obj\Debug\VoteMiss.Login.resources
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\bin\Debug\VoteMiss.exe.config
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\bin\Debug\VoteMiss.exe
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\bin\Debug\VoteMiss.pdb
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\bin\Debug\EntityFramework.dll
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\bin\Debug\EntityFramework.SqlServer.dll
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\bin\Debug\Model.dll
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\bin\Debug\Service.dll
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\bin\Debug\Repository.dll
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\bin\Debug\Model.pdb
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\bin\Debug\Service.pdb
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\bin\Debug\EntityFramework.xml
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\bin\Debug\EntityFramework.SqlServer.xml
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\bin\Debug\Repository.pdb
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\obj\Debug\VoteMiss.csprojResolveAssemblyReference.cache
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\obj\Debug\VoteMiss.AddForm.resources
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\obj\Debug\VoteMiss.EditForm.resources
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\obj\Debug\VoteMiss.FormAdmin.resources
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\obj\Debug\VoteMiss.FormUser.resources
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\obj\Debug\VoteMiss.FormVote.resources
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\obj\Debug\VoteMiss.Login.resources
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\obj\Debug\VoteMiss.Properties.Resources.resources
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\obj\Debug\VoteMiss.csproj.GenerateResource.Cache
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\obj\Debug\VoteMiss.exe
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\obj\Debug\VoteMiss.pdb
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\VoteMiss\obj\Debug\VoteMiss.FormCreateAcc.resources

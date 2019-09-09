@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="95cf729f1a134974accc92348fedc1fd" Name="Diagram1">
+        <EntityTypeShape EntityType="MissVoteModel.Comment" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MissVoteModel.Miss" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MissVoteModel.User" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MissVoteModel.Vote" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="MissVoteModel.FK_Comment_Miss" ManuallyRouted="false" />
+        <AssociationConnector Association="MissVoteModel.FK_Comment_User" ManuallyRouted="false" />
+        <AssociationConnector Association="MissVoteModel.FK_Vote_Miss" ManuallyRouted="false" />
+        <AssociationConnector Association="MissVoteModel.FK_Vote_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

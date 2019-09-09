@@ -1,0 +1,85 @@
+﻿@model Model.Miss
+
+@{
+    ViewBag.Title = "Delete";
+}
+<style>
+    img{
+        
+        width:20%;
+    }
+</style>
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Miss</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MissName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MissName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="~/Img/@Model.Image" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthOfDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthOfDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.size1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.size1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.size2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.size2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.size3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.size3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

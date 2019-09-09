@@ -1,0 +1,80 @@
+﻿@model Model.Miss
+@using Helper
+
+@{
+    ViewBag.Title = "Details";
+    var user = (UserSession)SessionHelper.GetSession();
+}
+<style>
+    .padding50 {
+        padding-top: 50px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .missdetail {
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 20px;
+    }
+    .commentdetails{
+        margin-top:50px;
+        background: rgba(178, 0, 255,0.5);
+        font-family:'Times New Roman', Times, serif ;
+        font-size:20px;
+        padding :20px;
+       
+    }
+    .h2Comment{
+        color:brown;
+    }
+  label{
+      color:blue;
+  }
+</style>
+
+<h2>Details</h2>
+
+<div class="container">
+    <div class="row padding50">
+        <div class="col-md-6">
+            <img src="~/Img/@Model.Image" />
+        </div>
+        <div class="col-md-6">
+            <div class="missdetail">
+                <h2>Thí sinh: @Model.MissName</h2>
+                <p>@Model.BirthOfDate.Value.ToLongDateString()</p>
+                <hr width="30%" size="10px" align="left" /> 
+                <h3>Số báo danh: @Model.MissId</h3>
+                <h3>Số đo 3 vòng: @Model.size1 @Model.size2 @Model.size3</h3>
+                <h3>Số lượt bình chọn: @ViewBag.Vote      </h3>
+                <h2 style="color:red">@ViewBag.ErrorMessage</h2>
+                <button>@Html.ActionLink("Vote", "CreateVote", new { UserId = user.UserID, MissId = @Model.MissId }) </button> 
+            </div>
+            <div class="commentdetails">
+                <h2 class="h2Comment">Comments:</h2>
+                <hr width="50%" size="10px" align="left" /> 
+                    @foreach(var item in @Model.Comments)
+                    {
+                        if (item.MissId == @Model.MissId)
+                        {
+                            <p><label style="">@item.User.UserName </label> :  @item.Content </p>
+                        }
+                    }
+
+             </div>
+        </div>
+      
+
+    </div>
+    <br/>
+    <br/>
+    <p>
+        <button>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MissId }) 
+        </button> | <button> @Html.ActionLink("Delete", "Delete", new { id = Model.MissId })</button> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>   

@@ -1,0 +1,134 @@
+﻿@model IEnumerable<Model.Miss>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+
+    img{
+        width:100%;
+        height:400px;
+    }
+    .misscontainer {
+        position: relative;
+        margin-bottom: 30px;
+
+    }
+    .missinfo {
+        position: absolute;
+        bottom: 0;
+        /* right: 50%; */
+        padding-left: 15px;
+        padding-right:15px;
+        padding-top :30px;
+        color: #000000;
+        background: rgba(255, 255, 255, 0.5);
+        width: 100%;
+    }
+  
+     a :hover{
+        
+        background: rgba(178, 0, 255,0.5);
+        color:#fff;
+    }
+</style>
+
+<h2>Index</h2>
+
+
+
+<div class="container">
+    <div class="row">
+
+        @foreach (var item in Model)
+            {
+            <div class="col-md-3 misscontainer ">
+              
+                <a href="/misses/Details/@item.MissId" >
+
+                    <img src="~/Img/@item.Image"  / >
+                    <div class="missinfo">
+                      
+                            <p>Tên Thí Sinh: @item.MissName</p>
+                            <p>Ngày Sinh: @item.BirthOfDate.Value.ToShortDateString()</p>
+                            <p>Số đo 3 vòng: @item.size1 @item.size2 @item.size3</p>
+
+
+                    </div>
+
+                </a>
+               
+            </div>
+        }
+    </div>
+    <button>
+        @Html.ActionLink("Create New", "Create")
+    </button>
+    
+  
+</div>
+
+
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MissName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthOfDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.size1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.size2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.size3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adress)
+        </th>
+        <th></th>
+    </tr>*@
+
+
+@*@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MissName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirthOfDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.size1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.size2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.size3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adress)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MissId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MissId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MissId })
+        </td>
+    </tr>
+}
+
+</table>*@
+
+

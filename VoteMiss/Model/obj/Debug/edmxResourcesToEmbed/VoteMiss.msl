@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MissVoteModelStoreContainer" CdmEntityContainer="MissVoteEntities">
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="MissVoteModel.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="MissId" ColumnName="MissId" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Misses">
+      <EntityTypeMapping TypeName="MissVoteModel.Miss">
+        <MappingFragment StoreEntitySet="Miss">
+          <ScalarProperty Name="MissId" ColumnName="MissId" />
+          <ScalarProperty Name="MissName" ColumnName="MissName" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="BirthOfDate" ColumnName="BirthOfDate" />
+          <ScalarProperty Name="size1" ColumnName="size1" />
+          <ScalarProperty Name="size2" ColumnName="size2" />
+          <ScalarProperty Name="size3" ColumnName="size3" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="MissVoteModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Votes">
+      <EntityTypeMapping TypeName="MissVoteModel.Vote">
+        <MappingFragment StoreEntitySet="Vote">
+          <ScalarProperty Name="VoteId" ColumnName="VoteId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="MissId" ColumnName="MissId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

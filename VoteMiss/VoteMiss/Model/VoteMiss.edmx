@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MissVoteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="MissId" Type="int" />
+          <Property Name="Content" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Miss">
+          <Key>
+            <PropertyRef Name="MissId" />
+          </Key>
+          <Property Name="MissId" Type="int" Nullable="false" />
+          <Property Name="MissName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar" MaxLength="50" />
+          <Property Name="BirthOfDate" Type="date" />
+          <Property Name="size1" Type="int" />
+          <Property Name="size2" Type="int" />
+          <Property Name="size3" Type="int" />
+          <Property Name="Adress" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Role" Type="nvarchar" MaxLength="10" />
+          <Property Name="Pass" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Vote">
+          <Key>
+            <PropertyRef Name="VoteId" />
+          </Key>
+          <Property Name="VoteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="MissId" Type="int" />
+        </EntityType>
+        <Association Name="FK_Comment_Miss">
+          <End Role="Miss" Type="Self.Miss" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Miss">
+              <PropertyRef Name="MissId" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="MissId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vote_Miss">
+          <End Role="Miss" Type="Self.Miss" Multiplicity="0..1" />
+          <End Role="Vote" Type="Self.Vote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Miss">
+              <PropertyRef Name="MissId" />
+            </Principal>
+            <Dependent Role="Vote">
+              <PropertyRef Name="MissId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vote_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Vote" Type="Self.Vote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Vote">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MissVoteModelStoreContainer">
+          <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Miss" EntityType="Self.Miss" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vote" EntityType="Self.Vote" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Comment_Miss" Association="Self.FK_Comment_Miss">
+            <End Role="Miss" EntitySet="Miss" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_User" Association="Self.FK_Comment_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vote_Miss" Association="Self.FK_Vote_Miss">
+            <End Role="Miss" EntitySet="Miss" />
+            <End Role="Vote" EntitySet="Vote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vote_User" Association="Self.FK_Vote_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Vote" EntitySet="Vote" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MissVoteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="MissId" Type="Int32" />
+          <Property Name="Content" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Miss" Relationship="Self.FK_Comment_Miss" FromRole="Comment" ToRole="Miss" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Comment_User" FromRole="Comment" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Miss">
+          <Key>
+            <PropertyRef Name="MissId" />
+          </Key>
+          <Property Name="MissId" Type="Int32" Nullable="false" />
+          <Property Name="MissName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BirthOfDate" Type="DateTime" Precision="0" />
+          <Property Name="size1" Type="Int32" />
+          <Property Name="size2" Type="Int32" />
+          <Property Name="size3" Type="Int32" />
+          <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_Miss" FromRole="Miss" ToRole="Comment" />
+          <NavigationProperty Name="Votes" Relationship="Self.FK_Vote_Miss" FromRole="Miss" ToRole="Vote" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_User" FromRole="User" ToRole="Comment" />
+          <NavigationProperty Name="Votes" Relationship="Self.FK_Vote_User" FromRole="User" ToRole="Vote" />
+        </EntityType>
+        <EntityType Name="Vote">
+          <Key>
+            <PropertyRef Name="VoteId" />
+          </Key>
+          <Property Name="VoteId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="MissId" Type="Int32" />
+          <NavigationProperty Name="Miss" Relationship="Self.FK_Vote_Miss" FromRole="Vote" ToRole="Miss" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Vote_User" FromRole="Vote" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Comment_Miss">
+          <End Role="Miss" Type="Self.Miss" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Miss">
+              <PropertyRef Name="MissId" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="MissId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vote_Miss">
+          <End Role="Miss" Type="Self.Miss" Multiplicity="0..1" />
+          <End Role="Vote" Type="Self.Vote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Miss">
+              <PropertyRef Name="MissId" />
+            </Principal>
+            <Dependent Role="Vote">
+              <PropertyRef Name="MissId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vote_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Vote" Type="Self.Vote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Vote">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MissVoteEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Comments" EntityType="Self.Comment" />
+          <EntitySet Name="Misses" EntityType="Self.Miss" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Votes" EntityType="Self.Vote" />
+          <AssociationSet Name="FK_Comment_Miss" Association="Self.FK_Comment_Miss">
+            <End Role="Miss" EntitySet="Misses" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_User" Association="Self.FK_Comment_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vote_Miss" Association="Self.FK_Vote_Miss">
+            <End Role="Miss" EntitySet="Misses" />
+            <End Role="Vote" EntitySet="Votes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vote_User" Association="Self.FK_Vote_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Vote" EntitySet="Votes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MissVoteModelStoreContainer" CdmEntityContainer="MissVoteEntities">
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="MissVoteModel.Comment">
+              <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="MissId" ColumnName="MissId" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Misses">
+            <EntityTypeMapping TypeName="MissVoteModel.Miss">
+              <MappingFragment StoreEntitySet="Miss">
+                <ScalarProperty Name="MissId" ColumnName="MissId" />
+                <ScalarProperty Name="MissName" ColumnName="MissName" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="BirthOfDate" ColumnName="BirthOfDate" />
+                <ScalarProperty Name="size1" ColumnName="size1" />
+                <ScalarProperty Name="size2" ColumnName="size2" />
+                <ScalarProperty Name="size3" ColumnName="size3" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MissVoteModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Votes">
+            <EntityTypeMapping TypeName="MissVoteModel.Vote">
+              <MappingFragment StoreEntitySet="Vote">
+                <ScalarProperty Name="VoteId" ColumnName="VoteId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="MissId" ColumnName="MissId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

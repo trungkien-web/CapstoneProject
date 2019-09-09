@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "DoLogin";
+}
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+            <h2>Login</h2>
+            <h2 style="color:red">@ViewBag.ErrorMessage</h2>
+            <form action="/loggin/dologin" method="post">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" name="username" />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" />
+                </div>
+
+                <input type="submit" value="Login" class="btn btn-default" />
+            </form>
+             
+        </div>
+        </div>
+
+</div>
+

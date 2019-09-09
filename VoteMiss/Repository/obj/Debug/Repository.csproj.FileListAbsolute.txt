@@ -1,0 +1,47 @@
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\Repository\bin\Debug\Repository.dll
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\Repository\bin\Debug\Repository.pdb
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\Repository\bin\Debug\EntityFramework.dll
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\Repository\bin\Debug\Model.dll
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\Repository\bin\Debug\Model.pdb
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\Repository\bin\Debug\EntityFramework.xml
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\Repository\obj\Debug\Repository.csprojResolveAssemblyReference.cache
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\Repository\obj\Debug\Repository.dll
+C:\Users\kienm\OneDrive\Desktop\VoteMiss\Repository\obj\Debug\Repository.pdb
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\Repository\bin\Debug\Repository.dll
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\Repository\bin\Debug\Repository.pdb
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\Repository\bin\Debug\EntityFramework.dll
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\Repository\bin\Debug\Model.dll
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\Repository\bin\Debug\Model.pdb
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\Repository\bin\Debug\EntityFramework.xml
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\Repository\obj\Debug\Repository.csprojResolveAssemblyReference.cache
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\Repository\obj\Debug\Repository.dll
+D:\FU_.NET_18_03\2. Asm\EntityFramework\7-6-2018\KienBT4\VoteMiss\Repository\obj\Debug\Repository.pdb
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Repository\bin\Debug\Repository.dll
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Repository\bin\Debug\Repository.pdb
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Repository\bin\Debug\EntityFramework.dll
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Repository\bin\Debug\Model.dll
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Repository\bin\Debug\Model.pdb
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Repository\bin\Debug\EntityFramework.xml
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Repository\obj\Debug\Repository.csprojResolveAssemblyReference.cache
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Repository\obj\Debug\Repository.dll
+C:\Users\kienm\OneDrive\Desktop\Traning\VoteMiss\Repository\obj\Debug\Repository.pdb
+D:\Traning\VoteMiss\Repository\bin\Debug\Repository.dll
+D:\Traning\VoteMiss\Repository\bin\Debug\Repository.pdb
+D:\Traning\VoteMiss\Repository\bin\Debug\EntityFramework.dll
+D:\Traning\VoteMiss\Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\Traning\VoteMiss\Repository\bin\Debug\Model.dll
+D:\Traning\VoteMiss\Repository\bin\Debug\Model.pdb
+D:\Traning\VoteMiss\Repository\bin\Debug\Model.dll.config
+D:\Traning\VoteMiss\Repository\bin\Debug\EntityFramework.xml
+D:\Traning\VoteMiss\Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\Traning\VoteMiss\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
+D:\Traning\VoteMiss\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+D:\Traning\VoteMiss\Repository\obj\Debug\Repository.csproj.CopyComplete
+D:\Traning\VoteMiss\Repository\obj\Debug\Repository.dll
+D:\Traning\VoteMiss\Repository\obj\Debug\Repository.pdb
