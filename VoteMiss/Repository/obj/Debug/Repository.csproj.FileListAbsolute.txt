@@ -45,3 +45,17 @@ D:\Traning\VoteMiss\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cac
 D:\Traning\VoteMiss\Repository\obj\Debug\Repository.csproj.CopyComplete
 D:\Traning\VoteMiss\Repository\obj\Debug\Repository.dll
 D:\Traning\VoteMiss\Repository\obj\Debug\Repository.pdb
+D:\Capstone Project\CapstoneProject\VoteMiss\Repository\bin\Debug\Repository.dll
+D:\Capstone Project\CapstoneProject\VoteMiss\Repository\bin\Debug\Repository.pdb
+D:\Capstone Project\CapstoneProject\VoteMiss\Repository\bin\Debug\EntityFramework.dll
+D:\Capstone Project\CapstoneProject\VoteMiss\Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\Capstone Project\CapstoneProject\VoteMiss\Repository\bin\Debug\Model.dll
+D:\Capstone Project\CapstoneProject\VoteMiss\Repository\bin\Debug\Model.pdb
+D:\Capstone Project\CapstoneProject\VoteMiss\Repository\bin\Debug\Model.dll.config
+D:\Capstone Project\CapstoneProject\VoteMiss\Repository\bin\Debug\EntityFramework.xml
+D:\Capstone Project\CapstoneProject\VoteMiss\Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\Capstone Project\CapstoneProject\VoteMiss\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
+D:\Capstone Project\CapstoneProject\VoteMiss\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+D:\Capstone Project\CapstoneProject\VoteMiss\Repository\obj\Debug\Repository.csproj.CopyComplete
+D:\Capstone Project\CapstoneProject\VoteMiss\Repository\obj\Debug\Repository.dll
+D:\Capstone Project\CapstoneProject\VoteMiss\Repository\obj\Debug\Repository.pdb

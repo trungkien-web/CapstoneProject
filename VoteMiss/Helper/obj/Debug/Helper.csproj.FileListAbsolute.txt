@@ -8,3 +8,9 @@ D:\Traning\VoteMiss\Helper\obj\Debug\Helper.csprojAssemblyReference.cache
 D:\Traning\VoteMiss\Helper\obj\Debug\Helper.csproj.CoreCompileInputs.cache
 D:\Traning\VoteMiss\Helper\obj\Debug\Helper.dll
 D:\Traning\VoteMiss\Helper\obj\Debug\Helper.pdb
+D:\Capstone Project\CapstoneProject\VoteMiss\Helper\bin\Debug\Helper.dll
+D:\Capstone Project\CapstoneProject\VoteMiss\Helper\bin\Debug\Helper.pdb
+D:\Capstone Project\CapstoneProject\VoteMiss\Helper\obj\Debug\Helper.csprojAssemblyReference.cache
+D:\Capstone Project\CapstoneProject\VoteMiss\Helper\obj\Debug\Helper.csproj.CoreCompileInputs.cache
+D:\Capstone Project\CapstoneProject\VoteMiss\Helper\obj\Debug\Helper.dll
+D:\Capstone Project\CapstoneProject\VoteMiss\Helper\obj\Debug\Helper.pdb
