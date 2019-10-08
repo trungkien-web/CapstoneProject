@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\CommonRepository.cs" />
+    <Compile Include="Common\ICommonRepository.cs" />
     <Compile Include="DepartmentRepository.cs" />
     <Compile Include="IDepartmentRepository.cs" />
     <Compile Include="IRateRepository.cs" />

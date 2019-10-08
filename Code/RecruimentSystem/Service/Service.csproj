@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\CommonService.cs" />
+    <Compile Include="Common\ICommonService.cs" />
     <Compile Include="IDepartmentService.cs" />
     <Compile Include="IRateService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
