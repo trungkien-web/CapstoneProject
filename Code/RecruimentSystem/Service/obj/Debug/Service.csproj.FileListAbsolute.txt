@@ -1,0 +1,14 @@
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Service\bin\Debug\Service.dll
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Service\bin\Debug\Service.pdb
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Service\bin\Debug\Model.dll
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Service\bin\Debug\Repository.dll
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Service\bin\Debug\EntityFramework.dll
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Service\bin\Debug\Model.pdb
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Service\bin\Debug\Model.dll.config
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Service\bin\Debug\Repository.pdb
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Service\bin\Debug\EntityFramework.xml
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Service\obj\Debug\Service.csprojAssemblyReference.cache
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Service\obj\Debug\Service.csproj.CopyComplete
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Service\obj\Debug\Service.dll
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Service\obj\Debug\Service.pdb

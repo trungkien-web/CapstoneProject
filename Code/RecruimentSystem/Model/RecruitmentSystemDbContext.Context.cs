@@ -15,6 +15,7 @@ namespace Model
     
     public partial class RecruitmentSystemEntities : DbContext
     {
+        
         public RecruitmentSystemEntities()
             : base("name=RecruitmentSystemEntities")
         {

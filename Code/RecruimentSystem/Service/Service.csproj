@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDepartmentService.cs" />
     <Compile Include="IRateService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DepartmentService.cs" />
     <Compile Include="RateSevice.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RecruitmentSystemModelStoreContainer" CdmEntityContainer="RecruitmentSystemEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="RecruiterID" ColumnName="RecruiterID" />
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Experiences">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Experience">
+        <MappingFragment StoreEntitySet="Experience">
+          <ScalarProperty Name="ExperienceID" ColumnName="ExperienceID" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeedbackRecruiters">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.FeedbackRecruiter">
+        <MappingFragment StoreEntitySet="FeedbackRecruiter">
+          <ScalarProperty Name="FeedbackRecruiterID" ColumnName="FeedbackRecruiterID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="RecruiterID" ColumnName="RecruiterID" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeedbackStudents">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.FeedbackStudent">
+        <MappingFragment StoreEntitySet="FeedbackStudent">
+          <ScalarProperty Name="FeedbackStudentID" ColumnName="FeedbackStudentID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="RecruiterID" ColumnName="RecruiterID" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Image">
+        <MappingFragment StoreEntitySet="Image">
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="Image1" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InterviewSchedules">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.InterviewSchedule">
+        <MappingFragment StoreEntitySet="InterviewSchedule">
+          <ScalarProperty Name="InterviewID" ColumnName="InterviewID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="RecruiterID" ColumnName="RecruiterID" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="StatusInterviewID" ColumnName="StatusInterviewID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Job">
+        <MappingFragment StoreEntitySet="Job">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="JobName" ColumnName="JobName" />
+          <ScalarProperty Name="ContentJob" ColumnName="ContentJob" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="RecruiterID" ColumnName="RecruiterID" />
+          <ScalarProperty Name="AmountStudent" ColumnName="AmountStudent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="LocationDetail" ColumnName="LocationDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Notification">
+        <MappingFragment StoreEntitySet="Notification">
+          <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="RecruiterID" ColumnName="RecruiterID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rates">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Rate">
+        <MappingFragment StoreEntitySet="Rate">
+          <ScalarProperty Name="RateID" ColumnName="RateID" />
+          <ScalarProperty Name="Star" ColumnName="Star" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="RecruiterID" ColumnName="RecruiterID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recommends">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Recommend">
+        <MappingFragment StoreEntitySet="Recommend">
+          <ScalarProperty Name="RecommendID" ColumnName="RecommendID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="RecruiterID" ColumnName="RecruiterID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recruiters">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Recruiter">
+        <MappingFragment StoreEntitySet="Recruiter">
+          <ScalarProperty Name="RecruiterID" ColumnName="RecruiterID" />
+          <ScalarProperty Name="RecruiterName" ColumnName="RecruiterName" />
+          <ScalarProperty Name="RecruiterAspirationsID" ColumnName="RecruiterAspirationsID" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecruiterAspirations">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.RecruiterAspiration">
+        <MappingFragment StoreEntitySet="RecruiterAspirations">
+          <ScalarProperty Name="RecruiterAspirationsID" ColumnName="RecruiterAspirationsID" />
+          <ScalarProperty Name="ExperienceID" ColumnName="ExperienceID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecruiterReports">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.RecruiterReport">
+        <MappingFragment StoreEntitySet="RecruiterReport">
+          <ScalarProperty Name="RecruiterReportID" ColumnName="RecruiterReportID" />
+          <ScalarProperty Name="RecruiterID" ColumnName="RecruiterID" />
+          <ScalarProperty Name="RecruiterName" ColumnName="RecruiterName" />
+          <ScalarProperty Name="RateID" ColumnName="RateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleTypes">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.RoleType">
+        <MappingFragment StoreEntitySet="RoleType">
+          <ScalarProperty Name="RoleTypeID" ColumnName="RoleTypeID" />
+          <ScalarProperty Name="RoleTypeName" ColumnName="RoleTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Skill">
+        <MappingFragment StoreEntitySet="Skill">
+          <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+          <ScalarProperty Name="SkillName" ColumnName="SkillName" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="StudentAspirationsID" ColumnName="StudentAspirationsID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ExperienceID" ColumnName="ExperienceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Statisticals">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Statistical">
+        <MappingFragment StoreEntitySet="Statistical">
+          <ScalarProperty Name="StatisticalID" ColumnName="StatisticalID" />
+          <ScalarProperty Name="RecruiterID" ColumnName="RecruiterID" />
+          <ScalarProperty Name="RecruiterName" ColumnName="RecruiterName" />
+          <ScalarProperty Name="NumRequest" ColumnName="NumRequest" />
+          <ScalarProperty Name="NumPassed" ColumnName="NumPassed" />
+          <ScalarProperty Name="NumFail" ColumnName="NumFail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusInterviews">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.StatusInterview">
+        <MappingFragment StoreEntitySet="StatusInterview">
+          <ScalarProperty Name="StatusInterviewID" ColumnName="StatusInterviewID" />
+          <ScalarProperty Name="StatusInterview1" ColumnName="StatusInterview" />
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="ExperienceID" ColumnName="ExperienceID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="CV" ColumnName="CV" />
+          <ScalarProperty Name="StudentAspirationsID" ColumnName="StudentAspirationsID" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="GPA" ColumnName="GPA" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentAspirations">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.StudentAspiration">
+        <MappingFragment StoreEntitySet="StudentAspirations">
+          <ScalarProperty Name="StudentAspirationsID" ColumnName="StudentAspirationsID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentReports">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.StudentReport">
+        <MappingFragment StoreEntitySet="StudentReport">
+          <ScalarProperty Name="StudentReportID" ColumnName="StudentReportID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="RecruiterID" ColumnName="RecruiterID" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

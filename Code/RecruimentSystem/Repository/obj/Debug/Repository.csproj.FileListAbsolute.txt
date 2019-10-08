@@ -1,0 +1,10 @@
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Repository\bin\Debug\Repository.dll
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Repository\bin\Debug\Repository.pdb
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Repository\bin\Debug\Model.dll
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Repository\bin\Debug\Model.pdb
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Repository\bin\Debug\Model.dll.config
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Repository\obj\Debug\Repository.csproj.CopyComplete
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Repository\obj\Debug\Repository.dll
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Repository\obj\Debug\Repository.pdb

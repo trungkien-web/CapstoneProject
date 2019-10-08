@@ -1,0 +1,959 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RecruitmentSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="AccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="StudentID" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecruiterID" Type="int" />
+    <Property Name="AdminID" Type="int" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhoneNumber" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Experience">
+    <Key>
+      <PropertyRef Name="ExperienceID" />
+    </Key>
+    <Property Name="ExperienceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Time" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DepartmentID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FeedbackRecruiter">
+    <Key>
+      <PropertyRef Name="FeedbackRecruiterID" />
+    </Key>
+    <Property Name="FeedbackRecruiterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecruiterID" Type="int" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FeedbackStudent">
+    <Key>
+      <PropertyRef Name="FeedbackStudentID" />
+    </Key>
+    <Property Name="FeedbackStudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecruiterID" Type="int" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="ImageID" />
+    </Key>
+    <Property Name="ImageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Image" Type="image" />
+  </EntityType>
+  <EntityType Name="InterviewSchedule">
+    <Key>
+      <PropertyRef Name="InterviewID" />
+    </Key>
+    <Property Name="InterviewID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecruiterID" Type="int" Nullable="false" />
+    <Property Name="StartTime" Type="datetime" Nullable="false" />
+    <Property Name="EndTime" Type="datetime" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="StatusInterviewID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="JobID" />
+    </Key>
+    <Property Name="JobID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ContentJob" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="RecruiterID" Type="int" Nullable="false" />
+    <Property Name="AmountStudent" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationDetail" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Notification">
+    <Key>
+      <PropertyRef Name="NotificationID" />
+    </Key>
+    <Property Name="NotificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StudentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecruiterID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rate">
+    <Key>
+      <PropertyRef Name="RateID" />
+    </Key>
+    <Property Name="RateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Star" Type="float" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecruiterID" Type="int" Nullable="false" />
+    <Property Name="StudentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Recommend">
+    <Key>
+      <PropertyRef Name="RecommendID" />
+    </Key>
+    <Property Name="RecommendID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecruiterID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Recruiter">
+    <Key>
+      <PropertyRef Name="RecruiterID" />
+    </Key>
+    <Property Name="RecruiterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RecruiterName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecruiterAspirationsID" Type="int" />
+    <Property Name="PhoneNumber" Type="int" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImageID" Type="int" />
+    <Property Name="StatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="RecruiterAspirations">
+    <Key>
+      <PropertyRef Name="RecruiterAspirationsID" />
+    </Key>
+    <Property Name="RecruiterAspirationsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExperienceID" Type="int" Nullable="false" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="Gender" Type="bit" Nullable="false" />
+    <Property Name="Salary" Type="float" Nullable="false" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecruiterReport">
+    <Key>
+      <PropertyRef Name="RecruiterReportID" />
+    </Key>
+    <Property Name="RecruiterReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RecruiterID" Type="int" Nullable="false" />
+    <Property Name="RecruiterName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RateID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoleType">
+    <Key>
+      <PropertyRef Name="RoleTypeID" />
+    </Key>
+    <Property Name="RoleTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleTypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="SkillID" />
+    </Key>
+    <Property Name="SkillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SkillName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DepartmentID" Type="int" Nullable="false" />
+    <Property Name="StudentID" Type="nvarchar" MaxLength="50" />
+    <Property Name="StudentAspirationsID" Type="int" Nullable="false" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="ExperienceID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Statistical">
+    <Key>
+      <PropertyRef Name="StatisticalID" />
+    </Key>
+    <Property Name="StatisticalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RecruiterID" Type="int" Nullable="false" />
+    <Property Name="RecruiterName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NumRequest" Type="int" Nullable="false" />
+    <Property Name="NumPassed" Type="int" Nullable="false" />
+    <Property Name="NumFail" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusInterview">
+    <Key>
+      <PropertyRef Name="StatusInterviewID" />
+    </Key>
+    <Property Name="StatusInterviewID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusInterview" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MessageID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StudentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ExperienceID" Type="int" />
+    <Property Name="DepartmentID" Type="int" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="DOB" Type="date" Nullable="false" />
+    <Property Name="Gender" Type="bit" Nullable="false" />
+    <Property Name="CV" Type="nvarchar" MaxLength="50" />
+    <Property Name="StudentAspirationsID" Type="int" />
+    <Property Name="PhoneNumber" Type="int" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GPA" Type="float" Nullable="false" />
+    <Property Name="ImageID" Type="int" />
+  </EntityType>
+  <EntityType Name="StudentAspirations">
+    <Key>
+      <PropertyRef Name="StudentAspirationsID" />
+    </Key>
+    <Property Name="StudentAspirationsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentID" Type="int" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Salary" Type="float" Nullable="false" />
+    <Property Name="StudentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudentReport">
+    <Key>
+      <PropertyRef Name="StudentReportID" />
+    </Key>
+    <Property Name="StudentReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StudentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Course" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DepartmentID" Type="int" Nullable="false" />
+    <Property Name="RecruiterID" Type="int" Nullable="false" />
+    <Property Name="Grade" Type="float" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Account_Admin">
+    <End Role="Admin" Type="Self.Admin" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin">
+        <PropertyRef Name="AdminID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="AdminID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Account_Recruiter">
+    <End Role="Recruiter" Type="Self.Recruiter" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recruiter">
+        <PropertyRef Name="RecruiterID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="RecruiterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Account_RoleType">
+    <End Role="RoleType" Type="Self.RoleType" Multiplicity="1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleType">
+        <PropertyRef Name="RoleTypeID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Account_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Account_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Admin_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="1" />
+    <End Role="Admin" Type="Self.Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Feedback_Recruiter">
+    <End Role="Recruiter" Type="Self.Recruiter" Multiplicity="1" />
+    <End Role="FeedbackStudent" Type="Self.FeedbackStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recruiter">
+        <PropertyRef Name="RecruiterID" />
+      </Principal>
+      <Dependent Role="FeedbackStudent">
+        <PropertyRef Name="RecruiterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Feedback_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="FeedbackStudent" Type="Self.FeedbackStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="FeedbackStudent">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FeedbackRecruiter_Recruiter">
+    <End Role="Recruiter" Type="Self.Recruiter" Multiplicity="1" />
+    <End Role="FeedbackRecruiter" Type="Self.FeedbackRecruiter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recruiter">
+        <PropertyRef Name="RecruiterID" />
+      </Principal>
+      <Dependent Role="FeedbackRecruiter">
+        <PropertyRef Name="RecruiterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FeedbackRecruiter_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="FeedbackRecruiter" Type="Self.FeedbackRecruiter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="FeedbackRecruiter">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InterviewSchedule_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="1" />
+    <End Role="InterviewSchedule" Type="Self.InterviewSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="InterviewSchedule">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InterviewSchedule_Recruiter">
+    <End Role="Recruiter" Type="Self.Recruiter" Multiplicity="1" />
+    <End Role="InterviewSchedule" Type="Self.InterviewSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recruiter">
+        <PropertyRef Name="RecruiterID" />
+      </Principal>
+      <Dependent Role="InterviewSchedule">
+        <PropertyRef Name="RecruiterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InterviewSchedule_StatusInterview">
+    <End Role="StatusInterview" Type="Self.StatusInterview" Multiplicity="1" />
+    <End Role="InterviewSchedule" Type="Self.InterviewSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusInterview">
+        <PropertyRef Name="StatusInterviewID" />
+      </Principal>
+      <Dependent Role="InterviewSchedule">
+        <PropertyRef Name="StatusInterviewID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InterviewSchedule_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="InterviewSchedule" Type="Self.InterviewSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="InterviewSchedule">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notification_Recruiter">
+    <End Role="Recruiter" Type="Self.Recruiter" Multiplicity="1" />
+    <End Role="Notification" Type="Self.Notification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recruiter">
+        <PropertyRef Name="RecruiterID" />
+      </Principal>
+      <Dependent Role="Notification">
+        <PropertyRef Name="RecruiterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notification_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Notification" Type="Self.Notification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="Notification">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rate_Recruiter">
+    <End Role="Recruiter" Type="Self.Recruiter" Multiplicity="1" />
+    <End Role="Rate" Type="Self.Rate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recruiter">
+        <PropertyRef Name="RecruiterID" />
+      </Principal>
+      <Dependent Role="Rate">
+        <PropertyRef Name="RecruiterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rate_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Rate" Type="Self.Rate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="Rate">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recommend_Recruiter">
+    <End Role="Recruiter" Type="Self.Recruiter" Multiplicity="1" />
+    <End Role="Recommend" Type="Self.Recommend" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recruiter">
+        <PropertyRef Name="RecruiterID" />
+      </Principal>
+      <Dependent Role="Recommend">
+        <PropertyRef Name="RecruiterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recommend_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Recommend" Type="Self.Recommend" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="Recommend">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recruiter_Image">
+    <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+    <End Role="Recruiter" Type="Self.Recruiter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="ImageID" />
+      </Principal>
+      <Dependent Role="Recruiter">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recruiter_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Recruiter" Type="Self.Recruiter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="Recruiter">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recruiter_RecruiterAspirations">
+    <End Role="RecruiterAspirations" Type="Self.RecruiterAspirations" Multiplicity="0..1" />
+    <End Role="Recruiter" Type="Self.Recruiter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RecruiterAspirations">
+        <PropertyRef Name="RecruiterAspirationsID" />
+      </Principal>
+      <Dependent Role="Recruiter">
+        <PropertyRef Name="RecruiterAspirationsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recruiter_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="Recruiter" Type="Self.Recruiter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Recruiter">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecruiterAspirations_Experience">
+    <End Role="Experience" Type="Self.Experience" Multiplicity="1" />
+    <End Role="RecruiterAspirations" Type="Self.RecruiterAspirations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Experience">
+        <PropertyRef Name="ExperienceID" />
+      </Principal>
+      <Dependent Role="RecruiterAspirations">
+        <PropertyRef Name="ExperienceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecruiterAspirations_Job">
+    <End Role="Job" Type="Self.Job" Multiplicity="1" />
+    <End Role="RecruiterAspirations" Type="Self.RecruiterAspirations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JobID" />
+      </Principal>
+      <Dependent Role="RecruiterAspirations">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecruiterAspirations_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="RecruiterAspirations" Type="Self.RecruiterAspirations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="RecruiterAspirations">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecruiterReport_Rate">
+    <End Role="Rate" Type="Self.Rate" Multiplicity="1" />
+    <End Role="RecruiterReport" Type="Self.RecruiterReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rate">
+        <PropertyRef Name="RateID" />
+      </Principal>
+      <Dependent Role="RecruiterReport">
+        <PropertyRef Name="RateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecruiterReport_Recruiter">
+    <End Role="Recruiter" Type="Self.Recruiter" Multiplicity="1" />
+    <End Role="RecruiterReport" Type="Self.RecruiterReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recruiter">
+        <PropertyRef Name="RecruiterID" />
+      </Principal>
+      <Dependent Role="RecruiterReport">
+        <PropertyRef Name="RecruiterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Skill_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="Skill">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Skill_Experience">
+    <End Role="Experience" Type="Self.Experience" Multiplicity="1" />
+    <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Experience">
+        <PropertyRef Name="ExperienceID" />
+      </Principal>
+      <Dependent Role="Skill">
+        <PropertyRef Name="ExperienceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Skill_Job">
+    <End Role="Job" Type="Self.Job" Multiplicity="1" />
+    <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JobID" />
+      </Principal>
+      <Dependent Role="Skill">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Skill_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="Skill">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Skill_StudentAspirations">
+    <End Role="StudentAspirations" Type="Self.StudentAspirations" Multiplicity="1" />
+    <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudentAspirations">
+        <PropertyRef Name="StudentAspirationsID" />
+      </Principal>
+      <Dependent Role="Skill">
+        <PropertyRef Name="StudentAspirationsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Statistical_Recruiter">
+    <End Role="Recruiter" Type="Self.Recruiter" Multiplicity="1" />
+    <End Role="Statistical" Type="Self.Statistical" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recruiter">
+        <PropertyRef Name="RecruiterID" />
+      </Principal>
+      <Dependent Role="Statistical">
+        <PropertyRef Name="RecruiterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Experience">
+    <End Role="Experience" Type="Self.Experience" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Experience">
+        <PropertyRef Name="ExperienceID" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="ExperienceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Image">
+    <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="ImageID" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_StudentAspirations">
+    <End Role="StudentAspirations" Type="Self.StudentAspirations" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudentAspirations">
+        <PropertyRef Name="StudentAspirationsID" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StudentAspirationsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentReport_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="StudentReport" Type="Self.StudentReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="StudentReport">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentReport_Recruiter">
+    <End Role="Recruiter" Type="Self.Recruiter" Multiplicity="1" />
+    <End Role="StudentReport" Type="Self.StudentReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recruiter">
+        <PropertyRef Name="RecruiterID" />
+      </Principal>
+      <Dependent Role="StudentReport">
+        <PropertyRef Name="RecruiterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentReport_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="StudentReport" Type="Self.StudentReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="StudentReport">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RecruitmentSystemModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Experience" EntityType="Self.Experience" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FeedbackRecruiter" EntityType="Self.FeedbackRecruiter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FeedbackStudent" EntityType="Self.FeedbackStudent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InterviewSchedule" EntityType="Self.InterviewSchedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notification" EntityType="Self.Notification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rate" EntityType="Self.Rate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recommend" EntityType="Self.Recommend" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recruiter" EntityType="Self.Recruiter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecruiterAspirations" EntityType="Self.RecruiterAspirations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecruiterReport" EntityType="Self.RecruiterReport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleType" EntityType="Self.RoleType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Statistical" EntityType="Self.Statistical" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusInterview" EntityType="Self.StatusInterview" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentAspirations" EntityType="Self.StudentAspirations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentReport" EntityType="Self.StudentReport" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Account_Admin" Association="Self.FK_Account_Admin">
+      <End Role="Admin" EntitySet="Admin" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Account_Recruiter" Association="Self.FK_Account_Recruiter">
+      <End Role="Recruiter" EntitySet="Recruiter" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Account_RoleType" Association="Self.FK_Account_RoleType">
+      <End Role="RoleType" EntitySet="RoleType" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Account_Status" Association="Self.FK_Account_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Account_Student" Association="Self.FK_Account_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Admin_Location" Association="Self.FK_Admin_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Admin" EntitySet="Admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Feedback_Recruiter" Association="Self.FK_Feedback_Recruiter">
+      <End Role="Recruiter" EntitySet="Recruiter" />
+      <End Role="FeedbackStudent" EntitySet="FeedbackStudent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Feedback_Student" Association="Self.FK_Feedback_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="FeedbackStudent" EntitySet="FeedbackStudent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FeedbackRecruiter_Recruiter" Association="Self.FK_FeedbackRecruiter_Recruiter">
+      <End Role="Recruiter" EntitySet="Recruiter" />
+      <End Role="FeedbackRecruiter" EntitySet="FeedbackRecruiter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FeedbackRecruiter_Student" Association="Self.FK_FeedbackRecruiter_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="FeedbackRecruiter" EntitySet="FeedbackRecruiter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InterviewSchedule_Location" Association="Self.FK_InterviewSchedule_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="InterviewSchedule" EntitySet="InterviewSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InterviewSchedule_Recruiter" Association="Self.FK_InterviewSchedule_Recruiter">
+      <End Role="Recruiter" EntitySet="Recruiter" />
+      <End Role="InterviewSchedule" EntitySet="InterviewSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InterviewSchedule_StatusInterview" Association="Self.FK_InterviewSchedule_StatusInterview">
+      <End Role="StatusInterview" EntitySet="StatusInterview" />
+      <End Role="InterviewSchedule" EntitySet="InterviewSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InterviewSchedule_Student" Association="Self.FK_InterviewSchedule_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="InterviewSchedule" EntitySet="InterviewSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notification_Recruiter" Association="Self.FK_Notification_Recruiter">
+      <End Role="Recruiter" EntitySet="Recruiter" />
+      <End Role="Notification" EntitySet="Notification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notification_Student" Association="Self.FK_Notification_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Notification" EntitySet="Notification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rate_Recruiter" Association="Self.FK_Rate_Recruiter">
+      <End Role="Recruiter" EntitySet="Recruiter" />
+      <End Role="Rate" EntitySet="Rate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rate_Student" Association="Self.FK_Rate_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Rate" EntitySet="Rate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recommend_Recruiter" Association="Self.FK_Recommend_Recruiter">
+      <End Role="Recruiter" EntitySet="Recruiter" />
+      <End Role="Recommend" EntitySet="Recommend" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recommend_Student" Association="Self.FK_Recommend_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Recommend" EntitySet="Recommend" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recruiter_Image" Association="Self.FK_Recruiter_Image">
+      <End Role="Image" EntitySet="Image" />
+      <End Role="Recruiter" EntitySet="Recruiter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recruiter_Location" Association="Self.FK_Recruiter_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Recruiter" EntitySet="Recruiter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recruiter_RecruiterAspirations" Association="Self.FK_Recruiter_RecruiterAspirations">
+      <End Role="RecruiterAspirations" EntitySet="RecruiterAspirations" />
+      <End Role="Recruiter" EntitySet="Recruiter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recruiter_Status" Association="Self.FK_Recruiter_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Recruiter" EntitySet="Recruiter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecruiterAspirations_Experience" Association="Self.FK_RecruiterAspirations_Experience">
+      <End Role="Experience" EntitySet="Experience" />
+      <End Role="RecruiterAspirations" EntitySet="RecruiterAspirations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecruiterAspirations_Job" Association="Self.FK_RecruiterAspirations_Job">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="RecruiterAspirations" EntitySet="RecruiterAspirations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecruiterAspirations_Status" Association="Self.FK_RecruiterAspirations_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="RecruiterAspirations" EntitySet="RecruiterAspirations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecruiterReport_Rate" Association="Self.FK_RecruiterReport_Rate">
+      <End Role="Rate" EntitySet="Rate" />
+      <End Role="RecruiterReport" EntitySet="RecruiterReport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecruiterReport_Recruiter" Association="Self.FK_RecruiterReport_Recruiter">
+      <End Role="Recruiter" EntitySet="Recruiter" />
+      <End Role="RecruiterReport" EntitySet="RecruiterReport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Skill_Department" Association="Self.FK_Skill_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Skill" EntitySet="Skill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Skill_Experience" Association="Self.FK_Skill_Experience">
+      <End Role="Experience" EntitySet="Experience" />
+      <End Role="Skill" EntitySet="Skill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Skill_Job" Association="Self.FK_Skill_Job">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="Skill" EntitySet="Skill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Skill_Student" Association="Self.FK_Skill_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Skill" EntitySet="Skill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Skill_StudentAspirations" Association="Self.FK_Skill_StudentAspirations">
+      <End Role="StudentAspirations" EntitySet="StudentAspirations" />
+      <End Role="Skill" EntitySet="Skill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Statistical_Recruiter" Association="Self.FK_Statistical_Recruiter">
+      <End Role="Recruiter" EntitySet="Recruiter" />
+      <End Role="Statistical" EntitySet="Statistical" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Department" Association="Self.FK_Student_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Experience" Association="Self.FK_Student_Experience">
+      <End Role="Experience" EntitySet="Experience" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Image" Association="Self.FK_Student_Image">
+      <End Role="Image" EntitySet="Image" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Location" Association="Self.FK_Student_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_StudentAspirations" Association="Self.FK_Student_StudentAspirations">
+      <End Role="StudentAspirations" EntitySet="StudentAspirations" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentReport_Department" Association="Self.FK_StudentReport_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="StudentReport" EntitySet="StudentReport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentReport_Recruiter" Association="Self.FK_StudentReport_Recruiter">
+      <End Role="Recruiter" EntitySet="Recruiter" />
+      <End Role="StudentReport" EntitySet="StudentReport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentReport_Student" Association="Self.FK_StudentReport_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="StudentReport" EntitySet="StudentReport" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

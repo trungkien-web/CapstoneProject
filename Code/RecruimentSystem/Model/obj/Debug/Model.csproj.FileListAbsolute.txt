@@ -1,0 +1,11 @@
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Model\bin\Debug\Model.dll.config
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Model\bin\Debug\Model.dll
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Model\bin\Debug\Model.pdb
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Model\bin\Debug\EntityFramework.dll
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Model\bin\Debug\EntityFramework.xml
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.dll
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.pdb
