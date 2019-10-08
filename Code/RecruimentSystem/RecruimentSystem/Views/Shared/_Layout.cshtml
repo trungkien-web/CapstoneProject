@@ -1,0 +1,271 @@
+﻿
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Internship Student Management System</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" />
+
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link href="/Assets/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+	<link href="/Assets/css/style.css" type="text/css" rel="stylesheet" media="all">
+	<link href="/Assets/css/font-awesome.min.css" rel="stylesheet">
+	<!-- online-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i"
+		  rel="stylesheet">
+</head>
+
+<body>
+	<!-- Slider -->
+	<div class="w3-banner-info-w3ltd position-relative">
+		<!-- header -->
+		<header>
+			<div class="container">
+				<nav class="navbar navbar-expand-lg navbar-light p-0">
+					<h1>
+						<a class="navbar-brand" href="index.html">
+							FPT RECRUITMENT
+
+						</a>
+					</h1>
+					<button class="navbar-toggler ml-lg-auto ml-sm-5 bg-light" type="button" data-toggle="collapse"
+							data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+							aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="ml-lg-5 navbar-nav mr-lg-auto">
+							<li class="nav-item active  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
+								<a href="index.html">Home</a>
+							</li>
+							<li class="nav-item  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
+								<a href="about.html">Nhà Tuyển Dụng</a>
+							</li>
+							<li class="nav-item dropdown mr-lg-4 my-lg-0 my-sm-4 my-3">
+								<a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+								   aria-expanded="false">
+									CV Sinh Viên
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a href="job_list.html">Job List</a>
+									<a href="job_single.html">Job Single</a>
+								</div>
+							</li>
+							<li class="nav-item mr-lg-4 my-lg-0 mb-sm-4 mb-3">
+								<a href="contact.html">Liên hệ</a>
+							</li>
+						</ul>
+						<button type="button" class="btn w3ls-btn text-uppercase font-weight-bold d-block" data-toggle="modal"
+								aria-pressed="false" data-target="#exampleModal1">
+							Register
+						</button>
+						<button type="button" class="btn w3ls-btn btn-2 ml-lg-1 text-uppercase font-weight-bold d-block"
+								data-toggle="modal" aria-pressed="false" data-target="#exampleModal">
+							Sign in
+						</button>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!-- //header -->
+	</div>
+	@RenderBody()
+	<!-- Footer -->
+	<footer id="footer" class="py-sm-5 py-4 bg-theme">
+		<div class="container">
+			<div class="footer-top-w3ls">
+				<h2><a href="index.html" class="navbar-brand">FPT recruit</a></h2>
+				<p class="text-white"> Hệ thống quản lý sinh viên thực tập là một trong những dự án của sinh viên Kỳ 9 hiện đang học tập và làm việc tại FPT. Hệ thống giúp sinh viên, nhà trường và nhà tuyển dụng có thể liên kết với nhau đem lại hiệu quả tối ưu nhất trong việc thực tập cho sinh viên. </p>
+			</div>
+			<div class="row  pt-5">
+				<div class="col-lg-3 col-sm-6 footer_grid1">
+					<h5>Address</h5>
+					<div class="d-flex align-items-center">
+						<span class="fa fa-building mr-4"></span>
+						<p>
+							20 Bà Triệu, Q.Hoàn Kiếm
+							<br>City State 100000.
+						</p>
+					</div>
+					<div class="d-flex mt-3 align-items-center">
+						<span class="fa fa-building mr-4"></span>
+						<p>
+							Km29 Đại Lộ Thăng Long
+							<br>City State 150000.
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 mt-sm-0 mt-5">
+					<h5>Quick links</h5>
+					<ul class="list-unstyled quick-links">
+						<li>
+							<a href="index.html">
+								<span class="fa fa-play"></span>Home
+							</a>
+						</li>
+						<li>
+							<a href="about.html">
+								<span class="fa fa-play"></span>About
+							</a>
+						</li>
+						<li>
+							<a href="job_list.html">
+								<span class="fa fa-play"></span>Danh sách Job
+							</a>
+						</li>
+						<li>
+							<a href="job_single.html">
+								<span class="fa fa-play"></span>Job Single
+							</a>
+						</li>
+						<li>
+							<a href="contact.html">
+								<span class="fa fa-play"></span>Liên Hệ
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-lg-3 col-sm-6 mt-lg-0 mt-5">
+					<h5>Quick links</h5>
+					<ul class="list-unstyled quick-links">
+						<li>
+							<a href="index.html">
+								<span class="fa fa-play"></span>Home
+							</a>
+						</li>
+						<li>
+							<a href="about.html">
+								<span class="fa fa-play"></span>About
+							</a>
+						</li>
+						<li>
+							<a href="job_list.html">
+								<span class="fa fa-play"></span>Job List
+							</a>
+						</li>
+						<li>
+							<a href="job_single.html">
+								<span class="fa fa-play"></span>Job Single
+							</a>
+						</li>
+						<li>
+							<a href="contact.html">
+								<span class="fa fa-play"></span>Contact
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-sm-6 mt-lg-0 mt-5">
+					<h5>subscribe to newsletter</h5>
+					<form action="#" method="post">
+						<div class="form-group">
+							<input type="email" class="form-control  border-0 border-rounded" id="emailid" placeholder="Enter email"
+								   name="email" required>
+						</div>
+						<div class="form-group">
+							<input type="Submit" class="form-control bg-light-theme  border-0 border-rounded" id="sub"
+								   value="Submit" name="sub">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- /Footer -->
+	<div class="cpy-right text-center py-4">
+		<p class="text-dark">
+			© 2019 FPT Recruit. All rights reserved | Design by
+			<a href="" class="text-theme"> FPT Student</a>
+		</p>
+	</div>
+
+	<!-- js -->
+	<script src="/Assets/js/jquery-2.2.3.min.js"></script>
+	<!-- Slider-JavaScript -->
+	<script src="/Assets/js/responsiveslides.min.js"></script>
+	<script>
+		$(function () {
+			$("#slider, #slider1").responsiveSlides({
+				auto: true,
+				nav: false,
+				speed: 1500,
+				namespace: "callbacks",
+				pager: true,
+			});
+		});
+	</script>
+	<!-- //Slider-JavaScript -->
+	<!-- script for password match -->
+	<script>
+		window.onload = function () {
+			document.getElementById("password1").onchange = validatePassword;
+			document.getElementById("password2").onchange = validatePassword;
+		}
+
+		function validatePassword() {
+			var pass2 = document.getElementById("password2").value;
+			var pass1 = document.getElementById("password1").value;
+			if (pass1 != pass2)
+				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+			else
+				document.getElementById("password2").setCustomValidity('');
+			//empty string means no validation error
+		}
+	</script>
+	<!-- script for password match -->
+	<!-- //js -->
+	<script src="/Assets/js/move-top.js"></script>
+	<script src="/Assets/js/easing.js"></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- //end-smooth-scrolling -->
+	<!-- smooth-scrolling-of-move-up -->
+	<script>
+		$(document).ready(function () {
+			/*
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+			};
+			*/
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<script src="/Assets/js/SmoothScroll.min.js"></script>
+	<!-- //smooth-scrolling-of-move-up -->
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/Assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>

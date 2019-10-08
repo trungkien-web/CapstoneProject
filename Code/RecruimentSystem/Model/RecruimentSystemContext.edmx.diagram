@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="77c08285b52d44d2b74c8eeec4514e2e" Name="Diagram1">
+        <EntityTypeShape EntityType="RecruitmentSystemModel.Account" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.Admin" Width="1.5" PointX="3" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.Department" Width="1.5" PointX="5.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.Experience" Width="1.5" PointX="1.5" PointY="33" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.FeedbackRecruiter" Width="1.5" PointX="10.25" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.FeedbackStudent" Width="1.5" PointX="10.25" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.Image" Width="1.5" PointX="0.75" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.InterviewSchedule" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.Job" Width="1.5" PointX="1.5" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.Location" Width="1.5" PointX="0.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.Notification" Width="1.5" PointX="10.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.Rate" Width="1.5" PointX="13.25" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.Recommend" Width="1.5" PointX="13.25" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.Recruiter" Width="1.5" PointX="3" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.RecruiterAspiration" Width="1.5" PointX="0.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.RecruiterReport" Width="1.5" PointX="15.5" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.RoleType" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.Skill" Width="1.5" PointX="1.5" PointY="40.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.Statistical" Width="1.5" PointX="5.25" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.Status" Width="1.5" PointX="1.5" PointY="43.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.StatusInterview" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.Student" Width="1.5" PointX="8" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.StudentAspiration" Width="1.5" PointX="5.75" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.StudentReport" Width="1.5" PointX="13.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecruitmentSystemModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Account_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Account_Recruiter" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Account_RoleType" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Account_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Account_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Admin_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Department_Skill" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Student_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Student_Department1" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_StudentReport_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_RecruiterAspirations_Experience" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Student_Experience" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_FeedbackRecruiter_Recruiter" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_FeedbackRecruiter_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Feedback_Recruiter" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Feedback_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Recruiter_Image" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Student_Image" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_InterviewSchedule_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_InterviewSchedule_Recruiter" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_InterviewSchedule_StatusInterview" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_InterviewSchedule_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Job_Skill" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_RecruiterAspirations_Job" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Recruiter_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Student_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Notification_Recruiter" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Notification_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Rate_Recruiter" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Rate_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_RecruiterReport_Rate" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Recommend_Recruiter" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Recommend_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Recruiter_RecruiterAspirations" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Recruiter_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_RecruiterReport_Recruiter" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Statistical_Recruiter" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_StudentReport_Recruiter" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_RecruiterAspirations_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_Student_StudentAspirations" ManuallyRouted="false" />
+        <AssociationConnector Association="RecruitmentSystemModel.FK_StudentReport_Student" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
