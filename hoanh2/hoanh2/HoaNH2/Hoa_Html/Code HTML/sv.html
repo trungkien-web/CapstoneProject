@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DOM - Quản lý sinh viên</title>
+        <!-- Favicon-->
+        <link rel="shortcut icon" href="img/favicon.png">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">             
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <!-- theme stylesheet-->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style.managementStudent.css">
+    </head>
+    <body>
+       
+        <div class="page-content">            
+            
+          
+
+                <div class="row management">
+                    <div class="col-md-12 col-sm-12 col-xs-12 dom">
+                        <div style="margin-bottom: 15px;">
+                            <h4 style="margin-top: 0;">Danh sách sinh viên:</h4>
+                        </div>
+                        <table id="lsStudent" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="th">STT</th>
+                                    <th class="th">Tên Sinh Viên</th>
+                                    <th class="th">Mã Sinh Viên</th>
+                                    
+                                    <th class="th">Email</th>
+                                    <th class="th">Số điện thoại</th>
+									<th class="th">Chuyên Ngành</th>
+                                    <th class="th">Khóa</th>
+                                    <th class="th">CV Ứng Tuyển</th>
+									<th class="th">Tình Trạng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                                <tr>
+                                    <td>
+                                       1
+                                    </td>
+                                    <td>
+                                        Nguyễn Hữu Hóa
+                                    </td>
+									<td>
+                                       SE05118
+                                    </td>
+                                   
+                                    <td>
+                                       HoaNHSe05118@fpt.edu.vn
+                                    </td>
+                                    <td>
+                                        123555
+                                    </td>
+                                    <td>
+                                        IS
+                                    </td>
+                                    <td>
+                                       K11
+                                    </td>
+                                    <td>
+                                       <a href="CallModalConfirmDeleteStudent?studentId" class="btn btn-danger">HoaNHSe05119_CV</a> 
+                                    </td>
+                                    <td>
+                                        <a href="CallModalConfirmDeleteStudent?studentId" class="btn btn-danger">&nbsp; Xóa &nbsp;</a>
+                                    </td>
+                                </tr>
+                                
+                                
+                            </tbody>
+                        </table>
+                    </div>
+              
+        </div>              
+       
+    </body>
+</html>

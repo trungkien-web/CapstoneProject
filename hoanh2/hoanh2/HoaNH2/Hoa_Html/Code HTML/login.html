@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DOM - Đăng nhập</title>
+        <!-- Favicon-->
+        <link rel="shortcut icon" href="img/favicon.png">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">             
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <!-- theme stylesheet-->
+        <link rel="stylesheet" href="css/login.css">
+    </head>
+    <body>
+        <section class="header">
+            <div>
+              
+                <div id="logo">
+                    <a href="login.jsp"><span style="font-size: 40px;">FPT RECRUITMENT</span></a>
+                </div>
+                <span>Vui lòng nhập Tên đăng nhập và Mật khẩu vào bên dưới.</span><br>
+               
+            </div>
+        </section>
+        <div class="arrow-down"></div>
+        <main class="container pd-top">
+            <form action="Login" method="post">
+                <div class="row mg">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <i class="fa fa-user icon-input" aria-hidden="true"></i>
+                        <input type="text" name="txtUser" class="input-text" placeholder="Tên đăng nhập">
+                    </div>
+                </div>
+                <div class="row mg">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <i class="fa fa-key icon-input" aria-hidden="true"></i>
+                        <input type="password" name="txtPassword" class="input-text" placeholder="Mật khẩu">
+                    </div>
+                </div>
+                <div class="row mg">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <button type="submit" class="btn-submit">
+                            ĐĂNG NHẬP
+                            <i class="fa fa-sign-in icon-btn" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </main>
+        <footer class="container">
+            <div class="row mg">
+                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                    <a href="#">Quên mật khẩu?</a><span>&nbsp;&nbsp;|&nbsp;</span>
+                    <a href="register.jsp">Đăng ký</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                    <span class="ft"> Copyright 2016 - FPT </span>
+                </div>
+            </div>
+        </footer>
+
+        <!--End: body content-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>

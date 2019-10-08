@@ -1,0 +1,21 @@
+.management #lsStudent_filter{
+    float: right;
+}
+
+.management label{
+    margin-bottom: 10px !important;
+}
+
+.management input{
+    margin-left: 5px !important;
+}
+
+.management select{
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+
+
+.management #lsStudent .btn{
+    padding: 4px 12px !important;
+}
