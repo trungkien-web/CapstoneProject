@@ -36,6 +36,7 @@
     </Key>
     <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ListSkills" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="IconFontAwesome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Skills" Relationship="Self.FK_Skill_Department" FromRole="Department" ToRole="Skill" />
     <NavigationProperty Name="Students" Relationship="Self.FK_Student_Department" FromRole="Department" ToRole="Student" />

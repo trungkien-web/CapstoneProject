@@ -15,7 +15,6 @@ namespace Model
     
     public partial class RecruitmentSystemEntities : DbContext
     {
-        
         public RecruitmentSystemEntities()
             : base("name=RecruitmentSystemEntities")
         {
@@ -43,7 +42,7 @@ namespace Model
         public virtual DbSet<RecruiterAspiration> RecruiterAspirations { get; set; }
         public virtual DbSet<RecruiterReport> RecruiterReports { get; set; }
         public virtual DbSet<RoleType> RoleTypes { get; set; }
-        public virtual DbSet<Skill> Skills { get; set; }
+        public virtual DbSet<Skill> Skill { get; set; }
         public virtual DbSet<Statistical> Statisticals { get; set; }
         public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<StatusInterview> StatusInterviews { get; set; }

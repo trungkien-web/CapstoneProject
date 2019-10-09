@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Service;
+using Model;
+using RecruimentSystem.Models;
 
 namespace RecruimentSystem.Controllers
 {
@@ -14,7 +16,13 @@ namespace RecruimentSystem.Controllers
         public ActionResult Index()
         {
             var department =  service.GetAllDepartments();
-            return View(department);
+			var skillKeyValuePair = service.GetToDictionary();
+			IndexVM model = new IndexVM();
+			model.departments = new List<Department>();
+			model.skillKeyValuePair = new Dictionary<int, List<Skill>>();
+			model.departments = department;
+			model.skillKeyValuePair = skillKeyValuePair;
+			return View(model);
         }
-    }
+	}
 }

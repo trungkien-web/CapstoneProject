@@ -10,5 +10,6 @@ namespace Service
 	public interface IDepartmentService
 	{
         List<Department> GetAllDepartments();
+		Dictionary<int, List<Skill>> GetToDictionary();
 	}
 }

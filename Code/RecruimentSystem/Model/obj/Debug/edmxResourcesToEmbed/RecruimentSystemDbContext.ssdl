@@ -29,6 +29,7 @@
     </Key>
     <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ListSkills" Type="nvarchar" MaxLength="50" />
     <Property Name="IconFontAwesome" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Experience">

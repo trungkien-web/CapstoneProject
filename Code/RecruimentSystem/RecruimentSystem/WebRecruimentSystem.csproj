@@ -132,6 +132,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\IndexVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -177,7 +178,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="fonts\" />
-    <Folder Include="Models\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
@@ -186,7 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{94E8A74B-792B-4590-A379-37AAE334C3A3}</Project>
+      <Project>{94e8a74b-792b-4590-a379-37aae334c3a3}</Project>
       <Name>Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
@@ -212,7 +212,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50746</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51829/</IISUrl>
+          <IISUrl>http://localhost:51828/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

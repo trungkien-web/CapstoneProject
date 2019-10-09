@@ -16,11 +16,11 @@ namespace Model
     {
         public int SkillID { get; set; }
         public string SkillName { get; set; }
-        public int DepartmentID { get; set; }
+        public Nullable<int> DepartmentID { get; set; }
         public string StudentID { get; set; }
-        public int StudentAspirationsID { get; set; }
-        public int JobID { get; set; }
-        public int ExperienceID { get; set; }
+        public Nullable<int> StudentAspirationsID { get; set; }
+        public Nullable<int> JobID { get; set; }
+        public Nullable<int> ExperienceID { get; set; }
     
         public virtual Department Department { get; set; }
         public virtual Experience Experience { get; set; }

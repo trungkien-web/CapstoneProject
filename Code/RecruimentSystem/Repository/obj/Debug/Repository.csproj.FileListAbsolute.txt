@@ -8,3 +8,13 @@ D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Repository\obj\Debug\R
 D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Repository\obj\Debug\Repository.csproj.CopyComplete
 D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Repository\obj\Debug\Repository.dll
 D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Repository\obj\Debug\Repository.pdb
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Repository\bin\Debug\Repository.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Repository\bin\Debug\Repository.pdb
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Repository\bin\Debug\Model.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Repository\bin\Debug\Model.pdb
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Repository\bin\Debug\Model.dll.config
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Repository\obj\Debug\Repository.csprojAssemblyReference.cache
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Repository\obj\Debug\Repository.csproj.CopyComplete
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Repository\obj\Debug\Repository.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Repository\obj\Debug\Repository.pdb

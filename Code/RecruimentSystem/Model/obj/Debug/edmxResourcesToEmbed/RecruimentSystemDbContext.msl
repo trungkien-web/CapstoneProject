@@ -31,6 +31,7 @@
         <MappingFragment StoreEntitySet="Department">
           <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
           <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="ListSkills" ColumnName="ListSkills" />
           <ScalarProperty Name="IconFontAwesome" ColumnName="IconFontAwesome" />
         </MappingFragment>
       </EntityTypeMapping>

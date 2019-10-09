@@ -34,6 +34,7 @@
           </Key>
           <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IconFontAwesome" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Experience">
           <Key>
@@ -174,11 +175,11 @@
           </Key>
           <Property Name="SkillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SkillName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" />
           <Property Name="StudentID" Type="nvarchar" MaxLength="50" />
-          <Property Name="StudentAspirationsID" Type="int" Nullable="false" />
-          <Property Name="JobID" Type="int" Nullable="false" />
-          <Property Name="ExperienceID" Type="int" Nullable="false" />
+          <Property Name="StudentAspirationsID" Type="int" />
+          <Property Name="JobID" Type="int" />
+          <Property Name="ExperienceID" Type="int" />
         </EntityType>
         <EntityType Name="Statistical">
           <Key>
@@ -596,7 +597,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Skill_Department">
-          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Department">
@@ -608,7 +609,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Skill_Experience">
-          <End Role="Experience" Type="Self.Experience" Multiplicity="1" />
+          <End Role="Experience" Type="Self.Experience" Multiplicity="0..1" />
           <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Experience">
@@ -620,7 +621,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Skill_Job">
-          <End Role="Job" Type="Self.Job" Multiplicity="1" />
+          <End Role="Job" Type="Self.Job" Multiplicity="0..1" />
           <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job">
@@ -644,7 +645,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Skill_StudentAspirations">
-          <End Role="StudentAspirations" Type="Self.StudentAspirations" Multiplicity="1" />
+          <End Role="StudentAspirations" Type="Self.StudentAspirations" Multiplicity="0..1" />
           <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StudentAspirations">
@@ -1002,6 +1003,7 @@
           </Key>
           <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IconFontAwesome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Skills" Relationship="Self.FK_Skill_Department" FromRole="Department" ToRole="Skill" />
           <NavigationProperty Name="Students" Relationship="Self.FK_Student_Department" FromRole="Department" ToRole="Student" />
           <NavigationProperty Name="StudentReports" Relationship="Self.FK_StudentReport_Department" FromRole="Department" ToRole="StudentReport" />
@@ -1192,11 +1194,11 @@
           </Key>
           <Property Name="SkillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SkillName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentID" Type="Int32" />
           <Property Name="StudentID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StudentAspirationsID" Type="Int32" Nullable="false" />
-          <Property Name="JobID" Type="Int32" Nullable="false" />
-          <Property Name="ExperienceID" Type="Int32" Nullable="false" />
+          <Property Name="StudentAspirationsID" Type="Int32" />
+          <Property Name="JobID" Type="Int32" />
+          <Property Name="ExperienceID" Type="Int32" />
           <NavigationProperty Name="Department" Relationship="Self.FK_Skill_Department" FromRole="Skill" ToRole="Department" />
           <NavigationProperty Name="Experience" Relationship="Self.FK_Skill_Experience" FromRole="Skill" ToRole="Experience" />
           <NavigationProperty Name="Job" Relationship="Self.FK_Skill_Job" FromRole="Skill" ToRole="Job" />
@@ -1367,7 +1369,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Skill_Department">
-          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Department">
@@ -1415,7 +1417,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Skill_Experience">
-          <End Role="Experience" Type="Self.Experience" Multiplicity="1" />
+          <End Role="Experience" Type="Self.Experience" Multiplicity="0..1" />
           <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Experience">
@@ -1571,7 +1573,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Skill_Job">
-          <End Role="Job" Type="Self.Job" Multiplicity="1" />
+          <End Role="Job" Type="Self.Job" Multiplicity="0..1" />
           <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Job">
@@ -1775,7 +1777,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Skill_StudentAspirations">
-          <End Role="StudentAspirations" Type="Self.StudentAspiration" Multiplicity="1" />
+          <End Role="StudentAspirations" Type="Self.StudentAspiration" Multiplicity="0..1" />
           <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StudentAspirations">
@@ -2044,6 +2046,7 @@
               <MappingFragment StoreEntitySet="Department">
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
                 <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="IconFontAwesome" ColumnName="IconFontAwesome" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

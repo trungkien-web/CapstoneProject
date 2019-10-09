@@ -10,12 +10,16 @@ namespace Service
 {
 	public class DepartmentService : IDepartmentService
 	{
-		private IDepartmentRepository department = new DepartmentRepository();
+		private IDepartmentRepository departmentRepository = new DepartmentRepository();
 
         public List<Department> GetAllDepartments()
         {
-            return department.GetAllDepartment();
+            return departmentRepository.GetAllDepartment();
         }
 
+		public Dictionary<int, List<Skill>> GetToDictionary()
+		{
+			return departmentRepository.GetToDictionary();
+		}
 	}
 }

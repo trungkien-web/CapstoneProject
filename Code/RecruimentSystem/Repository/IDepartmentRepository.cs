@@ -11,5 +11,8 @@ namespace Repository
     public interface IDepartmentRepository
     {
         List<Department> GetAllDepartment();
-    }
+		Dictionary<int, List<Skill>> GetToDictionary();
+		List<Skill> GetAllSkill();
+
+	}
 }
