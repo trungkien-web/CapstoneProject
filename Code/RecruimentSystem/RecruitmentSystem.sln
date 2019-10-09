@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRecruimentSystem", "RecruimentSystem\WebRecruimentSystem.csproj", "{D3302AB0-ED4D-4AE0-9182-BCE399EF1862}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRecruitmentSystem", "RecruimentSystem\WebRecruitmentSystem.csproj", "{D3302AB0-ED4D-4AE0-9182-BCE399EF1862}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{94E8A74B-792B-4590-A379-37AAE334C3A3}"
 EndProject
