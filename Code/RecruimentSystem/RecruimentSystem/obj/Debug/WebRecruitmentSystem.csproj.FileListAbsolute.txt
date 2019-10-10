@@ -172,3 +172,9 @@ C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\Recruiment
 C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\RecruimentSystem\obj\Debug\WebRecruitmentSystem.csproj.CopyComplete
 C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\RecruimentSystem\obj\Debug\RecruitmentSystem.dll
 C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\RecruimentSystem\obj\Debug\RecruitmentSystem.pdb
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\RecruimentSystem\bin\System.Net.Http.Formatting.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\RecruimentSystem\bin\System.Web.Http.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\RecruimentSystem\bin\System.Web.Http.WebHost.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\RecruimentSystem\bin\System.Net.Http.Formatting.xml
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\RecruimentSystem\bin\System.Web.Http.xml
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\RecruimentSystem\bin\System.Web.Http.WebHost.xml
