@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<!-- header -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Tìm kiếm và tuyển dụng ứng viên</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+
+        $(document).ready(function () {
+            $('#select-2-test').select2({
+                placeholder: 'Chon category'
+            });
+        });
+    </script>
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <!-- online-fonts -->
+    <link href="css/bootstrap_tungbc.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- body -->
+
+<body>
+    <style type="text/css">
+        #top_ad .wrapper #fancybox-close {
+            z-index: 1100
+        }
+
+        .box_usecommon,
+        #Customer_Info,
+        .le_resource .bradius,
+        .cb-createresume .margroup,
+        div.row,
+        .creResume {
+            float: none;
+    </style>
+    <div id="top_ad">
+        <div class="wrapper">
+            <a id="fancybox-close" class="close_top_ad" style="display: inline;"></a>
+        </div>
+    </div>
+    <div id="uni_wrapper">
+        <div class="top-head" id="top-head">
+            <div class="cb-wrapper">
+                <ul class="head-left">
+                    <li><i class="fa fa-globe"></i><a>Việt Nam</a></li>
+                    <li><i class="fa fa-phone"></i>HCM: 035 655 1659</li>
+                    <li><i class="fa fa-phone"></i>HN: 035 655 1659</li>
+                    <li><i class="fa fa-comments"></i><a>Liên hệ</a></li>
+                </ul>
+                <div class="head-right">
+                    <div class="kv_login">
+                        <div class="bpo"><i class="fa fa-user-plus"></i><a href="DangKy.html">Đăng ký</a></div>
+                        <div class="bpo hoverlogin">
+                            <form>
+                                <span class="text" id="Head_Login"><i class="fa fa-user"></i>Đăng nhập</span>
+                                <div id="login-area" class="frm-login shadow logjobseek btnSub">
+                                    <ul class="box_login">
+                                        <li><input type="text" id="username_box" class="username" name="username"
+                                                style="width: 190px" value="Email/Tên đăng nhập"
+                                                onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';"
+                                                onblur="if(this.value=='') this.value='Email/Tên đăng nhập';"
+                                                autocomplete="off" /></li>
+                                        <li>
+                                            <div id="password_area">
+                                                <input type="text" id="password_box" name="password"
+                                                    class="fl_left pass" style="width: 105px" value="Mật khẩu"
+                                                    onfocus="changeFieldPas()" autocomplete="off" />
+                                            </div>
+                                            <span class="btn_submit">
+                                                <input type="submit" value="Đăng nhập" />
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <div class="clear mar_top6"><a class="forget_pass">Quên mật khẩu</a> <a
+                                                    style="padding-left:10px" class="forget_pass">Đăng ký</a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="cb_link">
+                        <a href="DanhChoUngVien.html" class="radius2px">Dành cho Sinh Viên</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cb-header">
+        <div id="head_emp_pc">
+            <div class="logo_nav">
+                <ul class="nav m_emp">
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li>
+                        <a>Tìm Hồ Sơ Sinh Viên</a>
+                        <ul class="MyKv highZIndex" id="menu_product_pc">
+                            <li><a>Đăng Tuyển Dụng</a></li>
+                            <li><a>Tìm Hồ Sơ Ứng Viên</a></li>
+                        </ul>
+                        <ul class="postresumes highZIndex" style="display: none;">
+                            <li><a>Đăng Tuyển Dụng</a></li>
+                            <li><a>Tìm Hồ Sơ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <style>
+        .search-box {
+            width: 300px !important;
+            height: 42px !important;
+        }
+        
+        .search-horizontal select{
+            opacity: 1;
+        }
+        .chosen {
+            width: 100%;
+            height: 100%;
+            border-radius: 3px;
+        }
+    </style>
+    <!-- container for search SV -->
+    <div id="uni_container">
+        <div class="s-subpage">
+            <div id="NewSearchJob">
+                <form>
+                    <div class="search-horizontal" style="position:static" id="box_search_resume">
+                        <div class="search_keyword">
+                            <label>Từ khóa </label>
+                            <div id="tip_search_exp">
+                                <label>(Hướng dẫn tìm kiếm)</label>
+                            </div>
+                        </div>
+                        <input type="text" name="keyword" id="keyword"
+                            class="width_360 CBTextInput fl_left box_multiSelect_location search-box"
+                            autocomplete='off'>
+                        <a href=" javascript:void(0);" class="closex" id="close_keyword"></a>
+                        <div class="fl_left box_multiSelect_industry">
+                            <select name="list_industries[]" id="industry" class="chosen"
+                                data-placeholder="Tất cả ngành nghề" size="1">
+                                <output label="Công Nghệ Thông Tin" class="option-title">
+                                    <option value="cong-nghe-thong-tin">Công Nghệ Thông Tin</option>
+                                    <option value="IoT" class="option">IoT</option>
+                                    <option value="tri-tue-nhan-tao" class="option">Trí Tuệ Nhân Tạo</option>
+                                    <option value=" ky-thuat-phan-mem" class="option">Kỹ Thuật Phần Mềm</option>
+                                    <option value=" he-thong-thong-tin" class="option">Hệ Thống Thông Tin</option>
+                                    <option value="an-toan-thong-tin" class="option">An Toàn Thông Tin</option>
+                                    <option value=" thiet-ke-my-thuat-so" class="option">Thiết Kế Mỹ Thuật Số</option>
+                                </output>
+                                <output label="Quản Trị Kinh Doanh" class="option-title">
+                                    <option value="digital-marketing" class="option">Digital Marketing</option>
+                                    <option value="kinh-doanh-quoc-te" class="option">Kinh Doanh Quốc Tế</option>
+                                    <option value="quan-tri-khach-san" class="option">Quản Trị Khách Sạn</option>
+                                    <option value="quan-tri-du-lich-lu-hanh" class="option">Quản Trị Du Lịch Và Lữ Hành</option>
+                                    <option value="quan-ly-truyen-thong-da-phuong-tien" class="option">Quản Lý Truyền Thông Đa Phương
+                                        Tiện</option>
+                                </output>
+                                <output label="Ngôn Ngữ Học" class="option-title">
+                                    <option value="ngon-ngu-anh" class="option">Ngôn Ngữ Anh</option>
+                                    <option value="ngon-ngu-nhat" class="option">Ngôn Ngữ Nhật</option>
+                                    <option value="ngon-ngu-han-quoc" class="option">Ngôn Ngữ Hàn Quốc</option>
+                                </output>
+                            </select>
+                        </div>
+                        <div class="fl_left box_multiSelect_location">
+                            <select name="list_location[]" id="location" class="chosen"
+                                data-placeholder="Tất cả địa điểm" size="1">
+                                <optgroup label="Việt Nam" class="option-title">
+                                    <option value="ha-noi">Hà Nội</option>
+                                    <option value="ho-chi-minh">Hồ Chí Minh</option>
+                                    <option value="da-nang">Đà Nẵng</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <input type="submit" class="searchvt1  BtnButton" value="Tìm">
+                        <div id="option_keyword" class="search_option" style="display:none;">
+                            <span>Tìm</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </select> 
+    <!-- flex box category -->
+    <style>
+        #main {
+            width: 1000px;
+            height: 400px;
+            border: 1px solid black;
+            display: -webkit-flex;
+            /* Safari */
+            display: flex;
+            margin: auto;
+        }
+
+        #main div {
+            -webkit-flex: 1;
+            /* Safari 6.1+ */
+            -ms-flex: 1;
+            /* IE 10 */
+            flex: 1;
+        }
+
+        .output {
+            margin: 10px;
+        }
+
+        .option-title {
+            margin-left: 10px;
+            margin-bottom: 10px;
+            font-weight: bolder;
+        }
+
+        .option {
+            margin-left: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <div id="main">
+        <div style="background-color:coral;">
+            <output label="Công Nghệ Thông Tin" class="output">
+                <option value="IoT" class="option-title">IoT</option>
+                <option value="tri-tue-nhan-tao" class="option">Trí Tuệ Nhân Tạo</option>
+                <option value=" ky-thuat-phan-mem" class="option">Kỹ Thuật Phần Mềm</option>
+                <option value=" he-thong-thong-tin" class="option">Hệ Thống Thông Tin</option>
+                <option value="an-toan-thong-tin" class="option">An Toàn Thông Tin</option>
+                <option value=" thiet-ke-my-thuat-so" class="option">Thiết Kế Mỹ Thuật Số</option>
+            </output>
+        </div>
+        <div style="background-color:lightblue;">
+            <output label="Quản Trị Kinh Doanh" class="output">
+                <option value="digital-marketing" class="option-title">Digital Marketing</option>
+                <option value="kinh-doanh-quoc-te" class="option">Kinh Doanh Quốc Tế</option>
+                <option value="quan-tri-khach-san" class="option">Quản Trị Khách Sạn</option>
+                <option value="quan-tri-du-lich-lu-hanh" class="option">Quản Trị Du Lịch Và Lữ Hành</option>
+                <option value="quan-ly-truyen-thong-da-phuong-tien" class="option">Quản Lý Truyền Thông Đa Phương Tiện
+                </option>
+            </output>
+        </div>
+        <div style="background-color:lightgreen;">
+            <output label="Ngôn Ngữ Học" class="output">
+                <option value="ngon-ngu-anh" class="option-title">Ngôn Ngữ Anh</option>
+                <option value="ngon-ngu-nhat" class="option">Ngôn Ngữ Nhật</option>
+                <option value="ngon-ngu-han-quoc" class="option">Ngôn Ngữ Hàn Quốc</option>
+            </output>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer id="footer" class="py-sm-5 py-4 bg-theme">
+        <div class="container">
+            <div class="footer-top-w3ls">
+                <h2><a href="index.html" class="navbar-brand">FPT recruit</a></h2>
+                <p class="text-white"> Hệ thống quản lý sinh viên thực tập là một trong những dự án của sinh viên Kỳ 9
+                    hiện
+                    đang học tập và làm việc tại FPT. Hệ thống giúp sinh viên, nhà trường và nhà tuyển dụng có thể liên
+                    kết
+                    với nhau đem lại hiệu quả tối ưu nhất trong việc thực tập cho sinh viên. </p>
+            </div>
+            <div class="row  pt-5">
+                <div class="col-lg-3 col-sm-6 footer_grid1">
+                    <h5>Address</h5>
+                    <div class="d-flex align-items-center">
+                        <span class="fa fa-building mr-4"></span>
+                        <p>20 Bà Triệu, Q.Hoàn Kiếm
+                            <br>City State 100000.</p>
+                    </div>
+                    <div class="d-flex mt-3 align-items-center">
+                        <span class="fa fa-building mr-4"></span>
+                        <p>Km29 Đại Lộ Thăng Long
+                            <br>City State 150000.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 mt-sm-0 mt-5">
+                    <h5>Quick links</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li>
+                            <a href="index.html">
+                                <span class="fa fa-play"></span>Home</a>
+                        </li>
+                        <li>
+                            <a href="about.html">
+                                <span class="fa fa-play"></span>About</a>
+                        </li>
+                        <li>
+                            <a href="job_list.html">
+                                <span class="fa fa-play"></span>Danh sách Job</a>
+                        </li>
+                        <li>
+                            <a href="job_single.html">
+                                <span class="fa fa-play"></span>Job Single</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">
+                                <span class="fa fa-play"></span>Liên Hệ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 mt-lg-0 mt-5">
+                    <h5>Quick links</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li>
+                            <a href="index.html">
+                                <span class="fa fa-play"></span>Home</a>
+                        </li>
+                        <li>
+                            <a href="about.html">
+                                <span class="fa fa-play"></span>About</a>
+                        </li>
+                        <li>
+                            <a href="job_list.html">
+                                <span class="fa fa-play"></span>Job List</a>
+                        </li>
+                        <li>
+                            <a href="job_single.html">
+                                <span class="fa fa-play"></span>Job Single</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">
+                                <span class="fa fa-play"></span>Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-6 mt-lg-0 mt-5">
+                    <h5>subscribe to newsletter</h5>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="email" class="form-control  border-0 border-rounded" id="emailid"
+                                placeholder="Enter email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="Submit" class="form-control bg-light-theme  border-0 border-rounded" id="sub"
+                                value="Submit" name="sub">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /Footer -->
+    <div class="cpy-right text-center py-4">
+        <p class="text-dark">© 2019 FPT Recruit. All rights reserved | Design by
+            <a href="" class="text-theme"> FPT Student</a>
+        </p>
+    </div>
+
+
+    <!-- js -->
+    <!-- Slider-JavaScript -->
+    <script src="js/responsiveslides.min.js"></script>
+    <script>
+        $(function () {
+            $("#slider, #slider1").responsiveSlides({
+                auto: true,
+                nav: false,
+                speed: 1500,
+                namespace: "callbacks",
+                pager: true,
+            });
+        });
+    </script>
+    <!-- //Slider-JavaScript -->
+    <!-- script for password match -->
+    <script>
+        window.onload = function () {
+            document.getElementById("password1").onchange = validatePassword;
+            document.getElementById("password2").onchange = validatePassword;
+        }
+
+        function validatePassword() {
+            var pass2 = document.getElementById("password2").value;
+            var pass1 = document.getElementById("password1").value;
+            if (pass1 != pass2)
+                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+            else
+                document.getElementById("password2").setCustomValidity('');
+            //empty string means no validation error
+        }
+    </script>
+    <!-- script for password match -->
+    <!-- //js -->
+    <script src="js/move-top.js"></script>
+    <script src="js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="js/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Đăng Nhập Cho Nhà Tuyển Dụng</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i"
+          rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description"
+          content="FPT RECRUITMENT - Đăng nhập như nhà tuyển dụng để sử dụng mọi tiện ích đăng tuyển và quản lý hồ sơ ứng viên."/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+    
+    <link href="css/bootstrap_tungbc.css" rel="stylesheet" type="text/css" />
+         
+</head>
+<body>
+<style type="text/css">
+    #top_ad .wrapper #fancybox-close {
+        z-index: 1100
+    }
+    .box_usecommon, #Customer_Info, .le_resource .bradius, .cb-createresume .margroup, div.row, .creResume {
+        float: none;
+    }
+</style>
+
+<div id="top_ad">
+    <div class="wrapper">
+        <script type='text/javascript'><!--// <![CDATA[/* [id748] NTD_Top_JS_974x60 */
+        OA_show(748);
+        // ]]> --></script>
+        <a id="fancybox-close" class="close_top_ad" style="display: inline;"></a>
+    </div>
+</div>
+<div id="uni_wrapper">
+    <div class="top-head" id="top-head">
+        <div class="cb-wrapper">
+            <ul class="head-left">
+                <li><i class="fa fa-globe"></i><a>Việt Nam</a></li>
+                <li><i class="fa fa-phone"></i>HCM: 0356551659</li>
+                <li>HN: 0356551659</li>
+                <li><i class="fa fa-comments"></i><a>Liên hệ</a></li>
+            </ul>
+            <div class="head-right">
+                <div class="kv_login">
+
+                    <div class="bpo"><i class="fa fa-user-plus"></i><a href="DangKy.html">Đăng ký</a></div>
+                    <div class="bpo hoverlogin">
+                        <form method="post">
+                            <span class="text" id="Head_Login"><i class="fa fa-user"></i>Đăng nhập</span>
+                            <div id="login-area" class="frm-login shadow logjobseek btnSub">
+                                <ul class="box_login">
+                                    <li><input type="text" id="username_box" class="username" name="username"
+                                               style="width: 190px" value="Email/Tên đăng nhập"
+                                               onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';"
+                                               onblur="if(this.value=='') this.value='Email/Tên đăng nhập';"
+                                               autocomplete="off"/></li>
+                                    <li>
+                                        <div id="password_area">
+                                            <input type="text" id="password_box" name="password" class="fl_left pass"
+                                                   style="width: 105px" value="Mật khẩu" onfocus="changeFieldPas()"
+                                                   autocomplete="off"/>
+                                        </div>
+                                        <span class="btn_submit">
+                                                    <input type="submit" value="Đăng nhập"/>
+                                                </span>
+                                    </li>
+                                    <li>
+                                        <div class="clear mar_top6"><a class="forget_pass">Quên mật khẩu</a> <a
+                                                href="DangKy.html" style="padding-left:10px" class="forget_pass">Đăng
+                                            ký</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="cb_link">
+                    <a>Dành cho Ứng Viên</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cb-header">
+        <div id="head_emp_pc">
+            <div class="logo_nav">
+                <ul class="nav m_emp">
+                    <li class="focus"><a href="index.html">Trang Chủ</a></li>
+                    <li><a>Sản Phẩm và Dịch Vụ</a>
+                        <ul class="MyKv highZIndex" id="menu_product_pc">
+                            <li><a>Đăng Tuyển Dụng</a></li>
+                            <li><a>Tìm Hồ Sơ Ứng Viên</a></li>
+                        </ul>
+                        <ul class="postresumes highZIndex" style="display: none;">
+                            <li><a>Đăng Tuyển Dụng</a></li>
+                            <li><a>Tìm Hồ Sơ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="userBar" style="display:none;">
+                    <div class="functionUser" id="i_user"><span id="i_user_mobile"></span>
+                        <ul class="item highZIndex">
+                            <li class="m3"><a href="index.html">Trang Chủ</a></li>
+                            <li><a>Dành cho Ứng Viên</a></li>
+                            <li class="m5"><a>Sản Phẩm và Dịch Vụ</a>
+                                <ul class="subMenu">
+                                    <li><a>Đăng Tuyển Dụng</a></li>
+                                    <li><a>Tìm Hồ Sơ Ứng Viên</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="uni_container">
+                <div id="Login_Employer">
+                    <div class="top_emp"><i></i><b></b><span>Dành Cho Nhà Tuyển Dụng</span></div>
+                    <div class="container_login">
+                        <div class="left_formlogin" style="margin-top: 34px;">
+                            <p>Nếu quý khách đã có tài khoản Nhà Tuyển Dụng trên FPT RECRUITMENT, quý khách có thể đăng
+                                nhập vào FPT RECRUITMENT với cùng Tên đăng nhập và Mật khẩu</p>
+                            <form name="frmLogin" onsubmit="checkLogin();return false;" method="post">
+                                <ul class="standard">
+                                    <li>
+                                        <label>Email/Tên đăng nhập</label>
+                                        <input type="text" class="width_202" name="username" value=""
+                                               onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';"
+                                               onblur="if(this.value=='') this.value='Email/Tên đăng nhập';"
+                                               autocomplete="off"/>
+                                    </li>
+                                    <li class="no_error" id="validUserName">
+                                    </li>
+                                    <li class="no_error" id="UserNameIsNull">
+                                    </li>
+                                    <li>
+                                        <label>Mật khẩu</label>
+                                        <input type="password" class="width_202" name="password" value=""/>
+                                    </li>
+                                    <li class="no_error" id="validPassword">
+                                    </li>
+                                    <li class="no_error" id="PasswordIsNull">
+                                    </li>
+                                    <li>
+                                        <label>&nbsp</label>
+                                        <div class="fl_left">
+                                                    <span class="btn_submit">
+
+                                                        <input type="submit" value="Đăng nhập">
+                                                    </span>
+                                            <a>Quên mật khẩu</a>
+                                            <a>Đăng ký?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div class="right_register">
+                            <ul>
+                                <li>Dịch vụ đăng quảng cáo tuyển dụng nhanh gọn nhất</li>
+                                <li>Ngân hàng dữ liệu hồ sơ ứng viên khổng lồ</li>
+                                <li>Nhanh chóng có ngay hồ sơ đạt yêu cầu</li>
+                                <li>Tối ưu hóa quy trình tuyển dụng</li>
+                            </ul>
+                            <div class="regisfree">
+                                <div>
+                                    <h2>Quý khách chưa có tài khoản?</h2>
+                                    <p>Đăng ký dễ dàng, hoàn toàn miễn phí</p>
+                                </div>
+                                <span class="btn_submit">
+
+                                            <input type="button" onclick="location.href='DangKy.html'" value="ĐĂNG KÝ">
+                                        </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script language="JavaScript" type="text/javascript">
+                var language = {
+                    emp_login_username_again: "Vui lòng nhập tên đăng nhập",
+                    emp_login_password_again: "Vui lòng nhập mật khẩu"
+                };
+
+                function checkLogin() {
+                    var form = document.frmLogin;
+                    if (trim(form.username.value) == "") {
+                        document.getElementById('UserNameIsNull').className = "error";
+                        $("#UserNameIsNull").html(language.emp_login_username_again);
+                        document.getElementById('validUserName').className = "no_error";
+                        form.username.focus();
+                        return false;
+                    }
+                    else if (trim(form.password.value) == "") {
+                        document.getElementById('UserNameIsNull').className = "no_error";
+                        $("#UserNameIsNull").html();
+                        document.getElementById('PasswordIsNull').className = "error";
+                        $("#PasswordIsNull").html(language.emp_login_password_again);
+                        document.getElementById('validPassword').className = "no_error";
+                        form.password.focus();
+                        return false;
+                    }
+                    else {
+                        form.submit();
+                    }
+                }
+
+            </script>
+</body>
+
+<!-- Footer -->
+<footer id="footer" class="py-sm-5 py-4 bg-theme">
+    <div class="container">
+        <div class="footer-top-w3ls">
+            <h2><a href="index.html" class="navbar-brand">FPT recruit</a></h2>
+            <p class="text-white"> Hệ thống quản lý sinh viên thực tập là một trong những dự án của sinh viên Kỳ 9 hiện
+                đang học tập và làm việc tại FPT. Hệ thống giúp sinh viên, nhà trường và nhà tuyển dụng có thể liên kết
+                với nhau đem lại hiệu quả tối ưu nhất trong việc thực tập cho sinh viên. </p>
+        </div>
+        <div class="row  pt-5">
+            <div class="col-lg-3 col-sm-6 footer_grid1">
+                <h5>Address</h5>
+                <div class="d-flex align-items-center">
+                    <span class="fa fa-building mr-4"></span>
+                    <p>20 Bà Triệu, Q.Hoàn Kiếm
+                        <br>City State 100000.</p>
+                </div>
+                <div class="d-flex mt-3 align-items-center">
+                    <span class="fa fa-building mr-4"></span>
+                    <p>Km29 Đại Lộ Thăng Long
+                        <br>City State 150000.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mt-sm-0 mt-5">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li>
+                        <a href="index.html">
+                            <span class="fa fa-play"></span>Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            <span class="fa fa-play"></span>About</a>
+                    </li>
+                    <li>
+                        <a href="job_list.html">
+                            <span class="fa fa-play"></span>Danh sách Job</a>
+                    </li>
+                    <li>
+                        <a href="job_single.html">
+                            <span class="fa fa-play"></span>Job Single</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">
+                            <span class="fa fa-play"></span>Liên Hệ</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 mt-lg-0 mt-5">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li>
+                        <a href="index.html">
+                            <span class="fa fa-play"></span>Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            <span class="fa fa-play"></span>About</a>
+                    </li>
+                    <li>
+                        <a href="job_list.html">
+                            <span class="fa fa-play"></span>Job List</a>
+                    </li>
+                    <li>
+                        <a href="job_single.html">
+                            <span class="fa fa-play"></span>Job Single</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">
+                            <span class="fa fa-play"></span>Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 mt-lg-0 mt-5">
+                <h5>subscribe to newsletter</h5>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <input type="email" class="form-control  border-0 border-rounded" id="emailid"
+                               placeholder="Enter email"
+                               name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="Submit" class="form-control bg-light-theme  border-0 border-rounded" id="sub"
+                               value="Submit" name="sub">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- /Footer -->
+<div class="cpy-right text-center py-4">
+    <p class="text-dark">© 2019 FPT Recruit. All rights reserved | Design by
+        <a href="" class="text-theme"> FPT Student</a>
+    </p>
+</div>
+
+
+<!-- js -->
+<script src="js/jquery-2.2.3.min.js"></script>
+<!-- Slider-JavaScript -->
+<script src="js/responsiveslides.min.js"></script>
+<script>
+    $(function () {
+        $("#slider, #slider1").responsiveSlides({
+            auto: true,
+            nav: false,
+            speed: 1500,
+            namespace: "callbacks",
+            pager: true,
+        });
+    });
+</script>
+<!-- //Slider-JavaScript -->
+<!-- script for password match -->
+<script>
+    window.onload = function () {
+        document.getElementById("password1").onchange = validatePassword;
+        document.getElementById("password2").onchange = validatePassword;
+    }
+
+    function validatePassword() {
+        var pass2 = document.getElementById("password2").value;
+        var pass1 = document.getElementById("password1").value;
+        if (pass1 != pass2)
+            document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+        else
+            document.getElementById("password2").setCustomValidity('');
+        //empty string means no validation error
+    }
+</script>
+<!-- script for password match -->
+<!-- //js -->
+<script src="js/move-top.js"></script>
+<script src="js/easing.js"></script>
+<script>
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 1000);
+        });
+    });
+</script>
+<!-- //end-smooth-scrolling -->
+<!-- smooth-scrolling-of-move-up -->
+<script>
+    $(document).ready(function () {
+        /*
+        var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+        };
+        */
+
+        $().UItoTop({
+            easingType: 'easeOutQuart'
+        });
+
+    });
+</script>
+<script src="js/SmoothScroll.min.js"></script>
+<!-- //smooth-scrolling-of-move-up -->
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so <td></td>he pages load faster -->
+<script src="js/bootstrap.min.js"></script>
+
+</html>
+

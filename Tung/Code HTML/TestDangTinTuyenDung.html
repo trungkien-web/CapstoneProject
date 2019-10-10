@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Đăng Tin Tuyển Dụng</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+
+        $(document).ready(function () {
+            $('#select-2-test').select2({
+                placeholder: 'Chon category'
+            });
+        });
+    </script>
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- online-fonts -->
+    <link href="css/bootstrap_tungbc.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <style type="text/css">
+        #top_ad .wrapper #fancybox-close {
+            z-index: 1100
+        }
+
+        .box_usecommon,
+        #Customer_Info,
+        .le_resource .bradius,
+        .cb-createresume .margroup,
+        div.row,
+        .creResume {
+            float: none;
+    </style>
+    <div id="top_ad">
+        <div class="wrapper">
+            <script type='text/javascript'>< !--// <![CDATA[/* [id748] NTD_Top_JS_974x60 */
+                    OA_show(748);
+// ]]> --></script>
+            <a id="fancybox-close" class="close_top_ad" style="display: inline;"></a>
+        </div>
+    </div>
+    <div id="uni_wrapper">
+        <div class="top-head" id="top-head">
+            <div class="cb-wrapper">
+                <ul class="head-left">
+                    <li><i class="fa fa-globe"></i><a>Việt Nam</a></li>
+                    <li><i class="fa fa-phone"></i>HCM: 035 655 1659</li>
+                    <li><i class="fa fa-phone"></i>HN: 035 655 1659</li>
+                    <li><i class="fa fa-comments"></i><a>Liên hệ</a></li>
+                </ul>
+                <div class="head-right">
+                    <div class="kv_login">
+                        <div class="bpo"><i class="fa fa-user-plus"></i><a href="DangKy.html">Đăng ký</a></div>
+                        <div class="bpo hoverlogin">
+                            <form>
+                                <span class="text" id="Head_Login"><i class="fa fa-user"></i>Đăng nhập</span>
+                                <div id="login-area" class="frm-login shadow logjobseek btnSub">
+                                    <ul class="box_login">
+                                        <li><input type="text" id="username_box" class="username" name="username"
+                                                style="width: 190px" value="Email/Tên đăng nhập"
+                                                onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';"
+                                                onblur="if(this.value=='') this.value='Email/Tên đăng nhập';"
+                                                autocomplete="off" /></li>
+                                        <li>
+                                            <div id="password_area">
+                                                <input type="text" id="password_box" name="password"
+                                                    class="fl_left pass" style="width: 105px" value="Mật khẩu"
+                                                    onfocus="changeFieldPas()" autocomplete="off" />
+                                            </div>
+                                            <span class="btn_submit">
+                                                <input type="submit" value="Đăng nhập" />
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <div class="clear mar_top6"><a class="forget_pass">Quên mật khẩu</a> <a
+                                                    style="padding-left:10px" class="forget_pass">Đăng ký</a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="cb_link">
+                        <a href="index.html" class="radius2px">Trang Chủ</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-3 left-panel px-3">
+            <!-- <div class="logo">LOGO</div>
+            <div class="menu-toggle" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+                aria-controls="collapseExample">Menu</div> -->
+            <div class="menu collapse" id="collapseExample">
+                <nav class="navbar navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Đăng tin quản lý</a>
+                </nav>
+                <nav class="navbar navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Quản lý tin tuyển dụng</a>
+                </nav>
+                <nav class="navbar navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Hồ sơ đã ứng tuyển</a>
+                </nav>
+                <nav class="navbar navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Hồ sơ đã lưu</a>
+                </nav>
+            </div>
+        </div>
+        <div class="col-12 main-content px-3">
+            <!--   <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Nhà tuyển dụng <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nhà trường</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Guest</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sinh viên</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Admin</button>
+                    </form>
+                </div>
+            </nav> -->
+            <div class="recruitment px-3 py-2">
+                <!--  <a href="#">Nhà tuyển dụng</a> > <a href="#">Đăng tin tuyển dụng</a> > <a href="#"
+                    style="text-decoration: none;color: black">Thêm tin mới</a> -->
+                <h3 style="margin: 10px 0px 0px 20px">Đăng tin tuyển dụng</h3>
+                <div class="form-recruitment px-3">
+                    <form style="margin-top: 20px">
+                        <div class="form-group">
+                            <label for="inputAddress2">Tiêu đề tin</label>
+                            <input type="text" class="form-control" id="inputAddress2"
+                                placeholder="Apartment, studio, or floor">
+                        </div>
+                        <h4 style="color: green">Thông tin làm việc</h4>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Vị trí tuyển dụng</label>
+                                <input type="text" class="form-control" id="inputEmail4">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Loại tuyển dụng</label>
+                                <input type="text" class="form-control" id="inputPassword4">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Tên công ty</label>
+                                <input type="text" class="form-control" id="inputEmail4">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputPassword4">Thời gian từ</label>
+                                <input type="time" class="form-control" id="inputPassword4">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputPassword4">Đến</label>
+                                <input type="time" class="form-control" id="inputPassword4">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Địa điểm</label>
+                                <input type="email" class="form-control" id="inputEmail4">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Ngày làm việc</label>
+                                <input type="date" class="form-control" id="inputPassword4">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Hình thức làm việc</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Full-time</option>
+                                    <option>Part-time</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Mức lương</label>
+                                <input type="text" class="form-control" id="inputPassword4">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="exampleFormControlTextarea1">Mô tả công việc</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="exampleFormControlTextarea1">Quyền lơị được hưởng</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <h4 style="color: green">Yêu cầu ứng viên</h4>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="inputEmail4">Tuổi từ</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputEmail4">đến</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Số lượng tuyển</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Giới tính</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Name</option>
+                                    <option>Nữ</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Yêu cầu kinh nghiệm</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Không yêu cầu kinh nghiệm</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Yêu cầu thêm</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <button type="submit" class="btn btn-danger mx-2 my-2">Huỷ bỏ</button>
+                            <button type="submit" class="btn btn-primary mx-2 my-2">Đăng tin</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer id="footer" class="py-sm-5 py-4 bg-theme">
+        <div class="container">
+            <div class="footer-top-w3ls">
+                <h2><a href="index.html" class="navbar-brand">FPT recruit</a></h2>
+                <p class="text-white"> Hệ thống quản lý sinh viên thực tập là một trong những dự án của sinh viên Kỳ 9
+                    hiện đang học tập và làm việc tại FPT. Hệ thống giúp sinh viên, nhà trường và nhà tuyển dụng có thể
+                    liên kết với nhau đem lại hiệu quả tối ưu nhất trong việc thực tập cho sinh viên. </p>
+            </div>
+            <div class="row  pt-5">
+                <div class="col-lg-3 col-sm-6 footer_grid1">
+                    <h5>Address</h5>
+                    <div class="d-flex align-items-center">
+                        <span class="fa fa-building mr-4"></span>
+                        <p>20 Bà Triệu, Q.Hoàn Kiếm
+                            <br>City State 100000.</p>
+                    </div>
+                    <div class="d-flex mt-3 align-items-center">
+                        <span class="fa fa-building mr-4"></span>
+                        <p>Km29 Đại Lộ Thăng Long
+                            <br>City State 150000.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 mt-sm-0 mt-5">
+                    <h5>Quick links</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li>
+                            <a href="index.html">
+                                <span class="fa fa-play"></span>Home</a>
+                        </li>
+                        <li>
+                            <a href="about.html">
+                                <span class="fa fa-play"></span>About</a>
+                        </li>
+                        <li>
+                            <a href="job_list.html">
+                                <span class="fa fa-play"></span>Danh sách Job</a>
+                        </li>
+                        <li>
+                            <a href="job_single.html">
+                                <span class="fa fa-play"></span>Job Single</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">
+                                <span class="fa fa-play"></span>Liên Hệ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 mt-lg-0 mt-5">
+                    <h5>Quick links</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li>
+                            <a href="index.html">
+                                <span class="fa fa-play"></span>Home</a>
+                        </li>
+                        <li>
+                            <a href="about.html">
+                                <span class="fa fa-play"></span>About</a>
+                        </li>
+                        <li>
+                            <a href="job_list.html">
+                                <span class="fa fa-play"></span>Job List</a>
+                        </li>
+                        <li>
+                            <a href="job_single.html">
+                                <span class="fa fa-play"></span>Job Single</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">
+                                <span class="fa fa-play"></span>Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-6 mt-lg-0 mt-5">
+                    <h5>subscribe to newsletter</h5>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="email" class="form-control  border-0 border-rounded" id="emailid"
+                                placeholder="Enter email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="Submit" class="form-control bg-light-theme  border-0 border-rounded" id="sub"
+                                value="Submit" name="sub">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /Footer -->
+    <div class="cpy-right text-center py-4">
+        <p class="text-dark">© 2019 FPT Recruit. All rights reserved | Design by
+            <a href="" class="text-theme"> FPT Student</a>
+        </p>
+    </div>
+
+
+    <!-- js -->
+    <!-- Slider-JavaScript -->
+    <script src="js/responsiveslides.min.js"></script>
+    <script>
+        $(function () {
+            $("#slider, #slider1").responsiveSlides({
+                auto: true,
+                nav: false,
+                speed: 1500,
+                namespace: "callbacks",
+                pager: true,
+            });
+        });
+    </script>
+    <!-- //Slider-JavaScript -->
+    <!-- script for password match -->
+    <script>
+        window.onload = function () {
+            document.getElementById("password1").onchange = validatePassword;
+            document.getElementById("password2").onchange = validatePassword;
+        }
+
+        function validatePassword() {
+            var pass2 = document.getElementById("password2").value;
+            var pass1 = document.getElementById("password1").value;
+            if (pass1 != pass2)
+                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+            else
+                document.getElementById("password2").setCustomValidity('');
+            //empty string means no validation error
+        }
+    </script>
+    <!-- script for password match -->
+    <!-- //js -->
+    <script src="js/move-top.js"></script>
+    <script src="js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="js/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
