@@ -1454,5 +1454,15 @@ input[type="submit"] {
     .creResume {
         float: none;
     }
+    #top_ad .wrapper #fancybox-close {
+        z-index: 1100
+    }
 
-/* -- //Responsive code -- */
+    .box_usecommon,
+    #Customer_Info,
+    .le_resource .bradius,
+    .cb-createresume .margroup,
+    div.row,
+    .creResume {
+        float: none;
+        /* -- //Responsive code -- */

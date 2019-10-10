@@ -1,0 +1,230 @@
+﻿@{
+    ViewBag.Title = "PublishedRecruitment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+    
+    <div id="top_ad">
+        <div class="wrapper">
+            <script type='text/javascript'>
+< !--// <![CDATA[/* [id748] NTD_Top_JS_974x60 */
+                        OA_show(748);
+                    // ]]> --></script>
+            <a id="fancybox-close" class="close_top_ad" style="display: inline;"></a>
+        </div>
+    </div>
+    <div id="uni_wrapper">
+        <div class="top-head" id="top-head">
+            <div class="cb-wrapper">
+                <ul class="head-left">
+                    <li><i class="fa fa-globe"></i><a>Việt Nam</a></li>
+                    <li><i class="fa fa-phone"></i>HCM: 035 655 1659</li>
+                    <li><i class="fa fa-phone"></i>HN: 035 655 1659</li>
+                    <li><i class="fa fa-comments"></i><a>Liên hệ</a></li>
+                </ul>
+                <div class="head-right">
+                    <div class="kv_login">
+                        <div class="bpo"><i class="fa fa-user-plus"></i><a href="DangKy.html">Đăng ký</a></div>
+                        <div class="bpo hoverlogin">
+                            <form>
+                                <span class="text" id="Head_Login"><i class="fa fa-user"></i>Đăng nhập</span>
+                                <div id="login-area" class="frm-login shadow logjobseek btnSub">
+                                    <ul class="box_login">
+                                        <li>
+                                            <input type="text" id="username_box" class="username" name="username"
+                                                   style="width: 190px" value="Email/Tên đăng nhập"
+                                                   onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';"
+                                                   onblur="if(this.value=='') this.value='Email/Tên đăng nhập';"
+                                                   autocomplete="off" />
+                                        </li>
+                                        <li>
+                                            <div id="password_area">
+                                                <input type="text" id="password_box" name="password"
+                                                       class="fl_left pass" style="width: 105px" value="Mật khẩu"
+                                                       onfocus="changeFieldPas()" autocomplete="off" />
+                                            </div>
+                                            <span class="btn_submit">
+                                                <input type="submit" value="Đăng nhập" />
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <div class="clear mar_top6">
+                                                <a class="forget_pass">Quên mật khẩu</a> <a style="padding-left:10px" class="forget_pass">Đăng ký</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="cb_link">
+                        <a href="index.html" class="radius2px">Trang Chủ</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3 left-panel px-3">
+            <!-- <div class="logo">LOGO</div>
+            <div class="menu-toggle" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+                aria-controls="collapseExample">Menu</div> -->
+            <div class="menu collapse" id="collapseExample">
+                <nav class="navbar navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Đăng tin quản lý</a>
+                </nav>
+                <nav class="navbar navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Quản lý tin tuyển dụng</a>
+                </nav>
+                <nav class="navbar navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Hồ sơ đã ứng tuyển</a>
+                </nav>
+                <nav class="navbar navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Hồ sơ đã lưu</a>
+                </nav>
+            </div>
+        </div>
+        <div class="col-12 main-content px-3">
+            
+            <div class="recruitment px-3 py-2">
+                <!--  <a href="#">Nhà tuyển dụng</a> > <a href="#">Đăng tin tuyển dụng</a> > <a href="#"
+                    style="text-decoration: none;color: black">Thêm tin mới</a> -->
+                <h3 style="margin: 10px 0px 0px 20px">Đăng tin tuyển dụng</h3>
+                <div class="form-recruitment px-3">
+                    <form style="margin-top: 20px">
+                        <div class="form-group">
+                            <label for="inputAddress2">Tiêu đề tin</label>
+                            <input type="text" class="form-control" id="inputAddress2"
+                                   placeholder="Apartment, studio, or floor">
+                        </div>
+                        <h4 style="color: green">Thông tin làm việc</h4>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Vị trí tuyển dụng</label>
+                                <input type="text" class="form-control" id="inputEmail4">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Loại tuyển dụng</label>
+                                <input type="text" class="form-control" id="inputPassword4">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Tên công ty</label>
+                                <input type="text" class="form-control" id="inputEmail4">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputPassword4">Thời gian từ</label>
+                                <input type="time" class="form-control" id="inputPassword4">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputPassword4">Đến</label>
+                                <input type="time" class="form-control" id="inputPassword4">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Địa điểm</label>
+                                <input type="email" class="form-control" id="inputEmail4">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Ngày làm việc</label>
+                                <input type="date" class="form-control" id="inputPassword4">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Hình thức làm việc</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Full-time</option>
+                                    <option>Part-time</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Mức lương</label>
+                                <input type="text" class="form-control" id="inputPassword4">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="exampleFormControlTextarea1">Mô tả công việc</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="exampleFormControlTextarea1">Quyền lơị được hưởng</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <h4 style="color: green">Yêu cầu ứng viên</h4>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="inputEmail4">Tuổi từ</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputEmail4">đến</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Số lượng tuyển</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Giới tính</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Name</option>
+                                    <option>Nữ</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Yêu cầu kinh nghiệm</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Không yêu cầu kinh nghiệm</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Yêu cầu thêm</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <button type="submit" class="btn btn-danger mx-2 my-2">Huỷ bỏ</button>
+                            <button type="submit" class="btn btn-primary mx-2 my-2">Đăng tin</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  
