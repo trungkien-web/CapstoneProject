@@ -20,3 +20,4 @@ D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Model\bin\Debug\Enti
 D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.csproj.CopyComplete
 D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.pdb
+D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.csprojAssemblyReference.cache

@@ -181,6 +181,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="fonts\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Views\Recruiter\" />
+    <Folder Include="Views\Student\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
