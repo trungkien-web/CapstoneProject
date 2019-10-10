@@ -21,3 +21,15 @@ D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Mode
 D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.csproj.CopyComplete
 D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.pdb
 D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\Model\bin\Debug\Model.dll.config
+C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\Model\bin\Debug\Model.dll
+C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\Model\bin\Debug\Model.pdb
+C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\Model\bin\Debug\EntityFramework.dll
+C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\Model\bin\Debug\EntityFramework.xml
+C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.dll
+C:\Users\Tung\Desktop\CloneDATN\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.pdb

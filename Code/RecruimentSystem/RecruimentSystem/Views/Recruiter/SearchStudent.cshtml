@@ -1,0 +1,196 @@
+﻿
+@{
+    ViewBag.Title = "SearchStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+   
+    <div id="top_ad">
+        <div class="wrapper">
+            <a id="fancybox-close" class="close_top_ad" style="display: inline;"></a>
+        </div>
+    </div>
+    <div id="uni_wrapper">
+        <div class="top-head" id="top-head">
+            <div class="cb-wrapper">
+                <ul class="head-left">
+                    <li><i class="fa fa-globe"></i><a>Việt Nam</a></li>
+                    <li><i class="fa fa-phone"></i>HCM: 035 655 1659</li>
+                    <li><i class="fa fa-phone"></i>HN: 035 655 1659</li>
+                    <li><i class="fa fa-comments"></i><a>Liên hệ</a></li>
+                </ul>
+                <div class="head-right">
+                    <div class="kv_login">
+                        <div class="bpo"><i class="fa fa-user-plus"></i><a href="DangKy.html">Đăng ký</a></div>
+                        <div class="bpo hoverlogin">
+                            <form>
+                                <span class="text" id="Head_Login"><i class="fa fa-user"></i>Đăng nhập</span>
+                                <div id="login-area" class="frm-login shadow logjobseek btnSub">
+                                    <ul class="box_login">
+                                        <li><input type="text" id="username_box" class="username" name="username"
+                                                style="width: 190px" value="Email/Tên đăng nhập"
+                                                onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';"
+                                                onblur="if(this.value=='') this.value='Email/Tên đăng nhập';"
+                                                autocomplete="off" /></li>
+                                        <li>
+                                            <div id="password_area">
+                                                <input type="text" id="password_box" name="password"
+                                                    class="fl_left pass" style="width: 105px" value="Mật khẩu"
+                                                    onfocus="changeFieldPas()" autocomplete="off" />
+                                            </div>
+                                            <span class="btn_submit">
+                                                <input type="submit" value="Đăng nhập" />
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <div class="clear mar_top6"><a class="forget_pass">Quên mật khẩu</a> <a
+                                                    style="padding-left:10px" class="forget_pass">Đăng ký</a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="cb_link">
+                        <a href="DanhChoUngVien.html" class="radius2px">Dành cho Sinh Viên</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cb-header">
+        <div id="head_emp_pc">
+            <div class="logo_nav">
+                <ul class="nav m_emp">
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li>
+                        <a>Tìm Hồ Sơ Sinh Viên</a>
+                        <ul class="MyKv highZIndex" id="menu_product_pc">
+                            <li><a>Đăng Tuyển Dụng</a></li>
+                            <li><a>Tìm Hồ Sơ Ứng Viên</a></li>
+                        </ul>
+                        <ul class="postresumes highZIndex" style="display: none;">
+                            <li><a>Đăng Tuyển Dụng</a></li>
+                            <li><a>Tìm Hồ Sơ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <style>
+        .search-box {
+            width: 300px !important;
+            height: 42px !important;
+        }
+        
+        .search-horizontal select{
+            opacity: 1;
+        }
+        .chosen {
+            width: 100%;
+            height: 100%;
+            border-radius: 3px;
+        }
+    </style>
+    <!-- container for search SV -->
+    <div id="uni_container">
+        <div class="s-subpage">
+            <div id="NewSearchJob">
+                <form>
+                    <div class="search-horizontal" style="position:static" id="box_search_resume">
+                        <div class="search_keyword">
+                            <label>Từ khóa </label>
+                            <div id="tip_search_exp">
+                                <label>(Hướng dẫn tìm kiếm)</label>
+                            </div>
+                        </div>
+                        <input type="text" name="keyword" id="keyword"
+                            class="width_360 CBTextInput fl_left box_multiSelect_location search-box"
+                            autocomplete='off'>
+                        <a href=" javascript:void(0);" class="closex" id="close_keyword"></a>
+                        <div class="fl_left box_multiSelect_industry">
+                            <select name="list_industries[]" id="industry" class="chosen"
+                                data-placeholder="Tất cả ngành nghề" size="1">
+                                <output label="Công Nghệ Thông Tin" class="option-title">
+                                    <option value="cong-nghe-thong-tin">Công Nghệ Thông Tin</option>
+                                    <option value="IoT" class="option">IoT</option>
+                                    <option value="tri-tue-nhan-tao" class="option">Trí Tuệ Nhân Tạo</option>
+                                    <option value=" ky-thuat-phan-mem" class="option">Kỹ Thuật Phần Mềm</option>
+                                    <option value=" he-thong-thong-tin" class="option">Hệ Thống Thông Tin</option>
+                                    <option value="an-toan-thong-tin" class="option">An Toàn Thông Tin</option>
+                                    <option value=" thiet-ke-my-thuat-so" class="option">Thiết Kế Mỹ Thuật Số</option>
+                                </output>
+                                <output label="Quản Trị Kinh Doanh" class="option-title">
+                                    <option value="digital-marketing" class="option">Digital Marketing</option>
+                                    <option value="kinh-doanh-quoc-te" class="option">Kinh Doanh Quốc Tế</option>
+                                    <option value="quan-tri-khach-san" class="option">Quản Trị Khách Sạn</option>
+                                    <option value="quan-tri-du-lich-lu-hanh" class="option">Quản Trị Du Lịch Và Lữ Hành</option>
+                                    <option value="quan-ly-truyen-thong-da-phuong-tien" class="option">Quản Lý Truyền Thông Đa Phương
+                                        Tiện</option>
+                                </output>
+                                <output label="Ngôn Ngữ Học" class="option-title">
+                                    <option value="ngon-ngu-anh" class="option">Ngôn Ngữ Anh</option>
+                                    <option value="ngon-ngu-nhat" class="option">Ngôn Ngữ Nhật</option>
+                                    <option value="ngon-ngu-han-quoc" class="option">Ngôn Ngữ Hàn Quốc</option>
+                                </output>
+                            </select>
+                        </div>
+                        <div class="fl_left box_multiSelect_location">
+                            <select name="list_location[]" id="location" class="chosen"
+                                data-placeholder="Tất cả địa điểm" size="1">
+                                <optgroup label="Việt Nam" class="option-title">
+                                    <option value="ha-noi">Hà Nội</option>
+                                    <option value="ho-chi-minh">Hồ Chí Minh</option>
+                                    <option value="da-nang">Đà Nẵng</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <input type="submit" class="searchvt1  BtnButton" value="Tìm">
+                        <div id="option_keyword" class="search_option" style="display:none;">
+                            <span>Tìm</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </select> 
+  
+    <div id="main">
+        <div style="background-color:coral;">
+            <output label="Công Nghệ Thông Tin" class="output">
+                <option value="IoT" class="option-title">IoT</option>
+                <option value="tri-tue-nhan-tao" class="option">Trí Tuệ Nhân Tạo</option>
+                <option value=" ky-thuat-phan-mem" class="option">Kỹ Thuật Phần Mềm</option>
+                <option value=" he-thong-thong-tin" class="option">Hệ Thống Thông Tin</option>
+                <option value="an-toan-thong-tin" class="option">An Toàn Thông Tin</option>
+                <option value=" thiet-ke-my-thuat-so" class="option">Thiết Kế Mỹ Thuật Số</option>
+            </output>
+        </div>
+        <div style="background-color:lightblue;">
+            <output label="Quản Trị Kinh Doanh" class="output">
+                <option value="digital-marketing" class="option-title">Digital Marketing</option>
+                <option value="kinh-doanh-quoc-te" class="option">Kinh Doanh Quốc Tế</option>
+                <option value="quan-tri-khach-san" class="option">Quản Trị Khách Sạn</option>
+                <option value="quan-tri-du-lich-lu-hanh" class="option">Quản Trị Du Lịch Và Lữ Hành</option>
+                <option value="quan-ly-truyen-thong-da-phuong-tien" class="option">Quản Lý Truyền Thông Đa Phương Tiện
+                </option>
+            </output>
+        </div>
+        <div style="background-color:lightgreen;">
+            <output label="Ngôn Ngữ Học" class="output">
+                <option value="ngon-ngu-anh" class="option-title">Ngôn Ngữ Anh</option>
+                <option value="ngon-ngu-nhat" class="option">Ngôn Ngữ Nhật</option>
+                <option value="ngon-ngu-han-quoc" class="option">Ngôn Ngữ Hàn Quốc</option>
+            </output>
+        </div>
+    </div>
+    
+
+
+
