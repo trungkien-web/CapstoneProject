@@ -1,0 +1,2 @@
+D:\FU\CapstoneProject_Clone\FPTInternshipManagement\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\FU\CapstoneProject_Clone\FPTInternshipManagement\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
