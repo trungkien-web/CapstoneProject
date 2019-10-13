@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF531ED6-5E69-4C03-84B1-D7299EF4439D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Department.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Experience.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FeedbackType.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FPTInternshipManagementDbContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FPTInternshipManagementDbContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FPTInternshipManagementDbContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FPTInternshipManagementDbContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FPTInternshipManagementDbContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Image.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InterviewSchedule.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Job.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Location.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Notification.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rate.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Recruiter.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RecruiterAspiration.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Report.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Skill.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkillDepartment.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkillExperience.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkillJob.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkillStudentAspiration.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Statistical.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Student.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentAspiration.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserRole.cs">
+      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="FPTInternshipManagementDbContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FPTInternshipManagementDbContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="FPTInternshipManagementDbContext.edmx.diagram">
+      <DependentUpon>FPTInternshipManagementDbContext.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FPTInternshipManagementDbContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FPTInternshipManagementDbContext.Context.cs</LastGenOutput>
+      <DependentUpon>FPTInternshipManagementDbContext.edmx</DependentUpon>
+    </Content>
+    <Content Include="FPTInternshipManagementDbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FPTInternshipManagementDbContext.edmx</DependentUpon>
+      <LastGenOutput>FPTInternshipManagementDbContext.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
