@@ -263,16 +263,6 @@
     <NavigationProperty Name="SkillStudentAspirations" Relationship="Self.FK_SkillStudentAspirations_StudentAspirations" FromRole="StudentAspirations" ToRole="SkillStudentAspirations" />
     <NavigationProperty Name="Students" Relationship="Self.FK_Student_StudentAspirations" FromRole="StudentAspirations" ToRole="Student" />
   </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <EntityType Name="UserRole">
     <Key>
       <PropertyRef Name="UserRoleID" />
@@ -748,7 +738,6 @@
     <EntitySet Name="Statisticals" EntityType="Self.Statistical" />
     <EntitySet Name="Students" EntityType="Self.Student" />
     <EntitySet Name="StudentAspirations" EntityType="Self.StudentAspiration" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
     <EntitySet Name="Users" EntityType="Self.User" />
     <AssociationSet Name="FK_Experiences_Departments" Association="Self.FK_Experiences_Departments">

@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CF531ED6-5E69-4C03-84B1-D7299EF4439D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{6E6D082E-176B-40F3-9B66-FE49303F07C1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Model</RootNamespace>
     <AssemblyName>Model</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -134,9 +132,6 @@
     <Compile Include="StudentAspiration.cs">
       <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
     </Compile>
@@ -145,11 +140,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <EntityDeploy Include="FPTInternshipManagementDbContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>FPTInternshipManagementDbContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
     <None Include="FPTInternshipManagementDbContext.edmx.diagram">
       <DependentUpon>FPTInternshipManagementDbContext.edmx</DependentUpon>
     </None>

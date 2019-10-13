@@ -150,3 +150,10 @@ D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTI
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\obj\Debug\FPTInternshipManagement.csproj.CopyComplete
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\obj\Debug\FPTInternshipManagement.dll
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\obj\Debug\FPTInternshipManagement.pdb
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\Model.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\Service.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\EntityFramework.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\Model.pdb
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\Model.dll.config
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\Service.pdb
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\EntityFramework.xml

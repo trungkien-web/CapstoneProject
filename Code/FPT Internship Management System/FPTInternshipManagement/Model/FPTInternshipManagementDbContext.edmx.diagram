@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="94304656fd9e4327a81eda9d66b7fa02" Name="Diagram1">
+      <Diagram DiagramId="bd0a6d30e7474a438ceeadc4b322bac6" Name="Diagram1">
         <EntityTypeShape EntityType="FptInternshipManagermentModel.Department" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
         <EntityTypeShape EntityType="FptInternshipManagermentModel.Experience" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="FptInternshipManagermentModel.Feedback" Width="1.5" PointX="12.75" PointY="11.875" IsExpanded="true" />
@@ -27,7 +27,6 @@
         <EntityTypeShape EntityType="FptInternshipManagermentModel.Statistical" Width="1.5" PointX="12.75" PointY="24.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FptInternshipManagermentModel.Student" Width="1.5" PointX="8.25" PointY="9.5" IsExpanded="true" />
         <EntityTypeShape EntityType="FptInternshipManagermentModel.StudentAspiration" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FptInternshipManagermentModel.UserRole" Width="1.5" PointX="8.25" PointY="20.625" IsExpanded="true" />
         <EntityTypeShape EntityType="FptInternshipManagermentModel.User" Width="1.5" PointX="6" PointY="17.5" IsExpanded="true" />
         <AssociationConnector Association="FptInternshipManagermentModel.FK_Experiences_Departments" ManuallyRouted="false" />

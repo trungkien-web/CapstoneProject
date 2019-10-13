@@ -1,1 +1,9 @@
-D:\FU\CapstoneProject_Clone\FPTInternshipManagement\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Service.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Service.pdb
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Repository.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Repository.pdb
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.csprojAssemblyReference.cache
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.csproj.CopyComplete
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.pdb
