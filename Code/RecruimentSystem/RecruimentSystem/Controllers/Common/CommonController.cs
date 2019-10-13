@@ -5,6 +5,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Service;
+using Model;
+using System.Reflection;
+using System.Data;
+using System.Text;
+using System.Configuration;
+using System.Data.OleDb;
+using System.IO;
+using OfficeOpenXml;
+using OfficeOpenXml.Table;
 
 namespace RecruimentSystem.Controllers
 {
@@ -14,81 +23,144 @@ namespace RecruimentSystem.Controllers
         // GET: Common
         public ActionResult Index()
         {
-            var DataTable = service.GetAllNameTable();
-            ViewBag.NameTable = DataTable;
-            return View(DataTable);
-        }
+            using (var Mydb = new RecruitmentSystemEntities())
+            {
+                
 
-        // GET: Common/Details/5
-        public ActionResult Details(int id)
-        {
+                List<string> tbllistname = new List<string>();
+                tbllistname = service.GetAllNameData();
+                ViewBag.MyTables = tbllistname; 
+            }
+
             return View();
         }
 
-        // GET: Common/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Common/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ActionName("ExcelExportByName")]
+        public ActionResult ExcelExportByName()
         {
-            try
-            {
-                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+            string tableName = Request.Form["tableName"];
+            //Fill dataset with records
+            DataSet dataSet = service.GetDataByNameTable(tableName);
 
-        // GET: Common/Edit/5
-        public ActionResult Edit(int id)
-        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("<table>");
+
+            //LINQ to get Column names
+            var columnName = dataSet.Tables[0].Columns.Cast<DataColumn>()
+                                 .Select(x => x.ColumnName)
+                                 .ToArray();
+            sb.Append("<tr>");
+            //Looping through the column names
+            foreach (var col in columnName)
+                sb.Append("<td>" + col + "</td>");
+            sb.Append("</tr>");
+
+            //Looping through the records
+            foreach (DataRow dr in dataSet.Tables[0].Rows)
+            {
+                sb.Append("<tr>");
+                foreach (DataColumn dc in dataSet.Tables[0].Columns)
+                {
+                    sb.Append("<td>" + dr[dc] + "</td>");
+                }
+                sb.Append("</tr>");
+            }
+
+            sb.Append("</table>");
+
+            //Choose one of these: as the contentType
+            //Excel 2003 : "application/vnd.ms-excel"
+            //Excel 2007 : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" 
+            //Writing StringBuilder content to an excel file.
+            Response.Clear();
+            Response.ClearContent();
+            Response.ClearHeaders();
+            Response.Charset = "";
+            Response.Buffer = true;
+            Response.ContentType = "application/vnd.ms-excel";
+            Response.AddHeader("content-disposition", "attachment;filename=" + tableName + ".xls");
+            Response.Write(sb.ToString());
+            Response.Flush();
+            Response.Close();
             return View();
         }
+       
 
-        // POST: Common/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult ImportExcel(HttpPostedFileBase postedFile)
         {
-            try
+            string filePath = string.Empty;
+            if (postedFile != null)
             {
-                // TODO: Add update logic here
+                string path = Server.MapPath("~/Uploads/");
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
 
-                return RedirectToAction("Index");
+                filePath = path + Path.GetFileName(postedFile.FileName);
+                string extension = Path.GetExtension(postedFile.FileName);
+                postedFile.SaveAs(filePath);
+
+                string conString = string.Empty;
+                switch (extension)
+                {
+                    case ".xls": //Excel 97-03.
+                        conString = ConfigurationManager.ConnectionStrings["Excel03ConString"].ConnectionString;
+                        break;
+                    case ".xlsx": //Excel 07 and above.
+                        conString = ConfigurationManager.ConnectionStrings["Excel07ConString"].ConnectionString;
+                        break;
+                }
+
+                DataTable dt = new DataTable();
+                conString = string.Format(conString, filePath);
+                string sheetName;
+                using (OleDbConnection connExcel = new OleDbConnection(conString))
+                {
+                    using (OleDbCommand cmdExcel = new OleDbCommand())
+                    {
+                        using (OleDbDataAdapter odaExcel = new OleDbDataAdapter())
+                        {
+                            cmdExcel.Connection = connExcel;
+
+                            //Get the name of First Sheet.
+                            connExcel.Open();
+                            DataTable dtExcelSchema;
+                            dtExcelSchema = connExcel.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+                             sheetName = dtExcelSchema.Rows[0]["TABLE_NAME"].ToString();
+                            
+                            connExcel.Close();
+
+                            //Read Data from First Sheet.
+                            connExcel.Open();
+                            cmdExcel.CommandText = "SELECT * From [" + sheetName + "]";
+                            odaExcel.SelectCommand = cmdExcel;
+                            odaExcel.Fill(dt);
+                            connExcel.Close();
+                        }
+                    }
+                }
+                sheetName = sheetName.Remove(sheetName.Trim().Length - 1);
+                RecruitmentSystemEntities ctx = new RecruitmentSystemEntities();
+                conString = ctx.Database.Connection.ConnectionString;
+                using (SqlConnection con = new SqlConnection(conString))
+                {
+                    using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(con))
+                    {
+                        sqlBulkCopy.DestinationTableName = sheetName;
+                        con.Open();
+                        sqlBulkCopy.WriteToServer(dt);
+                        con.Close();
+                    }
+                }
             }
-            catch
-            {
-                return View();
-            }
+
+            return View("Index");
         }
 
-        // GET: Common/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Common/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

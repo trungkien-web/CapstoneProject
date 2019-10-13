@@ -1,20 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
 using Repository;
+using System.Data.OleDb;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Service
 {
-	public class CommonService : ICommonService
+    public class CommonService : ICommonService
     {
-		private ICommonRepository tableData = new CommonRepository();
+        private ICommonRepository common = new CommonRepository();
 
-        public List<string> GetAllNameTable()
+        public List<string> GetAllNameData()
         {
-            return tableData.GetAllNameTable();
+            return common.GetAllNameData();
         }
+
+        public DataSet GetDataByNameTable(string name)
+        {
+            return common.GetDataByNameTable(name);
+        }
+
+      
     }
 }

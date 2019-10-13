@@ -1,4 +1,4 @@
-﻿
+﻿@model ImportExcel.Models.ImportExcel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,19 +7,61 @@
 <div class="wthreepvt-pos py-md-5 py-5" id="positions">
     <div class="container py-lg-5">
         <div class="wthreepvt-pos-row row  text-center">
-            @foreach (var item in ViewBag.NameTable)
-            {
-                <div class="col-lg-4 col-sm-6 wthreepvt-pos-grids">
-                    <div class="p-md-5 p-sm-3">
-                        <select>
-                            <option value="@item">@item</option>
-                        </select>
-                    </div>
-                </div>
+            <form action="/Common/ExcelExportByName" method="post">
+                <table>
 
+                    <tr>
+
+                        <td>
+                            <select name="tableName" id="tableName">
+                                @foreach (var item in ViewBag.MyTables)
+                                {
+                                    <option value="@item">
+                                        @item
+                                    </option>
+                                }
+                            </select>
+
+                        </td>
+                        <td>
+                            <input type="submit" value="Export" class="btn btn-primary btn-block" />
+                        </td>
+
+
+                    </tr>
+
+
+                </table>
+            </form>
+        </div>
+        <div class="wthreepvt-pos-row row  text-center">
+            @using (Html.BeginForm("ImportExcel", "Common", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <table>
+                    <tr>
+                        <td>
+
+                            <input type="file" name="postedFile" />
+
+
+                        </td>
+                        <td>
+                            <input type="submit" value="Import" class="btn btn-primary btn-block" />
+                        </td>
+
+                    </tr>
+                </table>
             }
+        </div>
+
+
 
         </div>
     </div>
-</div>
+
+
+
+
+ 
+    
 

@@ -32,3 +32,4 @@ D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Mode
 D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.csproj.CopyComplete
 D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.dll
 D:\FU\CapstoneProject\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.pdb
+D:\Capstone Project\CapstoneProject\Code\RecruimentSystem\Model\obj\Debug\Model.csprojAssemblyReference.cache
