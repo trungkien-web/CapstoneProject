@@ -4,63 +4,13 @@
 }
 
 <div class="w3-banner-info-w3ltd position-relative">
-	<!-- header -->
-	<header>
-		<div class="container">
-			<nav class="navbar navbar-expand-lg navbar-light p-0">
-				<h1>
-					<a class="navbar-brand" href="index.html">
-						FPT RECRUITMENT
-
-					</a>
-				</h1>
-				<button class="navbar-toggler ml-lg-auto ml-sm-5 bg-light" type="button" data-toggle="collapse"
-						data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-						aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="ml-lg-5 navbar-nav mr-lg-auto">
-						<li class="nav-item active  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
-							<a href="index.html">Home</a>
-						</li>
-						<li class="nav-item  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
-							<a href="about.html">Nhà Tuyển Dụng</a>
-						</li>
-						<li class="nav-item dropdown mr-lg-4 my-lg-0 my-sm-4 my-3">
-							<a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-							   aria-expanded="false">
-								CV Sinh Viên
-							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a href="job_list.html">Job List</a>
-								<a href="job_single.html">Job Single</a>
-							</div>
-						</li>
-						<li class="nav-item mr-lg-4 my-lg-0 mb-sm-4 mb-3">
-							<a href="contact.html">Liên hệ</a>
-						</li>
-					</ul>
-					<button type="button" class="btn w3ls-btn text-uppercase font-weight-bold d-block" data-toggle="modal"
-							aria-pressed="false" data-target="#exampleModal1">
-						Register
-					</button>
-					<button type="button" class="btn w3ls-btn btn-2 ml-lg-1 text-uppercase font-weight-bold d-block"
-							data-toggle="modal" aria-pressed="false" data-target="#exampleModal">
-						Sign in
-					</button>
-				</div>
-			</nav>
-		</div>
-	</header>
-	<!-- //header -->
 	<div class="slider">
 		<ul class="rslides" id="slider">
 			<li>
 				<div class="d-flex banner-w3pvt-bg1 common-bg">
 					<div class="d-flex mx-auto align-items-center justify-content-center flex-column">
 						<div class="bnr-w3pvt">
-							<h3>FPT RECRUITMENT</h3>
+							<h3>FPT Internship Management</h3>
 							<div class="d-flex justify-content-between bnr-sub-txt align-items-center">
 								<span></span>
 								<p class="text-uppercase text-white">FIND A JOB AS QUICKLY AS POSSIBLE</p>
@@ -104,7 +54,7 @@
 				<div class="d-flex banner-w3pvt-bg2 common-bg">
 					<div class="d-flex mx-auto align-items-center justify-content-center flex-column">
 						<div class="bnr-w3pvt">
-							<h3>FPT RECRUITMENT</h3>
+							<h3>FPT Internship Management</h3>
 							<div class="d-flex justify-content-between bnr-sub-txt align-items-center">
 								<span></span>
 								<p class="text-uppercase text-white">FIND A JOB AS QUICKLY AS POSSIBLE</p>
@@ -148,7 +98,7 @@
 				<div class="d-flex banner-w3pvt-bg3 common-bg">
 					<div class="d-flex mx-auto align-items-center justify-content-center flex-column">
 						<div class="bnr-w3pvt">
-							<h3>FPT RECRUITMENT</h3>
+							<h3>FPT Internship Management</h3>
 							<div class="d-flex justify-content-between bnr-sub-txt align-items-center">
 								<span></span>
 								<p class="text-uppercase text-white">FIND A JOB AS QUICKLY AS POSSIBLE</p>
@@ -276,3 +226,103 @@
 	</div>
 </div>
 <!-- //job roles -->
+<!-- login modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	 aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header bg-theme1">
+				<h5 class="modal-title" id="exampleModalLabel">Đăng nhập</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form action="#" method="post" class="p-3">
+					<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Tên tài khoản</label>
+						<input type="text" class="form-control" placeholder=" " name="Name" id="recipient-name"
+							   required="">
+					</div>
+					<div class="form-group">
+						<label for="password" class="col-form-label">Mật khẩu</label>
+						<input type="password" class="form-control" placeholder=" " name="Password" id="password"
+							   required="">
+					</div>
+					<div class="right-w3l">
+						<input type="submit" class="form-control bg-theme" value="Login">
+					</div>
+					<div class="row sub-w3l my-3">
+						<div class="col sub-w3ltd">
+							<input type="checkbox" id="brand1" value="">
+							<label for="brand1" class="text-dark">
+								<span></span>Ghi nhớ
+							</label>
+						</div>
+						<div class="col forgot-w3l text-right">
+							<a href="#" class="text-dark">Quên mật khẩu?</a>
+						</div>
+					</div>
+					<p class="text-center dont-do">
+						Bạn chưa có tài khoản?
+						<a href="#" data-toggle="modal" data-target="#exampleModal1" class="text-dark">
+							<strong>Đăng Ký Ngay</strong>
+						</a>
+					</p>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //login modal -->
+<!-- register modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+	 aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header bg-theme1">
+				<h5 class="modal-title" id="exampleModalLabel1">Đăng Ký</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form action="#" method="post" class="p-3">
+					<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Họ Tên</label>
+						<input type="text" class="form-control" placeholder=" " name="Name" id="recipient-rname"
+							   required="">
+					</div>
+					<div class="form-group">
+						<label for="recipient-email" class="col-form-label">Email</label>
+						<input type="email" class="form-control" placeholder=" " name="Email" id="recipient-email"
+							   required="">
+					</div>
+					<div class="form-group">
+						<label for="password1" class="col-form-label">Mật khẩu</label>
+						<input type="password" class="form-control" placeholder=" " name="Password" id="password1"
+							   required="">
+					</div>
+					<div class="form-group">
+						<label for="password2" class="col-form-label">Nhập lại mật khẩu</label>
+						<input type="password" class="form-control" placeholder=" " name="Confirm Password" id="password2"
+							   required="">
+					</div>
+					<div class="sub-w3l">
+						<div class="sub-w3ltd">
+							<input type="checkbox" id="brand2" value="">
+							<label for="brand2" class="mb-3 text-dark">
+								<span></span>Tôi đồng ý với điều khoản và chính sách!
+							</label>
+						</div>
+					</div>
+					<div class="right-w3l">
+						<input type="submit" class="form-control bg-theme" value="Đăng Ký">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //register modal -->

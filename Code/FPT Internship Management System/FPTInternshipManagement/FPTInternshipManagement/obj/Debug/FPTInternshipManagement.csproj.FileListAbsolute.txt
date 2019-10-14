@@ -245,3 +245,8 @@ D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInt
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\obj\Debug\FPTInternshipManagement.csproj.CopyComplete
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\obj\Debug\FPTInternshipManagement.dll
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\obj\Debug\FPTInternshipManagement.pdb
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\EntityFramework.SqlServer.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\Repository.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\EntityFramework.SqlServer.xml
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\Repository.pdb
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\Repository.dll.config
