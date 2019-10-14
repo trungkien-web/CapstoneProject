@@ -16,7 +16,7 @@ namespace Model
     {
         public int ReportID { get; set; }
         public Nullable<int> RecruiterID { get; set; }
-        public string StudentID { get; set; }
+        public Nullable<int> StudentID { get; set; }
         public string Course { get; set; }
         public Nullable<int> DepartmentID { get; set; }
         public Nullable<double> Grade { get; set; }
@@ -27,7 +27,7 @@ namespace Model
     
         public virtual Department Department { get; set; }
         public virtual Rate Rate { get; set; }
-        public virtual Recruiter Recruiter { get; set; }
-        public virtual Student Student { get; set; }
+        public virtual User User { get; set; }
+        public virtual User User1 { get; set; }
     }
 }

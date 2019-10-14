@@ -4,66 +4,51 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bd0a6d30e7474a438ceeadc4b322bac6" Name="Diagram1">
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.Department" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.Experience" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.Feedback" Width="1.5" PointX="12.75" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.FeedbackType" Width="1.5" PointX="10.5" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.Image" Width="1.5" PointX="3.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.InterviewSchedule" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.Job" Width="1.5" PointX="6" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.Location" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.Notification" Width="1.5" PointX="15.75" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.Rate" Width="1.5" PointX="10.5" PointY="18" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.RecruiterAspiration" Width="1.5" PointX="8.25" PointY="14" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.Recruiter" Width="1.5" PointX="10.5" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.Report" Width="1.5" PointX="12.75" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.Role" Width="1.5" PointX="6" PointY="22.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.SkillDepartment" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.SkillExperience" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.SkillJob" Width="1.5" PointX="8.25" PointY="17.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.Skill" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.SkillStudentAspiration" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.Statistical" Width="1.5" PointX="12.75" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.Student" Width="1.5" PointX="8.25" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.StudentAspiration" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.UserRole" Width="1.5" PointX="8.25" PointY="20.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FptInternshipManagermentModel.User" Width="1.5" PointX="6" PointY="17.5" IsExpanded="true" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Experiences_Departments" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Reports_Departments" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_SkillDepartments_Departments" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_StudentAspirations_Departments" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_SkillExperiences_Experiences" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Student_Experiences" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Feedbacks_FeedbackTypes" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Feedbacks_Recruiters" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Feedbacks_Student" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Users_Images" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_InterviewSchedules_Locations" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_InterviewSchedules_Recruiters" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_InterviewSchedules_Student" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Jobs_Locations" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Jobs_Recruiters" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_RecruiterAspirations_Jobs" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_SkillJobs_Jobs" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_StudentAspirations_Locations" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Notifications_Recruiters" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Notifications_Student" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Reports_Rates" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Recruiters_RecruiterAspirations" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Recruiters_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Reports_Recruiters" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Statistical_Recruiters" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Reports_Student" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_UserRole_Roles" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_SkillDepartments_Skills" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_SkillExperiences_Skills" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_SkillJobs_Skills" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_SkillStudentAspirations_Skills" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_SkillStudentAspirations_StudentAspirations" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Student_StudentAspirations" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_Student_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="FptInternshipManagermentModel.FK_UserRole_Users" ManuallyRouted="false" />
+      <Diagram DiagramId="fe345bf82ec748b29caaf2ea9bec80ea" Name="Diagram1">
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.Aspiration" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.Department" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.Feedback" Width="1.5" PointX="10.5" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.FeedbackType" Width="1.5" PointX="8.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.Image" Width="1.5" PointX="6" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.InterviewSchedule" Width="1.5" PointX="13.5" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.Job" Width="1.5" PointX="10.5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.Location" Width="1.5" PointX="0.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.Notification" Width="1.5" PointX="10.5" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.Rate" Width="1.5" PointX="10.5" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.Report" Width="1.5" PointX="12.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.Role" Width="1.5" PointX="8.25" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.SkillList" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.Skill" Width="1.5" PointX="3" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.Statistical" Width="1.5" PointX="10.5" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.UserRole" Width="1.5" PointX="10.5" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FPTInternshipManagermentModel.User" Width="1.5" PointX="8.25" PointY="12.125" IsExpanded="true" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Aspirations_Jobs" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Aspirations_Locations" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_SkillList_Aspirations" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Users_Aspirations" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Reports_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_SkillList_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Feedbacks_FeedbackTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Feedbacks_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Feedbacks_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Users_Images" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_InterviewSchedules_Locations" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_InterviewSchedules_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_InterviewSchedules_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Jobs_Locations" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Jobs_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_SkillList_Jobs" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Notifications_Users3" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Notifications_Users4" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Rates_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Rates_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Reports_Rates" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Reports_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Reports_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_UserRole_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_SkillList_Skills" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_Statistical_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FPTInternshipManagermentModel.FK_UserRole_Users" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

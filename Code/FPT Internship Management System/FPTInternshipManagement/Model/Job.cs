@@ -17,8 +17,8 @@ namespace Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Job()
         {
-            this.RecruiterAspirations = new HashSet<RecruiterAspiration>();
-            this.SkillJobs = new HashSet<SkillJob>();
+            this.Aspirations = new HashSet<Aspiration>();
+            this.SkillLists = new HashSet<SkillList>();
         }
     
         public int JobID { get; set; }
@@ -29,11 +29,11 @@ namespace Model
         public int AmountStudent { get; set; }
         public string Status { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Aspiration> Aspirations { get; set; }
         public virtual Location Location { get; set; }
-        public virtual Recruiter Recruiter { get; set; }
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RecruiterAspiration> RecruiterAspirations { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SkillJob> SkillJobs { get; set; }
+        public virtual ICollection<SkillList> SkillLists { get; set; }
     }
 }

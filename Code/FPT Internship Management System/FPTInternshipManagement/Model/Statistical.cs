@@ -20,6 +20,6 @@ namespace Model
         public int NumPassed { get; set; }
         public int NumFail { get; set; }
     
-        public virtual Recruiter Recruiter { get; set; }
+        public virtual User User { get; set; }
     }
 }

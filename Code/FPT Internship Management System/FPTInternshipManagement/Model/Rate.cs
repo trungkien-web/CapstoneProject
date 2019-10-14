@@ -24,8 +24,10 @@ namespace Model
         public double Star { get; set; }
         public string Comment { get; set; }
         public int RecruiterID { get; set; }
-        public string StudentID { get; set; }
+        public int StudentID { get; set; }
     
+        public virtual User User { get; set; }
+        public virtual User User1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Report> Reports { get; set; }
     }

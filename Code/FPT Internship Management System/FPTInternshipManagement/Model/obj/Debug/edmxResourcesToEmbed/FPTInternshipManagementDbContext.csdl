@@ -1,39 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="FptInternshipManagermentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="FPTInternshipManagermentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Aspiration">
+    <Key>
+      <PropertyRef Name="AspirationsID" />
+    </Key>
+    <Property Name="AspirationsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="Gender" Type="Boolean" Nullable="false" />
+    <Property Name="Salary" Type="Double" Nullable="false" />
+    <Property Name="LocationID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Job" Relationship="Self.FK_Aspirations_Jobs" FromRole="Aspirations" ToRole="Jobs" />
+    <NavigationProperty Name="Location" Relationship="Self.FK_Aspirations_Locations" FromRole="Aspirations" ToRole="Locations" />
+    <NavigationProperty Name="SkillLists" Relationship="Self.FK_SkillList_Aspirations" FromRole="Aspirations" ToRole="SkillList" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_Aspirations" FromRole="Aspirations" ToRole="Users" />
+  </EntityType>
   <EntityType Name="Department">
     <Key>
       <PropertyRef Name="DepartmentID" />
     </Key>
     <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Experiences" Relationship="Self.FK_Experiences_Departments" FromRole="Departments" ToRole="Experiences" />
     <NavigationProperty Name="Reports" Relationship="Self.FK_Reports_Departments" FromRole="Departments" ToRole="Reports" />
-    <NavigationProperty Name="SkillDepartments" Relationship="Self.FK_SkillDepartments_Departments" FromRole="Departments" ToRole="SkillDepartments" />
-    <NavigationProperty Name="StudentAspirations" Relationship="Self.FK_StudentAspirations_Departments" FromRole="Departments" ToRole="StudentAspirations" />
-  </EntityType>
-  <EntityType Name="Experience">
-    <Key>
-      <PropertyRef Name="ExperienceID" />
-    </Key>
-    <Property Name="ExperienceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Department" Relationship="Self.FK_Experiences_Departments" FromRole="Experiences" ToRole="Departments" />
-    <NavigationProperty Name="SkillExperiences" Relationship="Self.FK_SkillExperiences_Experiences" FromRole="Experiences" ToRole="SkillExperiences" />
-    <NavigationProperty Name="Students" Relationship="Self.FK_Student_Experiences" FromRole="Experiences" ToRole="Student" />
+    <NavigationProperty Name="SkillLists" Relationship="Self.FK_SkillList_Departments" FromRole="Departments" ToRole="SkillList" />
   </EntityType>
   <EntityType Name="Feedback">
     <Key>
       <PropertyRef Name="FeedbackID" />
     </Key>
     <Property Name="FeedbackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="StudentID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
     <Property Name="RecruiterID" Type="Int32" Nullable="false" />
     <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="FeedbackTypeID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="FeedbackType" Relationship="Self.FK_Feedbacks_FeedbackTypes" FromRole="Feedbacks" ToRole="FeedbackTypes" />
-    <NavigationProperty Name="Recruiter" Relationship="Self.FK_Feedbacks_Recruiters" FromRole="Feedbacks" ToRole="Recruiters" />
-    <NavigationProperty Name="Student" Relationship="Self.FK_Feedbacks_Student" FromRole="Feedbacks" ToRole="Student" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Feedbacks_Users" FromRole="Feedbacks" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Feedbacks_Users1" FromRole="Feedbacks" ToRole="Users" />
   </EntityType>
   <EntityType Name="FeedbackType">
     <Key>
@@ -57,15 +59,15 @@
       <PropertyRef Name="InterviewID" />
     </Key>
     <Property Name="InterviewID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="StudentID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
     <Property Name="RecruiterID" Type="Int32" Nullable="false" />
     <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="LocationID" Type="Int32" Nullable="false" />
     <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Location" Relationship="Self.FK_InterviewSchedules_Locations" FromRole="InterviewSchedules" ToRole="Locations" />
-    <NavigationProperty Name="Recruiter" Relationship="Self.FK_InterviewSchedules_Recruiters" FromRole="InterviewSchedules" ToRole="Recruiters" />
-    <NavigationProperty Name="Student" Relationship="Self.FK_InterviewSchedules_Student" FromRole="InterviewSchedules" ToRole="Student" />
+    <NavigationProperty Name="User" Relationship="Self.FK_InterviewSchedules_Users" FromRole="InterviewSchedules" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_InterviewSchedules_Users1" FromRole="InterviewSchedules" ToRole="Users" />
   </EntityType>
   <EntityType Name="Job">
     <Key>
@@ -78,10 +80,10 @@
     <Property Name="RecruiterID" Type="Int32" Nullable="false" />
     <Property Name="AmountStudent" Type="Int32" Nullable="false" />
     <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Aspirations" Relationship="Self.FK_Aspirations_Jobs" FromRole="Jobs" ToRole="Aspirations" />
     <NavigationProperty Name="Location" Relationship="Self.FK_Jobs_Locations" FromRole="Jobs" ToRole="Locations" />
-    <NavigationProperty Name="Recruiter" Relationship="Self.FK_Jobs_Recruiters" FromRole="Jobs" ToRole="Recruiters" />
-    <NavigationProperty Name="RecruiterAspirations" Relationship="Self.FK_RecruiterAspirations_Jobs" FromRole="Jobs" ToRole="RecruiterAspirations" />
-    <NavigationProperty Name="SkillJobs" Relationship="Self.FK_SkillJobs_Jobs" FromRole="Jobs" ToRole="SkillJobs" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Jobs_Users" FromRole="Jobs" ToRole="Users" />
+    <NavigationProperty Name="SkillLists" Relationship="Self.FK_SkillList_Jobs" FromRole="Jobs" ToRole="SkillList" />
   </EntityType>
   <EntityType Name="Location">
     <Key>
@@ -90,9 +92,9 @@
     <Property Name="LocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="LocationDetail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Aspirations" Relationship="Self.FK_Aspirations_Locations" FromRole="Locations" ToRole="Aspirations" />
     <NavigationProperty Name="InterviewSchedules" Relationship="Self.FK_InterviewSchedules_Locations" FromRole="Locations" ToRole="InterviewSchedules" />
     <NavigationProperty Name="Jobs" Relationship="Self.FK_Jobs_Locations" FromRole="Locations" ToRole="Jobs" />
-    <NavigationProperty Name="StudentAspirations" Relationship="Self.FK_StudentAspirations_Locations" FromRole="Locations" ToRole="StudentAspirations" />
   </EntityType>
   <EntityType Name="Notification">
     <Key>
@@ -100,10 +102,10 @@
     </Key>
     <Property Name="NotificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="StudentID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
     <Property Name="RecruiterID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Recruiter" Relationship="Self.FK_Notifications_Recruiters" FromRole="Notifications" ToRole="Recruiters" />
-    <NavigationProperty Name="Student" Relationship="Self.FK_Notifications_Student" FromRole="Notifications" ToRole="Student" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Notifications_Users3" FromRole="Notifications" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Notifications_Users4" FromRole="Notifications" ToRole="Users" />
   </EntityType>
   <EntityType Name="Rate">
     <Key>
@@ -113,36 +115,10 @@
     <Property Name="Star" Type="Double" Nullable="false" />
     <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="RecruiterID" Type="Int32" Nullable="false" />
-    <Property Name="StudentID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Rates_Users" FromRole="Rates" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Rates_Users1" FromRole="Rates" ToRole="Users" />
     <NavigationProperty Name="Reports" Relationship="Self.FK_Reports_Rates" FromRole="Rates" ToRole="Reports" />
-  </EntityType>
-  <EntityType Name="RecruiterAspiration">
-    <Key>
-      <PropertyRef Name="RecruiterAspirationsID" />
-    </Key>
-    <Property Name="RecruiterAspirationsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="JobID" Type="Int32" Nullable="false" />
-    <Property Name="Gender" Type="Boolean" Nullable="false" />
-    <Property Name="Salary" Type="Double" Nullable="false" />
-    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Job" Relationship="Self.FK_RecruiterAspirations_Jobs" FromRole="RecruiterAspirations" ToRole="Jobs" />
-    <NavigationProperty Name="Recruiters" Relationship="Self.FK_Recruiters_RecruiterAspirations" FromRole="RecruiterAspirations" ToRole="Recruiters" />
-  </EntityType>
-  <EntityType Name="Recruiter">
-    <Key>
-      <PropertyRef Name="RecruiterID" />
-    </Key>
-    <Property Name="RecruiterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RecruiterAspirationsID" Type="Int32" />
-    <Property Name="UserID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Feedbacks" Relationship="Self.FK_Feedbacks_Recruiters" FromRole="Recruiters" ToRole="Feedbacks" />
-    <NavigationProperty Name="InterviewSchedules" Relationship="Self.FK_InterviewSchedules_Recruiters" FromRole="Recruiters" ToRole="InterviewSchedules" />
-    <NavigationProperty Name="Jobs" Relationship="Self.FK_Jobs_Recruiters" FromRole="Recruiters" ToRole="Jobs" />
-    <NavigationProperty Name="Notifications" Relationship="Self.FK_Notifications_Recruiters" FromRole="Recruiters" ToRole="Notifications" />
-    <NavigationProperty Name="RecruiterAspiration" Relationship="Self.FK_Recruiters_RecruiterAspirations" FromRole="Recruiters" ToRole="RecruiterAspirations" />
-    <NavigationProperty Name="User" Relationship="Self.FK_Recruiters_Users" FromRole="Recruiters" ToRole="Users" />
-    <NavigationProperty Name="Reports" Relationship="Self.FK_Reports_Recruiters" FromRole="Recruiters" ToRole="Reports" />
-    <NavigationProperty Name="Statisticals" Relationship="Self.FK_Statistical_Recruiters" FromRole="Recruiters" ToRole="Statistical" />
   </EntityType>
   <EntityType Name="Report">
     <Key>
@@ -150,7 +126,7 @@
     </Key>
     <Property Name="ReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RecruiterID" Type="Int32" />
-    <Property Name="StudentID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StudentID" Type="Int32" />
     <Property Name="Course" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DepartmentID" Type="Int32" />
     <Property Name="Grade" Type="Double" />
@@ -160,8 +136,8 @@
     <Property Name="RateID" Type="Int32" />
     <NavigationProperty Name="Department" Relationship="Self.FK_Reports_Departments" FromRole="Reports" ToRole="Departments" />
     <NavigationProperty Name="Rate" Relationship="Self.FK_Reports_Rates" FromRole="Reports" ToRole="Rates" />
-    <NavigationProperty Name="Recruiter" Relationship="Self.FK_Reports_Recruiters" FromRole="Reports" ToRole="Recruiters" />
-    <NavigationProperty Name="Student" Relationship="Self.FK_Reports_Student" FromRole="Reports" ToRole="Student" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Reports_Users" FromRole="Reports" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Reports_Users1" FromRole="Reports" ToRole="Users" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -171,35 +147,19 @@
     <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRole_Roles" FromRole="Roles" ToRole="UserRole" />
   </EntityType>
-  <EntityType Name="SkillDepartment">
+  <EntityType Name="SkillList">
     <Key>
-      <PropertyRef Name="SkillDepartmentID" />
+      <PropertyRef Name="SkillListID" />
     </Key>
-    <Property Name="SkillDepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SkillListID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="SkillID" Type="Int32" Nullable="false" />
-    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Department" Relationship="Self.FK_SkillDepartments_Departments" FromRole="SkillDepartments" ToRole="Departments" />
-    <NavigationProperty Name="Skill" Relationship="Self.FK_SkillDepartments_Skills" FromRole="SkillDepartments" ToRole="Skills" />
-  </EntityType>
-  <EntityType Name="SkillExperience">
-    <Key>
-      <PropertyRef Name="SkillExperienceID" />
-    </Key>
-    <Property Name="SkillExperienceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SkillID" Type="Int32" Nullable="false" />
-    <Property Name="ExperienceID" Type="Int32" />
-    <NavigationProperty Name="Experience" Relationship="Self.FK_SkillExperiences_Experiences" FromRole="SkillExperiences" ToRole="Experiences" />
-    <NavigationProperty Name="Skill" Relationship="Self.FK_SkillExperiences_Skills" FromRole="SkillExperiences" ToRole="Skills" />
-  </EntityType>
-  <EntityType Name="SkillJob">
-    <Key>
-      <PropertyRef Name="SkillJobID" />
-    </Key>
-    <Property Name="SkillJobID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SkillID" Type="Int32" Nullable="false" />
-    <Property Name="JobID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Job" Relationship="Self.FK_SkillJobs_Jobs" FromRole="SkillJobs" ToRole="Jobs" />
-    <NavigationProperty Name="Skill" Relationship="Self.FK_SkillJobs_Skills" FromRole="SkillJobs" ToRole="Skills" />
+    <Property Name="AspirationsID" Type="Int32" />
+    <Property Name="DepartmentID" Type="Int32" />
+    <Property Name="JobID" Type="Int32" />
+    <NavigationProperty Name="Aspiration" Relationship="Self.FK_SkillList_Aspirations" FromRole="SkillList" ToRole="Aspirations" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_SkillList_Departments" FromRole="SkillList" ToRole="Departments" />
+    <NavigationProperty Name="Job" Relationship="Self.FK_SkillList_Jobs" FromRole="SkillList" ToRole="Jobs" />
+    <NavigationProperty Name="Skill" Relationship="Self.FK_SkillList_Skills" FromRole="SkillList" ToRole="Skills" />
   </EntityType>
   <EntityType Name="Skill">
     <Key>
@@ -207,20 +167,7 @@
     </Key>
     <Property Name="SkillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="SkillName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="SkillDepartments" Relationship="Self.FK_SkillDepartments_Skills" FromRole="Skills" ToRole="SkillDepartments" />
-    <NavigationProperty Name="SkillExperiences" Relationship="Self.FK_SkillExperiences_Skills" FromRole="Skills" ToRole="SkillExperiences" />
-    <NavigationProperty Name="SkillJobs" Relationship="Self.FK_SkillJobs_Skills" FromRole="Skills" ToRole="SkillJobs" />
-    <NavigationProperty Name="SkillStudentAspirations" Relationship="Self.FK_SkillStudentAspirations_Skills" FromRole="Skills" ToRole="SkillStudentAspirations" />
-  </EntityType>
-  <EntityType Name="SkillStudentAspiration">
-    <Key>
-      <PropertyRef Name="SkillStudentAspirationID" />
-    </Key>
-    <Property Name="SkillStudentAspirationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SkillID" Type="Int32" Nullable="false" />
-    <Property Name="StudentAspirationsID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Skill" Relationship="Self.FK_SkillStudentAspirations_Skills" FromRole="SkillStudentAspirations" ToRole="Skills" />
-    <NavigationProperty Name="StudentAspiration" Relationship="Self.FK_SkillStudentAspirations_StudentAspirations" FromRole="SkillStudentAspirations" ToRole="StudentAspirations" />
+    <NavigationProperty Name="SkillLists" Relationship="Self.FK_SkillList_Skills" FromRole="Skills" ToRole="SkillList" />
   </EntityType>
   <EntityType Name="Statistical">
     <Key>
@@ -231,37 +178,7 @@
     <Property Name="NumRequest" Type="Int32" Nullable="false" />
     <Property Name="NumPassed" Type="Int32" Nullable="false" />
     <Property Name="NumFail" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Recruiter" Relationship="Self.FK_Statistical_Recruiters" FromRole="Statistical" ToRole="Recruiters" />
-  </EntityType>
-  <EntityType Name="Student">
-    <Key>
-      <PropertyRef Name="StudentID" />
-    </Key>
-    <Property Name="StudentID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ExperienceID" Type="Int32" />
-    <Property Name="CV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="StudentAspirationsID" Type="Int32" />
-    <Property Name="UserID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Experience" Relationship="Self.FK_Student_Experiences" FromRole="Student" ToRole="Experiences" />
-    <NavigationProperty Name="Feedbacks" Relationship="Self.FK_Feedbacks_Student" FromRole="Student" ToRole="Feedbacks" />
-    <NavigationProperty Name="InterviewSchedules" Relationship="Self.FK_InterviewSchedules_Student" FromRole="Student" ToRole="InterviewSchedules" />
-    <NavigationProperty Name="Notifications" Relationship="Self.FK_Notifications_Student" FromRole="Student" ToRole="Notifications" />
-    <NavigationProperty Name="Reports" Relationship="Self.FK_Reports_Student" FromRole="Student" ToRole="Reports" />
-    <NavigationProperty Name="StudentAspiration" Relationship="Self.FK_Student_StudentAspirations" FromRole="Student" ToRole="StudentAspirations" />
-    <NavigationProperty Name="User" Relationship="Self.FK_Student_Users" FromRole="Student" ToRole="Users" />
-  </EntityType>
-  <EntityType Name="StudentAspiration">
-    <Key>
-      <PropertyRef Name="StudentAspirationsID" />
-    </Key>
-    <Property Name="StudentAspirationsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
-    <Property Name="LocationID" Type="Int32" Nullable="false" />
-    <Property Name="Salary" Type="Double" Nullable="false" />
-    <NavigationProperty Name="Department" Relationship="Self.FK_StudentAspirations_Departments" FromRole="StudentAspirations" ToRole="Departments" />
-    <NavigationProperty Name="Location" Relationship="Self.FK_StudentAspirations_Locations" FromRole="StudentAspirations" ToRole="Locations" />
-    <NavigationProperty Name="SkillStudentAspirations" Relationship="Self.FK_SkillStudentAspirations_StudentAspirations" FromRole="StudentAspirations" ToRole="SkillStudentAspirations" />
-    <NavigationProperty Name="Students" Relationship="Self.FK_Student_StudentAspirations" FromRole="StudentAspirations" ToRole="Student" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Statistical_Users" FromRole="Statistical" ToRole="Users" />
   </EntityType>
   <EntityType Name="UserRole">
     <Key>
@@ -287,23 +204,72 @@
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="LocationID" Type="Int32" />
     <Property Name="CreateDate" Type="DateTime" Precision="0" />
+    <Property Name="CV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AspirationsID" Type="Int32" />
     <Property Name="ImageID" Type="Int32" />
     <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Aspiration" Relationship="Self.FK_Users_Aspirations" FromRole="Users" ToRole="Aspirations" />
+    <NavigationProperty Name="Feedbacks" Relationship="Self.FK_Feedbacks_Users" FromRole="Users" ToRole="Feedbacks" />
+    <NavigationProperty Name="Feedbacks1" Relationship="Self.FK_Feedbacks_Users1" FromRole="Users" ToRole="Feedbacks" />
     <NavigationProperty Name="Image" Relationship="Self.FK_Users_Images" FromRole="Users" ToRole="Images" />
-    <NavigationProperty Name="Recruiters" Relationship="Self.FK_Recruiters_Users" FromRole="Users" ToRole="Recruiters" />
-    <NavigationProperty Name="Students" Relationship="Self.FK_Student_Users" FromRole="Users" ToRole="Student" />
+    <NavigationProperty Name="InterviewSchedules" Relationship="Self.FK_InterviewSchedules_Users" FromRole="Users" ToRole="InterviewSchedules" />
+    <NavigationProperty Name="InterviewSchedules1" Relationship="Self.FK_InterviewSchedules_Users1" FromRole="Users" ToRole="InterviewSchedules" />
+    <NavigationProperty Name="Jobs" Relationship="Self.FK_Jobs_Users" FromRole="Users" ToRole="Jobs" />
+    <NavigationProperty Name="Notifications" Relationship="Self.FK_Notifications_Users3" FromRole="Users" ToRole="Notifications" />
+    <NavigationProperty Name="Notifications1" Relationship="Self.FK_Notifications_Users4" FromRole="Users" ToRole="Notifications" />
+    <NavigationProperty Name="Rates" Relationship="Self.FK_Rates_Users" FromRole="Users" ToRole="Rates" />
+    <NavigationProperty Name="Rates1" Relationship="Self.FK_Rates_Users1" FromRole="Users" ToRole="Rates" />
+    <NavigationProperty Name="Reports" Relationship="Self.FK_Reports_Users" FromRole="Users" ToRole="Reports" />
+    <NavigationProperty Name="Reports1" Relationship="Self.FK_Reports_Users1" FromRole="Users" ToRole="Reports" />
+    <NavigationProperty Name="Statisticals" Relationship="Self.FK_Statistical_Users" FromRole="Users" ToRole="Statistical" />
     <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRole_Users" FromRole="Users" ToRole="UserRole" />
   </EntityType>
-  <Association Name="FK_Experiences_Departments">
-    <End Role="Departments" Type="Self.Department" Multiplicity="1" />
-    <End Role="Experiences" Type="Self.Experience" Multiplicity="*" />
+  <Association Name="FK_Aspirations_Jobs">
+    <End Role="Jobs" Type="Self.Job" Multiplicity="1" />
+    <End Role="Aspirations" Type="Self.Aspiration" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Departments">
-        <PropertyRef Name="DepartmentID" />
+      <Principal Role="Jobs">
+        <PropertyRef Name="JobID" />
       </Principal>
-      <Dependent Role="Experiences">
-        <PropertyRef Name="DepartmentID" />
+      <Dependent Role="Aspirations">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aspirations_Locations">
+    <End Role="Locations" Type="Self.Location" Multiplicity="1" />
+    <End Role="Aspirations" Type="Self.Aspiration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locations">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="Aspirations">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SkillList_Aspirations">
+    <End Role="Aspirations" Type="Self.Aspiration" Multiplicity="0..1" />
+    <End Role="SkillList" Type="Self.SkillList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aspirations">
+        <PropertyRef Name="AspirationsID" />
+      </Principal>
+      <Dependent Role="SkillList">
+        <PropertyRef Name="AspirationsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Aspirations">
+    <End Role="Aspirations" Type="Self.Aspiration" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aspirations">
+        <PropertyRef Name="AspirationsID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="AspirationsID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -319,51 +285,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SkillDepartments_Departments">
-    <End Role="Departments" Type="Self.Department" Multiplicity="1" />
-    <End Role="SkillDepartments" Type="Self.SkillDepartment" Multiplicity="*" />
+  <Association Name="FK_SkillList_Departments">
+    <End Role="Departments" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="SkillList" Type="Self.SkillList" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Departments">
         <PropertyRef Name="DepartmentID" />
       </Principal>
-      <Dependent Role="SkillDepartments">
+      <Dependent Role="SkillList">
         <PropertyRef Name="DepartmentID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_StudentAspirations_Departments">
-    <End Role="Departments" Type="Self.Department" Multiplicity="1" />
-    <End Role="StudentAspirations" Type="Self.StudentAspiration" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Departments">
-        <PropertyRef Name="DepartmentID" />
-      </Principal>
-      <Dependent Role="StudentAspirations">
-        <PropertyRef Name="DepartmentID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_SkillExperiences_Experiences">
-    <End Role="Experiences" Type="Self.Experience" Multiplicity="0..1" />
-    <End Role="SkillExperiences" Type="Self.SkillExperience" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Experiences">
-        <PropertyRef Name="ExperienceID" />
-      </Principal>
-      <Dependent Role="SkillExperiences">
-        <PropertyRef Name="ExperienceID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Student_Experiences">
-    <End Role="Experiences" Type="Self.Experience" Multiplicity="0..1" />
-    <End Role="Student" Type="Self.Student" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Experiences">
-        <PropertyRef Name="ExperienceID" />
-      </Principal>
-      <Dependent Role="Student">
-        <PropertyRef Name="ExperienceID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -379,27 +309,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Feedbacks_Recruiters">
-    <End Role="Recruiters" Type="Self.Recruiter" Multiplicity="1" />
+  <Association Name="FK_Feedbacks_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
     <End Role="Feedbacks" Type="Self.Feedback" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Recruiters">
-        <PropertyRef Name="RecruiterID" />
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
       </Principal>
       <Dependent Role="Feedbacks">
-        <PropertyRef Name="RecruiterID" />
+        <PropertyRef Name="StudentID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Feedbacks_Student">
-    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+  <Association Name="FK_Feedbacks_Users1">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
     <End Role="Feedbacks" Type="Self.Feedback" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Student">
-        <PropertyRef Name="StudentID" />
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
       </Principal>
       <Dependent Role="Feedbacks">
-        <PropertyRef Name="StudentID" />
+        <PropertyRef Name="RecruiterID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -427,27 +357,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_InterviewSchedules_Recruiters">
-    <End Role="Recruiters" Type="Self.Recruiter" Multiplicity="1" />
+  <Association Name="FK_InterviewSchedules_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
     <End Role="InterviewSchedules" Type="Self.InterviewSchedule" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Recruiters">
-        <PropertyRef Name="RecruiterID" />
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
       </Principal>
       <Dependent Role="InterviewSchedules">
-        <PropertyRef Name="RecruiterID" />
+        <PropertyRef Name="StudentID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_InterviewSchedules_Student">
-    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+  <Association Name="FK_InterviewSchedules_Users1">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
     <End Role="InterviewSchedules" Type="Self.InterviewSchedule" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Student">
-        <PropertyRef Name="StudentID" />
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
       </Principal>
       <Dependent Role="InterviewSchedules">
-        <PropertyRef Name="StudentID" />
+        <PropertyRef Name="RecruiterID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -463,74 +393,74 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Jobs_Recruiters">
-    <End Role="Recruiters" Type="Self.Recruiter" Multiplicity="1" />
+  <Association Name="FK_Jobs_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
     <End Role="Jobs" Type="Self.Job" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Recruiters">
-        <PropertyRef Name="RecruiterID" />
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
       </Principal>
       <Dependent Role="Jobs">
         <PropertyRef Name="RecruiterID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_RecruiterAspirations_Jobs">
-    <End Role="Jobs" Type="Self.Job" Multiplicity="1" />
-    <End Role="RecruiterAspirations" Type="Self.RecruiterAspiration" Multiplicity="*" />
+  <Association Name="FK_SkillList_Jobs">
+    <End Role="Jobs" Type="Self.Job" Multiplicity="0..1" />
+    <End Role="SkillList" Type="Self.SkillList" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Jobs">
         <PropertyRef Name="JobID" />
       </Principal>
-      <Dependent Role="RecruiterAspirations">
+      <Dependent Role="SkillList">
         <PropertyRef Name="JobID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SkillJobs_Jobs">
-    <End Role="Jobs" Type="Self.Job" Multiplicity="1" />
-    <End Role="SkillJobs" Type="Self.SkillJob" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Jobs">
-        <PropertyRef Name="JobID" />
-      </Principal>
-      <Dependent Role="SkillJobs">
-        <PropertyRef Name="JobID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_StudentAspirations_Locations">
-    <End Role="Locations" Type="Self.Location" Multiplicity="1" />
-    <End Role="StudentAspirations" Type="Self.StudentAspiration" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Locations">
-        <PropertyRef Name="LocationID" />
-      </Principal>
-      <Dependent Role="StudentAspirations">
-        <PropertyRef Name="LocationID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Notifications_Recruiters">
-    <End Role="Recruiters" Type="Self.Recruiter" Multiplicity="1" />
+  <Association Name="FK_Notifications_Users3">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
     <End Role="Notifications" Type="Self.Notification" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Recruiters">
-        <PropertyRef Name="RecruiterID" />
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
       </Principal>
       <Dependent Role="Notifications">
-        <PropertyRef Name="RecruiterID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Notifications_Student">
-    <End Role="Student" Type="Self.Student" Multiplicity="1" />
-    <End Role="Notifications" Type="Self.Notification" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Student">
         <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notifications_Users4">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Notifications" Type="Self.Notification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
       </Principal>
       <Dependent Role="Notifications">
+        <PropertyRef Name="RecruiterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rates_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Rates" Type="Self.Rate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Rates">
+        <PropertyRef Name="RecruiterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rates_Users1">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Rates" Type="Self.Rate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Rates">
         <PropertyRef Name="StudentID" />
       </Dependent>
     </ReferentialConstraint>
@@ -547,60 +477,24 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Recruiters_RecruiterAspirations">
-    <End Role="RecruiterAspirations" Type="Self.RecruiterAspiration" Multiplicity="0..1" />
-    <End Role="Recruiters" Type="Self.Recruiter" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="RecruiterAspirations">
-        <PropertyRef Name="RecruiterAspirationsID" />
-      </Principal>
-      <Dependent Role="Recruiters">
-        <PropertyRef Name="RecruiterAspirationsID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Recruiters_Users">
-    <End Role="Users" Type="Self.User" Multiplicity="1" />
-    <End Role="Recruiters" Type="Self.Recruiter" Multiplicity="*" />
+  <Association Name="FK_Reports_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Reports" Type="Self.Report" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
         <PropertyRef Name="UserID" />
-      </Principal>
-      <Dependent Role="Recruiters">
-        <PropertyRef Name="UserID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Reports_Recruiters">
-    <End Role="Recruiters" Type="Self.Recruiter" Multiplicity="0..1" />
-    <End Role="Reports" Type="Self.Report" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Recruiters">
-        <PropertyRef Name="RecruiterID" />
       </Principal>
       <Dependent Role="Reports">
         <PropertyRef Name="RecruiterID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Statistical_Recruiters">
-    <End Role="Recruiters" Type="Self.Recruiter" Multiplicity="1" />
-    <End Role="Statistical" Type="Self.Statistical" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Recruiters">
-        <PropertyRef Name="RecruiterID" />
-      </Principal>
-      <Dependent Role="Statistical">
-        <PropertyRef Name="RecruiterID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Reports_Student">
-    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+  <Association Name="FK_Reports_Users1">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
     <End Role="Reports" Type="Self.Report" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Student">
-        <PropertyRef Name="StudentID" />
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
       </Principal>
       <Dependent Role="Reports">
         <PropertyRef Name="StudentID" />
@@ -619,87 +513,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SkillDepartments_Skills">
+  <Association Name="FK_SkillList_Skills">
     <End Role="Skills" Type="Self.Skill" Multiplicity="1" />
-    <End Role="SkillDepartments" Type="Self.SkillDepartment" Multiplicity="*" />
+    <End Role="SkillList" Type="Self.SkillList" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Skills">
         <PropertyRef Name="SkillID" />
       </Principal>
-      <Dependent Role="SkillDepartments">
+      <Dependent Role="SkillList">
         <PropertyRef Name="SkillID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SkillExperiences_Skills">
-    <End Role="Skills" Type="Self.Skill" Multiplicity="1" />
-    <End Role="SkillExperiences" Type="Self.SkillExperience" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Skills">
-        <PropertyRef Name="SkillID" />
-      </Principal>
-      <Dependent Role="SkillExperiences">
-        <PropertyRef Name="SkillID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_SkillJobs_Skills">
-    <End Role="Skills" Type="Self.Skill" Multiplicity="1" />
-    <End Role="SkillJobs" Type="Self.SkillJob" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Skills">
-        <PropertyRef Name="SkillID" />
-      </Principal>
-      <Dependent Role="SkillJobs">
-        <PropertyRef Name="SkillID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_SkillStudentAspirations_Skills">
-    <End Role="Skills" Type="Self.Skill" Multiplicity="1" />
-    <End Role="SkillStudentAspirations" Type="Self.SkillStudentAspiration" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Skills">
-        <PropertyRef Name="SkillID" />
-      </Principal>
-      <Dependent Role="SkillStudentAspirations">
-        <PropertyRef Name="SkillID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_SkillStudentAspirations_StudentAspirations">
-    <End Role="StudentAspirations" Type="Self.StudentAspiration" Multiplicity="1" />
-    <End Role="SkillStudentAspirations" Type="Self.SkillStudentAspiration" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="StudentAspirations">
-        <PropertyRef Name="StudentAspirationsID" />
-      </Principal>
-      <Dependent Role="SkillStudentAspirations">
-        <PropertyRef Name="StudentAspirationsID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Student_StudentAspirations">
-    <End Role="StudentAspirations" Type="Self.StudentAspiration" Multiplicity="0..1" />
-    <End Role="Student" Type="Self.Student" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="StudentAspirations">
-        <PropertyRef Name="StudentAspirationsID" />
-      </Principal>
-      <Dependent Role="Student">
-        <PropertyRef Name="StudentAspirationsID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Student_Users">
+  <Association Name="FK_Statistical_Users">
     <End Role="Users" Type="Self.User" Multiplicity="1" />
-    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <End Role="Statistical" Type="Self.Statistical" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
         <PropertyRef Name="UserID" />
       </Principal>
-      <Dependent Role="Student">
-        <PropertyRef Name="UserID" />
+      <Dependent Role="Statistical">
+        <PropertyRef Name="RecruiterID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -716,8 +550,8 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="FptInternshipManagermentEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Aspirations" EntityType="Self.Aspiration" />
     <EntitySet Name="Departments" EntityType="Self.Department" />
-    <EntitySet Name="Experiences" EntityType="Self.Experience" />
     <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />
     <EntitySet Name="FeedbackTypes" EntityType="Self.FeedbackType" />
     <EntitySet Name="Images" EntityType="Self.Image" />
@@ -726,54 +560,47 @@
     <EntitySet Name="Locations" EntityType="Self.Location" />
     <EntitySet Name="Notifications" EntityType="Self.Notification" />
     <EntitySet Name="Rates" EntityType="Self.Rate" />
-    <EntitySet Name="RecruiterAspirations" EntityType="Self.RecruiterAspiration" />
-    <EntitySet Name="Recruiters" EntityType="Self.Recruiter" />
     <EntitySet Name="Reports" EntityType="Self.Report" />
     <EntitySet Name="Roles" EntityType="Self.Role" />
-    <EntitySet Name="SkillDepartments" EntityType="Self.SkillDepartment" />
-    <EntitySet Name="SkillExperiences" EntityType="Self.SkillExperience" />
-    <EntitySet Name="SkillJobs" EntityType="Self.SkillJob" />
+    <EntitySet Name="SkillLists" EntityType="Self.SkillList" />
     <EntitySet Name="Skills" EntityType="Self.Skill" />
-    <EntitySet Name="SkillStudentAspirations" EntityType="Self.SkillStudentAspiration" />
     <EntitySet Name="Statisticals" EntityType="Self.Statistical" />
-    <EntitySet Name="Students" EntityType="Self.Student" />
-    <EntitySet Name="StudentAspirations" EntityType="Self.StudentAspiration" />
     <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
     <EntitySet Name="Users" EntityType="Self.User" />
-    <AssociationSet Name="FK_Experiences_Departments" Association="Self.FK_Experiences_Departments">
-      <End Role="Departments" EntitySet="Departments" />
-      <End Role="Experiences" EntitySet="Experiences" />
+    <AssociationSet Name="FK_Aspirations_Jobs" Association="Self.FK_Aspirations_Jobs">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="Aspirations" EntitySet="Aspirations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aspirations_Locations" Association="Self.FK_Aspirations_Locations">
+      <End Role="Locations" EntitySet="Locations" />
+      <End Role="Aspirations" EntitySet="Aspirations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SkillList_Aspirations" Association="Self.FK_SkillList_Aspirations">
+      <End Role="Aspirations" EntitySet="Aspirations" />
+      <End Role="SkillList" EntitySet="SkillLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Aspirations" Association="Self.FK_Users_Aspirations">
+      <End Role="Aspirations" EntitySet="Aspirations" />
+      <End Role="Users" EntitySet="Users" />
     </AssociationSet>
     <AssociationSet Name="FK_Reports_Departments" Association="Self.FK_Reports_Departments">
       <End Role="Departments" EntitySet="Departments" />
       <End Role="Reports" EntitySet="Reports" />
     </AssociationSet>
-    <AssociationSet Name="FK_SkillDepartments_Departments" Association="Self.FK_SkillDepartments_Departments">
+    <AssociationSet Name="FK_SkillList_Departments" Association="Self.FK_SkillList_Departments">
       <End Role="Departments" EntitySet="Departments" />
-      <End Role="SkillDepartments" EntitySet="SkillDepartments" />
-    </AssociationSet>
-    <AssociationSet Name="FK_StudentAspirations_Departments" Association="Self.FK_StudentAspirations_Departments">
-      <End Role="Departments" EntitySet="Departments" />
-      <End Role="StudentAspirations" EntitySet="StudentAspirations" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SkillExperiences_Experiences" Association="Self.FK_SkillExperiences_Experiences">
-      <End Role="Experiences" EntitySet="Experiences" />
-      <End Role="SkillExperiences" EntitySet="SkillExperiences" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Student_Experiences" Association="Self.FK_Student_Experiences">
-      <End Role="Experiences" EntitySet="Experiences" />
-      <End Role="Student" EntitySet="Students" />
+      <End Role="SkillList" EntitySet="SkillLists" />
     </AssociationSet>
     <AssociationSet Name="FK_Feedbacks_FeedbackTypes" Association="Self.FK_Feedbacks_FeedbackTypes">
       <End Role="FeedbackTypes" EntitySet="FeedbackTypes" />
       <End Role="Feedbacks" EntitySet="Feedbacks" />
     </AssociationSet>
-    <AssociationSet Name="FK_Feedbacks_Recruiters" Association="Self.FK_Feedbacks_Recruiters">
-      <End Role="Recruiters" EntitySet="Recruiters" />
+    <AssociationSet Name="FK_Feedbacks_Users" Association="Self.FK_Feedbacks_Users">
+      <End Role="Users" EntitySet="Users" />
       <End Role="Feedbacks" EntitySet="Feedbacks" />
     </AssociationSet>
-    <AssociationSet Name="FK_Feedbacks_Student" Association="Self.FK_Feedbacks_Student">
-      <End Role="Student" EntitySet="Students" />
+    <AssociationSet Name="FK_Feedbacks_Users1" Association="Self.FK_Feedbacks_Users1">
+      <End Role="Users" EntitySet="Users" />
       <End Role="Feedbacks" EntitySet="Feedbacks" />
     </AssociationSet>
     <AssociationSet Name="FK_Users_Images" Association="Self.FK_Users_Images">
@@ -784,97 +611,65 @@
       <End Role="Locations" EntitySet="Locations" />
       <End Role="InterviewSchedules" EntitySet="InterviewSchedules" />
     </AssociationSet>
-    <AssociationSet Name="FK_InterviewSchedules_Recruiters" Association="Self.FK_InterviewSchedules_Recruiters">
-      <End Role="Recruiters" EntitySet="Recruiters" />
+    <AssociationSet Name="FK_InterviewSchedules_Users" Association="Self.FK_InterviewSchedules_Users">
+      <End Role="Users" EntitySet="Users" />
       <End Role="InterviewSchedules" EntitySet="InterviewSchedules" />
     </AssociationSet>
-    <AssociationSet Name="FK_InterviewSchedules_Student" Association="Self.FK_InterviewSchedules_Student">
-      <End Role="Student" EntitySet="Students" />
+    <AssociationSet Name="FK_InterviewSchedules_Users1" Association="Self.FK_InterviewSchedules_Users1">
+      <End Role="Users" EntitySet="Users" />
       <End Role="InterviewSchedules" EntitySet="InterviewSchedules" />
     </AssociationSet>
     <AssociationSet Name="FK_Jobs_Locations" Association="Self.FK_Jobs_Locations">
       <End Role="Locations" EntitySet="Locations" />
       <End Role="Jobs" EntitySet="Jobs" />
     </AssociationSet>
-    <AssociationSet Name="FK_Jobs_Recruiters" Association="Self.FK_Jobs_Recruiters">
-      <End Role="Recruiters" EntitySet="Recruiters" />
+    <AssociationSet Name="FK_Jobs_Users" Association="Self.FK_Jobs_Users">
+      <End Role="Users" EntitySet="Users" />
       <End Role="Jobs" EntitySet="Jobs" />
     </AssociationSet>
-    <AssociationSet Name="FK_RecruiterAspirations_Jobs" Association="Self.FK_RecruiterAspirations_Jobs">
+    <AssociationSet Name="FK_SkillList_Jobs" Association="Self.FK_SkillList_Jobs">
       <End Role="Jobs" EntitySet="Jobs" />
-      <End Role="RecruiterAspirations" EntitySet="RecruiterAspirations" />
+      <End Role="SkillList" EntitySet="SkillLists" />
     </AssociationSet>
-    <AssociationSet Name="FK_SkillJobs_Jobs" Association="Self.FK_SkillJobs_Jobs">
-      <End Role="Jobs" EntitySet="Jobs" />
-      <End Role="SkillJobs" EntitySet="SkillJobs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_StudentAspirations_Locations" Association="Self.FK_StudentAspirations_Locations">
-      <End Role="Locations" EntitySet="Locations" />
-      <End Role="StudentAspirations" EntitySet="StudentAspirations" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Notifications_Recruiters" Association="Self.FK_Notifications_Recruiters">
-      <End Role="Recruiters" EntitySet="Recruiters" />
+    <AssociationSet Name="FK_Notifications_Users3" Association="Self.FK_Notifications_Users3">
+      <End Role="Users" EntitySet="Users" />
       <End Role="Notifications" EntitySet="Notifications" />
     </AssociationSet>
-    <AssociationSet Name="FK_Notifications_Student" Association="Self.FK_Notifications_Student">
-      <End Role="Student" EntitySet="Students" />
+    <AssociationSet Name="FK_Notifications_Users4" Association="Self.FK_Notifications_Users4">
+      <End Role="Users" EntitySet="Users" />
       <End Role="Notifications" EntitySet="Notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rates_Users" Association="Self.FK_Rates_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Rates" EntitySet="Rates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rates_Users1" Association="Self.FK_Rates_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Rates" EntitySet="Rates" />
     </AssociationSet>
     <AssociationSet Name="FK_Reports_Rates" Association="Self.FK_Reports_Rates">
       <End Role="Rates" EntitySet="Rates" />
       <End Role="Reports" EntitySet="Reports" />
     </AssociationSet>
-    <AssociationSet Name="FK_Recruiters_RecruiterAspirations" Association="Self.FK_Recruiters_RecruiterAspirations">
-      <End Role="RecruiterAspirations" EntitySet="RecruiterAspirations" />
-      <End Role="Recruiters" EntitySet="Recruiters" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Recruiters_Users" Association="Self.FK_Recruiters_Users">
+    <AssociationSet Name="FK_Reports_Users" Association="Self.FK_Reports_Users">
       <End Role="Users" EntitySet="Users" />
-      <End Role="Recruiters" EntitySet="Recruiters" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Reports_Recruiters" Association="Self.FK_Reports_Recruiters">
-      <End Role="Recruiters" EntitySet="Recruiters" />
       <End Role="Reports" EntitySet="Reports" />
     </AssociationSet>
-    <AssociationSet Name="FK_Statistical_Recruiters" Association="Self.FK_Statistical_Recruiters">
-      <End Role="Recruiters" EntitySet="Recruiters" />
-      <End Role="Statistical" EntitySet="Statisticals" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Reports_Student" Association="Self.FK_Reports_Student">
-      <End Role="Student" EntitySet="Students" />
+    <AssociationSet Name="FK_Reports_Users1" Association="Self.FK_Reports_Users1">
+      <End Role="Users" EntitySet="Users" />
       <End Role="Reports" EntitySet="Reports" />
     </AssociationSet>
     <AssociationSet Name="FK_UserRole_Roles" Association="Self.FK_UserRole_Roles">
       <End Role="Roles" EntitySet="Roles" />
       <End Role="UserRole" EntitySet="UserRoles" />
     </AssociationSet>
-    <AssociationSet Name="FK_SkillDepartments_Skills" Association="Self.FK_SkillDepartments_Skills">
+    <AssociationSet Name="FK_SkillList_Skills" Association="Self.FK_SkillList_Skills">
       <End Role="Skills" EntitySet="Skills" />
-      <End Role="SkillDepartments" EntitySet="SkillDepartments" />
+      <End Role="SkillList" EntitySet="SkillLists" />
     </AssociationSet>
-    <AssociationSet Name="FK_SkillExperiences_Skills" Association="Self.FK_SkillExperiences_Skills">
-      <End Role="Skills" EntitySet="Skills" />
-      <End Role="SkillExperiences" EntitySet="SkillExperiences" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SkillJobs_Skills" Association="Self.FK_SkillJobs_Skills">
-      <End Role="Skills" EntitySet="Skills" />
-      <End Role="SkillJobs" EntitySet="SkillJobs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SkillStudentAspirations_Skills" Association="Self.FK_SkillStudentAspirations_Skills">
-      <End Role="Skills" EntitySet="Skills" />
-      <End Role="SkillStudentAspirations" EntitySet="SkillStudentAspirations" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SkillStudentAspirations_StudentAspirations" Association="Self.FK_SkillStudentAspirations_StudentAspirations">
-      <End Role="StudentAspirations" EntitySet="StudentAspirations" />
-      <End Role="SkillStudentAspirations" EntitySet="SkillStudentAspirations" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Student_StudentAspirations" Association="Self.FK_Student_StudentAspirations">
-      <End Role="StudentAspirations" EntitySet="StudentAspirations" />
-      <End Role="Student" EntitySet="Students" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Student_Users" Association="Self.FK_Student_Users">
+    <AssociationSet Name="FK_Statistical_Users" Association="Self.FK_Statistical_Users">
       <End Role="Users" EntitySet="Users" />
-      <End Role="Student" EntitySet="Students" />
+      <End Role="Statistical" EntitySet="Statisticals" />
     </AssociationSet>
     <AssociationSet Name="FK_UserRole_Users" Association="Self.FK_UserRole_Users">
       <End Role="Users" EntitySet="Users" />

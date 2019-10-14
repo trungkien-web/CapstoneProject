@@ -12,13 +12,17 @@ namespace Model
     using System;
     using System.Collections.Generic;
     
-    public partial class SkillDepartment
+    public partial class SkillList
     {
-        public int SkillDepartmentID { get; set; }
+        public int SkillListID { get; set; }
         public int SkillID { get; set; }
-        public int DepartmentID { get; set; }
+        public Nullable<int> AspirationsID { get; set; }
+        public Nullable<int> DepartmentID { get; set; }
+        public Nullable<int> JobID { get; set; }
     
+        public virtual Aspiration Aspiration { get; set; }
         public virtual Department Department { get; set; }
+        public virtual Job Job { get; set; }
         public virtual Skill Skill { get; set; }
     }
 }

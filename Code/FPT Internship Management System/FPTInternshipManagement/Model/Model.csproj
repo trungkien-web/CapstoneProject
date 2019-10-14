@@ -50,10 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Department.cs">
+    <Compile Include="Aspiration.cs">
       <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Experience.cs">
+    <Compile Include="Department.cs">
       <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Feedback.cs">
@@ -96,12 +96,6 @@
     <Compile Include="Rate.cs">
       <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Recruiter.cs">
-      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RecruiterAspiration.cs">
-      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="Report.cs">
       <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
     </Compile>
@@ -111,25 +105,10 @@
     <Compile Include="Skill.cs">
       <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="SkillDepartment.cs">
-      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SkillExperience.cs">
-      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SkillJob.cs">
-      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SkillStudentAspiration.cs">
+    <Compile Include="SkillList.cs">
       <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Statistical.cs">
-      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Student.cs">
-      <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="StudentAspiration.cs">
       <DependentUpon>FPTInternshipManagementDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
@@ -140,32 +119,30 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="FPTInternshipManagementDbContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>FPTInternshipManagementDbContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="FPTInternshipManagementDbContext.edmx.diagram">
       <DependentUpon>FPTInternshipManagementDbContext.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="FPTInternshipManagementDbContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>FPTInternshipManagementDbContext.Context.cs</LastGenOutput>
       <DependentUpon>FPTInternshipManagementDbContext.edmx</DependentUpon>
+      <LastGenOutput>FPTInternshipManagementDbContext.Context.cs</LastGenOutput>
     </Content>
     <Content Include="FPTInternshipManagementDbContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>FPTInternshipManagementDbContext.edmx</DependentUpon>
       <LastGenOutput>FPTInternshipManagementDbContext.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

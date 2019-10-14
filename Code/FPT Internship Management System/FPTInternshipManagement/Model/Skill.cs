@@ -17,22 +17,13 @@ namespace Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Skill()
         {
-            this.SkillDepartments = new HashSet<SkillDepartment>();
-            this.SkillExperiences = new HashSet<SkillExperience>();
-            this.SkillJobs = new HashSet<SkillJob>();
-            this.SkillStudentAspirations = new HashSet<SkillStudentAspiration>();
+            this.SkillLists = new HashSet<SkillList>();
         }
     
         public int SkillID { get; set; }
         public string SkillName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SkillDepartment> SkillDepartments { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SkillExperience> SkillExperiences { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SkillJob> SkillJobs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SkillStudentAspiration> SkillStudentAspirations { get; set; }
+        public virtual ICollection<SkillList> SkillLists { get; set; }
     }
 }

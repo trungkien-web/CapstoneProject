@@ -12,22 +12,27 @@ namespace Model
     using System;
     using System.Collections.Generic;
     
-    public partial class RecruiterAspiration
+    public partial class Aspiration
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RecruiterAspiration()
+        public Aspiration()
         {
-            this.Recruiters = new HashSet<Recruiter>();
+            this.SkillLists = new HashSet<SkillList>();
+            this.Users = new HashSet<User>();
         }
     
-        public int RecruiterAspirationsID { get; set; }
+        public int AspirationsID { get; set; }
         public int JobID { get; set; }
         public bool Gender { get; set; }
         public double Salary { get; set; }
+        public int LocationID { get; set; }
         public string Status { get; set; }
     
         public virtual Job Job { get; set; }
+        public virtual Location Location { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Recruiter> Recruiters { get; set; }
+        public virtual ICollection<SkillList> SkillLists { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }

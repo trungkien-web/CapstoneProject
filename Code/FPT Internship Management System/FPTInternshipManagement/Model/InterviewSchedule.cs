@@ -15,7 +15,7 @@ namespace Model
     public partial class InterviewSchedule
     {
         public int InterviewID { get; set; }
-        public string StudentID { get; set; }
+        public int StudentID { get; set; }
         public int RecruiterID { get; set; }
         public System.DateTime StartTime { get; set; }
         public System.DateTime EndTime { get; set; }
@@ -23,7 +23,7 @@ namespace Model
         public string Status { get; set; }
     
         public virtual Location Location { get; set; }
-        public virtual Recruiter Recruiter { get; set; }
-        public virtual Student Student { get; set; }
+        public virtual User User { get; set; }
+        public virtual User User1 { get; set; }
     }
 }

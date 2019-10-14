@@ -178,14 +178,21 @@
 <div class="wthreepvt-pos py-md-5 py-5" id="positions">
 	<div class="container py-lg-5">
 		<div class="wthreepvt-pos-row row  text-center">
-			<div class="col-lg-4 col-sm-6 wthreepvt-pos-grids">
-				<div class="p-md-5 p-sm-3">
-					<span class="fa fa-check-square" aria-hidden="true"></span>
-					<h4 class="mt-2 mb-3">Computer & IT</h4>
-					<p>PHP, Java, .Net, WordPress, IT Manager, Tester, Full Stack....</p>
-				</div>
-			</div>
-			<div class="col-lg-4 col-sm-6 wthreepvt-pos-grids  border-left border-right my-sm-0 my-5">
+			@{
+				var data = ViewBag.KeyValues;
+				foreach (var keyvalue in data)
+				{
+					<div class="col-lg-4 col-sm-6 wthreepvt-pos-grids">
+						<div class="p-md-5 p-sm-3">
+							<span class="fa fa-check-square" aria-hidden="true"></span>
+							<h4 class="mt-2 mb-3">@keyvalue.Key</h4>
+							<p>@keyvalue.Value</p>
+						</div>
+					</div>
+				}
+			}
+
+			@*<div class="col-lg-4 col-sm-6 wthreepvt-pos-grids  border-left border-right my-sm-0 my-5">
 				<div class="p-md-5 p-sm-3">
 					<span class="fa fa-suitcase" aria-hidden="true"></span>
 					<h4 class="mt-2 mb-3">Marketing</h4>
@@ -221,7 +228,7 @@
 					<h4 class="mt-2 mb-3">Designer</h4>
 					<p>Logo, Bao bì, In ấn, 3D , 2D ....</p>
 				</div>
-			</div>
+			</div>*@
 		</div>
 	</div>
 </div>

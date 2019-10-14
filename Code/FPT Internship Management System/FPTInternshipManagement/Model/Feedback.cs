@@ -15,13 +15,13 @@ namespace Model
     public partial class Feedback
     {
         public int FeedbackID { get; set; }
-        public string StudentID { get; set; }
+        public int StudentID { get; set; }
         public int RecruiterID { get; set; }
         public string Content { get; set; }
         public int FeedbackTypeID { get; set; }
     
         public virtual FeedbackType FeedbackType { get; set; }
-        public virtual Recruiter Recruiter { get; set; }
-        public virtual Student Student { get; set; }
+        public virtual User User { get; set; }
+        public virtual User User1 { get; set; }
     }
 }

@@ -1,25 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="FptInternshipManagermentModelStoreContainer" CdmEntityContainer="FptInternshipManagermentEntities">
+  <EntityContainerMapping StorageEntityContainer="FPTInternshipManagermentModelStoreContainer" CdmEntityContainer="FptInternshipManagermentEntities">
+    <EntitySetMapping Name="Aspirations">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.Aspiration">
+        <MappingFragment StoreEntitySet="Aspirations">
+          <ScalarProperty Name="AspirationsID" ColumnName="AspirationsID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Departments">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.Department">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.Department">
         <MappingFragment StoreEntitySet="Departments">
           <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
           <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Experiences">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.Experience">
-        <MappingFragment StoreEntitySet="Experiences">
-          <ScalarProperty Name="ExperienceID" ColumnName="ExperienceID" />
-          <ScalarProperty Name="Time" ColumnName="Time" />
-          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Feedbacks">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.Feedback">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.Feedback">
         <MappingFragment StoreEntitySet="Feedbacks">
           <ScalarProperty Name="FeedbackID" ColumnName="FeedbackID" />
           <ScalarProperty Name="StudentID" ColumnName="StudentID" />
@@ -30,7 +33,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="FeedbackTypes">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.FeedbackType">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.FeedbackType">
         <MappingFragment StoreEntitySet="FeedbackTypes">
           <ScalarProperty Name="FeedbackTypeID" ColumnName="FeedbackTypeID" />
           <ScalarProperty Name="FeedbackTypeName" ColumnName="FeedbackTypeName" />
@@ -38,7 +41,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Images">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.Image">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.Image">
         <MappingFragment StoreEntitySet="Images">
           <ScalarProperty Name="ImageID" ColumnName="ImageID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -47,7 +50,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="InterviewSchedules">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.InterviewSchedule">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.InterviewSchedule">
         <MappingFragment StoreEntitySet="InterviewSchedules">
           <ScalarProperty Name="InterviewID" ColumnName="InterviewID" />
           <ScalarProperty Name="StudentID" ColumnName="StudentID" />
@@ -60,7 +63,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Jobs">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.Job">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.Job">
         <MappingFragment StoreEntitySet="Jobs">
           <ScalarProperty Name="JobID" ColumnName="JobID" />
           <ScalarProperty Name="JobName" ColumnName="JobName" />
@@ -73,7 +76,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Locations">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.Location">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.Location">
         <MappingFragment StoreEntitySet="Locations">
           <ScalarProperty Name="LocationID" ColumnName="LocationID" />
           <ScalarProperty Name="City" ColumnName="City" />
@@ -82,7 +85,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Notifications">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.Notification">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.Notification">
         <MappingFragment StoreEntitySet="Notifications">
           <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
           <ScalarProperty Name="Content" ColumnName="Content" />
@@ -92,7 +95,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Rates">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.Rate">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.Rate">
         <MappingFragment StoreEntitySet="Rates">
           <ScalarProperty Name="RateID" ColumnName="RateID" />
           <ScalarProperty Name="Star" ColumnName="Star" />
@@ -102,28 +105,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="RecruiterAspirations">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.RecruiterAspiration">
-        <MappingFragment StoreEntitySet="RecruiterAspirations">
-          <ScalarProperty Name="RecruiterAspirationsID" ColumnName="RecruiterAspirationsID" />
-          <ScalarProperty Name="JobID" ColumnName="JobID" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="Salary" ColumnName="Salary" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Recruiters">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.Recruiter">
-        <MappingFragment StoreEntitySet="Recruiters">
-          <ScalarProperty Name="RecruiterID" ColumnName="RecruiterID" />
-          <ScalarProperty Name="RecruiterAspirationsID" ColumnName="RecruiterAspirationsID" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Reports">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.Report">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.Report">
         <MappingFragment StoreEntitySet="Reports">
           <ScalarProperty Name="ReportID" ColumnName="ReportID" />
           <ScalarProperty Name="RecruiterID" ColumnName="RecruiterID" />
@@ -139,59 +122,34 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Roles">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.Role">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.Role">
         <MappingFragment StoreEntitySet="Roles">
           <ScalarProperty Name="RoleID" ColumnName="RoleID" />
           <ScalarProperty Name="RoleName" ColumnName="RoleName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SkillDepartments">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.SkillDepartment">
-        <MappingFragment StoreEntitySet="SkillDepartments">
-          <ScalarProperty Name="SkillDepartmentID" ColumnName="SkillDepartmentID" />
+    <EntitySetMapping Name="SkillLists">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.SkillList">
+        <MappingFragment StoreEntitySet="SkillList">
+          <ScalarProperty Name="SkillListID" ColumnName="SkillListID" />
           <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+          <ScalarProperty Name="AspirationsID" ColumnName="AspirationsID" />
           <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SkillExperiences">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.SkillExperience">
-        <MappingFragment StoreEntitySet="SkillExperiences">
-          <ScalarProperty Name="SkillExperienceID" ColumnName="SkillExperienceID" />
-          <ScalarProperty Name="SkillID" ColumnName="SkillID" />
-          <ScalarProperty Name="ExperienceID" ColumnName="ExperienceID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SkillJobs">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.SkillJob">
-        <MappingFragment StoreEntitySet="SkillJobs">
-          <ScalarProperty Name="SkillJobID" ColumnName="SkillJobID" />
-          <ScalarProperty Name="SkillID" ColumnName="SkillID" />
           <ScalarProperty Name="JobID" ColumnName="JobID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Skills">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.Skill">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.Skill">
         <MappingFragment StoreEntitySet="Skills">
           <ScalarProperty Name="SkillID" ColumnName="SkillID" />
           <ScalarProperty Name="SkillName" ColumnName="SkillName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SkillStudentAspirations">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.SkillStudentAspiration">
-        <MappingFragment StoreEntitySet="SkillStudentAspirations">
-          <ScalarProperty Name="SkillStudentAspirationID" ColumnName="SkillStudentAspirationID" />
-          <ScalarProperty Name="SkillID" ColumnName="SkillID" />
-          <ScalarProperty Name="StudentAspirationsID" ColumnName="StudentAspirationsID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Statisticals">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.Statistical">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.Statistical">
         <MappingFragment StoreEntitySet="Statistical">
           <ScalarProperty Name="StatisticalID" ColumnName="StatisticalID" />
           <ScalarProperty Name="RecruiterID" ColumnName="RecruiterID" />
@@ -201,29 +159,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Students">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.Student">
-        <MappingFragment StoreEntitySet="Student">
-          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
-          <ScalarProperty Name="ExperienceID" ColumnName="ExperienceID" />
-          <ScalarProperty Name="CV" ColumnName="CV" />
-          <ScalarProperty Name="StudentAspirationsID" ColumnName="StudentAspirationsID" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="StudentAspirations">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.StudentAspiration">
-        <MappingFragment StoreEntitySet="StudentAspirations">
-          <ScalarProperty Name="StudentAspirationsID" ColumnName="StudentAspirationsID" />
-          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
-          <ScalarProperty Name="Salary" ColumnName="Salary" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="UserRoles">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.UserRole">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.UserRole">
         <MappingFragment StoreEntitySet="UserRole">
           <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
@@ -232,7 +169,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="FptInternshipManagermentModel.User">
+      <EntityTypeMapping TypeName="FPTInternshipManagermentModel.User">
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="Username" ColumnName="Username" />
@@ -244,7 +181,9 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="LocationID" ColumnName="LocationID" />
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CV" ColumnName="CV" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AspirationsID" ColumnName="AspirationsID" />
           <ScalarProperty Name="ImageID" ColumnName="ImageID" />
           <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
