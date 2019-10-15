@@ -11,10 +11,8 @@ namespace Model
 {
     using System;
     using System.Collections.Generic;
-	using System.ComponentModel;
-	using System.ComponentModel.DataAnnotations;
-
-	public partial class User
+    
+    public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
@@ -35,12 +33,8 @@ namespace Model
         }
     
         public int UserID { get; set; }
-		[Required(ErrorMessage = "This field is required.")]
-		[DisplayName("User Name")]
         public string Username { get; set; }
-		[Required(ErrorMessage = "This field is required.")]
-		[DataType(DataType.Password)]
-		public string Password { get; set; }
+        public string Password { get; set; }
         public string Name { get; set; }
         public Nullable<int> Phone { get; set; }
         public Nullable<System.DateTime> DOB { get; set; }

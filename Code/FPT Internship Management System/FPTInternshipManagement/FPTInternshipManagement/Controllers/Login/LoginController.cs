@@ -18,7 +18,7 @@ namespace FPTInternshipManagement.Controllers.Login
 		[HttpPost]
 		public ActionResult Autherize(User user)
 		{
-			using (FptInternshipManagermentEntities db = new FptInternshipManagermentEntities())
+			using (FPTInternshipManagermentEntities db = new FPTInternshipManagermentEntities())
 			{
 				var userDetails = db.Users.Where(x => x.Username == user.Username && x.Password == user.Password).FirstOrDefault();
 				if(userDetails == null)

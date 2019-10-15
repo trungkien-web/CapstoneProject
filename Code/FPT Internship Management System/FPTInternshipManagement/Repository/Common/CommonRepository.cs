@@ -7,7 +7,7 @@ namespace Repository
 {
     public class CommonRepository : ICommonRepository
     {
-        private FptInternshipManagermentEntities ctx = new FptInternshipManagermentEntities();
+        private FPTInternshipManagermentEntities ctx = new FPTInternshipManagermentEntities();
 
         public List<string> GetAllNameData()
         {

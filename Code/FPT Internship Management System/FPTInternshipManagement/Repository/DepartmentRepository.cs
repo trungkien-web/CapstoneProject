@@ -9,7 +9,7 @@ namespace Repository
 {
 	public class DepartmentRepository : IDepartmentRepository
 	{
-		FptInternshipManagermentEntities ctx = new FptInternshipManagermentEntities();
+		FPTInternshipManagermentEntities ctx = new FPTInternshipManagermentEntities();
 		public List<Department> GetAllDepartments()
 		{
 			var list = ctx.Departments.ToList();
