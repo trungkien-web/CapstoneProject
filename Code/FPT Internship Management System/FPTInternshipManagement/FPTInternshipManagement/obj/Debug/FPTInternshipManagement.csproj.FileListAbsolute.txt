@@ -239,7 +239,6 @@ D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInt
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\Antlr3.Runtime.pdb
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\Repository.pdb
-D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\bin\Repository.dll.config
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\obj\Debug\FPTInternshipManagement.csprojAssemblyReference.cache
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\obj\Debug\FPTInternshipManagement.csproj.CoreCompileInputs.cache
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\FPTInternshipManagement\obj\Debug\FPTInternshipManagement.csproj.CopyComplete

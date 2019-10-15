@@ -127,9 +127,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\Common\CommonController.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
     <Compile Include="Controllers\Recruiter\RecruiterController.cs" />
+    <Compile Include="Controllers\Student\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -139,6 +141,7 @@
     <Content Include="Assets\css\bootstrap.min.css" />
     <Content Include="Assets\css\bootstrap_tungbc.css" />
     <Content Include="Assets\css\font-awesome.min.css" />
+    <Content Include="Assets\css\style_recruiment.css" />
     <Content Include="Assets\css\style.css" />
     <Content Include="Assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\images\b1.jpg" />
@@ -187,6 +190,9 @@
     <Content Include="Views\Recruiter\PublishedRecruitment.cshtml" />
     <Content Include="Views\Recruiter\SearchStudent.cshtml" />
     <Content Include="Views\Common\Index.cshtml" />
+    <Content Include="Views\Recruiter\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

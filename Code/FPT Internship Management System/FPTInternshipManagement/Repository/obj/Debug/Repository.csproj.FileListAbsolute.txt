@@ -10,7 +10,6 @@ D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTI
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Repository\obj\Debug\Repository.csproj.CopyComplete
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Repository\obj\Debug\Repository.dll
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Repository\obj\Debug\Repository.pdb
-D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Repository\bin\Debug\Repository.dll.config
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Repository\bin\Debug\Repository.dll
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Repository\bin\Debug\Repository.pdb
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Repository\bin\Debug\EntityFramework.dll
