@@ -1,12 +1,3 @@
-D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Service.dll
-D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Service.pdb
-D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Repository.dll
-D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Repository.pdb
-D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.csprojAssemblyReference.cache
-D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
-D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.csproj.CopyComplete
-D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.dll
-D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.pdb
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Service.dll
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Service.pdb
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Repository.dll
@@ -21,9 +12,17 @@ D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInt
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.csproj.CopyComplete
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.dll
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.pdb
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Service.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Service.pdb
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Repository.dll
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Model.dll
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\EntityFramework.dll
-D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Repository.dll.config
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Repository.pdb
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Model.pdb
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Model.dll.config
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\EntityFramework.xml
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.csprojAssemblyReference.cache
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.csproj.CopyComplete
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.dll
+D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.pdb
