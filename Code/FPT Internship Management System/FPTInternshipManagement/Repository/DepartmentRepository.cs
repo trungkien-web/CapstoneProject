@@ -55,7 +55,8 @@ namespace Repository
 			foreach (var keyValues in GetToDictionary())
 			{
 				var nameList =from kp in keyValues.Value select kp.SkillName;
-				string combindedString = string.Join(",", nameList);
+				string combindedString = string.Join(",", nameList.Take(5));
+				combindedString += "...";
 				keyValuePairs.Add(GetDepartmentById(keyValues.Key).DepartmentName, combindedString);
 			}
 			return keyValuePairs;
