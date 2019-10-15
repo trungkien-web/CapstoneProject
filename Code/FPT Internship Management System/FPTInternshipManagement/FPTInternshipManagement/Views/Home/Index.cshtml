@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Model.User
+@{
 	ViewBag.Title = "Index";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -193,42 +194,42 @@
 			}
 
 			@*<div class="col-lg-4 col-sm-6 wthreepvt-pos-grids  border-left border-right my-sm-0 my-5">
-				<div class="p-md-5 p-sm-3">
-					<span class="fa fa-suitcase" aria-hidden="true"></span>
-					<h4 class="mt-2 mb-3">Marketing</h4>
-					<p>SEO, Google Ads, Facebook Ads, Tiktok Ads, Zalo Ads</p>
+						<div class="p-md-5 p-sm-3">
+							<span class="fa fa-suitcase" aria-hidden="true"></span>
+							<h4 class="mt-2 mb-3">Marketing</h4>
+							<p>SEO, Google Ads, Facebook Ads, Tiktok Ads, Zalo Ads</p>
+						</div>
+					</div>
+					<div class="col-lg-4 wthreepvt-pos-grids">
+						<div class="p-md-5 p-sm-3">
+							<span class="fa fa-thumbs-up" aria-hidden="true"></span>
+							<h4 class="mt-2 mb-3">Tài Chính - Ngân Hàng</h4>
+							<p>Kiểm Định, Tín dụng, Chăm sóc khách hàng, kế toán...</p>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="col-lg-4 wthreepvt-pos-grids">
-				<div class="p-md-5 p-sm-3">
-					<span class="fa fa-thumbs-up" aria-hidden="true"></span>
-					<h4 class="mt-2 mb-3">Tài Chính - Ngân Hàng</h4>
-					<p>Kiểm Định, Tín dụng, Chăm sóc khách hàng, kế toán...</p>
-				</div>
-			</div>
-		</div>
-		<div class="wthreepvt-pos-row border-top row text-center pb-lg-5 pt-md-0 pt-5 mt-md-0 mt-sm-5 mt-4">
-			<div class="col-lg-4 col-sm-6 wthreepvt-pos-grids">
-				<div class="p-md-5 p-sm-3 col-label">
-					<span class="fa fa-thumb-tack" aria-hidden="true"></span>
-					<h4 class="mt-2 mb-3">Bảo Hiểm</h4>
-					<p>Chăm sóc khách hàng, Hoạch đinh tài chính, Tư Vấn, Hành chính...</p>
-				</div>
-			</div>
-			<div class="col-lg-4 col-sm-6 wthreepvt-pos-grids mt-lg-0 mt-md-3 border-left border-right pt-sm-0 pt-5">
-				<div class="p-md-5 p-sm-3 col-label">
-					<span class="fa fa-external-link" aria-hidden="true"></span>
-					<h4 class="mt-2 mb-3">Cơ Khí - Chế Tạo</h4>
-					<p>Kỹ thuật, Bảo trì, Thiết kế, Lắp ráp...</p>
-				</div>
-			</div>
-			<div class="col-lg-4 wthreepvt-pos-grids pt-md-0 pt-5">
-				<div class="p-md-5 p-sm-3 col-label">
-					<span class="fa fa-cog" aria-hidden="true"></span>
-					<h4 class="mt-2 mb-3">Designer</h4>
-					<p>Logo, Bao bì, In ấn, 3D , 2D ....</p>
-				</div>
-			</div>*@
+				<div class="wthreepvt-pos-row border-top row text-center pb-lg-5 pt-md-0 pt-5 mt-md-0 mt-sm-5 mt-4">
+					<div class="col-lg-4 col-sm-6 wthreepvt-pos-grids">
+						<div class="p-md-5 p-sm-3 col-label">
+							<span class="fa fa-thumb-tack" aria-hidden="true"></span>
+							<h4 class="mt-2 mb-3">Bảo Hiểm</h4>
+							<p>Chăm sóc khách hàng, Hoạch đinh tài chính, Tư Vấn, Hành chính...</p>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-6 wthreepvt-pos-grids mt-lg-0 mt-md-3 border-left border-right pt-sm-0 pt-5">
+						<div class="p-md-5 p-sm-3 col-label">
+							<span class="fa fa-external-link" aria-hidden="true"></span>
+							<h4 class="mt-2 mb-3">Cơ Khí - Chế Tạo</h4>
+							<p>Kỹ thuật, Bảo trì, Thiết kế, Lắp ráp...</p>
+						</div>
+					</div>
+					<div class="col-lg-4 wthreepvt-pos-grids pt-md-0 pt-5">
+						<div class="p-md-5 p-sm-3 col-label">
+							<span class="fa fa-cog" aria-hidden="true"></span>
+							<h4 class="mt-2 mb-3">Designer</h4>
+							<p>Logo, Bao bì, In ấn, 3D , 2D ....</p>
+						</div>
+					</div>*@
 		</div>
 	</div>
 </div>
@@ -246,16 +247,17 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form action="#" method="post" class="p-3">
+				@using (Html.BeginForm("Autherize","Login", FormMethod.Post))
+				{
 					<div class="form-group">
-						<label for="recipient-name" class="col-form-label">Tên tài khoản</label>
-						<input type="text" class="form-control" placeholder=" " name="Name" id="recipient-name"
-							   required="">
+						@Html.LabelFor(Model => Model.Username)
+						@Html.EditorFor(Model => Model.Username)
+						@Html.ValidationMessageFor(Model => Model.Username)
 					</div>
 					<div class="form-group">
-						<label for="password" class="col-form-label">Mật khẩu</label>
-						<input type="password" class="form-control" placeholder=" " name="Password" id="password"
-							   required="">
+						@Html.LabelFor(Model => Model.Password)
+						@Html.EditorFor(Model => Model.Password)
+						@Html.ValidationMessageFor(Model => Model.Password)
 					</div>
 					<div class="right-w3l">
 						<input type="submit" class="form-control bg-theme" value="Login">
@@ -277,7 +279,7 @@
 							<strong>Đăng Ký Ngay</strong>
 						</a>
 					</p>
-				</form>
+				}
 			</div>
 		</div>
 	</div>
@@ -332,4 +334,7 @@
 		</div>
 	</div>
 </div>
+<script src='@Url.Content("~/Scripts/jquery-1.8.2.js")' type='text/javascript'></script>
+<script src='@Url.Content("~/Scripts/jquery.validate.js")' type='text/javascript'></script>
+<script src='@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")' type='text/javascript'></script>
 <!-- //register modal -->

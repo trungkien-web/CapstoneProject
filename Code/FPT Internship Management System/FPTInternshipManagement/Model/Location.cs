@@ -17,7 +17,6 @@ namespace Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Location()
         {
-            this.Aspirations = new HashSet<Aspiration>();
             this.InterviewSchedules = new HashSet<InterviewSchedule>();
             this.Jobs = new HashSet<Job>();
         }
@@ -26,8 +25,6 @@ namespace Model
         public string City { get; set; }
         public string LocationDetail { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Aspiration> Aspirations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InterviewSchedule> InterviewSchedules { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

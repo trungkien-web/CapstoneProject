@@ -10,10 +10,11 @@
             <PropertyRef Name="AspirationsID" />
           </Key>
           <Property Name="AspirationsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AspirationsName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="JobID" Type="int" Nullable="false" />
           <Property Name="Gender" Type="bit" Nullable="false" />
           <Property Name="Salary" Type="float" Nullable="false" />
-          <Property Name="LocationID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
           <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Departments">
@@ -185,18 +186,6 @@
             </Principal>
             <Dependent Role="Aspirations">
               <PropertyRef Name="JobID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Aspirations_Locations">
-          <End Role="Locations" Type="Self.Locations" Multiplicity="1" />
-          <End Role="Aspirations" Type="Self.Aspirations" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Locations">
-              <PropertyRef Name="LocationID" />
-            </Principal>
-            <Dependent Role="Aspirations">
-              <PropertyRef Name="LocationID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -522,10 +511,6 @@
             <End Role="Jobs" EntitySet="Jobs" />
             <End Role="Aspirations" EntitySet="Aspirations" />
           </AssociationSet>
-          <AssociationSet Name="FK_Aspirations_Locations" Association="Self.FK_Aspirations_Locations">
-            <End Role="Locations" EntitySet="Locations" />
-            <End Role="Aspirations" EntitySet="Aspirations" />
-          </AssociationSet>
           <AssociationSet Name="FK_Feedbacks_FeedbackTypes" Association="Self.FK_Feedbacks_FeedbackTypes">
             <End Role="FeedbackTypes" EntitySet="FeedbackTypes" />
             <End Role="Feedbacks" EntitySet="Feedbacks" />
@@ -637,13 +622,13 @@
             <PropertyRef Name="AspirationsID" />
           </Key>
           <Property Name="AspirationsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AspirationsName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="JobID" Type="Int32" Nullable="false" />
           <Property Name="Gender" Type="Boolean" Nullable="false" />
           <Property Name="Salary" Type="Double" Nullable="false" />
-          <Property Name="LocationID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Job" Relationship="Self.FK_Aspirations_Jobs" FromRole="Aspirations" ToRole="Jobs" />
-          <NavigationProperty Name="Location" Relationship="Self.FK_Aspirations_Locations" FromRole="Aspirations" ToRole="Locations" />
           <NavigationProperty Name="SkillLists" Relationship="Self.FK_SkillList_Aspirations" FromRole="Aspirations" ToRole="SkillList" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Users_Aspirations" FromRole="Aspirations" ToRole="Users" />
         </EntityType>
@@ -724,7 +709,6 @@
           <Property Name="LocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LocationDetail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Aspirations" Relationship="Self.FK_Aspirations_Locations" FromRole="Locations" ToRole="Aspirations" />
           <NavigationProperty Name="InterviewSchedules" Relationship="Self.FK_InterviewSchedules_Locations" FromRole="Locations" ToRole="InterviewSchedules" />
           <NavigationProperty Name="Jobs" Relationship="Self.FK_Jobs_Locations" FromRole="Locations" ToRole="Jobs" />
         </EntityType>
@@ -866,18 +850,6 @@
             </Principal>
             <Dependent Role="Aspirations">
               <PropertyRef Name="JobID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Aspirations_Locations">
-          <End Role="Locations" Type="Self.Location" Multiplicity="1" />
-          <End Role="Aspirations" Type="Self.Aspiration" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Locations">
-              <PropertyRef Name="LocationID" />
-            </Principal>
-            <Dependent Role="Aspirations">
-              <PropertyRef Name="LocationID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1181,7 +1153,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="FptInternshipManagermentEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="FPTInternshipManagermentEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Aspirations" EntityType="Self.Aspiration" />
           <EntitySet Name="Departments" EntityType="Self.Department" />
           <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />
@@ -1201,10 +1173,6 @@
           <EntitySet Name="Users" EntityType="Self.User" />
           <AssociationSet Name="FK_Aspirations_Jobs" Association="Self.FK_Aspirations_Jobs">
             <End Role="Jobs" EntitySet="Jobs" />
-            <End Role="Aspirations" EntitySet="Aspirations" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Aspirations_Locations" Association="Self.FK_Aspirations_Locations">
-            <End Role="Locations" EntitySet="Locations" />
             <End Role="Aspirations" EntitySet="Aspirations" />
           </AssociationSet>
           <AssociationSet Name="FK_SkillList_Aspirations" Association="Self.FK_SkillList_Aspirations">
@@ -1313,15 +1281,16 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FPTInternshipManagermentModelStoreContainer" CdmEntityContainer="FptInternshipManagermentEntities">
+        <EntityContainerMapping StorageEntityContainer="FPTInternshipManagermentModelStoreContainer" CdmEntityContainer="FPTInternshipManagermentEntities">
           <EntitySetMapping Name="Aspirations">
             <EntityTypeMapping TypeName="FPTInternshipManagermentModel.Aspiration">
               <MappingFragment StoreEntitySet="Aspirations">
                 <ScalarProperty Name="AspirationsID" ColumnName="AspirationsID" />
+                <ScalarProperty Name="AspirationsName" ColumnName="AspirationsName" />
                 <ScalarProperty Name="JobID" ColumnName="JobID" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="Salary" ColumnName="Salary" />
-                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>

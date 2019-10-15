@@ -21,7 +21,7 @@ namespace RecruimentSystem.Controllers
         // GET: Common
         public ActionResult Index()
         {
-            using (var Mydb = new FptInternshipManagermentEntities())
+            using (var Mydb = new FPTInternshipManagermentEntities())
             {
                 
 
@@ -143,7 +143,7 @@ namespace RecruimentSystem.Controllers
                     }
                 }
                 sheetName = sheetName.Remove(sheetName.Trim().Length - 1);
-                FptInternshipManagermentEntities ctx = new FptInternshipManagermentEntities();
+                FPTInternshipManagermentEntities ctx = new FPTInternshipManagermentEntities();
                 conString = ctx.Database.Connection.ConnectionString;
                 using (SqlConnection con = new SqlConnection(conString))
                 {

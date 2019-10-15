@@ -22,14 +22,14 @@ namespace Model
         }
     
         public int AspirationsID { get; set; }
+        public string AspirationsName { get; set; }
         public int JobID { get; set; }
         public bool Gender { get; set; }
         public double Salary { get; set; }
-        public int LocationID { get; set; }
+        public string Description { get; set; }
         public string Status { get; set; }
     
         public virtual Job Job { get; set; }
-        public virtual Location Location { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SkillList> SkillLists { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
