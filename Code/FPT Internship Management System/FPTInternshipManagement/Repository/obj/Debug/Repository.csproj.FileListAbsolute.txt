@@ -15,6 +15,9 @@ D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInt
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Repository\obj\Debug\Repository.dll
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Repository\obj\Debug\Repository.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
+=======
 >>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
 =======
 >>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database

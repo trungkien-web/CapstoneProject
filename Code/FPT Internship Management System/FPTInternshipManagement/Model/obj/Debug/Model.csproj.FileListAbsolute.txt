@@ -13,6 +13,9 @@ D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInt
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\obj\Debug\Model.pdb
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\obj\Debug\Model.csprojAssemblyReference.cache
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
+=======
 >>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
 =======
 >>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
