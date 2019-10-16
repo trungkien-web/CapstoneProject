@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+=======
+D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\bin\Debug\Model.dll.config
+D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\bin\Debug\Model.dll
+D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\bin\Debug\Model.pdb
+D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\bin\Debug\EntityFramework.dll
+D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\bin\Debug\EntityFramework.xml
+D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\obj\Debug\Model.dll
+D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\obj\Debug\Model.pdb
+D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\obj\Debug\Model.csprojAssemblyReference.cache
+>>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\bin\Debug\Model.dll.config
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\bin\Debug\Model.dll
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Model\bin\Debug\Model.pdb

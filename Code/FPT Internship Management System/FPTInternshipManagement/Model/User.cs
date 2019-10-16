@@ -33,8 +33,16 @@ namespace Model
         }
     
         public int UserID { get; set; }
+<<<<<<< HEAD
         public string Username { get; set; }
         public string Password { get; set; }
+=======
+		[Required(ErrorMessage = "Please enter Username")]
+        public string Username { get; set; }
+		[Required(ErrorMessage = "Please enter Password")]
+		[DataType(DataType.Password)]
+		public string Password { get; set; }
+>>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
         public string Name { get; set; }
         public Nullable<int> Phone { get; set; }
         public Nullable<System.DateTime> DOB { get; set; }

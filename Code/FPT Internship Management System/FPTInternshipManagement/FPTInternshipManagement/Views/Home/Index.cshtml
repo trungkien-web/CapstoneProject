@@ -249,6 +249,7 @@
 			<div class="modal-body">
 				@using (Html.BeginForm("Autherize","Login", FormMethod.Post))
 				{
+<<<<<<< HEAD
                 <div class="form-group">
                     <label for="recipient-name" class="col-form-label">Họ Tên</label>
                     class="form-control"
@@ -268,6 +269,18 @@
 						@Html.LabelFor(Model => Model.Password)
 						@Html.EditorFor(Model => Model.Password)
 						@Html.ValidationMessageFor(Model => Model.Password)
+=======
+					@Html.ValidationSummary(true)
+					<div class="form-group">
+						@Html.LabelFor(Model => Model.Username)<br>
+						@Html.EditorFor(Model => Model.Username, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(Model => Model.Username, "", new { @class = "text-danger" })
+					</div>
+					<div class="form-group">
+						@Html.LabelFor(Model => Model.Password)<br>
+						@Html.EditorFor(Model => Model.Password, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(Model => Model.Password, "", new { @class = "text-danger" })
+>>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
 					</div>
 					<div class="right-w3l">
 						<input type="submit" class="form-control bg-theme" value="Login">
