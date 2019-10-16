@@ -24,12 +24,15 @@ namespace FPTInternshipManagement.Controllers.Login
 				if(userDetails == null)
 				{
 <<<<<<< HEAD
+<<<<<<< HEAD
 					ViewBag.ErrorMessage = "Login Fail";
 					return Redirect("/Home");
 				}
 			}
 			return View();
 =======
+=======
+>>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
 					TempData["Script"] = "<script>$(document).ready(function() {$('#exampleModal').modal('show');});</script>";
 					ViewBag.MessageError = "Login Error!";
 					return RedirectToAction("Index", "Home");
@@ -38,6 +41,9 @@ namespace FPTInternshipManagement.Controllers.Login
 					return Redirect("/Recruiter");
 				}
 			}
+<<<<<<< HEAD
+>>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
+=======
 >>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
 		}
 	}

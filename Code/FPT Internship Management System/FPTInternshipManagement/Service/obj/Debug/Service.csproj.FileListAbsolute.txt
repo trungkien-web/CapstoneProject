@@ -8,7 +8,10 @@ D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTI
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.dll
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Service.dll
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Service.pdb
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Repository.dll
@@ -23,6 +26,9 @@ D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInt
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.csproj.CopyComplete
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.dll
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\obj\Debug\Service.pdb
+<<<<<<< HEAD
+>>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
+=======
 >>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\Model.dll
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Service\bin\Debug\EntityFramework.dll
