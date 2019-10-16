@@ -4,11 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Helper;
+using Service;
+using FPTInternshipManagement.Common;
 
 namespace FPTInternshipManagement.Controllers.Login
 {
     public class LoginController : Controller
     {
+		
         // GET: Login
         public ActionResult Index()
         {
@@ -18,19 +22,35 @@ namespace FPTInternshipManagement.Controllers.Login
 		[HttpPost]
 		public ActionResult Autherize(User user)
 		{
-			using (FPTInternshipManagermentEntities db = new FPTInternshipManagermentEntities())
+			ILoginService service = new LoginService();
+			string role = service.GetRole(user);
+			if(role == null)
 			{
-				var userDetails = db.Users.Where(x => x.Username == user.Username && x.Password == user.Password).FirstOrDefault();
-				if(userDetails == null)
-				{
-					TempData["Script"] = "<script>$(document).ready(function() {$('#exampleModal').modal('show');});</script>";
-					ViewBag.MessageError = "Login Error!";
-					return RedirectToAction("Index", "Home");
-				} else
-				{
-					return Redirect("/Recruiter");
-				}
+				TempData["Script"] = "<script>$(document).ready(function() {$('#exampleModal').modal('show');});</script>";
+				TempData["LoginErrorMessage"] = user.LoginErrorMessage;
+				return RedirectToAction("Index", "Home");
+			} else
+			{
+				SessionHelper.SetSession(new UserSession { UserID = user.UserID, Name = user.Name , Role = role});
 			}
+			if(role == CommonConstants.RECRUITER_ROLE)
+			{
+				return Redirect("/Recruiter");
+			} else if(role == CommonConstants.ADMIN_ROLE)
+			{
+				return Redirect("/Admin");
+			} else if(role == CommonConstants.STUDENT_ROLE)
+			{
+				return Redirect("/Student");
+			}
+			return RedirectToAction("Index", "Home");
 		}
+
+		public ActionResult Logout()
+		{
+			Session.Abandon();
+			return RedirectToAction("Index", "Home");
+		}
+
 	}
 }

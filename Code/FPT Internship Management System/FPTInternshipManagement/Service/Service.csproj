@@ -45,11 +45,17 @@
     <Compile Include="Common\ICommonService.cs" />
     <Compile Include="DepartmentService.cs" />
     <Compile Include="IDepartmentService.cs" />
+    <Compile Include="ILoginService.cs" />
+    <Compile Include="LoginService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recruiter\IRecruiterService.cs" />
     <Compile Include="Recruiter\RecruiterService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{6E6D082E-176B-40F3-9B66-FE49303F07C1}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Repository\Repository.csproj">
       <Project>{23d64441-deab-4148-9839-c30f35eb0360}</Project>
       <Name>Repository</Name>
