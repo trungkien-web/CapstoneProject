@@ -1,11 +1,12 @@
-﻿using Helper;
+﻿using FPTInternshipManagement.Common;
+using Helper;
 using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FPTInternshipManagement.Common
+namespace Repository.Common
 {
 	public static class CommonSession
 	{

@@ -1,10 +1,12 @@
-﻿using FPTInternshipManagement.Common;
+﻿
+using FPTInternshipManagement.Common;
 using Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Repository.Common;
 
 namespace FPTInternshipManagement.Controllers.Admin
 {

@@ -10,39 +10,51 @@ using FPTInternshipManagement.Common;
 
 namespace FPTInternshipManagement.Controllers.Login
 {
-    public class LoginController : Controller
-    {
-		
-        // GET: Login
-        public ActionResult Index()
-        {
-            return View();
-        }
+	public class LoginController : Controller
+	{
+
+		// GET: Login
+		public ActionResult Index()
+		{
+			return View();
+		}
 
 		[HttpPost]
 		public ActionResult Autherize(User user)
 		{
 			ILoginService service = new LoginService();
-			string role = service.GetRole(user);
-			if(role == null)
+			try
 			{
-				TempData["Script"] = "<script>$(document).ready(function() {$('#exampleModal').modal('show');});</script>";
-				TempData["LoginErrorMessage"] = user.LoginErrorMessage;
-				return RedirectToAction("Index", "Home");
-			} else
-			{
-				SessionHelper.SetSession(new UserSession { UserID = user.UserID, Name = user.Name , Role = role});
+				string role = service.GetRole(user);
+				if (role == null)
+				{
+					TempData["Script"] = "<script>$(document).ready(function() {$('#exampleModal').modal('show');});</script>";
+					TempData["LoginErrorMessage"] = user.LoginErrorMessage;
+					return RedirectToAction("Index", "Home");
+				}
+				else
+				{
+					SessionHelper.SetSession(new UserSession { UserID = user.UserID, Name = user.Name, Role = role });
+				}
+				if (role == CommonConstants.RECRUITER_ROLE)
+				{
+					return Redirect("/Recruiter");
+				}
+				else if (role == CommonConstants.ADMIN_ROLE)
+				{
+					return Redirect("/Admin");
+				}
+				else if (role == CommonConstants.STUDENT_ROLE)
+				{
+					return Redirect("/Student");
+				}
 			}
-			if(role == CommonConstants.RECRUITER_ROLE)
+			catch (Exception ex)
 			{
-				return Redirect("/Recruiter");
-			} else if(role == CommonConstants.ADMIN_ROLE)
-			{
-				return Redirect("/Admin");
-			} else if(role == CommonConstants.STUDENT_ROLE)
-			{
-				return Redirect("/Student");
+				TempData["ErrorMessgae"] = ex.Message;
+				return RedirectToAction("Index", "Error");
 			}
+
 			return RedirectToAction("Index", "Home");
 		}
 

@@ -11,5 +11,7 @@ namespace FPTInternshipManagement.Common
 		public static string ADMIN_ROLE = "Admin";
 		public static string STUDENT_ROLE = "Student";
 		public static string SESSION_LOGGED = "loggeduser";
+		public static string ACCOUNT_ACTIVATED = "Activated";
+		public static string ACCOUNT_NOT_ACTIVATED = "Not Activated";
 	}
 }

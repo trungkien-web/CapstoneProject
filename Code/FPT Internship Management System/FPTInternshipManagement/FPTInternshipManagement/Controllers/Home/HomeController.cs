@@ -12,8 +12,10 @@ namespace FPTInternshipManagement.Controllers
 		public ActionResult Index()
 		{
 			IDepartmentService departmentService = new DepartmentService();
+			IRateService rateService = new RateService();
 			Dictionary<string, string> keyValues= departmentService.GetToDictionaryHome();
 			ViewBag.KeyValues = keyValues;
+			ViewBag.TopRecruiter = rateService.GetTopRecruiter();
 			return View();
 		}
 	}

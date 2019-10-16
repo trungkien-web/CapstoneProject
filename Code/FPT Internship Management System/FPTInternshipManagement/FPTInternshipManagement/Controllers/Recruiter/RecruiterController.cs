@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using FPTInternshipManagement.Common;
+using Repository.Common;
 
 namespace FPTInternshipManagement.Controllers.Recruiter
 {
