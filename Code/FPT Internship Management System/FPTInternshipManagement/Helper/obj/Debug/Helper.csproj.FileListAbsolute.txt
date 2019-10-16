@@ -1,0 +1,5 @@
+D:\Capstone Project\CapstoneProject-c05c8c11c2f15eaf24fb734bd457a8170b37ddd1\Code\FPT Internship Management System\FPTInternshipManagement\Helper\bin\Debug\Helper.dll
+D:\Capstone Project\CapstoneProject-c05c8c11c2f15eaf24fb734bd457a8170b37ddd1\Code\FPT Internship Management System\FPTInternshipManagement\Helper\bin\Debug\Helper.pdb
+D:\Capstone Project\CapstoneProject-c05c8c11c2f15eaf24fb734bd457a8170b37ddd1\Code\FPT Internship Management System\FPTInternshipManagement\Helper\obj\Debug\Helper.csproj.CoreCompileInputs.cache
+D:\Capstone Project\CapstoneProject-c05c8c11c2f15eaf24fb734bd457a8170b37ddd1\Code\FPT Internship Management System\FPTInternshipManagement\Helper\obj\Debug\Helper.dll
+D:\Capstone Project\CapstoneProject-c05c8c11c2f15eaf24fb734bd457a8170b37ddd1\Code\FPT Internship Management System\FPTInternshipManagement\Helper\obj\Debug\Helper.pdb

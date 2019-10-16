@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FPTInternshipManagement.Common;
+using Helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,14 @@ namespace FPTInternshipManagement.Controllers.Student
         // GET: Student
         public ActionResult Index()
         {
-            return View();
+			if (CommonSession.SESSION_ROLE_STUDENT())
+			{
+				return View();
+			}
+			else
+			{
+				return RedirectToAction("Index", "Home");
+			}
         }
 
         // GET: Student/Details/5

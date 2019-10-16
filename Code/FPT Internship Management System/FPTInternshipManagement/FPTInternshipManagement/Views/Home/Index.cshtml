@@ -192,49 +192,12 @@
 					</div>
 				}
 			}
-
-			@*<div class="col-lg-4 col-sm-6 wthreepvt-pos-grids  border-left border-right my-sm-0 my-5">
-						<div class="p-md-5 p-sm-3">
-							<span class="fa fa-suitcase" aria-hidden="true"></span>
-							<h4 class="mt-2 mb-3">Marketing</h4>
-							<p>SEO, Google Ads, Facebook Ads, Tiktok Ads, Zalo Ads</p>
-						</div>
-					</div>
-					<div class="col-lg-4 wthreepvt-pos-grids">
-						<div class="p-md-5 p-sm-3">
-							<span class="fa fa-thumbs-up" aria-hidden="true"></span>
-							<h4 class="mt-2 mb-3">Tài Chính - Ngân Hàng</h4>
-							<p>Kiểm Định, Tín dụng, Chăm sóc khách hàng, kế toán...</p>
-						</div>
-					</div>
-				</div>
-				<div class="wthreepvt-pos-row border-top row text-center pb-lg-5 pt-md-0 pt-5 mt-md-0 mt-sm-5 mt-4">
-					<div class="col-lg-4 col-sm-6 wthreepvt-pos-grids">
-						<div class="p-md-5 p-sm-3 col-label">
-							<span class="fa fa-thumb-tack" aria-hidden="true"></span>
-							<h4 class="mt-2 mb-3">Bảo Hiểm</h4>
-							<p>Chăm sóc khách hàng, Hoạch đinh tài chính, Tư Vấn, Hành chính...</p>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6 wthreepvt-pos-grids mt-lg-0 mt-md-3 border-left border-right pt-sm-0 pt-5">
-						<div class="p-md-5 p-sm-3 col-label">
-							<span class="fa fa-external-link" aria-hidden="true"></span>
-							<h4 class="mt-2 mb-3">Cơ Khí - Chế Tạo</h4>
-							<p>Kỹ thuật, Bảo trì, Thiết kế, Lắp ráp...</p>
-						</div>
-					</div>
-					<div class="col-lg-4 wthreepvt-pos-grids pt-md-0 pt-5">
-						<div class="p-md-5 p-sm-3 col-label">
-							<span class="fa fa-cog" aria-hidden="true"></span>
-							<h4 class="mt-2 mb-3">Designer</h4>
-							<p>Logo, Bao bì, In ấn, 3D , 2D ....</p>
-						</div>
-					</div>*@
 		</div>
 	</div>
 </div>
 <!-- //job roles -->
 <!-- login modal -->
+
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 	 aria-hidden="true">
@@ -246,52 +209,26 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
+
 			<div class="modal-body">
-				@using (Html.BeginForm("Autherize","Login", FormMethod.Post))
+				@using (Html.BeginForm("Autherize", "Login", FormMethod.Post, new { @id = "login-form" }))
 				{
-<<<<<<< HEAD
-                <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Họ Tên</label>
-                    class="form-control"
-                    @Html.LabelFor(Model => Model.Username)
-
-                    @Html.EditorFor(Model => Model.Username, "", new { @class = "form-control" })
-                    @Html.ValidationMessageFor(Model => Model.Username)
-
-
-
-
-
-                    @Html.TextBoxFor(Model => Model.Username, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(Model => Model.Username)
-                </div>
-					<div class="form-control" style="width: 500px; background:red;">
-						@Html.LabelFor(Model => Model.Password)
-						@Html.EditorFor(Model => Model.Password)
-						@Html.ValidationMessageFor(Model => Model.Password)
-=======
 					@Html.ValidationSummary(true)
+					<label class="text-danger">@TempData["LoginErrorMessage"]</label>
 					<div class="form-group">
-						@Html.LabelFor(Model => Model.Username)<br>
+						<label for="recipient-name" class="col-form-label">Tên tài khoản</label>
 						@Html.EditorFor(Model => Model.Username, new { htmlAttributes = new { @class = "form-control" } })
 						@Html.ValidationMessageFor(Model => Model.Username, "", new { @class = "text-danger" })
 					</div>
 					<div class="form-group">
-						@Html.LabelFor(Model => Model.Password)<br>
+						<label for="password" class="col-form-label">Mật khẩu</label>
 						@Html.EditorFor(Model => Model.Password, new { htmlAttributes = new { @class = "form-control" } })
 						@Html.ValidationMessageFor(Model => Model.Password, "", new { @class = "text-danger" })
->>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
 					</div>
 					<div class="right-w3l">
-						<input type="submit" class="form-control bg-theme" value="Login">
+						<input type="submit" class="form-control bg-theme" value="Đăng Nhập">
 					</div>
 					<div class="row sub-w3l my-3">
-						<div class="col sub-w3ltd">
-							<input type="checkbox" id="brand1" value="">
-							<label for="brand1" class="text-dark">
-								<span></span>Ghi nhớ
-							</label>
-						</div>
 						<div class="col forgot-w3l text-right">
 							<a href="#" class="text-dark">Quên mật khẩu?</a>
 						</div>
@@ -357,7 +294,5 @@
 		</div>
 	</div>
 </div>
-<script src='@Url.Content("~/Scripts/jquery-1.8.2.js")' type='text/javascript'></script>
-<script src='@Url.Content("~/Scripts/jquery.validate.js")' type='text/javascript'></script>
-<script src='@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")' type='text/javascript'></script>
+@Html.Raw(TempData["Script"])
 <!-- //register modal -->

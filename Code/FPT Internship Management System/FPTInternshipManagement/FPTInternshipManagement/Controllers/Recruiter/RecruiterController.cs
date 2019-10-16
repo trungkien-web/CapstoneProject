@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FPTInternshipManagement.Common;
 
 namespace FPTInternshipManagement.Controllers.Recruiter
 {
@@ -11,7 +13,14 @@ namespace FPTInternshipManagement.Controllers.Recruiter
         // GET: Recruiter
         public ActionResult Index()
         {
-            return View();
+			if (CommonSession.SESSION_ROLE_RECRUITMENT())
+			{
+				return View();
+			}
+			else
+			{
+				return RedirectToAction("Index","Home");
+			}
         }
 		public ActionResult PublishedRecruitment()
 		{
