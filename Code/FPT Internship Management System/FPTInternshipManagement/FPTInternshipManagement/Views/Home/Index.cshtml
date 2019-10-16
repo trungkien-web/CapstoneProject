@@ -249,12 +249,22 @@
 			<div class="modal-body">
 				@using (Html.BeginForm("Autherize","Login", FormMethod.Post))
 				{
-					<div class="form-group">
-						@Html.LabelFor(Model => Model.Username)
-						@Html.EditorFor(Model => Model.Username)
-						@Html.ValidationMessageFor(Model => Model.Username)
-					</div>
-					<div class="form-group">
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Họ Tên</label>
+                    class="form-control"
+                    @Html.LabelFor(Model => Model.Username)
+
+                    @Html.EditorFor(Model => Model.Username, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(Model => Model.Username)
+
+
+
+
+
+                    @Html.TextBoxFor(Model => Model.Username, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(Model => Model.Username)
+                </div>
+					<div class="form-control" style="width: 500px; background:red;">
 						@Html.LabelFor(Model => Model.Password)
 						@Html.EditorFor(Model => Model.Password)
 						@Html.ValidationMessageFor(Model => Model.Password)
