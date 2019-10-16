@@ -23,11 +23,14 @@ namespace FPTInternshipManagement.Controllers.Login
 				var userDetails = db.Users.Where(x => x.Username == user.Username && x.Password == user.Password).FirstOrDefault();
 				if(userDetails == null)
 				{
-					ViewBag.ErrorMessage = "Login Fail";
-					return Redirect("/Home");
+					TempData["Script"] = "<script>$(document).ready(function() {$('#exampleModal').modal('show');});</script>";
+					ViewBag.MessageError = "Login Error!";
+					return RedirectToAction("Index", "Home");
+				} else
+				{
+					return Redirect("/Recruiter");
 				}
 			}
-			return View();
 		}
 	}
 }
