@@ -14,13 +14,6 @@ D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInt
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Repository\obj\Debug\Repository.csproj.CopyComplete
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Repository\obj\Debug\Repository.dll
 D:\Capstone Project\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Repository\obj\Debug\Repository.pdb
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
-=======
->>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
-=======
->>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Repository\bin\Debug\Repository.dll
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Repository\bin\Debug\Repository.pdb
 D:\FU\CapstoneProject\CapstoneProject\Code\FPT Internship Management System\FPTInternshipManagement\Repository\bin\Debug\EntityFramework.dll

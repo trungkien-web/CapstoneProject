@@ -33,16 +33,6 @@ namespace Model
         }
     
         public int UserID { get; set; }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        public string Username { get; set; }
-        public string Password { get; set; }
-=======
-=======
->>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
-=======
->>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
 		[Required(ErrorMessage = "Please enter Username")]
         public string Username { get; set; }
 		[Required(ErrorMessage = "Please enter Password")]

@@ -23,19 +23,6 @@ namespace FPTInternshipManagement.Controllers.Login
 				var userDetails = db.Users.Where(x => x.Username == user.Username && x.Password == user.Password).FirstOrDefault();
 				if(userDetails == null)
 				{
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-					ViewBag.ErrorMessage = "Login Fail";
-					return Redirect("/Home");
-				}
-			}
-			return View();
-=======
-=======
->>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
-=======
->>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
 					TempData["Script"] = "<script>$(document).ready(function() {$('#exampleModal').modal('show');});</script>";
 					ViewBag.MessageError = "Login Error!";
 					return RedirectToAction("Index", "Home");
@@ -44,13 +31,6 @@ namespace FPTInternshipManagement.Controllers.Login
 					return Redirect("/Recruiter");
 				}
 			}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
-=======
->>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
-=======
->>>>>>> parent of c05c8c1... DUCDD_Commit Code_Update Database
 		}
 	}
 }
