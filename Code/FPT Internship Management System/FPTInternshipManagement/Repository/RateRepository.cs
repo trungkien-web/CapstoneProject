@@ -45,7 +45,7 @@ namespace Repository
 
 		public List<User> GetTopRecruiter()
 		{
-			var idList = CalRate().OrderByDescending(x => x.Value).Select(p => p.Key).ToList().Take(6);
+			var idList = CalRate().OrderBy(x => x.Value).Select(p => p.Key).ToList().Take(6);
 			List<User> list = new List<User>();
 			var listUsers = CommonUser.GET_ALL_USER();
 			foreach(int id in idList)
