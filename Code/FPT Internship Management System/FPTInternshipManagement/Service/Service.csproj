@@ -46,8 +46,10 @@
     <Compile Include="DepartmentService.cs" />
     <Compile Include="IDepartmentService.cs" />
     <Compile Include="ILoginService.cs" />
+    <Compile Include="IRateService.cs" />
     <Compile Include="LoginService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RateService.cs" />
     <Compile Include="Recruiter\IRecruiterService.cs" />
     <Compile Include="Recruiter\RecruiterService.cs" />
   </ItemGroup>
