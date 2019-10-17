@@ -121,10 +121,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Common\CommonConstants.cs" />
-    <Compile Include="Common\CommonSession.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\Common\CommonController.cs" />
+    <Compile Include="Controllers\Error\ErrorController.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
     <Compile Include="Controllers\Login\LoginController.cs" />
     <Compile Include="Controllers\Recruiter\RecruiterController.cs" />
@@ -195,6 +194,7 @@
     <Content Include="Views\Recruiter\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Helper\Helper.csproj">
@@ -204,6 +204,10 @@
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{6e6d082e-176b-40f3-9b66-fe49303f07c1}</Project>
       <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{23d64441-deab-4148-9839-c30f35eb0360}</Project>
+      <Name>Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{a4e414f4-576f-45cd-8401-237137db1d3b}</Project>
