@@ -13,5 +13,6 @@ namespace FPTInternshipManagement.Common
 		public static string SESSION_LOGGED = "loggeduser";
 		public static string ACCOUNT_ACTIVATED = "Activated";
 		public static string ACCOUNT_NOT_ACTIVATED = "Not Activated";
+		public static string JOB_STATUS_AVAILABLE = "Available";
 	}
 }

@@ -12,5 +12,7 @@ namespace Repository
 		List<Rate> GetAllRates();
 		Dictionary<int,double> CalRate();
 		List<User> GetTopRecruiter();
+		Dictionary<User,int> GetTotalJobByRecruiter();
+		Dictionary<User, string> GetLocaltionByRecruiter();
 	}
 }
