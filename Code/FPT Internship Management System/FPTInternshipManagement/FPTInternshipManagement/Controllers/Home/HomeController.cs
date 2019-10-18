@@ -15,7 +15,8 @@ namespace FPTInternshipManagement.Controllers
 			IRateService rateService = new RateService();
 			Dictionary<string, string> keyValues= departmentService.GetToDictionaryHome();
 			ViewBag.KeyValues = keyValues;
-			ViewBag.TopRecruiter = rateService.GetTopRecruiter();
+			ViewBag.TopRecruiter = rateService.GetTotalJobByRecruiter();
+			ViewBag.TopLocation = rateService.GetLocaltionByRecruiter();
 			return View();
 		}
 	}

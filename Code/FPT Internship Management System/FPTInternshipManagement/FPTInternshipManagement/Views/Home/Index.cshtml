@@ -160,14 +160,15 @@
 		</div>
 		<ul class="list-unstyled py-md-5 py-3 partners-icon text-center">
 			@{
-				var ListRecruiter = ViewBag.TopRecruiter;
-				foreach (var user in ListRecruiter)
-				{
+					var ListRecruiter = ViewBag.TopRecruiter;
+					var Location = ViewBag.TopLocation;
+					foreach (var user in ListRecruiter)
+					{
 					<li>
 						<a href="https://www.google.com/">
 							<span class="fa fa-twitter-square" aria-hidden="true"></span>
-							<p>@user.Name</p>
-							<p>3 Jobs - Ha Noi</p>
+							<p>@user.Key.Name</p>
+							<p>@user.Value Job - @Location[user.Key]</p>
 						</a>
 					</li>
 				}
