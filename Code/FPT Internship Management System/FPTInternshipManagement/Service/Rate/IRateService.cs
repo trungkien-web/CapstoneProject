@@ -9,6 +9,8 @@ namespace Service
 {
 	public interface IRateService
 	{
-		List<User> GetTopRecruiter();
+		//List<User> GetTopRecruiter();
+		Dictionary<User, int> GetTotalJobByRecruiter();
+		Dictionary<User, string> GetLocaltionByRecruiter();
 	}
 }

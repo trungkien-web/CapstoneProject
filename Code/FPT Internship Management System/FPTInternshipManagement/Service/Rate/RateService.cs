@@ -10,10 +10,21 @@ namespace Service
 {
 	public class RateService : IRateService
 	{
-		public List<User> GetTopRecruiter()
+		IRateRepository repository = new RateRepository();
+
+		public Dictionary<User, string> GetLocaltionByRecruiter()
 		{
-			IRateRepository repository = new RateRepository();
-			return repository.GetTopRecruiter();
+			return repository.GetLocaltionByRecruiter();
+		}
+
+		//public List<User> GetTopRecruiter()
+		//{
+		//	
+		//	return repository.GetTopRecruiter();
+		//}
+		public Dictionary<User, int> GetTotalJobByRecruiter()
+		{
+			return repository.GetTotalJobByRecruiter();
 		}
 	}
 }
