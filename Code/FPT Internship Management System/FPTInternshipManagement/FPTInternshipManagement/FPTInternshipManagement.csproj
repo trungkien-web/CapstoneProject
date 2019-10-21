@@ -147,6 +147,7 @@
     <Content Include="Assets\images\bg1.jpg" />
     <Content Include="Assets\images\bg2.jpg" />
     <Content Include="Assets\images\bg3.jpg" />
+    <Content Include="Assets\images\google_logo.png" />
     <Content Include="Assets\images\inner.jpg" />
     <Content Include="Assets\images\move-top.png" />
     <Content Include="Assets\images\services.jpg" />

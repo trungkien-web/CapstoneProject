@@ -160,97 +160,20 @@
 		</div>
 		<ul class="list-unstyled py-md-5 py-3 partners-icon text-center">
 			@{
-					var ListRecruiter = ViewBag.TopRecruiter;
-					var Location = ViewBag.TopLocation;
-					foreach (var user in ListRecruiter)
-					{
+				var ListRecruiter = ViewBag.TopRecruiter;
+				var Location = ViewBag.TopLocation;
+				var Image = ViewBag.TopImage;
+				foreach (var user in ListRecruiter)
+				{
 					<li>
 						<a href="https://www.google.com/">
-							<span class="fa fa-twitter-square" aria-hidden="true"></span>
+							<img style="width: 100px;" src="@Url.Content(Image[user.Key])" alt="" />							
 							<p>@user.Key.Name</p>
 							<p>@user.Value Job - @Location[user.Key]</p>
 						</a>
 					</li>
 				}
 			}
-			@*<li>
-				<a href="https://www.google.com/">
-					<span class="fa fa-twitter-square" aria-hidden="true"></span>
-					<p>JCB Company</p>
-					<p>3 Jobs - Ha Noi</p>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.google.com/">
-					<span class="fa fa-facebook-square" aria-hidden="true"></span>
-					<p>JCB Company</p>
-					<p>3 Jobs - Ha Noi</p>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.google.com/">
-					<span class="fa fa-behance-square" aria-hidden="true"></span>
-					<p>JCB Company</p>
-					<p>3 Jobs - Ha Noi</p>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.google.com/">
-					<span class="fa fa-google-plus-square" aria-hidden="true"></span>
-					<p>JCB Company</p>
-					<p>3 Jobs - Ha Noi</p>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.google.com/">
-					<span class="fa fa-cc-stripe" aria-hidden="true"></span>
-					<p>JCB Company</p>
-					<p>3 Jobs - Ha Noi</p>
-				</a>
-			</li>
-
-		</ul>
-		<ul class="list-unstyled py-md-5 py-3 partners-icon text-center">
-			<li>
-				<a href="https://www.google.com/">
-					<span class="fa fa-twitter-square" aria-hidden="true"></span>
-					<p>JCB Company</p>
-					<p>3 Jobs - Ha Noi</p>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.google.com/">
-					<span class="fa fa-facebook-square" aria-hidden="true"></span>
-					<p>JCB Company</p>
-					<p>3 Jobs - Ha Noi</p>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.google.com/">
-					<span class="fa fa-behance-square" aria-hidden="true"></span>
-					<p>JCB Company</p>
-					<p>3 Jobs - Ha Noi</p>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.google.com/">
-					<span class="fa fa-google-plus-square" aria-hidden="true"></span>
-					<p>JCB Company</p>
-					<p>3 Jobs - Ha Noi</p>
-				</a>
-			</li>
-
-
-			<li>
-				<a href="https://www.google.com/">
-					<span class="fa fa-cc-jcb" aria-hidden="true"></span>
-					<p>JCB Company</p>
-					<p>3 Jobs - Ha Noi</p>
-				</a>
-			</li>
-		</ul>*@
-
-		<p style="text-align: center;"><button type="button" class="btn btn-primary">See more</button></p>
 		<br>
 	</div>
 </div>

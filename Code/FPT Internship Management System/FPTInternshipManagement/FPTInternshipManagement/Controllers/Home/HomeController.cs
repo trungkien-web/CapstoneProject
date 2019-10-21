@@ -17,6 +17,7 @@ namespace FPTInternshipManagement.Controllers
 			ViewBag.KeyValues = keyValues;
 			ViewBag.TopRecruiter = rateService.GetTotalJobByRecruiter();
 			ViewBag.TopLocation = rateService.GetLocaltionByRecruiter();
+			ViewBag.TopImage = rateService.GetImageByRecruiter();
 			return View();
 		}
 	}
