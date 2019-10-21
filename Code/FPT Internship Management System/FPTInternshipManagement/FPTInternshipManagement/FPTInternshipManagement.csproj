@@ -139,6 +139,7 @@
     <Content Include="Assets\css\font-awesome.min.css" />
     <Content Include="Assets\css\style_recruiment.css" />
     <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\css\style_student.css" />
     <Content Include="Assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\images\b1.jpg" />
     <Content Include="Assets\images\b2.jpg" />
@@ -196,6 +197,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Student\MyProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Helper\Helper.csproj">
