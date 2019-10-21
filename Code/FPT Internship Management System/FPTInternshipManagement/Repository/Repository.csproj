@@ -58,6 +58,8 @@
     <Compile Include="Common\ICommonRepository.cs" />
     <Compile Include="Department\DepartmentRepository.cs" />
     <Compile Include="Department\IDepartmentRepository.cs" />
+    <Compile Include="Image\IImageRepository.cs" />
+    <Compile Include="Image\ImageRepository.cs" />
     <Compile Include="Location\ILocationRepository.cs" />
     <Compile Include="Location\LocationRepository.cs" />
     <Compile Include="Login\ILoginRepository.cs" />

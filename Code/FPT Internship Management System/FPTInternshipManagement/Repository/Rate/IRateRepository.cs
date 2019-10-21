@@ -14,5 +14,6 @@ namespace Repository
 		List<User> GetTopRecruiter();
 		Dictionary<User,int> GetTotalJobByRecruiter();
 		Dictionary<User, string> GetLocaltionByRecruiter();
+		Dictionary<User, string> GetImageByRecruiter();
 	}
 }

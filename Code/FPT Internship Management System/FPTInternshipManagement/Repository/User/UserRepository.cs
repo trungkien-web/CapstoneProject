@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-	class UserRepository
+	class UserRepository : IUserRepository
 	{
 		FPTInternshipManagermentEntities ctx = new FPTInternshipManagermentEntities();
 		public User GetUserById(int id)

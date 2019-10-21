@@ -12,8 +12,9 @@ namespace Repository
 	public class RateRepository : IRateRepository
 	{
 		FPTInternshipManagermentEntities ctx = new FPTInternshipManagermentEntities();
-		UserRepository userRepository = new UserRepository();
-		LocationRepository locationRepository = new LocationRepository();
+		IUserRepository userRepository = new UserRepository();
+		ILocationRepository locationRepository = new LocationRepository();
+		IImageRepository imageRepository = new ImageRepository();
 		public Dictionary<int, double> CalRate()
 		{
 			List<Rate> rates = GetAllRates();
@@ -46,6 +47,19 @@ namespace Repository
 			return list;
 		}
 
+		public Dictionary<User, string> GetImageByRecruiter()
+		{
+			List<User> list = GetTopRecruiter();
+			Dictionary<User, string> keyValuePairs = new Dictionary<User, string>();
+			foreach (User user in list)
+			{
+				int id = (int)user.ImageID;
+				Image image = imageRepository.GetImageById(id);
+				keyValuePairs.Add(user, image.Path);
+			}
+			return keyValuePairs;
+		}
+
 		public Dictionary<User, string> GetLocaltionByRecruiter()
 		{
 			List<User> list = GetTopRecruiter();
@@ -53,7 +67,6 @@ namespace Repository
 			foreach (User user in list)
 			{
 				int id = (int) user.LocationID;
-				var count = ctx.Jobs.Where(j => j.RecruiterID == user.UserID && j.Status == CommonConstants.JOB_STATUS_AVAILABLE).Count();
 				Location location = locationRepository.GetLocationById(id);
 				keyValuePairs.Add(user, location.City);
 			}
