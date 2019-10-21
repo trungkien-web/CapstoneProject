@@ -12,6 +12,11 @@ namespace Service
 	{
 		IRateRepository repository = new RateRepository();
 
+		public Dictionary<User, string> GetImageByRecruiter()
+		{
+			return repository.GetImageByRecruiter();
+		}
+
 		public Dictionary<User, string> GetLocaltionByRecruiter()
 		{
 			return repository.GetLocaltionByRecruiter();
