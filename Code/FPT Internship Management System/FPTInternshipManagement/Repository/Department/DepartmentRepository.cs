@@ -10,6 +10,7 @@ namespace Repository
 	public class DepartmentRepository : IDepartmentRepository
 	{
 		FPTInternshipManagermentEntities ctx = new FPTInternshipManagermentEntities();
+		ISkillRepository skillRepository = new SkillRepository();
 		public List<Department> GetAllDepartments()
 		{
 			var list = ctx.Departments.ToList();
@@ -22,29 +23,14 @@ namespace Repository
 			return department;
 		}
 
-		public Skill GetSkillById(int id)
-		{
-			var skill = ctx.Skills.Where(s => s.SkillID == id).FirstOrDefault<Skill>();
-			return skill;
-		}
-
-		public List<Skill> GetSkillsByDepartmentId(int id)
-		{
-			List<Skill> skills = new List<Skill>();
-			var skillList = ctx.SkillLists.Where(s => s.DepartmentID == id).ToList();
-			foreach(SkillList sl  in skillList)
-			{
-				skills.Add(GetSkillById(sl.SkillID));
-			}
-			return skills;
-		}
+		
 
 		public Dictionary<int, List<Skill>> GetToDictionary()
 		{
 			Dictionary<int, List<Skill>> keyValuePairs = new Dictionary<int, List<Skill>>();
 			foreach (Department department in GetAllDepartments())
 			{
-				keyValuePairs.Add(department.DepartmentID, GetSkillsByDepartmentId(department.DepartmentID));
+				keyValuePairs.Add(department.DepartmentID, skillRepository.GetSkillsByDepartmentId(department.DepartmentID));
 			}
 			return keyValuePairs;
 		}

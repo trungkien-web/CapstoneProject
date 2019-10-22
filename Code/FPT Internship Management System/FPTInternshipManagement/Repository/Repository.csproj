@@ -69,6 +69,8 @@
     <Compile Include="Rate\RateRepository.cs" />
     <Compile Include="Recruiter\IRecruiterRepository.cs" />
     <Compile Include="Recruiter\RecruiterRepository.cs" />
+    <Compile Include="Skill\ISkillRepository.cs" />
+    <Compile Include="Skill\SkillRepository.cs" />
     <Compile Include="User\IUserRepository.cs" />
     <Compile Include="User\UserRepository.cs" />
   </ItemGroup>

@@ -11,8 +11,6 @@ namespace Repository
 	{
 		List<Department> GetAllDepartments();
 		Dictionary<int, List<Skill>> GetToDictionary();
-		List<Skill> GetSkillsByDepartmentId(int id);
-		Skill GetSkillById(int id);
 		Department GetDepartmentById(int id);
 		Dictionary<string, string> GetToDictionaryHome();
 	}
