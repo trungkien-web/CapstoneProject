@@ -1,4 +1,5 @@
-﻿
+﻿@model FPTInternshipManagement.Models.SkillViewModel
+
 @{
 	ViewBag.Title = "MyProfile";
 	Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,12 +11,12 @@
 
 			<br>
 			<!-- Nav tabs -->
-			<ul class="nav nav-tabs" role="tablist">
+			<ul class="nav nav-tabs" role="tablist" id="myTab">
 				<li class="nav-item show">
-					<a class="nav-link active" data-toggle="tab" href="#Account">Account</a>
+					<a class="nav-link active" data_id="1" data-toggle="tab" href="#Account">Account</a>
 				</li>
 				<li class="nav-item show">
-					<a class="nav-link" data-toggle="tab" href="#Aspirations">Aspirations</a>
+					<a class="nav-link" data_id="2" data-toggle="tab" href="#Aspirations">Aspirations</a>
 				</li>
 			</ul>
 
@@ -65,29 +66,35 @@
 					</form>
 				</div>
 				<div id="Aspirations" class="container tab-pane fade">
-					<form action="#" method="post" class="p-3">
-						<br>
+					@using (Html.BeginForm())
+					{
+
 						<div class="form-group">
 							<label for="recipient-email" class="col-form-label">Aspirations Name</label>
 							<input type="text" class="form-control" placeholder=" " name="AspirationsName" id="recipient-email"
-								   required="">
+								   required="" value="@TempData["name"]">
 						</div>
 						<div class="form-group">
 							<label for="recipient-email" class="col-form-label">Salary</label>
 							<input type="text" class="form-control" placeholder=" " name="Salary" id="recipient-email"
-								   required="">
+								   required="" value="@TempData["Salary"]">
 						</div>
 						<div class="form-group">
 							<label for="recipient-email" class="col-form-label">Description</label>
 							<input type="text" class="form-control" placeholder=" " name="Description" id="recipient-email"
-								   required="">
+								   required=""  value="@TempData["Description"]">
 						</div>
-						
+						<div class="form-group">
+							<label for="list-skill" class="col-form-label">Skills</label>
+							@Html.DropDownListFor(x => x.SkillList, Model.GetSkillViewModels.Select(x => new SelectListItem { Text = x.SkillName, Value = x.SkillID.ToString()}),
+						   new { @class = "btn btn-default chosen-select", @multiple = true, @id = "list-skill"})
+							<input type="submit" formaction="/Student/GetSkill" value="Select" name="btnSkill">
+							<label class="col-form-label">@TempData["listskill"]</label>
+						</div>
 						<div class="right-w3l">
-							<input type="submit" class="form-control bg-theme" value="Save">
+							<input type="submit" class="form-control bg-theme" formaction="/Student/SaveAspiration" value="Save" name="btnSave">
 						</div>
-
-					</form>
+					}
 				</div>
 
 			</div>
@@ -102,6 +109,12 @@
 		$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 	});
 </script>
+
+<script>
+	$('chosen-select').chosen();
+</script>
+
+@Html.Raw(TempData["Script"])
 
 
 

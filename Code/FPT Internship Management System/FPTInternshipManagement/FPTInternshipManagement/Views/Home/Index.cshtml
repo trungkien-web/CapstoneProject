@@ -1,10 +1,8 @@
 ﻿@model Model.User
-
 @{
 	ViewBag.Title = "Index";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <div class="w3-banner-info-w3ltd position-relative">
 	<div class="slider">
 		<ul class="rslides" id="slider">
@@ -148,6 +146,7 @@
 <div class="w3ltdits-partners bg-theme" id="partners">
 	<div class="container pt-4">
 		<style type="text/css">
+
 			a {
 				color: white;
 			}
@@ -167,13 +166,14 @@
 				{
 					<li>
 						<a href="https://www.google.com/">
-							<img style="width: 100px;" src="@Url.Content(Image[user.Key])" alt="" />							
+							<img style="width: 100px;" src="@Url.Content(Image[user.Key])" alt="" />
 							<p>@user.Key.Name</p>
 							<p>@user.Value Job - @Location[user.Key]</p>
 						</a>
 					</li>
 				}
 			}
+		</ul>
 		<br>
 	</div>
 </div>
@@ -201,7 +201,6 @@
 <!-- //job roles -->
 <!-- login modal -->
 
-
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 	 aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
@@ -212,7 +211,6 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-
 			<div class="modal-body">
 				@using (Html.BeginForm("Autherize", "Login", FormMethod.Post, new { @id = "login-form" }))
 				{
