@@ -52,6 +52,8 @@
     <Compile Include="Rate\RateService.cs" />
     <Compile Include="Recruiter\IRecruiterService.cs" />
     <Compile Include="Recruiter\RecruiterService.cs" />
+    <Compile Include="Skill\ISkillService.cs" />
+    <Compile Include="Skill\SkillService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">
