@@ -39,7 +39,7 @@ namespace FPTInternshipManagement.Controllers.Student
 			//	return RedirectToAction("Index", "Home");
 			//}
 			SkillViewModel model = new SkillViewModel();
-			model.GetSkillViewModels = service.GetAllSkills().Select(x => new SkillViewModel { SkillID = x.SkillID, SkillName = x.SkillName}).ToList();
+			model.GetSkillViewModels = service.GetAllSkills().Select(x => new SkillViewModel { SkillID = x.SkillID, SkillName = x.SkillName }).ToList();
 			return View(model);
 		}
 
