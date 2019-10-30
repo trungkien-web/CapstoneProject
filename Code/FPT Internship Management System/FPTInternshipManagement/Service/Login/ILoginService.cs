@@ -9,6 +9,8 @@ namespace Service
 {
 	public interface ILoginService
 	{
+		string GetErrorMessage();
+		Boolean CheckLogin(string username, string password);
 		string GetRole(User user);
 	}
 }

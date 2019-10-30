@@ -54,6 +54,8 @@
     <Compile Include="Recruiter\RecruiterService.cs" />
     <Compile Include="Skill\ISkillService.cs" />
     <Compile Include="Skill\SkillService.cs" />
+    <Compile Include="User\IUserService.cs" />
+    <Compile Include="User\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

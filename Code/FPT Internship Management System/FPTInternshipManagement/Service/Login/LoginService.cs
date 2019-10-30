@@ -12,6 +12,16 @@ namespace Service
 	{
 		ILoginRepository repository = new LoginRepository();
 
+		public bool CheckLogin(string username, string password)
+		{
+			return repository.CheckLogin(username, password);
+		}
+
+		public string GetErrorMessage()
+		{
+			return repository.GetErrorMessage();
+		}
+
 		public string GetRole(User user)
 		{
 			return repository.GetRole(user);
