@@ -9,6 +9,8 @@ namespace Repository
 {
 	public interface ILoginRepository
 	{
+		string GetErrorMessage();
+		Boolean CheckLogin(string username, string password);
 		string GetRole(User user);
 	}
 }

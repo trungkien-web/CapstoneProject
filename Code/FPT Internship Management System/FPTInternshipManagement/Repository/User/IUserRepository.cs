@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-	interface IUserRepository
+	public interface IUserRepository
 	{
 		User GetUserById(int id);
 		List<User> GetAllUser();
