@@ -52,7 +52,6 @@ namespace Model
         public Nullable<int> ImageID { get; set; }
         public string Status { get; set; }
 
-		public string LoginErrorMessage { get; set; }
 
 		public virtual Aspiration Aspiration { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
