@@ -12,32 +12,20 @@ using System.Web.Mvc;
 
 namespace FPTInternshipManagement.Controllers.Student
 {
-    public class StudentController : Controller
+
+	[Authorize(Roles = "Student")]
+	public class StudentController : Controller
     {
 		ISkillService service = new SkillService();
-        // GET: Student
-        public ActionResult Index()
+		// GET: Student
+		
+		public ActionResult Index()
         {
-			if (CommonSession.SESSION_ROLE_STUDENT())
-			{
-				return View();
-			}
-			else
-			{
-				return RedirectToAction("Index", "Home");
-			}
-        }
+			return View();
+		}
 
 		public ActionResult MyProfile()
 		{
-			//if (CommonSession.SESSION_ROLE_STUDENT())
-			//{
-			//	return View();
-			//}
-			//else
-			//{
-			//	return RedirectToAction("Index", "Home");
-			//}
 			SkillViewModel model = new SkillViewModel();
 			model.GetSkillViewModels = service.GetAllSkills().Select(x => new SkillViewModel { SkillID = x.SkillID, SkillName = x.SkillName }).ToList();
 			return View(model);

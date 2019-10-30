@@ -8,20 +8,14 @@ using Repository.Common;
 
 namespace FPTInternshipManagement.Controllers.Recruiter
 {
-    public class RecruiterController : Controller
+	[Authorize(Roles = "Recruiter")]
+	public class RecruiterController : Controller
     {
         // GET: Recruiter
         public ActionResult Index()
         {
-			if (CommonSession.SESSION_ROLE_RECRUITMENT())
-			{
-				return View();
-			}
-			else
-			{
-				return RedirectToAction("Index","Home");
-			}
-        }
+			return View();
+		}
 		public ActionResult PublishedRecruitment()
 		{
 			return View();

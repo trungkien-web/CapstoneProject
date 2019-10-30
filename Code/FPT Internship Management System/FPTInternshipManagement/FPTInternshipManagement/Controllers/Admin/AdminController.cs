@@ -10,20 +10,14 @@ using Repository.Common;
 
 namespace FPTInternshipManagement.Controllers.Admin
 {
-    public class AdminController : Controller
+	[Authorize(Roles = "Admin")]
+	public class AdminController : Controller
     {
         // GET: Admin
         public ActionResult Index()
         {
-			if (CommonSession.SESSION_ROLE_ADMIN())
-			{
-				return View();
-			}
-			else
-			{
-				return RedirectToAction("Index", "Home");
-			}
-        }
+			return View();
+		}
 
         // GET: Admin/Details/5
         public ActionResult Details(int id)
