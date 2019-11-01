@@ -13,48 +13,82 @@ using System.Web.Mvc;
 namespace FPTInternshipManagement.Controllers.Student
 {
 
-	[Authorize(Roles = "Student")]
+	//[Authorize(Roles = "Student")]
 	public class StudentController : Controller
-    {
-		ISkillService service = new SkillService();
+	{
+		ISkillService skillService = new SkillService();
+		IDepartmentService departmentService = new DepartmentService();
 		// GET: Student
-		
+
 		public ActionResult Index()
-        {
+		{
 			return View();
 		}
 
+
 		public ActionResult MyProfile()
 		{
-			SkillViewModel model = new SkillViewModel();
-			model.GetSkillViewModels = service.GetAllSkills().Select(x => new SkillViewModel { SkillID = x.SkillID, SkillName = x.SkillName }).ToList();
+			List<Department> departments = departmentService.GetAllDepartments();
+			StudentViewModel model = new StudentViewModel();
+			model.GetAllDepartment = departments;
+			model.SelectListItems = GetDepartments(departments);
 			return View(model);
 		}
 
 		[HttpPost]
-		public ActionResult GetSkill(SkillViewModel model)
+		public ActionResult MyProfile(StudentViewModel model)
 		{
-			TempData["name"] = Request.Form["AspirationsName"];
-			TempData["Salary"] = Request.Form["Salary"];
-			TempData["Description"] = Request.Form["Description"];
-			List<int> list = model.SkillList.OfType<int>().ToList();
-			string str = "";
-			foreach(int a in list)
+			try
 			{
-				str += service.GetSkillById(a).SkillName + " ";
+				string selected = Request.Form["dropdownDepartment"];
+				if (ModelState.IsValid)
+				{
+					model.AvailableSkills = new List<SelectListItem>(GetSkills(Int32.Parse(selected)));
+					List<Department> departments = departmentService.GetAllDepartments();
+					model.SelectListItems = GetDepartments(departments);
+					model.SelectedDepartmentId = Int32.Parse(selected);
+					TempData["Name"] = Request.Form["AspirationsName"];
+					TempData["Salary"] = Request.Form["Salary"];
+					TempData["Description"] = Request.Form["Description"];
+					TempData["Script"] = "<script>$(document).ready(function() {$('.nav-tabs a[data_id=2]').tab('show');});</script>";
+				}
 			}
-			TempData["Script"] = "<script>$(document).ready(function() {$('.nav-tabs a[data_id=2]').tab('show');});</script>";
-			TempData["listskill"] = str;
-			return RedirectToAction("MyProfile");
+			catch (Exception ex)
+			{
+
+			}
+
+			return View(model);
 
 		}
 
-		[HttpPost]
-		public ActionResult SaveAspiration(SkillViewModel model)
-		{
-			//code
-			return RedirectToAction("MyProfile");
 
+		[HttpPost]
+		public ActionResult SaveAspiration(StudentViewModel model)
+		{
+			//var fruits = string.Join(",", model.SelectedSkills);
+			return RedirectToAction("MyProfile", "Student");
+
+		}
+		private List<SelectListItem> GetSkills(int id)
+		{
+			List<SelectListItem> list = new List<SelectListItem>();
+			foreach (var skill in skillService.GetSkillsByDepartmentId(id))
+			{
+				list.Add(new SelectListItem { Text = skill.SkillName, Value = skill.SkillID.ToString() });
+
+			}
+			return list;
+		}
+		private List<SelectListItem> GetDepartments(List<Department> departments)
+		{
+			List<SelectListItem> list = new List<SelectListItem>();
+
+			foreach (var department in departments)
+			{
+				list.Add(new SelectListItem() { Text = department.DepartmentName, Value = department.DepartmentID.ToString() });
+			}
+			return list;
 		}
 
 	}
