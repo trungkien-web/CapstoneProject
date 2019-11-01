@@ -1,4 +1,5 @@
-﻿using Repository;
+﻿using Model;
+using Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,11 @@ namespace Service
 	public class DepartmentService : IDepartmentService
 	{
 		IDepartmentRepository departmentRepository = new DepartmentRepository();
+
+		public List<Department> GetAllDepartments()
+		{
+			return departmentRepository.GetAllDepartments();
+		}
 
 		public Dictionary<string, string> GetToDictionaryHome()
 		{
