@@ -36,7 +36,7 @@ namespace Repository
         //      on user.UserID = role.UserID
         //  Where
         //      RoleID = 2
-        //      and Status = 'active'
+        //      and Status = 'Activated'
         public List<User> GetAllStudents()
         {
             var students = from user in ctx.Users
@@ -44,7 +44,7 @@ namespace Repository
                                 on user.UserID equals role.UserID
                            where
                                 role.RoleID == 2
-                                && user.Status.Equals("active")
+                                && user.Status.Equals("Activated")
                            orderby
                                 user.Username
                            select user;
@@ -58,7 +58,7 @@ namespace Repository
         //      on user.UserID = role.UserID
         //  Where
         //      RoleID = 2
-        //      and Status = 'active'
+        //      and Status = 'Activated'
         //      username like 
         //  orderby
         //      Username
@@ -69,7 +69,7 @@ namespace Repository
                                 on user.UserID equals role.UserID
                            where
                                 role.RoleID == 2
-                                && user.Status.Equals("active")
+                                && user.Status.Equals("Activated")
                                 && user.Username.Contains(studentName)
                            orderby
                                 user.Username
@@ -84,13 +84,13 @@ namespace Repository
         //      on user.UserID = role.UserID
         //  Where
         //      RoleID = 2
-        //      and Status = 'active'
+        //      and Status = 'Activated'
         //      and UserID == userID
         //      and Username like @userName
         //      and LocationDetail like @location
         //  orderby
         //      Username
-        public List<User> SearchStudentsWithLocaTion(string location, int userID, string userName)
+        public List<User> SearchStudents(string location, int userID, string userName)
         {
             var students = from user in ctx.Users
                            join loca in ctx.Locations 
@@ -98,7 +98,7 @@ namespace Repository
                            join role in ctx.UserRoles
                                 on user.UserID equals role.UserID
                            where  
-                                user.Status.Equals("active")
+                                user.Status.Equals("Activated")
                                 && role.RoleID == 2
                                 && user.UserID == userID
                                 && user.Username.Contains(userName)
@@ -116,7 +116,7 @@ namespace Repository
         //      on user.UserID = role.UserID
         //  Where
         //      RoleID = 2
-        //      and Status = 'active'
+        //      and Status = 'Activated'
         //      and UserID == userID
         //      and Username like @userName
         //      and LocationDetail like @location
@@ -130,13 +130,101 @@ namespace Repository
                            join role in ctx.UserRoles
                                 on user.UserID equals role.UserID
                            where
-                                user.Status.Equals("active")
+                                user.Status.Equals("Activated")
                                 && role.RoleID == 2
                                 && user.UserID == userID
                            orderby
                                 user.Username
                            select user;
             return students.ToList();
+        }
+
+        // SQL select student with studentID, name location, userName
+        //  Select *
+        //  From
+        //      users inner join userroles
+        //      on user.UserID = role.UserID
+        //  Where
+        //      RoleID = 2
+        //      and Status = 'Activated'
+        //      and intership.Status == 'Activated'
+        //      and StartTime < endDate
+        //      and EndTime > endDate
+        //  orderby
+        //      Username
+        public List<User> SearchStudentsInTime(DateTime startDate, DateTime endDate)
+        {
+            var students = from user in ctx.Users
+                           join role in ctx.UserRoles
+                                on user.UserID equals role.UserID
+                           join intership in ctx.InterviewSchedules
+                                on user.UserID equals intership.StudentID
+                           where
+                                user.Status.Equals("Activated")
+                                && role.RoleID == 2
+                                && intership.Status.Equals("Activated")
+                                && intership.StartTime < endDate
+                                && intership.EndTime > startDate
+                           orderby
+                                user.Username
+                           select user;
+            return students.ToList();
+        }
+
+        // SQL select student with studentID, name location, userName
+        //  Select *
+        //  From
+        //      users inner join userroles
+        //      on user.UserID = role.UserID
+        //  Where
+        //      RoleID = 2
+        //      and Status = 'Activated'
+        //      and intership.Status == 'Activated'
+        //      and StartTime < @endDate
+        //      and EndTime > @endDate
+        //      and Username like @userName
+        //      and LocationDetail like @location
+        //  orderby
+        //      Username
+        public List<User> SearchStudentsDetail(DateTime startDate, DateTime endDate, string location, int userID, string userName)
+        {
+            var students = from user in ctx.Users
+                           join role in ctx.UserRoles
+                                on user.UserID equals role.UserID
+                           join loca in ctx.Locations
+                                on user.LocationID equals loca.LocationID
+                           join intership in ctx.InterviewSchedules
+                                on user.UserID equals intership.StudentID
+                           where
+                                user.Status.Equals("Activated")
+                                && role.RoleID == 2
+                                && intership.Status.Equals("Activated")
+                                && intership.StartTime < endDate
+                                && intership.EndTime > startDate
+                                && user.Username.Contains(userName)
+                                && loca.LocationDetail.Contains(location)
+                           orderby
+                                user.Username
+                           select user;
+            return students.ToList();
+        }
+
+        public void InsertStudent(User newStudent)
+        {
+            ctx.Users.Add(newStudent);
+            UserRole role = new UserRole();
+            role.UserID = newStudent.UserID;
+            role.UserRoleID = 1;
+            role.RoleID = 2;
+            ctx.UserRoles.Add(role);
+            ctx.SaveChanges();
+        }
+
+        public void UpdateStudent(User newStudent)
+        {
+            var studentsUpdate = ctx.Users.Single(user => user.UserID == newStudent.UserID);
+            studentsUpdate = newStudent;
+            ctx.SaveChanges();
         }
     }
 }

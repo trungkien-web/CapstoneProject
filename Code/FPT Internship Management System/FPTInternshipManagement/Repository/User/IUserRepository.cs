@@ -20,8 +20,16 @@ namespace Repository
         List<User> SearchStudentsNameOnly(string studentName);
 
         // Get all student is active with userid, name, location
-        List<User> SearchStudentsWithLocaTion(string location, int userID, string userName);
+        List<User> SearchStudents(string location, int userID, string userName);
 
         List<User> SearchStudentsWithId(int userID);
+
+        void InsertStudent(User newStudent);
+
+        void UpdateStudent(User newStudent);
+
+        List<User> SearchStudentsInTime(DateTime startDate, DateTime endDate);
+
+        List<User> SearchStudentsDetail(DateTime startDate, DateTime endDate, string location, int userID, string userName);
     }
 }
