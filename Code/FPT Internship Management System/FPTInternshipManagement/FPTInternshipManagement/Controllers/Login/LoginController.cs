@@ -36,7 +36,8 @@ namespace FPTInternshipManagement.Controllers.Login
 				{
 					FormsAuthentication.SetAuthCookie(user.Username, false);
 					string role = loginService.GetRole(user);
-					SessionHelper.SetSession(new UserSession { UserID = user.UserID, Name = user.Name, Role = role });
+					var u = userService.GetUserByName(user.Username);
+					SessionHelper.SetSession(new UserSession { UserID = u.UserID, Name = u.Name, Role = role });
 					if (role == CommonConstants.RECRUITER_ROLE)
 					{
 						return Redirect("/Recruiter");
