@@ -6,6 +6,8 @@ using Repository.Common;
 using Service;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,11 +15,12 @@ using System.Web.Mvc;
 namespace FPTInternshipManagement.Controllers.Student
 {
 
-	//[Authorize(Roles = "Student")]
+	[Authorize(Roles = "Student")]
 	public class StudentController : Controller
 	{
 		ISkillService skillService = new SkillService();
 		IDepartmentService departmentService = new DepartmentService();
+		IStudentAspirationService studentAspirationService = new StudentAspirationService();
 		// GET: Student
 
 		public ActionResult Index()
@@ -30,10 +33,11 @@ namespace FPTInternshipManagement.Controllers.Student
 		{
 			List<Department> departments = departmentService.GetAllDepartments();
 			StudentViewModel model = new StudentViewModel();
-            string selected = departments.ElementAt(0).DepartmentID.ToString();
+ 			string selected = departments.ElementAt(0).DepartmentID.ToString();
             model.AvailableSkills = new List<SelectListItem>(GetSkills(Int32.Parse(selected)));
-            model.GetAllDepartment = departments;
+			model.GetAllDepartment = departments;
 			model.SelectListItems = GetDepartments(departments);
+
 			return View(model);
 		}
 
@@ -43,7 +47,7 @@ namespace FPTInternshipManagement.Controllers.Student
 			try
 			{
 				string selected = Request.Form["dropdownDepartment"];
-                if (ModelState.IsValid)
+				if (ModelState.IsValid)
 				{
 					model.AvailableSkills = new List<SelectListItem>(GetSkills(Int32.Parse(selected)));
 					List<Department> departments = departmentService.GetAllDepartments();
@@ -57,7 +61,7 @@ namespace FPTInternshipManagement.Controllers.Student
 			}
 			catch (Exception ex)
 			{
-
+				throw ex;
 			}
 
 			return View(model);
@@ -68,7 +72,31 @@ namespace FPTInternshipManagement.Controllers.Student
 		[HttpPost]
 		public ActionResult SaveAspiration(StudentViewModel model)
 		{
-			//var fruits = string.Join(",", model.SelectedSkills);
+			List<string> listId = new List<string>(model.SelectedSkills);
+			try
+			{
+				var user = (UserSession)SessionHelper.GetSession();
+				int userId = user.UserID;
+				var aspiration = new Aspiration();
+				aspiration.AspirationsName = Request.Form["AspirationsName"];
+				aspiration.Salary = Convert.ToDouble(Request.Form["Salary"]);
+				aspiration.Description = Request.Form["Description"];
+				aspiration.Status = "Available";
+				aspiration.Gender = true;
+				studentAspirationService.InsertStudentAspiration(aspiration, userId, listId);
+			}
+			catch (DbEntityValidationException dbEx)
+			{
+				foreach (var validationErrors in dbEx.EntityValidationErrors)
+				{
+					foreach (var validationError in validationErrors.ValidationErrors)
+					{
+						Trace.TraceInformation("Property: {0} Error: {1}",
+												validationError.PropertyName,
+												validationError.ErrorMessage);
+					}
+				}
+			}
 			return RedirectToAction("MyProfile", "Student");
 
 		}
