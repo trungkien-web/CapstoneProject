@@ -23,8 +23,8 @@ namespace Model
     
         public int AspirationsID { get; set; }
         public string AspirationsName { get; set; }
-        public int JobID { get; set; }
-        public bool Gender { get; set; }
+        public Nullable<int> JobID { get; set; }
+        public Nullable<bool>  Gender { get; set; }
         public double Salary { get; set; }
         public string Description { get; set; }
         public string Status { get; set; }
