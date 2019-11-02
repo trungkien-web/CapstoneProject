@@ -15,5 +15,10 @@ namespace Service
 		{
 			return repository.GetRole(user);
 		}
+
+		public User GetUserByName(string username)
+		{
+			return repository.GetUserByName(username);
+		}
 	}
 }

@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-	public interface IUserService
+	public interface IStudentAspirationService
 	{
-		string GetRole(User user);
-		User GetUserByName(string username);
+		void InsertStudentAspiration(Aspiration aspiration, int userId, List<string> listId);
 	}
 }
