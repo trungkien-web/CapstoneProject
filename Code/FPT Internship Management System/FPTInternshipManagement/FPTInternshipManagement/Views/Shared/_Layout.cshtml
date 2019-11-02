@@ -82,6 +82,7 @@
 							<li class="nav-item mr-lg-4 my-lg-0 mb-sm-4 mb-3">
 								<a href="contact.html">Liên hệ</a>
 							</li>
+
 						</ul>
 						@{
 							if (Session["loggeduser"] != null)
@@ -89,6 +90,7 @@
 								<button type="button" class="btn w3ls-btn text-uppercase font-weight-bold d-block" onclick="location.href='@Url.Action("Logout", "Login")'">
 									Đăng Xuất
 								</button>
+
 							}
 							else
 							{
