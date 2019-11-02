@@ -226,5 +226,11 @@ namespace Repository
             studentsUpdate = newStudent;
             ctx.SaveChanges();
         }
-    }
+
+		public User GetUserByName(string username)
+		{
+			var user = ctx.Users.Where(u => u.Username == username).FirstOrDefault();
+			return user;
+		}
+	}
 }

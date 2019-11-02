@@ -71,6 +71,8 @@
     <Compile Include="Recruiter\RecruiterRepository.cs" />
     <Compile Include="Skill\ISkillRepository.cs" />
     <Compile Include="Skill\SkillRepository.cs" />
+    <Compile Include="StudentAspiration\IStudentAspirationRepository.cs" />
+    <Compile Include="StudentAspiration\StudentAspirationRepository.cs" />
     <Compile Include="User\IUserRepository.cs" />
     <Compile Include="User\UserRepository.cs" />
   </ItemGroup>

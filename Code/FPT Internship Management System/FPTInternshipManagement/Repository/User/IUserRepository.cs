@@ -12,24 +12,26 @@ namespace Repository
 		User GetUserById(int id);
 		List<User> GetAllUser();
 		string GetRole(User user);
-        
-        // Get all student is active
-        List<User> GetAllStudents();
 
-        // Get all student is active with name
-        List<User> SearchStudentsNameOnly(string studentName);
+		User GetUserByName(string username);
 
-        // Get all student is active with userid, name, location
-        List<User> SearchStudents(string location, int userID, string userName);
+		// Get all student is active
+		List<User> GetAllStudents();
 
-        List<User> SearchStudentsWithId(int userID);
+		// Get all student is active with name
+		List<User> SearchStudentsNameOnly(string studentName);
 
-        void InsertStudent(User newStudent);
+		// Get all student is active with userid, name, location
+		List<User> SearchStudents(string location, int userID, string userName);
 
-        void UpdateStudent(User newStudent);
+		List<User> SearchStudentsWithId(int userID);
 
-        List<User> SearchStudentsInTime(DateTime startDate, DateTime endDate);
+		void InsertStudent(User newStudent);
 
-        List<User> SearchStudentsDetail(DateTime startDate, DateTime endDate, string location, int userID, string userName);
-    }
+		void UpdateStudent(User newStudent);
+
+		List<User> SearchStudentsInTime(DateTime startDate, DateTime endDate);
+
+		List<User> SearchStudentsDetail(DateTime startDate, DateTime endDate, string location, int userID, string userName);
+	}
 }
