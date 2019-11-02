@@ -30,7 +30,9 @@ namespace FPTInternshipManagement.Controllers.Student
 		{
 			List<Department> departments = departmentService.GetAllDepartments();
 			StudentViewModel model = new StudentViewModel();
-			model.GetAllDepartment = departments;
+            string selected = departments.ElementAt(0).DepartmentID.ToString();
+            model.AvailableSkills = new List<SelectListItem>(GetSkills(Int32.Parse(selected)));
+            model.GetAllDepartment = departments;
 			model.SelectListItems = GetDepartments(departments);
 			return View(model);
 		}
@@ -41,7 +43,7 @@ namespace FPTInternshipManagement.Controllers.Student
 			try
 			{
 				string selected = Request.Form["dropdownDepartment"];
-				if (ModelState.IsValid)
+                if (ModelState.IsValid)
 				{
 					model.AvailableSkills = new List<SelectListItem>(GetSkills(Int32.Parse(selected)));
 					List<Department> departments = departmentService.GetAllDepartments();
