@@ -1,13 +1,153 @@
 ﻿
 @{
 	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Student</h2>
-<div class="wthreepvt-pos py-md-5 py-5" id="positions">
-	<div class="container">
-		<div class="content-account">
-			@Html.ActionLink("MyProfile", "MyProfile", "Student", new { htmlAttributes = new { @class = "navbar-brand" } })
+@*<h2>Student</h2>
+	<div class="wthreepvt-pos py-md-5 py-5" id="positions">
+		<div class="container">
+			<div class="content-account">
+				@Html.ActionLink("MyProfile", "MyProfile", "Student", new { htmlAttributes = new { @class = "navbar-brand" } })
+			</div>
 		</div>
+	</div>*@
+<!-- Slider -->
+	<!-- //header -->
+	<div class="slider">
+		<ul class="rslides" id="slider">
+			<li>
+				<div class="d-flex banner-w3pvt-bg1 common-bg">
+					<div class="d-flex mx-auto align-items-center justify-content-center flex-column">
+						<div class="bnr-w3pvt">
+							<h3>FPT Internship Management</h3>
+							<div class="d-flex justify-content-between bnr-sub-txt align-items-center">
+								<span></span>
+								<p class="text-uppercase text-white">FIND A JOB AS QUICKLY AS POSSIBLE</p>
+								<span></span>
+							</div>
+						</div>
+						<div class="row justify-content-between bnr-form-w3ls">
+							<div class="col-lg-4">
+								<h4>Hơn 100,000+ việc làm hấp dẫn đang tuyển dụng hôm nay</h4>
+							</div>
+							<div class="col-lg-8">
+								<form action="job_list.html" method="post" class="bnr-field">
+									<div class="row">
+										<div class="col-md-5 form-group mb-md-0">
+											<label class="text-capitalize">
+												Tìm việc
+											</label>
+											<input class="form-control" type="text" name="name" required=""
+												   placeholder="IT, Designer, Marketing">
+										</div>
+										<div class="col-md-5 mb-md-0 form-group">
+											<label class="text-capitalize">
+												Nơi làm việc
+											</label>
+											<input class="form-control" type="text" name="place" required=""
+												   placeholder="Ha Noi, Ho Chi Minh, Da Nang">
+										</div>
+										<div class="col-md-2 d-flex align-items-end">
+											<button type="submit" class="btn btn-w3ltd btn-block w-100 bg-theme font-weight-bold text-uppercase">
+												<span class="fa fa-search"></span>
+											</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="d-flex banner-w3pvt-bg2 common-bg">
+					<div class="d-flex mx-auto align-items-center justify-content-center flex-column">
+						<div class="bnr-w3pvt">
+							<h3>FPT Internship Management</h3>
+							<div class="d-flex justify-content-between bnr-sub-txt align-items-center">
+								<span></span>
+								<p class="text-uppercase text-white">FIND A JOB AS QUICKLY AS POSSIBLE</p>
+								<span></span>
+							</div>
+						</div>
+						<div class="row justify-content-between bnr-form-w3ls">
+							<div class="col-lg-4">
+								<h4>Hơn 100,000+ việc làm hấp dẫn đang tuyển dụng hôm nay</h4>
+							</div>
+							<div class="col-lg-8">
+								<form action="job_list.html" method="post" class="bnr-field">
+									<div class="row">
+										<div class="col-md-5 form-group mb-md-0">
+											<label class="text-capitalize">
+												Tìm việc
+											</label>
+											<input class="form-control" type="text" name="name" required=""
+												   placeholder="IT, Designer, Marketing">
+										</div>
+										<div class="col-md-5 mb-md-0 form-group">
+											<label class="text-capitalize">
+												Nơi làm việc
+											</label>
+											<input class="form-control" type="text" name="place" required=""
+												   placeholder="Ha Noi, Ho Chi Minh, Da Nang">
+										</div>
+										<div class="col-md-2 d-flex align-items-end">
+											<button type="submit" class="btn btn-w3ltd bg-theme btn-block w-100 font-weight-bold text-uppercase">
+												<span class="fa fa-search"></span>
+											</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="d-flex banner-w3pvt-bg3 common-bg">
+					<div class="d-flex mx-auto align-items-center justify-content-center flex-column">
+						<div class="bnr-w3pvt">
+							<h3>FPT Internship Management</h3>
+							<div class="d-flex justify-content-between bnr-sub-txt align-items-center">
+								<span></span>
+								<p class="text-uppercase text-white">FIND A JOB AS QUICKLY AS POSSIBLE</p>
+								<span></span>
+							</div>
+						</div>
+						<div class="row justify-content-between bnr-form-w3ls">
+							<div class="col-lg-4">
+								<h4>Hơn 100,000+ việc làm hấp dẫn đang tuyển dụng hôm nay</h4>
+							</div>
+							<div class="col-lg-8">
+								<form action="job_list.html" method="post" class="bnr-field">
+									<div class="row">
+										<div class="col-md-5 form-group mb-md-0">
+											<label class="text-capitalize">
+												Tìm việc
+											</label>
+											<input class="form-control" type="text" name="name" required=""
+												   placeholder="IT, Designer, Marketing">
+										</div>
+										<div class="col-md-5 mb-md-0 form-group">
+											<label class="text-capitalize">
+												Nơi làm việc
+											</label>
+											<input class="form-control" type="text" name="place" required=""
+												   placeholder="Ha Noi, Ho Chi Minh, Da Nang">
+										</div>
+										<div class="col-md-2 d-flex align-items-end">
+											<button type="submit" class="btn btn-w3ltd bg-theme  btn-block w-100 font-weight-bold text-uppercase">
+												<span class="fa fa-search"></span>
+											</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
 	</div>
 </div>
-
+<!-- //Slider -->
