@@ -20,5 +20,17 @@ namespace FPTInternshipManagement.Controllers
 			ViewBag.TopImage = rateService.GetImageByRecruiter();
 			return View();
 		}
+		public ActionResult JobList()
+		{
+			return View();
+		}
+		public ActionResult JobDetail()
+		{
+			return View();
+		}
+		public ActionResult Contact()
+		{
+			return View();
+		}
 	}
 }
