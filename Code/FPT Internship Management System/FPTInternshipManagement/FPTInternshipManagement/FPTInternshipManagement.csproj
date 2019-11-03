@@ -143,6 +143,7 @@
     <Content Include="Assets\css\style.css" />
     <Content Include="Assets\css\style_student.css" />
     <Content Include="Assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\images\6.png" />
     <Content Include="Assets\images\b1.jpg" />
     <Content Include="Assets\images\b2.jpg" />
     <Content Include="Assets\images\b3.jpg" />
@@ -150,10 +151,17 @@
     <Content Include="Assets\images\bg1.jpg" />
     <Content Include="Assets\images\bg2.jpg" />
     <Content Include="Assets\images\bg3.jpg" />
+    <Content Include="Assets\images\fe.png" />
+    <Content Include="Assets\images\fpt2.png" />
     <Content Include="Assets\images\google_logo.png" />
     <Content Include="Assets\images\inner.jpg" />
+    <Content Include="Assets\images\mobi.png" />
     <Content Include="Assets\images\move-top.png" />
     <Content Include="Assets\images\services.jpg" />
+    <Content Include="Assets\images\viettel.png" />
+    <Content Include="Assets\images\vina.png" />
+    <Content Include="Assets\images\vina2.png" />
+    <Content Include="Assets\images\x.png" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\easing.js" />
     <Content Include="Assets\js\jquery-2.2.3.min.js" />
@@ -181,6 +189,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Views\Contact\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +208,9 @@
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Student\MyProfile.cshtml" />
+    <Content Include="Views\Home\JobList.cshtml" />
+    <Content Include="Views\Home\JobDetail.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Helper\Helper.csproj">
