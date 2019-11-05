@@ -26,8 +26,8 @@ namespace Repository
 		public List<Skill> GetSkillsByDepartmentId(int id)
 		{
 			List<Skill> skills = new List<Skill>();
-			var skillList = ctx.SkillLists.Where(s => s.DepartmentID == id).ToList();
-			foreach (SkillList sl in skillList)
+			var skillList = ctx.SkillDetails.Where(s => s.DepartmentID == id).ToList();
+			foreach (SkillDetail sl in skillList)
 			{
 				skills.Add(GetSkillById(sl.SkillID));
 			}

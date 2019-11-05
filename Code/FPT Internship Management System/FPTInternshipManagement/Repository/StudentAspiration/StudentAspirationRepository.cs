@@ -13,8 +13,9 @@ namespace Repository
 
 		public bool CheckAspiration(int userId)
 		{
-			var user = ctx.Users.Where(u => u.UserID == userId).FirstOrDefault();
-			return user.AspirationsID != null;
+			//var user = ctx.Users.Where(u => u.UserID == userId).FirstOrDefault();
+			//return user.AspirationsID != null;
+			return false;
 		}
 
 		public Aspiration GetAspirationById(int id)
@@ -24,15 +25,15 @@ namespace Repository
 
 		public void InsertListSkillsAspiration(List<string> listId, int aspirationId)
 		{
-			SkillList skillList;
-			foreach (var id in listId)
-			{
-				skillList = new SkillList();
-				skillList.SkillID = Int32.Parse(id);
-				skillList.AspirationsID = aspirationId;
-				ctx.SkillLists.Add(skillList);
-				ctx.SaveChanges();
-			}
+			//SkillList skillList;
+			//foreach (var id in listId)
+			//{
+			//	skillList = new SkillList();
+			//	skillList.SkillID = Int32.Parse(id);
+			//	skillList.AspirationsID = aspirationId;
+			//	ctx.SkillLists.Add(skillList);
+			//	ctx.SaveChanges();
+			//}
 		}
 
 		public void InsertStudentAspiration(Aspiration aspiration, int userId, List<string> listId)
@@ -52,9 +53,9 @@ namespace Repository
 
 		public void InsertStudentAspirationId(int id, int userId)
 		{
-			var user = ctx.Users.Where(u => u.UserID == userId).FirstOrDefault();
-			user.AspirationsID = id;
-			ctx.SaveChanges();
+			//var user = ctx.Users.Where(u => u.UserID == userId).FirstOrDefault();
+			//user.AspirationsID = id;
+			//ctx.SaveChanges();
 		}
 
 	}
