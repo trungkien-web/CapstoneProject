@@ -19,6 +19,7 @@ namespace Model
         {
             this.InterviewSchedules = new HashSet<InterviewSchedule>();
             this.Jobs = new HashSet<Job>();
+            this.Users = new HashSet<User>();
         }
     
         public int LocationID { get; set; }
@@ -29,5 +30,7 @@ namespace Model
         public virtual ICollection<InterviewSchedule> InterviewSchedules { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Job> Jobs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }

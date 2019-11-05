@@ -12,14 +12,13 @@ namespace Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Notification
+    public partial class UserAspiration
     {
-        public int NotificationID { get; set; }
-        public string Content { get; set; }
-        public int StudentID { get; set; }
-        public int RecruiterID { get; set; }
+        public int UserAspirationID { get; set; }
+        public int AspirationsID { get; set; }
+        public int UserID { get; set; }
     
+        public virtual Aspiration Aspiration { get; set; }
         public virtual User User { get; set; }
-        public virtual User User1 { get; set; }
     }
 }

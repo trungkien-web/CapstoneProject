@@ -30,12 +30,13 @@ namespace Model
             this.Reports = new HashSet<Report>();
             this.Reports1 = new HashSet<Report>();
             this.Statisticals = new HashSet<Statistical>();
+            this.UserAspirations = new HashSet<UserAspiration>();
             this.UserRoles = new HashSet<UserRole>();
         }
     
         public int UserID { get; set; }
 		[Required(ErrorMessage = "Nhập tên tài khoản.")]
-        public string Username { get; set; }
+		public string Username { get; set; }
 		[Required(ErrorMessage = "Nhập mật khẩu.")]
 		[DataType(DataType.Password)]
 		public string Password { get; set; }
@@ -48,12 +49,9 @@ namespace Model
         public Nullable<System.DateTime> CreateDate { get; set; }
         public string CV { get; set; }
         public string Description { get; set; }
-        public Nullable<int> AspirationsID { get; set; }
         public Nullable<int> ImageID { get; set; }
         public string Status { get; set; }
-
-
-		public virtual Aspiration Aspiration { get; set; }
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -65,6 +63,7 @@ namespace Model
         public virtual ICollection<InterviewSchedule> InterviewSchedules1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Job> Jobs { get; set; }
+        public virtual Location Location { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Notification> Notifications { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -79,6 +78,8 @@ namespace Model
         public virtual ICollection<Report> Reports1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Statistical> Statisticals { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserAspiration> UserAspirations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserRole> UserRoles { get; set; }
     }

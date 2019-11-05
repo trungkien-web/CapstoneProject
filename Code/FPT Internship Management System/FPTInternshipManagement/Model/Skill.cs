@@ -17,13 +17,13 @@ namespace Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Skill()
         {
-            this.SkillLists = new HashSet<SkillList>();
+            this.SkillDetails = new HashSet<SkillDetail>();
         }
     
         public int SkillID { get; set; }
         public string SkillName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SkillList> SkillLists { get; set; }
+        public virtual ICollection<SkillDetail> SkillDetails { get; set; }
     }
 }

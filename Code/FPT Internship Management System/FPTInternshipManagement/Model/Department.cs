@@ -18,7 +18,7 @@ namespace Model
         public Department()
         {
             this.Reports = new HashSet<Report>();
-            this.SkillLists = new HashSet<SkillList>();
+            this.SkillDetails = new HashSet<SkillDetail>();
         }
     
         public int DepartmentID { get; set; }
@@ -27,6 +27,6 @@ namespace Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Report> Reports { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SkillList> SkillLists { get; set; }
+        public virtual ICollection<SkillDetail> SkillDetails { get; set; }
     }
 }
