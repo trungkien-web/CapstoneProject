@@ -88,6 +88,7 @@
 						@{
 							if (Session["loggeduser"] != null)
 							{
+								//UserSession user = (UserSession)HttpContext.Current.Session["loggeduser"];
 								@*<button type="button" class="btn w3ls-btn text-uppercase font-weight-bold d-block" onclick="location.href='@Url.Action("Logout", "Login")'">
 					Đăng Xuất
 				</button>*@
@@ -98,7 +99,7 @@
 									</style>
 									<a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
 									   aria-expanded="false">
-										<span class="fa fa-github"></span> &nbsp; Account Name &nbsp; <span class="fa fa-caret-down"></span>
+										<span class="fa fa-github"></span> &nbsp; @Session["name"] &nbsp; <span class="fa fa-caret-down"></span>
 									</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<style type="text/css">
@@ -113,7 +114,7 @@
 										<a class="droppro" href="#"><span class="fa fa-rss"></span> &nbsp;Thông Báo</a>
 										<a class="droppro" href="#"><span class="fa fa-save"></span> &nbsp;Đã Lưu</a>
 										<a class="droppro" href="#"><span class="fa fa-check-circle"></span> &nbsp;Đã Ứng Tuyển</a>
-										<a class="droppro" href="#"><span class="fa fa-power-off"></span> &nbsp;Đăng Xuất</a>
+										<a class="droppro" href="@Url.Action("Logout", "Login")"><span class="fa fa-power-off"></span> &nbsp;Đăng Xuất</a>
 									</div>
 									<div></div>
 								</ul>
