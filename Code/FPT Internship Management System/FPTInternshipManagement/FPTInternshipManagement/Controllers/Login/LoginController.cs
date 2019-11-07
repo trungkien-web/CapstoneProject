@@ -38,6 +38,7 @@ namespace FPTInternshipManagement.Controllers.Login
 					string role = loginService.GetRole(user);
 					var u = userService.GetUserByName(user.Username);
 					SessionHelper.SetSession(new UserSession { UserID = u.UserID, Name = u.Name, Role = role });
+					Session["name"] = u.Name; 
 					if (role == CommonConstants.RECRUITER_ROLE)
 					{
 						return Redirect("/Recruiter");
