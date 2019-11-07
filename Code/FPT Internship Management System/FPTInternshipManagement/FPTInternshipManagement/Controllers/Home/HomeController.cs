@@ -18,7 +18,11 @@ namespace FPTInternshipManagement.Controllers
 			ViewBag.TopRecruiter = rateService.GetTotalJobByRecruiter();
 			ViewBag.TopLocation = rateService.GetLocaltionByRecruiter();
 			ViewBag.TopImage = rateService.GetImageByRecruiter();
-			return View();
+            //ViewBag.StartUL = "<ul class=\"list-unstyled py-md-5 py-3 partners-icon text- center\" style=\"width: max-content;\">";
+            ViewBag.StartUL = "<tr>";
+            ViewBag.EndUL = "</tr>";
+            //ViewBag.EndUL = "</ul>";
+            return View();
 		}
 		public ActionResult JobList()
 		{
