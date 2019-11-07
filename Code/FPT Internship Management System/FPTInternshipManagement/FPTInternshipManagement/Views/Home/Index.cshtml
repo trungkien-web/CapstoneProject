@@ -144,41 +144,61 @@
 <!-- //Slider -->
 <!--partners  -->
 <div class="w3ltdits-partners bg-theme" id="partners">
-	<div class="container pt-4">
-		<style type="text/css">
+    <div class="container pt-4">
+        <style type="text/css">
 
-			a {
-				color: white;
-			}
-		</style>
-		<div class="title-wthree text-center">
-			<h3 class="w3ltd-title">
-				Danh Sách Top Nhà Tuyển Dụng
-			</h3>
-			<span></span>
-		</div>
-		<ul class="list-unstyled py-md-5 py-3 partners-icon text-center">
-			@{
-				var ListRecruiter = ViewBag.TopRecruiter;
-				var Location = ViewBag.TopLocation;
-				var Image = ViewBag.TopImage;
-				foreach (var user in ListRecruiter)
-				{
-					<li>
-						<a href="https://www.google.com/">
-							<img style="width: 110px; padding-bottom:35px;" src="@Url.Content(Image[user.Key])" alt="" />
-							<p>@user.Key.Name</p>
-							<p>@user.Value Job - @Location[user.Key]</p>
-						</a>
-					</li>
+            a {
+                color: white;
+            }
+        </style>
+        <div class="title-wthree text-center">
+            <h3 class="w3ltd-title">
+                Danh Sách Top Nhà Tuyển Dụng
+            </h3>
+            <span></span>
+        </div>
 
-				}
-			}
-		</ul>
+        <table>
+            @{
+                var ListRecruiter = ViewBag.TopRecruiter;
+                var Location = ViewBag.TopLocation;
+                var Image = ViewBag.TopImage;
+                int count = 0;
+                foreach (var user in ListRecruiter)
+                {
+                    if (count == 0)
+                    {
+                        @Html.Raw(ViewBag.StartUL);
+                    }
+                    <td style="padding:30px; ">
+                        <a href="#">
+                            <div class="placeholder" style="height:50px; ">
+                                <img style="width: 110px;" src="@Url.Content(Image[user.Key])" alt="" />
+                                <div style=" background-color: white;"></div>
+                            </div>
+                            <div style="margin-top: 10px;  height: 56px; text-align:center;">
+                                <p >@user.Key.Name</p>
+                                <p >@user.Value Job - @Location[user.Key]</p>
+                            </div>
+                        </a>
+                    </td>
+                    if (count == 5)
+                    {
+                        @Html.Raw(ViewBag.EndUL);
+                        count = 0;
+                        continue;
+                    }
+                    count++;
 
-		<p style="text-align:center;"><button type="button" class="btn btn-primary">Xem Thêm</button></p>
-		<br>
-	</div>
+                }
+            }
+        </table>
+
+
+
+        <p style="text-align:center;"><button type="button" class="btn btn-primary">Xem Thêm</button></p>
+        <br>
+    </div>
 </div>
 <!-- //partners -->
 <!-- job roles -->
