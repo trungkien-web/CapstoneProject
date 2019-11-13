@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Booking Calendar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+     <meta name="distributor" content="Global" />
+    <meta itemprop="contentRating" content="General" />
+    <meta name="robots" content="All" />
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link href="css/responsive-calendar.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Slider -->
+    <div class="w3-banner-info-w3ltd position-relative">
+        <!-- header -->
+        <header>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                    <h1><a class="navbar-brand" href="index.html">FIM
+
+                        </a></h1>
+                    <button class="navbar-toggler ml-lg-auto ml-sm-5 bg-light" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="ml-lg-5 navbar-nav mr-lg-auto">
+                            <li class="nav-item active  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
+                                <a href="about.html">Nhà Tuyển Dụng</a>
+                            </li>
+                            <li class="nav-item dropdown mr-lg-4 my-lg-0 my-sm-4 my-3">
+                                <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    CV Sinh Viên
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a href="job_list.html">Job List</a>
+                                    <a href="job_single.html">Job Single</a>
+                                </div>
+                            </li>
+                            <li class="nav-item mr-lg-4 my-lg-0 mb-sm-4 mb-3">
+                                <a href="contact.html">Liên hệ</a>
+                            </li>
+                        </ul>
+                        <ul class="nav-item dropdown mr-lg-4 my-lg-0 my-sm-4 my-3">
+                                <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                   <span class="fa fa-github"></span> &nbsp; Account Name &nbsp; <span class="fa fa-caret-down"></span>
+                                </a> 
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                	<style type="text/css">
+                a.droppro:hover {
+                	background: yellow;  
+    color: red;
+                    }
+
+                
+            </style>
+                                    <a class="droppro" href="#"><span class="fa fa-user"></span> &nbsp;Tài Khoản</a>
+                                    <a class="droppro" href="#"><span class="fa fa-rss"></span> &nbsp;Thông Báo</a>
+                                    <a class="droppro" href="#"><span class="fa fa-save"></span> &nbsp;Đã Lưu</a>
+                                    <a class="droppro" href="#"><span class="fa fa-check-circle"></span> &nbsp;Đã Ứng Tuyển</a>
+                                    <a class="droppro" href="#"><span class="fa fa-power-off"></span> &nbsp;Đăng Xuất</a>
+                                </div>
+                                <div></div>
+                            </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- //header -->
+        
+    </div>
+     <div class="inner-banner-w3ls">
+    </div>
+    <!-- //Slider -->
+    <!-- breadcrumbs -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb d-flex justify-content-center bg-theme">
+            <li class="breadcrumb-item">
+                <a href="index.html" class="text-white">Trang Chủ</a>
+            </li>
+            <li class="breadcrumb-item active text-white font-weight-bold" aria-current="page">Đặt Lịch Phỏng Vấn</li>
+        </ol>
+    </nav>
+    <!-- //breadcrumbs -->
+    <!--partners  -->
+    
+    <!-- //partners -->
+  
+  <div class="responsive-calendar" style="padding: 25px 150px 150px 150px;">
+        <div class="controls">
+            <a class="pull-left" data-go="prev"><div class="btn btn-primary">Prev</div></a>
+            <h4><span data-head-year></span> <span data-head-month></span></h4>
+            <a class="pull-right" data-go="next"><div class="btn btn-primary">Next</div></a>
+        </div><hr/>
+        <div class="day-headers">
+          <div class="day header">Mon</div>
+          <div class="day header">Tue</div>
+          <div class="day header">Wed</div>
+          <div class="day header">Thu</div>
+          <div class="day header">Fri</div>
+          <div class="day header">Sat</div>
+          <div class="day header">Sun</div>
+        </div>
+        <div class="days" data-group="days">
+          
+        </div>
+      </div>
+    
+    <!-- job roles -->
+    <div class="wthreepvt-pos py-md-5 py-5" id="positions">
+        <div class="container py-lg-5">
+            <div class="wthreepvt-pos-row row  text-center">
+                
+            </div>
+            <div class="wthreepvt-pos-row border-top row text-center pb-lg-5 pt-md-0 pt-5 mt-md-0 mt-sm-5 mt-4">
+                
+            </div>
+        </div>
+    </div>
+    <!-- //job roles -->
+
+    <!-- Footer -->
+    <footer id="footer" class="py-sm-5 py-4 bg-theme">
+        <div class="container">
+            <div class="footer-top-w3ls">
+                <h2><a href="index.html" class="navbar-brand">FPT Internship Management</a></h2>
+                <p class="text-white"> Hệ thống quản lý sinh viên thực tập là một trong những dự án của sinh viên Kỳ 9 hiện đang học tập và làm việc tại FPT. Hệ thống giúp sinh viên, nhà trường và nhà tuyển dụng có thể liên kết với nhau đem lại hiệu quả tối ưu nhất trong việc thực tập cho sinh viên. </p>
+            </div>
+            <div class="row  pt-5">
+                <div class="col-lg-3 col-sm-6 footer_grid1">
+                    <h5>Address</h5>
+                    <div class="d-flex align-items-center">
+                        <span class="fa fa-building mr-4"></span>
+                        <p>20 Bà Triệu, Q.Hoàn Kiếm
+                            <br>City State 100000.</p>
+                    </div>
+                    <div class="d-flex mt-3 align-items-center">
+                        <span class="fa fa-building mr-4"></span>
+                        <p>Km29 Đại Lộ Thăng Long
+                            <br>City State 150000.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 mt-sm-0 mt-5">
+                    <h5>Quick links</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li>
+                            <a href="index.html">
+                                <span class="fa fa-play"></span>Home</a>
+                        </li>
+                        <li>
+                            <a href="about.html">
+                                <span class="fa fa-play"></span>About</a>
+                        </li>
+                        <li>
+                            <a href="job_list.html">
+                                <span class="fa fa-play"></span>Danh sách Job</a>
+                        </li>
+                        <li>
+                            <a href="job_single.html">
+                                <span class="fa fa-play"></span>Job Single</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">
+                                <span class="fa fa-play"></span>Liên Hệ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 mt-lg-0 mt-5">
+                    
+                </div>
+                <div class="col-lg-3 col-sm-6 mt-lg-0 mt-5">
+                    <h5>Nhận thông báo về email</h5>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="email" class="form-control  border-0 border-rounded" id="emailid" placeholder="Enter email"
+                                name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="Submit" class="form-control bg-light-theme  border-0 border-rounded" id="sub"
+                                value="Submit" name="sub">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /Footer -->
+
+
+    <div class="cpy-right text-center py-4">
+        <p class="text-dark">© 2019 FIM. All rights reserved | Design by
+            <a href="" class="text-theme"> FPT Student</a>
+        </p>
+    </div>
+  
+    
+    
+    
+ 
+    <!-- js -->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <!-- Slider-JavaScript -->
+    <script src="js/responsiveslides.min.js"></script>
+    <script>
+        $(function () {
+            $("#slider, #slider1").responsiveSlides({
+                auto: true,
+                nav: false,
+                speed: 1500,
+                namespace: "callbacks",
+                pager: true,
+            });
+        });
+    </script>
+    <!-- //Slider-JavaScript -->
+
+    <!-- //js -->
+    <script src="js/move-top.js"></script>
+    <script src="js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+          
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+
+    <script src="js/SmoothScroll.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/responsive-calendar.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".responsive-calendar").responsiveCalendar({
+          time: '2019-11',
+          events: {
+            "2013-04-30": {"number": 5, "url": ""},
+            "2013-04-26": {"number": 1, "url": ""}, 
+            "2019-11-07":{"number": 1,"url": "http://google.com"}, 
+            }
+        });
+      });
+    </script>
+</body>
+
+</html>
