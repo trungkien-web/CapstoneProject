@@ -40,6 +40,16 @@
           <Property Name="FeedbackTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FeedbackTypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="HistoryRecords">
+          <Key>
+            <PropertyRef Name="HistoryRecordID" />
+          </Key>
+          <Property Name="HistoryRecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="date" Nullable="false" />
+          <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="Images">
           <Key>
             <PropertyRef Name="ImageID" />
@@ -156,6 +166,15 @@
           <Property Name="AspirationsID" Type="int" Nullable="false" />
           <Property Name="UserID" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="UserJobs">
+          <Key>
+            <PropertyRef Name="UserJobID" />
+          </Key>
+          <Property Name="UserJobID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="UserRole">
           <Key>
             <PropertyRef Name="UserRoleID" />
@@ -228,6 +247,18 @@
             </Principal>
             <Dependent Role="Feedbacks">
               <PropertyRef Name="RecruiterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoryRecords_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="HistoryRecords" Type="Self.HistoryRecords" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="HistoryRecords">
+              <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -471,6 +502,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_UserJobs_Jobs">
+          <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
+          <End Role="UserJobs" Type="Self.UserJobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jobs">
+              <PropertyRef Name="JobID" />
+            </Principal>
+            <Dependent Role="UserJobs">
+              <PropertyRef Name="JobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserJobs_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserJobs" Type="Self.UserJobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserJobs">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_UserRole_Roles">
           <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
           <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
@@ -524,6 +579,7 @@
           <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Feedbacks" EntityType="Self.Feedbacks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FeedbackTypes" EntityType="Self.FeedbackTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistoryRecords" EntityType="Self.HistoryRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Images" EntityType="Self.Images" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="InterviewSchedules" EntityType="Self.InterviewSchedules" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
@@ -536,6 +592,7 @@
           <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Statistical" EntityType="Self.Statistical" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAspirations" EntityType="Self.UserAspirations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserJobs" EntityType="Self.UserJobs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Aspirations_Jobs" Association="Self.FK_Aspirations_Jobs">
@@ -553,6 +610,10 @@
           <AssociationSet Name="FK_Feedbacks_Users1" Association="Self.FK_Feedbacks_Users1">
             <End Role="Users" EntitySet="Users" />
             <End Role="Feedbacks" EntitySet="Feedbacks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoryRecords_Users" Association="Self.FK_HistoryRecords_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="HistoryRecords" EntitySet="HistoryRecords" />
           </AssociationSet>
           <AssociationSet Name="FK_InterviewSchedules_Locations" Association="Self.FK_InterviewSchedules_Locations">
             <End Role="Locations" EntitySet="Locations" />
@@ -634,6 +695,14 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="UserAspirations" EntitySet="UserAspirations" />
           </AssociationSet>
+          <AssociationSet Name="FK_UserJobs_Jobs" Association="Self.FK_UserJobs_Jobs">
+            <End Role="Jobs" EntitySet="Jobs" />
+            <End Role="UserJobs" EntitySet="UserJobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserJobs_Users" Association="Self.FK_UserJobs_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserJobs" EntitySet="UserJobs" />
+          </AssociationSet>
           <AssociationSet Name="FK_UserRole_Roles" Association="Self.FK_UserRole_Roles">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="UserRole" EntitySet="UserRole" />
@@ -700,6 +769,17 @@
           <Property Name="FeedbackTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Feedbacks" Relationship="Self.FK_Feedbacks_FeedbackTypes" FromRole="FeedbackTypes" ToRole="Feedbacks" />
         </EntityType>
+        <EntityType Name="HistoryRecord">
+          <Key>
+            <PropertyRef Name="HistoryRecordID" />
+          </Key>
+          <Property Name="HistoryRecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_HistoryRecords_Users" FromRole="HistoryRecords" ToRole="Users" />
+        </EntityType>
         <EntityType Name="Image">
           <Key>
             <PropertyRef Name="ImageID" />
@@ -739,6 +819,7 @@
           <NavigationProperty Name="Location" Relationship="Self.FK_Jobs_Locations" FromRole="Jobs" ToRole="Locations" />
           <NavigationProperty Name="User" Relationship="Self.FK_Jobs_Users" FromRole="Jobs" ToRole="Users" />
           <NavigationProperty Name="SkillDetails" Relationship="Self.FK_SkillDetails_Jobs" FromRole="Jobs" ToRole="SkillDetails" />
+          <NavigationProperty Name="UserJobs" Relationship="Self.FK_UserJobs_Jobs" FromRole="Jobs" ToRole="UserJobs" />
         </EntityType>
         <EntityType Name="Location">
           <Key>
@@ -845,6 +926,17 @@
           <NavigationProperty Name="Aspiration" Relationship="Self.FK_UserAspirations_Aspirations" FromRole="UserAspirations" ToRole="Aspirations" />
           <NavigationProperty Name="User" Relationship="Self.FK_UserAspirations_Users" FromRole="UserAspirations" ToRole="Users" />
         </EntityType>
+        <EntityType Name="UserJob">
+          <Key>
+            <PropertyRef Name="UserJobID" />
+          </Key>
+          <Property Name="UserJobID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Job" Relationship="Self.FK_UserJobs_Jobs" FromRole="UserJobs" ToRole="Jobs" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserJobs_Users" FromRole="UserJobs" ToRole="Users" />
+        </EntityType>
         <EntityType Name="UserRole">
           <Key>
             <PropertyRef Name="UserRoleID" />
@@ -875,6 +967,7 @@
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Feedbacks" Relationship="Self.FK_Feedbacks_Users" FromRole="Users" ToRole="Feedbacks" />
           <NavigationProperty Name="Feedbacks1" Relationship="Self.FK_Feedbacks_Users1" FromRole="Users" ToRole="Feedbacks" />
+          <NavigationProperty Name="HistoryRecords" Relationship="Self.FK_HistoryRecords_Users" FromRole="Users" ToRole="HistoryRecords" />
           <NavigationProperty Name="Image" Relationship="Self.FK_Users_Images" FromRole="Users" ToRole="Images" />
           <NavigationProperty Name="InterviewSchedules" Relationship="Self.FK_InterviewSchedules_Users" FromRole="Users" ToRole="InterviewSchedules" />
           <NavigationProperty Name="InterviewSchedules1" Relationship="Self.FK_InterviewSchedules_Users1" FromRole="Users" ToRole="InterviewSchedules" />
@@ -888,6 +981,7 @@
           <NavigationProperty Name="Reports1" Relationship="Self.FK_Reports_Users1" FromRole="Users" ToRole="Reports" />
           <NavigationProperty Name="Statisticals" Relationship="Self.FK_Statistical_Users" FromRole="Users" ToRole="Statistical" />
           <NavigationProperty Name="UserAspirations" Relationship="Self.FK_UserAspirations_Users" FromRole="Users" ToRole="UserAspirations" />
+          <NavigationProperty Name="UserJobs" Relationship="Self.FK_UserJobs_Users" FromRole="Users" ToRole="UserJobs" />
           <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRole_Users" FromRole="Users" ToRole="UserRole" />
         </EntityType>
         <Association Name="FK_Aspirations_Jobs">
@@ -986,6 +1080,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_HistoryRecords_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="HistoryRecords" Type="Self.HistoryRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="HistoryRecords">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Users_Images">
           <End Role="Images" Type="Self.Image" Multiplicity="0..1" />
           <End Role="Users" Type="Self.User" Multiplicity="*" />
@@ -1066,6 +1172,18 @@
               <PropertyRef Name="JobID" />
             </Principal>
             <Dependent Role="SkillDetails">
+              <PropertyRef Name="JobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserJobs_Jobs">
+          <End Role="Jobs" Type="Self.Job" Multiplicity="1" />
+          <End Role="UserJobs" Type="Self.UserJob" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jobs">
+              <PropertyRef Name="JobID" />
+            </Principal>
+            <Dependent Role="UserJobs">
               <PropertyRef Name="JobID" />
             </Dependent>
           </ReferentialConstraint>
@@ -1214,6 +1332,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_UserJobs_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="UserJobs" Type="Self.UserJob" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserJobs">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_UserRole_Users">
           <End Role="Users" Type="Self.User" Multiplicity="1" />
           <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
@@ -1231,6 +1361,7 @@
           <EntitySet Name="Departments" EntityType="Self.Department" />
           <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />
           <EntitySet Name="FeedbackTypes" EntityType="Self.FeedbackType" />
+          <EntitySet Name="HistoryRecords" EntityType="Self.HistoryRecord" />
           <EntitySet Name="Images" EntityType="Self.Image" />
           <EntitySet Name="InterviewSchedules" EntityType="Self.InterviewSchedule" />
           <EntitySet Name="Jobs" EntityType="Self.Job" />
@@ -1243,6 +1374,7 @@
           <EntitySet Name="Skills" EntityType="Self.Skill" />
           <EntitySet Name="Statisticals" EntityType="Self.Statistical" />
           <EntitySet Name="UserAspirations" EntityType="Self.UserAspiration" />
+          <EntitySet Name="UserJobs" EntityType="Self.UserJob" />
           <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <AssociationSet Name="FK_Aspirations_Jobs" Association="Self.FK_Aspirations_Jobs">
@@ -1277,6 +1409,10 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Feedbacks" EntitySet="Feedbacks" />
           </AssociationSet>
+          <AssociationSet Name="FK_HistoryRecords_Users" Association="Self.FK_HistoryRecords_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="HistoryRecords" EntitySet="HistoryRecords" />
+          </AssociationSet>
           <AssociationSet Name="FK_Users_Images" Association="Self.FK_Users_Images">
             <End Role="Images" EntitySet="Images" />
             <End Role="Users" EntitySet="Users" />
@@ -1304,6 +1440,10 @@
           <AssociationSet Name="FK_SkillDetails_Jobs" Association="Self.FK_SkillDetails_Jobs">
             <End Role="Jobs" EntitySet="Jobs" />
             <End Role="SkillDetails" EntitySet="SkillDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserJobs_Jobs" Association="Self.FK_UserJobs_Jobs">
+            <End Role="Jobs" EntitySet="Jobs" />
+            <End Role="UserJobs" EntitySet="UserJobs" />
           </AssociationSet>
           <AssociationSet Name="FK_Users_Locations" Association="Self.FK_Users_Locations">
             <End Role="Locations" EntitySet="Locations" />
@@ -1353,6 +1493,10 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="UserAspirations" EntitySet="UserAspirations" />
           </AssociationSet>
+          <AssociationSet Name="FK_UserJobs_Users" Association="Self.FK_UserJobs_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserJobs" EntitySet="UserJobs" />
+          </AssociationSet>
           <AssociationSet Name="FK_UserRole_Users" Association="Self.FK_UserRole_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="UserRole" EntitySet="UserRoles" />
@@ -1400,6 +1544,17 @@
               <MappingFragment StoreEntitySet="FeedbackTypes">
                 <ScalarProperty Name="FeedbackTypeID" ColumnName="FeedbackTypeID" />
                 <ScalarProperty Name="FeedbackTypeName" ColumnName="FeedbackTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HistoryRecords">
+            <EntityTypeMapping TypeName="FPTInternshipManagermentModel.HistoryRecord">
+              <MappingFragment StoreEntitySet="HistoryRecords">
+                <ScalarProperty Name="HistoryRecordID" ColumnName="HistoryRecordID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1528,6 +1683,16 @@
                 <ScalarProperty Name="UserAspirationID" ColumnName="UserAspirationID" />
                 <ScalarProperty Name="AspirationsID" ColumnName="AspirationsID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserJobs">
+            <EntityTypeMapping TypeName="FPTInternshipManagermentModel.UserJob">
+              <MappingFragment StoreEntitySet="UserJobs">
+                <ScalarProperty Name="UserJobID" ColumnName="UserJobID" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -77,6 +77,9 @@
     <Compile Include="FeedbackType.cs">
       <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="HistoryRecord.cs">
+      <DependentUpon>DbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Image.cs">
       <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
@@ -115,6 +118,9 @@
       <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="UserAspiration.cs">
+      <DependentUpon>DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserJob.cs">
       <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="UserRole.cs">

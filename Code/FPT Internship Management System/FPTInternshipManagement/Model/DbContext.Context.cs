@@ -29,6 +29,7 @@ namespace Model
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Feedback> Feedbacks { get; set; }
         public virtual DbSet<FeedbackType> FeedbackTypes { get; set; }
+        public virtual DbSet<HistoryRecord> HistoryRecords { get; set; }
         public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<InterviewSchedule> InterviewSchedules { get; set; }
         public virtual DbSet<Job> Jobs { get; set; }
@@ -41,6 +42,7 @@ namespace Model
         public virtual DbSet<Skill> Skills { get; set; }
         public virtual DbSet<Statistical> Statisticals { get; set; }
         public virtual DbSet<UserAspiration> UserAspirations { get; set; }
+        public virtual DbSet<UserJob> UserJobs { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
