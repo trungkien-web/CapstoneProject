@@ -81,7 +81,7 @@ namespace FPTInternshipManagement.Controllers.Student
 				aspiration.AspirationsName = Request.Form["AspirationsName"];
 				aspiration.Salary = Convert.ToDouble(Request.Form["Salary"]);
 				aspiration.Description = Request.Form["Description"];
-				aspiration.Status = "Available";
+				
 				studentAspirationService.InsertStudentAspiration(aspiration, userId, listId);
 			}
 			catch (DbEntityValidationException dbEx)
