@@ -20,6 +20,7 @@ namespace Model
         public System.DateTime StartTime { get; set; }
         public System.DateTime EndTime { get; set; }
         public int LocationID { get; set; }
+        public string Subject { get; set; }
         public string Status { get; set; }
     
         public virtual Location Location { get; set; }
