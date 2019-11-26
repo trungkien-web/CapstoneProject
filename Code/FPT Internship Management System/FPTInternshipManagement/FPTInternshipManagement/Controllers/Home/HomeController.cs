@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FPTInternshipManagement.Models;
 
 namespace FPTInternshipManagement.Controllers
 {
@@ -26,7 +27,21 @@ namespace FPTInternshipManagement.Controllers
 		}
 		public ActionResult JobList()
 		{
-			return View();
+            IJobListService jobService = new JobListService();
+            ILocationService location = new LocationService();
+            List<JobListModel> jobListModel = new List<JobListModel>();
+            jobService.GetAllJob().ForEach(x => {
+                JobListModel job = new JobListModel();
+                job.JobID = x.JobID;
+                job.JobName = x.JobName;
+                job.LocationName = location.GetLocation(x.LocationID.Value);
+                job.Recruiter = x.User.Name;
+                job.AmountStudent = x.AmountStudent;
+                job.Status = x.Status;
+                jobListModel.Add(job);
+            });
+            ViewData["JobList"] = jobListModel;
+            return View(jobListModel);
 		}
 		public ActionResult JobDetail()
 		{
