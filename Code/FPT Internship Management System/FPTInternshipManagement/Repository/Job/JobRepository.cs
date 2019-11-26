@@ -12,7 +12,7 @@ namespace Repository
 		FPTInternshipManagermentEntities ctx = new FPTInternshipManagermentEntities();
 		public List<Job> GetAllJobs()
 		{
-			var jobs = ctx.Jobs.ToList();
+			var jobs = ctx.Jobs.Where(job => job.Status.Equals("Available")).ToList();
 			return jobs;
 		}
 
