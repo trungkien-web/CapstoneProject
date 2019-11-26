@@ -45,6 +45,10 @@
     <Compile Include="Common\ICommonService.cs" />
     <Compile Include="Department\DepartmentService.cs" />
     <Compile Include="Department\IDepartmentService.cs" />
+    <Compile Include="JobList\JobListService.cs" />
+    <Compile Include="JobList\IJobListService.cs" />
+    <Compile Include="Location\ILocationService.cs" />
+    <Compile Include="Location\LocationService.cs" />
     <Compile Include="Login\ILoginService.cs" />
     <Compile Include="Rate\IRateService.cs" />
     <Compile Include="Login\LoginService.cs" />
