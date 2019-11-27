@@ -12,9 +12,9 @@ namespace Service
     {
         IUserRepository userRepo = new UserRepository();
 
-        public List<User> searchStudents(DateTime startDate, DateTime endDate, string studentID, string location, string studentName)
+        public List<User> searchStudents(string startDate, string endDate, string studentID, string location, string studentName)
         {
-            if (startDate.Equals(null) && endDate.Equals(null) && string.IsNullOrEmpty(studentID) && string.IsNullOrEmpty(location) && string.IsNullOrEmpty(studentName))
+            if (string.IsNullOrEmpty(startDate) && string.IsNullOrEmpty(endDate) && string.IsNullOrEmpty(studentID) && string.IsNullOrEmpty(location) && string.IsNullOrEmpty(studentName))
             {
                 return userRepo.GetAllStudents();
             }
@@ -31,12 +31,12 @@ namespace Service
 
             if (!startDate.Equals(null) && !endDate.Equals(null) && string.IsNullOrEmpty(studentID) && string.IsNullOrEmpty(location) && string.IsNullOrEmpty(studentName))
             {
-                return userRepo.SearchStudentsInTime(startDate, endDate);
+                return userRepo.SearchStudentsInTime(DateTime.Parse(startDate), DateTime.Parse(endDate));
             }
 
             if (!startDate.Equals(null) && !endDate.Equals(null) && !string.IsNullOrEmpty(studentID) && !string.IsNullOrEmpty(location) && !string.IsNullOrEmpty(studentName))
             {
-                return userRepo.SearchStudentsDetail(startDate, endDate, location, int.Parse(studentID), studentName);
+                return userRepo.SearchStudentsDetail(DateTime.Parse(startDate), DateTime.Parse(endDate), location, int.Parse(studentID), studentName);
             }
 
             return null;

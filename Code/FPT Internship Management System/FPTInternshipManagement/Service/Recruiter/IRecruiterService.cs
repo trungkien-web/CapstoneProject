@@ -9,7 +9,7 @@ namespace Service
 {
     public interface IRecruiterService
     {
-        List<User> searchStudents(DateTime startDate, DateTime endDate, string studentID, string location, string studentName);
+        List<User> searchStudents(string startDate, string endDate, string studentID, string location, string studentName);
 
         void InsertStudent(User newStudent);
 
