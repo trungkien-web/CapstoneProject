@@ -131,6 +131,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\JobListModel.cs" />
     <Compile Include="Models\StudentViewModel.cs" />
     <Compile Include="MyRoleProvider\SiteRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
