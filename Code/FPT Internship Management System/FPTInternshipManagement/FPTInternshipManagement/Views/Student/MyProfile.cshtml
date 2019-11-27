@@ -65,48 +65,116 @@
 						</div>
 					</form>
 				</div>
-                <div id="Aspirations" class="container tab-pane fade">
-                    @using (Html.BeginForm("MyProfile", "Student"))
-                    {
+				<div id="Aspirations" class="container tab-pane fade">
+					@using (Html.BeginForm("MyProfile", "Student"))
+					{
+						<div class="form-group">
+							<style type="text/css">
+							</style>
+							<p style="margin:7px;width:80%; display:inline-flex; " ;>
+								Objective &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <textarea style="margin:7px;width:60%; display:inline;background-color: #eeeeee; " ; type="text" class="form-control  border-0 border-rounded" id="" placeholder="SE04596"
+																	  name="email" required> </textarea>
+							</p>
 
-                        <div class="form-group">
-                            <label for="recipient-email" class="col-form-label">Aspirations Name</label>
-                            <input type="text" class="form-control" placeholder=" " name="AspirationsName" id="recipient-email"
-                                   required="" value="@TempData["Name"]">
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-email" class="col-form-label">Salary</label>
-                            <input type="text" class="form-control" placeholder=" " name="Salary" id="recipient-email"
-                                   required="" value="@TempData["Salary"]">
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-email" class="col-form-label">Description</label>
-                            <input type="text" class="form-control" placeholder=" " name="Description" id="recipient-email"
-                                   required="" value="@TempData["Description"]">
-                        </div>
-                        <div class="form-group">
-                            <label for="SelectedDepartmentId">Department:</label>
-                            @Html.DropDownListFor(x => x.SelectedDepartmentId, Model.SelectListItems, new { id = "dropdownDepartment", Name = "dropdownDepartment", @class = "form-control", onchange = "this.form.submit();" })
-                        </div>
-                      
-                            foreach (var item in Model.AvailableSkills)
-                            {
-                            <div class="checkbox" class="form-control" style="height:50px; float:left;">
-                                <label style="padding-right: 20px;">
-                                    <input type="checkbox"
-                                           name="SelectedSkills"
-                                           value="@item.Value"
-                                           @if (Model.SelectedSkills.Contains(item.Value)) { <text> checked </text> } /> @item.Text
-                                </label>
-                                </div>
-                                }
-                                <div class="right-w3l">
-                                    <input type="submit" class="form-control bg-theme" formaction="/Student/SaveAspiration" value="Save" name="btnSave">
-                                </div>
-                                }
-                            </div>
+							<p>
+								Skill &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    <select style="margin:7px;width:16%; display:inline-flex;background-color: #eeeeee; " ; class="custom-select" id="inputGroupSelect01">
+									<option selected>Choose...</option>
+									<option value="1">Node JS</option>
+									<option value="2">HTML5</option>
+									<option value="3">C++</option>
+								</select>
+								<input style="display: inline-flex;" ; id="datepicker" width="200" /> <input style="margin:7px;width:16%; display:inline;background-color: #eeeeee; " ; class="form-control  border-0 border-rounded" type="text" placeholder="Description"> <button type="button" class="btn btn-primary">Add Skill +</button>
+								<script>
+									$('#datepicker').datepicker({
+										uiLibrary: 'bootstrap4'
+									});
+								</script>
+							</p> <br>
+							<div class="tech-job">
+								<style type="text/css">
+									.div {
+										display: inline-flex;
+									}
+								</style>
 
-                        </div>
+								@*<ul class="e-tags">
+									<li class="collapsible">NODE JS</li>
+									<div class="content">
+										<p>Date : 16/08/2019</p>
+										<p>Description : Xin chao</p>
+									</div>
+									<li class="collapsible">HTML5</li>
+									<div class="content">
+										<p>Date : 16/08/2019</p>
+										<p>Description : Xin chao</p>
+									</div>
+									<li class="collapsible">Bootstrap</li>
+									<div class="content">
+										<p>Date : 16/08/2019</p>
+										<p>Description : Xin chao</p>
+									</div>
+									<li class="collapsible">angular js</li>
+									<div class="content">
+										<p>Date : 16/08/2019</p>
+										<p>Description : Xin chao</p>
+									</div>
+									<li class="collapsible">c++</li>
+									<div class="content">
+										<p>Date : 16/08/2019</p>
+										<p>Description : Xin chao</p>
+									</div>
+								</ul>*@
+							</div>
+							<p style="margin:7px;width:80%; display:inline-flex; " ;>
+								Other Information &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <textarea style="margin:7px;width:60%; display:inline;background-color: #eeeeee; " ; type="text" class="form-control  border-0 border-rounded" id="" placeholder="SE04596"
+																									  name="email" required> </textarea>
+							</p>
+							<div class="right-w3l">
+								<input type="submit" class="form-control bg-theme" formaction="/Student/SaveAspiration" value="Save" name="btnSave">
+							</div>
+						</div>
+					}
+					@*@using (Html.BeginForm("MyProfile", "Student"))
+						{
+
+						<div class="form-group">
+							<label for="recipient-email" class="col-form-label">Aspirations Name</label>
+							<input type="text" class="form-control" placeholder=" " name="AspirationsName" id="recipient-email"
+								   required="" value="@TempData["Name"]">
+						</div>
+						<div class="form-group">
+							<label for="recipient-email" class="col-form-label">Salary</label>
+							<input type="text" class="form-control" placeholder=" " name="Salary" id="recipient-email"
+								   required="" value="@TempData["Salary"]">
+						</div>
+						<div class="form-group">
+							<label for="recipient-email" class="col-form-label">Description</label>
+							<input type="text" class="form-control" placeholder=" " name="Description" id="recipient-email"
+								   required="" value="@TempData["Description"]">
+						</div>
+						<div class="form-group">
+							<label for="SelectedDepartmentId">Department:</label>
+							@Html.DropDownListFor(x => x.SelectedDepartmentId, Model.SelectListItems, new { id = "dropdownDepartment", Name = "dropdownDepartment", @class = "form-control", onchange = "this.form.submit();" })
+						</div>
+
+						foreach (var item in Model.AvailableSkills)
+						{
+						<div class="checkbox" class="form-control" style="height:50px; float:left;">
+							<label style="padding-right: 20px;">
+								<input type="checkbox"
+									   name="SelectedSkills"
+									   value="@item.Value"
+									   @if (Model.SelectedSkills.Contains(item.Value)) { <text> checked </text> } /> @item.Text
+								</label>
+							</div>
+							}
+							<div class="right-w3l">
+								<input type="submit" class="form-control bg-theme" formaction="/Student/SaveAspiration" value="Save" name="btnSave">
+							</div>
+							}*@
+				</div>
+
+			</div>
 
 		</div>
 
