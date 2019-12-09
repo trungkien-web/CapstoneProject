@@ -140,7 +140,9 @@
   <ItemGroup>
     <Content Include="Assets\css\bootstrap.min.css" />
     <Content Include="Assets\css\bootstrap_tungbc.css" />
+    <Content Include="Assets\css\calendar.css" />
     <Content Include="Assets\css\font-awesome.min.css" />
+    <Content Include="Assets\css\responsive-calendar.css" />
     <Content Include="Assets\css\style_recruiment.css" />
     <Content Include="Assets\css\style.css" />
     <Content Include="Assets\css\style_student.css" />
@@ -172,6 +174,8 @@
     <Content Include="Assets\js\jquery.validate.unobtrusive.js" />
     <Content Include="Assets\js\jquery.validate.unobtrusive.min.js" />
     <Content Include="Assets\js\move-top.js" />
+    <Content Include="Assets\js\responsive-calendar.js" />
+    <Content Include="Assets\js\responsive-calendar.min.js" />
     <Content Include="Assets\js\responsiveslides.min.js" />
     <Content Include="Assets\js\SmoothScroll.min.js" />
     <Content Include="favicon.ico" />
@@ -201,6 +205,8 @@
     <Content Include="Assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Assets\fonts\FontAwesome.otf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Assets\css\less\responsive-calendar.less" />
+    <Content Include="Assets\js\coffee\responsive-calendar.coffee" />
     <None Include="packages.config" />
     <Content Include="Views\Recruiter\PublishedRecruitment.cshtml" />
     <Content Include="Views\Recruiter\SearchStudent.cshtml" />
