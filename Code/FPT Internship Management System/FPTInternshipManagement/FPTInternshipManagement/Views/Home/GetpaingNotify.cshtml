@@ -1,0 +1,30 @@
+﻿@model PagedList.IPagedList<Model.Notification>
+@using PagedList.Mvc
+@{
+
+    Layout = null;
+}
+    <ul style="    list-style: lower-roman;
+    font-size: 20px;
+    color: green; margin-bottom:50px;">
+
+        @foreach (var item in Model)
+        {
+        <li style="padding: 20px 20px;
+    border-bottom: dashed;">
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            summary
+            <a href="/Home/NotifyDetail/@item.NotificationID">
+                @Html.Raw(!String.IsNullOrEmpty(item.Content) ? item.Content.Substring(0, Math.Min(item.Content.Length, 50)) : "No thing")
+            </a>
+        </li>
+        }
+
+    </ul>
+
+@Html.PagedListPager(Model, page => Url.Action("MyNotify", new { page }),
+    PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+    {
+        HttpMethod = "GET",
+        UpdateTargetId = "main"
+    }))

@@ -15,5 +15,11 @@ namespace Repository
 			var location = ctx.Locations.Where(l => l.LocationID == id).FirstOrDefault();
 			return location;
 		}
+
+		public List<Location> GetAllLocation()
+		{
+			var location = ctx.Locations.ToList();
+			return location;
+		}
 	}
 }

@@ -1,0 +1,143 @@
+﻿@{ 
+    ViewBag.Title = "Recommend";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="top_ad">
+    <div class="wrapper">
+        <a id="fancybox-close" class="close_top_ad" style="display: inline;"></a>
+    </div>
+</div>
+
+<style>
+
+    .search-box {
+        width: 300px !important;
+        height: 42px !important;
+    }
+
+    .search-horizontal select {
+        opacity: 1;
+    }
+
+    .chosen {
+        width: 100%;
+        height: 36px;
+        border-radius: 3px;
+    }
+</style>
+<!-- container for search SV -->
+<div class="inner-banner contact" style="background: url(../../imageshome/inner-banner-bg.jpg) no-repeat center top / cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="col-sm-12">
+                    <h1>Recommend</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <br />
+    <div class="col-md-3 m-0 p-0">
+        <h3 style="margin-top:5px;">What News?</h3>
+        <ul style="list-style: disc; color: blue;">
+            @foreach (var item in ViewBag.lstNot)
+            {
+                <li style="word-wrap: break-word;">
+                    <a style="color: #0c84ca;text-transform: uppercase;" target="_blank" href="/Home/NotifyDetail/@item.NotificationID">@Html.Raw(!String.IsNullOrEmpty(item.Content) ? item.Content.Substring(0, Math.Min(item.Content.Length, 50)) : "No thing")</a>
+                </li>
+            }
+            <a href="/Home/NotifyAll">View more</a>
+        </ul>
+    </div>
+    <div class="col-md-9 m-0 p-0">
+        <table id="lsStudent" class="table table-striped table-bordered table-hover" cellspacing="0" width="80%" align="center">
+            <thead> 
+                <tr style="background: #234a66; color: white;">
+                    <th class="th">No</th>
+                    <th class="th">Name</th>
+                    <th class="th">Image</th>
+                    <th class="th">Phone</th>
+                    <th class="th">Email</th>
+                    <th class="th">CV</th>
+                    <th class="th">GPA</th>
+                    <th class="th">Skills</th>
+                    <th class="th">Semester</th>
+                    <th class="th">Specialized</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ var count = 1;
+                    foreach (var student in ViewBag.Recommend)
+                    {
+                                <tr>
+                                    <td>
+                                        @count
+                                    </td>
+                                    <td>
+                                        @student.Name
+                                    </td>
+                                    <td>
+                                        <img width="120" height="150" src="@Url.Content(@student.Status)" />
+                                    </td>
+                                    <td>
+                                        @student.Phone
+                                    </td>
+
+                                    <td>
+                                        @student.Email
+                                    </td>
+
+
+                                    <td>
+                                        @{
+                                            if (student.CV != null && student.CV != "")
+                                            {
+
+                                                <a href="../../Assets/upload/@student.CV" download="@student.CV">Download</a>
+                                            }
+                                        }
+                                    </td>
+                                   
+                                    <td>
+                                        @student.GPA
+                                    </td>
+                                    <td>
+                                        <ul style="text-decoration:none;float:left;">
+                                            @Html.Raw(student.Description)
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        @student.Semester
+                                    </td>
+                                    <td>
+                                        @student.Specialized
+                                    </td>
+                                    @*<td>
+            @student.specialized
+        </td>*@
+
+                                    @*<td>
+            <a href="CallModalConfirmDeleteStudent?studentId" class="btn btn-warning">Xem CV</a>
+        </td>*@
+                                    @*<td>
+            <a onclick="Reject(@student.id)" class="btn btn-danger">&nbsp; Xóa &nbsp;</a>
+        </td>*@
+                                </tr>
+                        count += 1;
+                    }
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+

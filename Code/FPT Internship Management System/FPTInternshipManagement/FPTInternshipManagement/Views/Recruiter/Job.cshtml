@@ -1,0 +1,365 @@
+﻿@{
+    ViewBag.Title = "Jobs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="top_ad">
+    <div class="wrapper">
+        <a id="fancybox-close" class="close_top_ad" style="display: inline;"></a>
+    </div>
+</div>
+<div class="inner-banner contact" style="background: url(../../imageshome/inner-banner-bg.jpg) no-repeat center top / cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="col-sm-12">
+                    <h1>ASPIRATIONS</h1>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<style>
+
+    .search-box {
+        width: 300px !important;
+        height: 42px !important;
+    }
+
+    .search-horizontal select {
+        opacity: 1;
+    }
+
+    .chosen {
+        width: 100%;
+        height: 36px;
+        border-radius: 3px;
+    }
+</style>
+<!-- container for search SV -->
+
+<div class="container" id="uni_container" style="padding-top:50px;">
+    <div id="main" class="row w-80 p-5 m-0 ">
+        <div class="form-group w-100">
+
+            <p style="margin:7px;width:80%; display:inline-flex; " ;>
+                Update personal Aspirations
+            </p>
+            <p>
+                <a data-toggle="modal" data-target="#AddAsp" style="padding:4px 10px;background:green" class="btn btn-primary" id="btnAddAsp">Add your Aspiration</a>
+            </p>
+        </div>
+        <div class="row w-100 m-0">
+            <b>Statistics Aspirations</b>
+        </div>
+        <br />
+        <!--TABLE SKILL -->
+        <div id="tableAsp"></div>
+
+    </div>
+</div>
+<div id="AddAsp" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="max-width: none !important;">
+
+        <!-- Modal content-->
+        <div class="modal-content" style="width:1000px;    margin: auto;">
+            <div class="modal-header">
+                <h4 class="modal-title">Add New Aspiration</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Aspiration Name</label>
+                        <input type="text" class="form-control" id="Name" aria-describedby="emailHelp" placeholder="Enter your Aspiration Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Add skill to Aspiration</label>
+                        <div class="row w-100">
+                            <ul style="padding-left:30px;width:100%;">
+                                @foreach (var item in ViewBag.Exp)
+                                {
+                                    <li style="float:left;margin-right:20px;width:45%;">
+                                        <input type="checkbox" name="ckbSkill" id="@item.IdEx" value="@item.IdEx" />
+                                        <label>@item.skill</label>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <label for="exampleInputEmail1">Aspiration Content </label>
+                        <textarea type="text" id="Description"></textarea>
+                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            CKEDITOR.replace('Description');
+                        });
+
+                    </script>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <span id="AlertShow" style="color:red;"></span>
+                <button type="button" id="btnSaveAsp" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--Edit modal-->
+<div id="EditAsp" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="max-width: none !important;">
+
+        <!-- Modal content-->
+        <div class="modal-content" style="width:1000px;margin: auto;">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit your Aspiration</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control fade" id="EAspId" hidden>
+                        <label for="exampleInputEmail1">Aspiration Name</label>
+                        <input type="text" class="form-control" id="EName" placeholder="Enter your Aspiration Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Add job to Aspiration</label>
+                        <div class="row w-100">
+                            <ul style="padding-left:30px;width:100%;">
+                                @foreach (var item in ViewBag.Exp)
+                                {
+                                    <li style="margin-right:20px;float:left;width:45%;">
+                                        <input type="checkbox" name="ckbSkill" id="@item.IdEx" value="@item.IdEx" />
+                                        <label>@item.skill</label>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <label for="exampleInputEmail1">Aspiration Content </label>
+                        <textarea type="text" id="EDescription"></textarea>
+                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            CKEDITOR.replace('EDescription');
+                        });
+
+                    </script>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <span id="EAlertShow" style="color:red;"></span>
+                <button type="button" id="btnSaveEdit" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        GetDataAsp();
+        $("#AddAsp").on('show.bs.modal', function () {
+            $("#AddAsp input[name='ckbSkill']").prop('checked', false);
+            $('#Name').val("");
+            CKEDITOR.instances['Description'].setData("");
+        });
+        //$("#EditAsp").on('show.bs.modal', function () {
+        //    $('#EName').val("");
+        //    CKEDITOR.instances['EDescription'].setData("");
+        //});
+    });
+
+    $(".custom-file-input").on("change", function () {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+
+
+
+    function GetDataAsp() {
+        var serviceURL = '/Recruiter/MyAspiration';
+        $.ajax({
+            type: "GET",
+            url: serviceURL,
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: successFunc,
+            error: errorFunc
+        });
+        function successFunc(data, status) {
+            $('#tableAsp').html(data)
+        }
+        function errorFunc() {
+            alert('error');
+        }
+    }
+
+
+
+
+
+    function DelAps(id) {
+        var serviceURL = '/Recruiter/DelAspiration';
+        $.ajax({
+            type: "POST",
+            url: serviceURL,
+            data: JSON.stringify({ Id: id }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: successFunc,
+            error: errorFunc
+        });
+        function successFunc(data, status) {
+            GetDataAsp();
+        }
+        function errorFunc() {
+            alert('error');
+        }
+    }
+
+    function GetDataAspEdit(id) {
+        //$("#EditAsp input[name='ckbSkill']").attr('checked', false);
+        // $('#EName').val("");
+        //    CKEDITOR.instances['EDescription'].setData("");
+        //    $('#EAspId').val("");
+        var serviceURL = '/Recruiter/GetAspiration';
+        $.ajax({
+            type: "POST",
+            url: serviceURL,
+            data: JSON.stringify({ id: id }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: successFunc,
+            error: errorFunc
+        });
+        function successFunc(data, status) {
+            $("#EditAsp input[name='ckbSkill']").prop('checked', false);
+            $('#EName').val(data.name);
+            CKEDITOR.instances['EDescription'].setData(data.des);
+            $('#EAspId').val(data.id);
+            $.each(data.skill, function (index, i) {
+                $("#EditAsp input[value='" + i + "']").prop('checked', true);
+            })
+
+        }
+        function errorFunc() {
+            alert('error');
+        }
+    }
+
+
+
+    $('#btnSaveAsp').on('click', function () {
+        var lstcheck = "";
+        $.each($("#AddAsp input[name='ckbSkill']:checked"), function () {
+            lstcheck = lstcheck + "," + $(this).val();
+        })
+         if (lstcheck == "" || lstcheck == null) {
+                $('#AlertShow').text("Please choose your jobs");
+                    setInterval(function () {
+                        $('#AlertShow').text("")
+                    }, 5000);
+            return;
+        }
+        lstcheck = lstcheck.substr(1);
+        var Name = $('#Name').val();
+         if (Name == "" || Name == null) {
+                $('#AlertShow').text("Please enter your Aspiration name");
+                    setInterval(function () {
+                        $('#AlertShow').text("")
+                    }, 5000);
+            return;
+        }
+        var Desc = CKEDITOR.instances['Description'].getData();
+        if (Desc == "" || Desc == null) {
+                $('#AlertShow').text("Please enter Aspiration Content");
+                    setInterval(function () {
+                        $('#AlertShow').text("")
+                    }, 5000);
+            return;
+        }
+        var serviceURL = '/Recruiter/SaveAspiration';
+        $.ajax({
+            type: "POST",
+            url: serviceURL,
+            data: JSON.stringify({ Des: Desc, Skill: lstcheck, Name: Name }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: successFunc,
+            error: errorFunc
+        });
+        function successFunc(data, status) {
+             $('#AddAsp').modal('toggle');
+            GetDataAsp();
+        }
+        function errorFunc() {
+            alert('error');
+        }
+    })
+
+    $('#btnSaveEdit').on('click', function () {
+        var lstcheck = "";
+        $.each($("#EditAsp input[name='ckbSkill']:checked"), function () {
+            lstcheck = lstcheck + "," + $(this).val();
+        })
+         if (lstcheck == "" || lstcheck == null) {
+                $('#EAlertShow').text("Please choose your Jobs");
+                    setInterval(function () {
+                        $('#EAlertShow').text("")
+                    }, 5000);
+            return;
+        }
+        lstcheck = lstcheck.substr(1);
+        var Name = $('#EName').val();
+        if (Name == "" || Name == null) {
+                $('#EAlertShow').text("Please enter your Aspiration name");
+                    setInterval(function () {
+                        $('#EAlertShow').text("")
+                    }, 5000);
+            return;
+        }
+        var id = $('#EAspId').val();
+        var Desc = CKEDITOR.instances['EDescription'].getData();
+        if (Desc == "" || Desc == null) {
+                $('#EAlertShow').text("Please enter Aspiration Content");
+                    setInterval(function () {
+                        $('#EAlertShow').text("")
+                    }, 5000);
+            return;
+        }
+        var serviceURL = '/Recruiter/SaveEditAspiration';
+        $.ajax({
+            type: "POST",
+            url: serviceURL,
+            data: JSON.stringify({ Id: id, Des: Desc, Skill: lstcheck, Name: Name }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: successFunc,
+            error: errorFunc
+        });
+        function successFunc(data, status) {
+             $('#EditAsp').modal('toggle');
+            GetDataAsp();
+        }
+        function errorFunc() {
+            alert('error');
+        }
+    })
+
+
+</script>
+
+
+
+

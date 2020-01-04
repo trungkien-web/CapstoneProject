@@ -1,0 +1,215 @@
+﻿
+@{
+    ViewBag.Title = "AccountManagement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="inner-banner contact" style="background: url(../../imageshome/inner-banner-bg.jpg) no-repeat center top / cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="col-sm-12">
+                    <h1>   Student Account Management</h1>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container" id="uni_container" style="padding-top:70px;">
+
+    <div class="s-subpage">
+        <div id="NewSearchJob" style="padding: 0px 10%;">
+            <div class="row justify-content-between bnr-form-w3ls">
+                <div class="w-100">
+                    <div class="row">
+                        <div class="row col-md-12">
+                            <div class="col-md-5 form-group mb-md-0">
+                                <label class="text-capitalize">
+                                    Find
+                                </label>
+                                <input class="form-control" style="height:37px;" id="txtKeyword" type="text" name="name" placeholder="">
+                            </div>
+                            <div class="col-md-4 mb-md-0 form-group">
+                                <label class="text-capitalize">
+                                    Semester
+                                </label>
+                                <select label="Việt Nam" id="Semester" class="option-title w-100 float-right" style="height:37px;width: 100%;">
+                                    <option selected value="All">All</option>
+                                    <option value="Spring 2018">Spring 2018</option>
+                                    <option value="Summer 2018">Summer 2018</option>
+                                    <option value="Fall 2018">Fall 2018</option>
+                                    <option value="Spring 2019">Spring 2019</option>
+                                    <option value="Summer 2019">Summer 2019</option>
+                                    <option value="Fall 2019">Fall 2019</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-2 d-flex align-items-end">
+                                <button type="submit" id="btnSearch" style="margin-top: 27px;padding: 10px 20px !important;" class="btn btn-w3ltd btn-block w-100 bg-theme font-weight-bold text-uppercase">
+                                    <span class="fa fa-search"></span>
+                                </button>
+
+                                @*<a style="margin-left:10px;" type="submit" data-toggle="modal" data-target="#AddAsp" id="btnAdd" class="btn btn-w3ltd btn-block w-100 bg-theme font-weight-bold text-uppercase">
+                                        <span class="fa fa-plus"></span>
+                                    </a>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wthreepvt-pos-row row  text-center" style="float:right; margin: 0 3px 15px 0;">
+        <table>
+            <tr>
+                <td style="width:200px">
+                    <a href="@Url.Action("DownloadExcelAccount","Staff")" class="btn btn-primary btn-block" style="width: 92px;" >Export</a>
+                </td>
+
+                @using (Html.BeginForm("ImportExcel", "Staff", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+
+
+                    <td>
+                        <input type="file" name="postedFile" style="width:200px" />
+
+                    </td>
+                    <td>
+                        <input type="submit" value="Import" class="btn btn-primary btn-block" />
+                    </td>
+                 }
+                </tr>
+            </table>
+
+
+    </div>
+    <div id="main">
+
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+                            GetDataUser();
+                        });
+
+        $('#btnSearch').on('click', function () {
+                            GetDataUser();
+                        })
+
+
+        function GetDataUser() {
+                            var serviceURL = '/Staff/AccountSearchStudent';
+                            var keyword = $('#txtKeyword').val();
+                            var semester = $('#Semester :selected').val();
+            $.ajax({
+                            type: "POST",
+                url: serviceURL,
+                data: JSON.stringify({ keyword: keyword, semester: semester }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: successFunc,
+                error: errorFunc
+            });
+            function successFunc(data, status) {
+                $('#main').html(data)
+            }
+                    function errorFunc() {
+                        alert('error');
+                    }
+                }
+
+                function Accept(id) {
+                    var serviceURL = '/Admin/Accept';
+                    var UserId = id;
+            $.ajax({
+                    type: "POST",
+                url: serviceURL,
+                data: JSON.stringify({ UserId: UserId }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: successFunc,
+                error: errorFunc
+            });
+                    function successFunc(data, status) {
+                        GetDataUser();
+                    }
+                    function errorFunc() {
+                        alert('error');
+                    }
+                }
+
+
+                function Reject(id) {
+                    var serviceURL = '/Admin/Reject';
+                    var UserId = id;
+            $.ajax({
+                    type: "POST",
+                url: serviceURL,
+                data: JSON.stringify({ UserId: UserId }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: successFunc,
+                error: errorFunc
+            });
+                    function successFunc(data, status) {
+                        GetDataUser();
+                    }
+                    function errorFunc() {
+                        alert('error');
+                    }
+                }
+
+                function Del(id) {
+                    var serviceURL = '/Admin/Delete';
+                    var UserId = id;
+            $.ajax({
+                    type: "POST",
+                url: serviceURL,
+                data: JSON.stringify({ UserId: UserId }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: successFunc,
+                error: errorFunc
+            });
+                    function successFunc(data, status) {
+                        GetDataUser();
+                    }
+                    function errorFunc() {
+                        alert('error');
+                    }
+                }
+
+        $('#btnSave').on('click', function () {
+                    var Name = $('#Name').val();
+                    var UserName = $('#UserName').val();
+                    var Password = $('#Password').val();
+                    var ConfirmPassword = $('#ConfirmPassword').val();
+                    var Email = $('#Email').val();
+                    //var Phone = $('#Phone').val();
+                    var Specialized = $('#Specialized').val();
+                    var Location = $('#location').val();
+                    var Semester = $('#Semester').val();
+                    var RoleAdd = $('#RoleAdd').val();
+                    var serviceURL = '/Admin/AddNew';
+            $.ajax({
+                    type: "POST",
+                url: serviceURL,
+                data: JSON.stringify({ Name: Name, UserName: UserName, Password: Password, Email: Email, Specialized: Specialized, Location: Location, Semester: Semester, RoleAdd: RoleAdd }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: successFunc,
+                error: errorFunc
+            });
+                    function successFunc(data, status) {
+                        GetDataUser();
+                    }
+                    function errorFunc() {
+                        alert('error');
+                    }
+                })
+
+    </script>
+
+</div>

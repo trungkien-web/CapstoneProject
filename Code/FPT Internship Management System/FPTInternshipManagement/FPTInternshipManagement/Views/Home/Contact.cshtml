@@ -1,181 +1,311 @@
 ﻿
 @{
-	ViewBag.Title = "Contact";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<header>
-	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-light p-0">
-			<h1>
-				<a class="navbar-brand" href="index.html">
-					FIM
-
-				</a>
-			</h1>
-			<button class="navbar-toggler ml-lg-auto ml-sm-5 bg-light" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="ml-lg-5 navbar-nav mr-lg-auto">
-					<li class="nav-item active  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
-						<a href="index.html">Home</a>
-					</li>
-					<li class="nav-item  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
-						<a href="about.html">Nhà Tuyển Dụng</a>
-					</li>
-					<li class="nav-item dropdown mr-lg-4 my-lg-0 my-sm-4 my-3">
-						<a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-						   aria-expanded="false">
-							CV Sinh Viên
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a href="job_list.html">Job List</a>
-							<a href="job_single.html">Job Single</a>
-						</div>
-					</li>
-					<li class="nav-item mr-lg-4 my-lg-0 mb-sm-4 mb-3">
-						<a href="contact.html">Liên hệ</a>
-					</li>
-				</ul>
-				<button type="button" class="btn w3ls-btn text-uppercase font-weight-bold d-block" data-toggle="modal"
-						aria-pressed="false" data-target="#exampleModal1">
-					Đăng Ký
-				</button>
-				<button type="button" class="btn w3ls-btn btn-2 ml-lg-1 text-uppercase font-weight-bold d-block"
-						data-toggle="modal" aria-pressed="false" data-target="#exampleModal">
-					Đăng Nhập
-				</button>
-			</div>
-		</nav>
-	</div>
-</header>
-<!-- //header -->
-<div class="inner-banner-w3ls">
+<style>
+    #snoAlertBox {
+        z-index: 1400;
+        top: 2%;
+        right: 4%;
+        margin: 0px auto;
+        text-align: center;
+        display: none;
+    }
+</style>
+<div id="loading" style="display: none;">
+    <div class="element">
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+        </div>
+    </div>
 </div>
-<!-- breadcrumbs -->
-<nav aria-label="breadcrumb">
-	<ol class="breadcrumb d-flex justify-content-center bg-theme">
-		<li class="breadcrumb-item">
-			<a href="index.html" class="text-white">Trang Chủ</a>
-		</li>
-		<li class="breadcrumb-item active text-white font-weight-bold" aria-current="page">Liên Hệ</li>
-	</ol>
-</nav>
+
+<!-- //header -->
+<div class="inner-banner contact" style="background: url(../../imageshome/inner-banner-bg.jpg) no-repeat center top / cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="col-sm-12">
+                    <h1>Contact Us</h1>
+                    <div class="row" style="width:100%;">
+                        <div class="col-lg-4">
+                            <div class="row fv3-contact">
+                                <div class="col-sm-4  text-center">
+                                    <span style="font-size: 40px;" class="fa fa-envelope-open ml-2"></span>
+                                </div>
+                                <div class="col-sm-8">
+                                    <a href="mailto:thotqse04596@fpt.edu.vn" class="d-block text-secondary">Kienbtse05182@fpt.edu.vn</a><br />
+                                    <a href="mailto:acad.hl@fpt.edu.vn" class="d-block text-secondary">acad.hl@fpt.edu.vn</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 my-lg-0 my-4">
+                            <div class="row  fv3-contact">
+                                <div class="col-sm-4 my-2 text-center">
+                                    <span style="font-size: 40px;" class="fa fa-phone ml-2"></span>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p>(024)66805916</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="row fv3-contact">
+                                <div class="col-sm-4  text-center">
+                                    <span style="font-size: 40px;" class="fa fa-home ml-2"></span>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p>
+                                        Khu GD&ĐT, Khu CNC, KM29, ĐCT08, Hòa Lạc, Thạch Thất, Hà Nội
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 <!-- //breadcrumbs -->
 <!-- contact -->
 <section class="contact-w3pvt py-lg-5">
-	<div class="container py-md-5">
-		<div class="address-w3layouts">
-			<div class="title-sec-w3layouts_pvt text-center">
+    <div class="container py-md-5">
 
-				<h4 class="w3layouts_pvt-head">Thông tin liên hệ</h4>
-			</div>
-			<div class="row py-md-5 pt-4">
-				<div class="col-lg-4">
-					<div class="row fv3-contact">
-						<div class="col-4  text-center">
-							<span class="fa fa-envelope-open ml-2"></span>
-						</div>
-						<div class="col-8">
-							<a href="mailto:thotqse04596@fpt.edu.vn" class="d-block text-secondary">info@fpt.edu.vn</a>
-							<a href="mailto:kienbtse05182@fpt.edu.vn" class="d-block text-secondary">kienbtse05182@fpt.edu.vn</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 my-lg-0 my-4">
-					<div class="row  fv3-contact">
-						<div class="col-4 my-2 text-center">
-							<span class="fa fa-phone ml-2"></span>
-						</div>
-						<div class="col-8">
-							<p>+84 98 513 8384</p>
-							<p>+84 97 789 2345</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="row fv3-contact">
-						<div class="col-4  text-center">
-							<span class="fa fa-home ml-2"></span>
-						</div>
-						<div class="col-8">
-							<p>
-								20A Royal City
-								<br>76 Nguyen Trai Street, Ha Noi
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<hr>
-		<div class="row">
-			<div class="col-12 mx-auto">
-				<!-- register form grid -->
-				<div class="register-top1 py-lg-3">
-					<div class="title-sec-w3layouts_pvt text-center">
-						<h4 class="w3layouts_pvt-head">Thông tin của bạn</h4>
-					</div>
-					<form action="#" method="get" class="register-wthree pt-md-5 pb-md-0 py-4">
-						<div class="form-group">
-							<div class="row">
-								<div class="col-md-12">
-									<label>
-										Name
-									</label>
-									<input class="form-control" type="text" placeholder="Trung Kien" name="email"
-										   required="">
-								</div>
-
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="row">
-								<div class="col-md-6">
-									<label>
-										Mobile
-									</label>
-									<input class="form-control" type="text" placeholder="xxxx xxxxx" name="email"
-										   required="">
-								</div>
-								<div class="col-md-6 mt-md-0 mt-4">
-									<label>
-										Email
-									</label>
-									<input class="form-control" type="email" placeholder="example@email.com" name="email"
-										   required="">
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="row">
-								<div class="col-md-12">
-									<label>
-										Your message
-									</label>
-									<textarea placeholder="Type your message here" class="form-control"></textarea>
-								</div>
-							</div>
-						</div>
-						<div class="row mt-3">
-							<div class="col-md-12">
-								<button type="submit" class="btn btn-agile btn-block w-100 font-weight-bold text-uppercase bg-theme">Send</button>
-							</div>
-						</div>
-					</form>
-				</div>
-				<!--  //register form grid ends here -->
-				<div class="border-pos-wthree border-exp"></div>
-			</div>
-		</div>
-	</div>
+        <hr>
+        <div class="row">
+            <div class="col-12 mx-auto">
+                <!-- register form grid -->
+                <div class="register-top1 py-lg-3">
+                    <div class="title-sec-w3layouts_pvt text-center">
+                        <h4 class="w3layouts_pvt-head">Your Information:</h4>
+                    </div>
+                    <div id="snoAlertBox" class="alert alert-success" data-alert="alert"><span id="s1"></span></div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>
+                                    Company Name
+                                </label>
+                                <input class="form-control" type="text" placeholder="Trung Kien" id="name"
+                                       required/>
+                            </div>
+                            <div class="col-md-12">
+                                <label>
+                                    Name of legal representative
+                                </label>
+                                <input class="form-control" type="text" placeholder="Trung Kien" id="nameof"
+                                       required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>
+                                    Mobile
+                                </label>
+                                <input class="form-control" type="tel" placeholder="xxxx xxxxx" id="mobile"
+                                       required>
+                            </div>
+                            <div class="col-md-6 mt-md-0 mt-4">
+                                <label>
+                                    Email
+                                </label>
+                                <input class="form-control" type="email" placeholder="example@email.com" id="email"
+                                       required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4 mt-md-0 mt-4">
+                                <label>
+                                    Business code
+                                </label>
+                                <input class="form-control" type="text" placeholder="1234xxxx" id="code" required>
+                            </div>
+                            <div class="col-md-4 mt-md-0 mt-4">
+                                <label>
+                                    Location
+                                </label>
+                                <select label="Việt Nam" id="location" class="form-control" >
+                                    @foreach (var item in ViewBag.Location)
+                                    {
+                                            <option value="@item.LocationID">@item.LocationDetail</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-md-4 mt-md-0 mt-4">
+                                <label>
+                                    Location detail
+                                </label>
+                                <input class="form-control" type="text" placeholder="Hà nội,...." id="address" required/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>
+                                    Your message
+                                </label>
+                                <textarea placeholder="Type your message here" id="message" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <button id="btnRegistryRecruiter" type="submit" class="btn btn-agile btn-block w-100 font-weight-bold text-uppercase bg-theme">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <!--  //register form grid ends here -->
+                <div class="border-pos-wthree border-exp"></div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="map px-2">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4825706089778!2d105.52510551493236!3d21.013368686006768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b32ca5086d%3A0xa3c62e29d8ab37e4!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBGUFQ!5e0!3m2!1svi!2s!4v1571823596285!5m2!1svi!2s" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </div>
 </section>
 <!-- //contact -->
 <!-- map -->
-<div class="map px-2">
-	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4825706089778!2d105.52510551493236!3d21.013368686006768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b32ca5086d%3A0xa3c62e29d8ab37e4!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBGUFQ!5e0!3m2!1svi!2s!4v1571823596285!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-</div>
 <!--// map-->
+
+<script>
+    $(document).ready(function () {
+        $('#btnRegistryRecruiter').on('click', function () {
+            var serviceURL = '/Home/ContactPost';
+			var name = $('#name').val();
+			if (name =="" || name==null) {
+				$('#s1').text("Please enter your name");
+				$("#snoAlertBox").fadeIn();
+				closeSnoAlertBox();
+				return;
+			}
+
+			var mobile = $('#mobile').val();
+			if (mobile == "" || mobile == null) {
+				$('#s1').text("Please enter mobile");
+				$("#snoAlertBox").fadeIn();
+				closeSnoAlertBox();
+				return;
+			}
+			if (jQuery.isNumeric(mobile)==false || mobile.length > 10) {
+				$('#s1').text("Mobile is not valid");
+				$("#snoAlertBox").fadeIn();
+				closeSnoAlertBox();
+				return;
+			}
+			var message = $('#message').val();
+			if (message == "" || message == null) {
+				$('#s1').text("Enter you message");
+				$("#snoAlertBox").fadeIn();
+				closeSnoAlertBox();
+				return;
+			}
+			var email = $('#email').val();
+
+			if (email == "" || email == null) {
+				$('#s1').text("Enter you email");
+				$("#snoAlertBox").fadeIn();
+				closeSnoAlertBox();
+				return;
+			}
+			if (IsEmail(email) == false) {
+				$('#s1').text("email is not vaild.");
+				$("#snoAlertBox").fadeIn();
+				closeSnoAlertBox();
+				return;
+			}
+            var location = $('#location').val();
+			var address = $('#address').val();
+			if (email == "" || email == null) {
+				$('#s1').text("Enter your detail address");
+				$("#snoAlertBox").fadeIn();
+				closeSnoAlertBox();
+				return;
+			}
+			var nameof = $('#nameof').val();
+			if (nameof == "" || nameof == null) {
+				$('#s1').text("Enter name of legal representative ");
+				$("#snoAlertBox").fadeIn();
+				closeSnoAlertBox();
+				return;
+			}
+			var code = $('#code').val();
+			if (code == "" || code == null) {
+				$('#s1').text("Enter your business code");
+				$("#snoAlertBox").fadeIn();
+				closeSnoAlertBox();
+				return;
+			}
+			if (jQuery.isNumeric(code)  == false) {
+				$('#s1').text("Business code is not valid");
+				$("#snoAlertBox").fadeIn();
+				closeSnoAlertBox();
+				return;
+			}
+            $.ajax({
+                type: "POST",
+                url: serviceURL,
+                data: JSON.stringify({ name: name, message: message, email: email, location: location, mobile: mobile, nameof: nameof, code: code , address:address }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: successFunc,
+                error: errorFunc
+            });
+            function successFunc(data) {
+                var rls = data.Status
+                if (rls == "Fail") {
+                    $('#s1').text(data.Data);
+                    $("#snoAlertBox").fadeIn();
+                    closeSnoAlertBox();
+                }
+                else {
+                    $('#s1').text(data.Data);
+                    $("#snoAlertBox").fadeIn();
+                    setTimeout(function () {
+                        window.location.href = window.location.href;
+                    }, 5000);
+                }
+            }
+            function errorFunc() {
+                alert('All input must entered');
+            }
+        })
+
+		function IsEmail(email) {
+        var regex = /^([a-zA-Z0-9_\.\-\+])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if(!regex.test(email)) {
+           return false;
+        }else{
+           return true;
+        }
+      }
+
+		function IsMobile(mobile) {
+			var regex = (/^[0-9-+]+$/);
+			if (!regex.test(mobile)) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+
+
+
+        function closeSnoAlertBox() {
+            window.setTimeout(function () {
+                $("#snoAlertBox").fadeOut(300)
+            }, 3000);
+        }
+    });
+</script>

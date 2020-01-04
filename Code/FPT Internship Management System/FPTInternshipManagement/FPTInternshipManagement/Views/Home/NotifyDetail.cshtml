@@ -1,0 +1,35 @@
+﻿@model Model.Notification
+
+@{
+    ViewBag.Title = "NotifyDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="inner-banner contact" style="background: url(../../imageshome/inner-banner-bg.jpg) no-repeat center top / cover;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <div class="col-sm-12">
+                        <h1>   Notifications</h1>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+
+        <div>
+            <h4>Content</h4>
+            <hr />
+            <div class="row m-0 dl-horizontal">
+             
+                    @Html.Raw(Model.Content)
+             
+
+            </div>
+        </div>
+        <br/>
+        <a href="/Home/NotifyAll">Back to List</a>
+    </div>

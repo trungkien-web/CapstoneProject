@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Notifications";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="inner-banner contact" style="background: url(../../imageshome/inner-banner-bg.jpg) no-repeat center top / cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="col-sm-12">
+                    <h1>  Notifications</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container" id="uni_container" style="padding-top:70px;">
+    <div class="s-subpage">
+        <div id="main">
+            @{ Html.RenderAction("GetpaingNotify", "Home");}
+        </div>
+    </div>
+
+</div>
+

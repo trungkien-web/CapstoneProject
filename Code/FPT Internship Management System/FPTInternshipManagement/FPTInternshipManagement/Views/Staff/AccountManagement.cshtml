@@ -1,0 +1,197 @@
+﻿
+@{
+    ViewBag.Title = "AccountManagement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="inner-banner contact" style="background: url(../../imageshome/inner-banner-bg.jpg) no-repeat center top / cover;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <div class="col-sm-12">
+                        <h1>   Recruiter Account Management</h1>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container" id="uni_container" style="padding-top:70px;">
+        
+        <div class="s-subpage">
+            <div id="NewSearchJob" style="padding: 0px 10%;">
+                <div class="row justify-content-between bnr-form-w3ls">
+                    <div class="w-100">
+                        <div class="row">
+                            <div class="row col-md-10">
+                                <div class="col-md-5 form-group mb-md-0">
+                                    <label class="text-capitalize">
+                                        Find
+                                    </label>
+                                    <input class="form-control" id="txtKeyword" type="text" name="name" placeholder="">
+                                </div>
+                                <div class="col-md-4 mb-md-0 form-group">
+                                    <label class="text-capitalize">
+                                        Location
+                                    </label>
+                                    <select label="Việt Nam" id="location"  class="option-title w-100 float-right" style="height:37px;width:100%;">
+                                        <option selected value="All">All</option>
+                                        @foreach (var item in ViewBag.Location)
+                                        {
+                                            if (item.LocationID == ViewBag.Address)
+                                            {
+                                                <option  value="@item.LocationID">@item.LocationDetail</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@item.LocationID">@item.LocationDetail</option>
+                                            }
+
+                                        }
+                                    </select>
+                                </div>
+
+                                <div class="col-md-2 d-flex align-items-end">
+                                    <button type="submit" style="margin-top:20px;" id="btnSearch" class="btn btn-w3ltd btn-block w-100 bg-theme font-weight-bold text-uppercase">
+                                        <span class="fa fa-search"></span>
+                                    </button>
+
+                                    @*<a style="margin-left:10px;" type="submit" data-toggle="modal" data-target="#AddAsp" id="btnAdd" class="btn btn-w3ltd btn-block w-100 bg-theme font-weight-bold text-uppercase">
+                                        <span class="fa fa-plus"></span>
+                                    </a>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="main">
+
+
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                GetDataUser();
+            });
+
+            $('#btnSearch').on('click', function () {
+                GetDataUser();
+            })
+
+
+            function GetDataUser() {
+                var serviceURL = '/Staff/AccountSearch';
+                var keyword = $('#txtKeyword').val();
+                var location = $('#location :selected').val();
+                $.ajax({
+                    type: "POST",
+                    url: serviceURL,
+                    data: JSON.stringify({ keyword: keyword, location: location }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: successFunc,
+                    error: errorFunc
+                });
+                function successFunc(data, status) {
+                    $('#main').html(data)
+                }
+                function errorFunc() {
+                    alert('error');
+                }
+            }
+
+            function Accept(id) {
+                var serviceURL = '/Admin/Accept';
+                var UserId = id;
+                $.ajax({
+                    type: "POST",
+                    url: serviceURL,
+                    data: JSON.stringify({ UserId: UserId }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: successFunc,
+                    error: errorFunc
+                });
+                function successFunc(data, status) {
+                    GetDataUser();
+                }
+                function errorFunc() {
+                    alert('error');
+                }
+            }
+
+
+            function Reject(id) {
+                var serviceURL = '/Admin/Reject';
+                var UserId = id;
+                $.ajax({
+                    type: "POST",
+                    url: serviceURL,
+                    data: JSON.stringify({ UserId: UserId }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: successFunc,
+                    error: errorFunc
+                });
+                function successFunc(data, status) {
+                    GetDataUser();
+                }
+                function errorFunc() {
+                    alert('error');
+                }
+            }
+
+            function Del(id) {
+                var serviceURL = '/Admin/Delete';
+                var UserId = id;
+                $.ajax({
+                    type: "POST",
+                    url: serviceURL,
+                    data: JSON.stringify({ UserId: UserId }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: successFunc,
+                    error: errorFunc
+                });
+                function successFunc(data, status) {
+                    GetDataUser();
+                }
+                function errorFunc() {
+                    alert('error');
+                }
+            }
+
+            $('#btnSave').on('click', function () {
+                var Name = $('#Name').val();
+                var UserName = $('#UserName').val();
+                var Password = $('#Password').val();
+                var ConfirmPassword = $('#ConfirmPassword').val();
+                var Email = $('#Email').val();
+                //var Phone = $('#Phone').val();
+                var Specialized = $('#Specialized').val();
+                var Location = $('#location').val();
+                var Semester = $('#Semester').val();
+                var RoleAdd = $('#RoleAdd').val();
+                var serviceURL = '/Admin/AddNew';
+                $.ajax({
+                    type: "POST",
+                    url: serviceURL,
+                    data: JSON.stringify({ Name: Name, UserName: UserName, Password: Password, Email: Email, Specialized: Specialized, Location: Location, Semester: Semester, RoleAdd: RoleAdd }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: successFunc,
+                    error: errorFunc
+                });
+                function successFunc(data, status) {
+                    GetDataUser();
+                }
+                function errorFunc() {
+                    alert('error');
+                }
+            })
+
+        </script>
+        </div>

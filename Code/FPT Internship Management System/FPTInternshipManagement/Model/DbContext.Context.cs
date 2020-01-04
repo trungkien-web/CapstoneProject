@@ -27,6 +27,7 @@ namespace Model
     
         public virtual DbSet<Aspiration> Aspirations { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
+        public virtual DbSet<Experience> Experiences { get; set; }
         public virtual DbSet<Feedback> Feedbacks { get; set; }
         public virtual DbSet<FeedbackType> FeedbackTypes { get; set; }
         public virtual DbSet<HistoryRecord> HistoryRecords { get; set; }
@@ -45,5 +46,6 @@ namespace Model
         public virtual DbSet<UserJob> UserJobs { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<AspirationSkill> AspirationSkills { get; set; }
     }
 }

@@ -29,5 +29,8 @@ namespace Model
         public virtual Rate Rate { get; set; }
         public virtual User User { get; set; }
         public virtual User User1 { get; set; }
+        public string recruitername { get; set; }
+        public string studentname { get; set; }
+        public string studentcode { get; set; }
     }
 }

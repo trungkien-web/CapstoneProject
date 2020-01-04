@@ -26,7 +26,12 @@ namespace Service
 
             if (startDate.Equals(null) && endDate.Equals(null) && !string.IsNullOrEmpty(studentID) && !string.IsNullOrEmpty(location) || !string.IsNullOrEmpty(studentName))
             {
-                return userRepo.SearchStudents(location, int.Parse(studentID), studentName);
+                return userRepo.SearchStudents(location, studentID, studentName);
+            }
+
+            if (startDate.Equals(null) && endDate.Equals(null) && string.IsNullOrEmpty(studentID) && !string.IsNullOrEmpty(location) || string.IsNullOrEmpty(studentName))
+            {
+                return userRepo.SearchStudents(location, studentID, studentName);
             }
 
             if (!startDate.Equals(null) && !endDate.Equals(null) && string.IsNullOrEmpty(studentID) && string.IsNullOrEmpty(location) && string.IsNullOrEmpty(studentName))

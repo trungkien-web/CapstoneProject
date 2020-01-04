@@ -9,6 +9,8 @@ namespace FPTInternshipManagement.Models
     {
         public int no;
 
+        public int id;
+
         public string name;
 
         public string code;
@@ -24,5 +26,8 @@ namespace FPTInternshipManagement.Models
         public string cv;
 
         public string status;
+
+        public string semester;
+        public string image;
     }
 }

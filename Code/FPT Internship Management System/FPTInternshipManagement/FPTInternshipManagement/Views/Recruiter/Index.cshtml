@@ -1,8 +1,133 @@
 ﻿
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "MyProfile - Recruit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div id="loading" style="display: none;">
+    <div class="element">
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+        </div>
+    </div>
+</div>
 
-<h2>Nha Tuyen dung</h2>
+<!-- //header -->
+<div class="inner-banner contact" style="background: url(../../imageshome/inner-banner-bg.jpg) no-repeat center top / cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="col-sm-12">
+                    <h1>Recruiter Manager</h1>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="wthreepvt-pos py-md-5 pt-5" id="positions">
+    <div class="container">
+        <div class="content-account">
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div id="Account" class="container tab-pane  active">
+                    @using (Html.BeginForm("MyProfile", "Recruiter", FormMethod.Post, new
+                    {
+                        enctype = "multipart/form-data"
+                    }))
+                    {
+                        <br>
+                        <input class="form-control fade" placeholder=" " name="id" id="recipient-email" value="@ViewBag.UserID"
+                               hidden>
+                        <div class="table-responsive">
+                            <table class="table-avatar-name">
+                                <tbody>
+                                    <tr>
+										<td>
+											<div class="div-avatar">
+												<img class="user-avatar" src="@ViewBag.Image" style="height:400px; width:400px;" />
+											</div>
+											<input type="file" class="custom-file-input" name="fileimage" />
+										</td>
+                                        <td class="user-name"><b>@Model.Name</b></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <div class="form-group  w-50">
+                            <label for="recipient-email" class="col-form-label">Email</label>
+                            <input type="email" class="form-control" name="Mail" id="recipient-email" value="@ViewBag.Mail"
+                                   required>
+                        </div>
+                        <div class="form-group  w-50">
+                            <label for="recipient-email" class="col-form-label">CompanyName</label>
+                            <input type="text" class="form-control" placeholder=" " name="Name" id="recipient-email" value="@Model.Name" required>
+                        </div>
+                        <div class="form-group  w-50">
+                            <label for="recipient-email" class="col-form-label">Business Code</label>
+                            <input type="number" class="form-control" placeholder=" " name="Code" id="recipient-email" value="@Model.Code" required>
+                        </div>
+                        <div class="form-group  w-50">
+                            <label for="recipient-email" class="col-form-label">Name of legal representative</label>
+                            <input type="text" class="form-control" placeholder=" " name="Nameoflegalrepresentative" id="recipient-email" value="@Model.Nameoflegalrepresentative" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-email" class="col-form-label">Address</label><br />
+                            <input type="text" class="form-control" placeholder=" " name="Address" id="recipient-email" value="@Model.Address"
+                                      required/>
+
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Location
+                            </label>
+                            <select label="Việt Nam" name="location" class="form-control">
+                                @foreach (var item in ViewBag.Location)
+                                {
+                                    if (item.LocationID == ViewBag.Address2)
+                                    {
+                                        <option value="@item.LocationID" selected>@item.LocationDetail</option>
+                                    }
+                                    else
+
+                                    {
+                                        <option value="@item.LocationID">@item.LocationDetail</option>
+                                    }
+
+                                }
+                            </select>
+                        </div>
+                        @*<div class="custom-file mb-3 w-50">
+                <label class="custom-file-label" for="customFile">thay ảnh đại diện</label>
+                <input type="file" class="custom-file-input" name="file">
+            </div>*@
+                        <div class="right-w3l w-25">
+                            <input type="submit" class="form-control bg-theme" value="Save" style="width:200px;background:green;color:white;margin-bottom:20px;">
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script>
+    $(".custom-file-input").on("change", function () {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+</script>
+
+@Html.Raw(TempData["Script"])
+
+
+
+
 

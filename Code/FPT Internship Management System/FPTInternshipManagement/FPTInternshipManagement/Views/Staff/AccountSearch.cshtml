@@ -1,0 +1,69 @@
+﻿
+@{ Layout = "";}
+<table id="lsStudent" class="table table-striped table-bordered table-hover" cellspacing="0" width="80%" align="center">
+    <thead>
+        <tr  style="background: #234a66; color: white;">
+            <th class="th">No</th>
+            <th class="th">Name</th>
+            <th class="th">UserName</th>
+            <th class="th">Location</th>
+
+            <th class="th">Email</th>
+            <th class="th">Phone</th>
+            <th class="th">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ 
+            var count = 1;
+
+            foreach (var acc in ViewBag.User)
+            {
+        <tr>
+            <td>
+                @count
+            </td>
+            <td>
+                @acc.Name
+            </td>
+            <td>
+                @acc.Username
+            </td>
+            <td>
+                @acc.Location.LocationDetail
+            </td>
+            <td>
+                @acc.Email
+            </td>
+            <td>
+                @acc.Phone
+            </td>
+            <td>
+                @acc.Status
+            </td>
+
+            @*@{
+            if (acc.Status == "Not Activated")
+            {
+                <a onclick="Accept(@acc.UserID)" class="btn btn-success">Accept</a>
+                <a onclick="Reject(@acc.UserID)" class="btn btn-danger">&nbsp; Reject &nbsp;</a>
+                <a onclick="Del(@acc.UserID)" class="btn btn-danger">&nbsp; Delete &nbsp;</a>
+            }
+
+            else if (acc.Status == "Reject")
+            {
+                <a onclick="Del(@acc.UserID)" class="btn btn-danger">&nbsp; Delete &nbsp;</a>
+            }
+            else
+            {
+                <a onclick="Reject(@acc.UserID)" class="btn btn-danger">&nbsp; Reject &nbsp;</a>
+                <a onclick="Del(@acc.UserID)" class="btn btn-danger">&nbsp; Delete &nbsp;</a>
+            }
+
+        }*@
+        </tr>
+                count += 1;
+            }
+        }
+    </tbody>
+</table>

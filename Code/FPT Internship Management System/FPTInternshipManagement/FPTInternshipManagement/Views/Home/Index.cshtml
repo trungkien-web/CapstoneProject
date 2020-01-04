@@ -1,322 +1,327 @@
-﻿@model Model.User
+﻿
 @{
-	ViewBag.Title = "Index";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="w3-banner-info-w3ltd position-relative">
-	<div class="slider">
-		<ul class="rslides" id="slider">
-			<li>
-				<div class="d-flex banner-w3pvt-bg1 common-bg">
-					<div class="d-flex mx-auto align-items-center justify-content-center flex-column">
-						<div class="bnr-w3pvt">
-							<h3>FPT Internship Management</h3>
-							<div class="d-flex justify-content-between bnr-sub-txt align-items-center">
-								<span></span>
-								<p class="text-uppercase text-white">FIND A JOB AS QUICKLY AS POSSIBLE</p>
-								<span></span>
-							</div>
-						</div>
-						<div class="row justify-content-between bnr-form-w3ls">
-							<div class="col-lg-4">
-								<h4>Hơn 100,000+ việc làm hấp dẫn đang tuyển dụng hôm nay</h4>
-							</div>
-							<div class="col-lg-8">
-								<form action="job_list.html" method="post" class="bnr-field">
-									<div class="row">
-										<div class="col-md-5 form-group mb-md-0">
-											<label class="text-capitalize">
-												Tìm việc
-											</label>
-											<input class="form-control" type="text" name="name" required=""
-												   placeholder="IT, Designer, Marketing">
-										</div>
-										<div class="col-md-5 mb-md-0 form-group">
-											<label class="text-capitalize">
-												Nơi làm việc
-											</label>
-											<input class="form-control" type="text" name="place" required=""
-												   placeholder="Ha Noi, Ho Chi Minh, Da Nang">
-										</div>
-										<div class="col-md-2 d-flex align-items-end">
-											<button type="submit" class="btn btn-w3ltd btn-block w-100 bg-theme font-weight-bold text-uppercase">
-												<span class="fa fa-search"></span>
-											</button>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="d-flex banner-w3pvt-bg2 common-bg">
-					<div class="d-flex mx-auto align-items-center justify-content-center flex-column">
-						<div class="bnr-w3pvt">
-							<h3>FPT Internship Management</h3>
-							<div class="d-flex justify-content-between bnr-sub-txt align-items-center">
-								<span></span>
-								<p class="text-uppercase text-white">FIND A JOB AS QUICKLY AS POSSIBLE</p>
-								<span></span>
-							</div>
-						</div>
-						<div class="row justify-content-between bnr-form-w3ls">
-							<div class="col-lg-4">
-								<h4>Hơn 100,000+ việc làm hấp dẫn đang tuyển dụng hôm nay</h4>
-							</div>
-							<div class="col-lg-8">
-								<form action="job_list.html" method="post" class="bnr-field">
-									<div class="row">
-										<div class="col-md-5 form-group mb-md-0">
-											<label class="text-capitalize">
-												Tìm việc
-											</label>
-											<input class="form-control" type="text" name="name" required=""
-												   placeholder="IT, Designer, Marketing">
-										</div>
-										<div class="col-md-5 mb-md-0 form-group">
-											<label class="text-capitalize">
-												Nơi làm việc
-											</label>
-											<input class="form-control" type="text" name="place" required=""
-												   placeholder="Ha Noi, Ho Chi Minh, Da Nang">
-										</div>
-										<div class="col-md-2 d-flex align-items-end">
-											<button type="submit" class="btn btn-w3ltd bg-theme btn-block w-100 font-weight-bold text-uppercase">
-												<span class="fa fa-search"></span>
-											</button>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="d-flex banner-w3pvt-bg3 common-bg">
-					<div class="d-flex mx-auto align-items-center justify-content-center flex-column">
-						<div class="bnr-w3pvt">
-							<h3>FPT Internship Management</h3>
-							<div class="d-flex justify-content-between bnr-sub-txt align-items-center">
-								<span></span>
-								<p class="text-uppercase text-white">FIND A JOB AS QUICKLY AS POSSIBLE</p>
-								<span></span>
-							</div>
-						</div>
-						<div class="row justify-content-between bnr-form-w3ls">
-							<div class="col-lg-4">
-								<h4>Hơn 100,000+ việc làm hấp dẫn đang tuyển dụng hôm nay</h4>
-							</div>
-							<div class="col-lg-8">
-								<form action="job_list.html" method="post" class="bnr-field">
-									<div class="row">
-										<div class="col-md-5 form-group mb-md-0">
-											<label class="text-capitalize">
-												Tìm việc
-											</label>
-											<input class="form-control" type="text" name="name" required=""
-												   placeholder="IT, Designer, Marketing">
-										</div>
-										<div class="col-md-5 mb-md-0 form-group">
-											<label class="text-capitalize">
-												Nơi làm việc
-											</label>
-											<input class="form-control" type="text" name="place" required=""
-												   placeholder="Ha Noi, Ho Chi Minh, Da Nang">
-										</div>
-										<div class="col-md-2 d-flex align-items-end">
-											<button type="submit" class="btn btn-w3ltd bg-theme  btn-block w-100 font-weight-bold text-uppercase">
-												<span class="fa fa-search"></span>
-											</button>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</li>
-		</ul>
-	</div>
-</div>
-<!-- //Slider -->
-<!--partners  -->
-<div class="w3ltdits-partners bg-theme" id="partners">
-    <div class="container pt-4">
-        <style type="text/css">
 
-            a {
-                color: white;
-            }
-        </style>
-        <div class="title-wthree text-center">
-            <h3 class="w3ltd-title">
-                Danh Sách Top Nhà Tuyển Dụng
-            </h3>
-            <span></span>
+<!-- End Header -->
+<!-- Start Banner Carousel -->
+<div class="banner-outer">
+    <div class="banner-slider">
+        <div class="slide1" style="background: url(../../imageshome/banner1.jpg)">
+            <div class="container">
+                <div class="content animated fadeInRight">
+                    <div class="fl-right">
+                        <h1 class="animated fadeInRight">5★<span class="animated fadeInRight">EDUCATION QUALITY</span> </h1>
+                        <p class="animated fadeInRight">FPT University</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="slide2" style="background: url(../../imageshome/banner2.jpg)">
+            <div class="container">
+                <div class="content">
+                    <h1 class="animated fadeInUp" style="color:black!important">TOP2</h1>
+                    <p class="animated fadeInUp" style="color:black!important">BEST BUSINESS MANAGEMENT IN VIETNAM</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide3" style="background: url(../../imageshome/banner3.jpg)">
+            <div class="container">
+                <div class="content animated fadeInLeft">
+                    <h1 class="animated fadeInLeft">19%</h1>
+                    <p class="animated fadeInLeft">STUDENTS HAVE WORKING OVERSEAS.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search-box" style="position:absolute;top: 100px; z-index: 1000; left: 30%;width: 40%;">
+        <input type="text" value="Search Job..." id="txtsearchbox" style="height: 50px;margin-right: 20px; padding: 20px; width: 70%;" />
+        <input type="button" id="btnsearch" value=" Click Now!" style="height: 50px;background: red;color: white;width: 17%;border: none;" />
+    </div>
+</div>
+<!-- End Banner Carousel -->
+<!-- Start About Section -->
+<section class="about">
+    <div class="container">
+        <ul class="row our-links">
+            <li class="col-sm-4 apply-online clearfix equal-hight">
+                <div class="icon"><img src="../imageshome/apply-online-ico.png" class="img-responsive" alt=""></div>
+                <div class="detail">
+                    <h3>Apply Online</h3>
+                    <p>FSMS system makes job application simple</p>
+                    <a href="apply-online.html" class="more"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                </div>
+            </li>
+            <li class="col-sm-4 prospects clearfix equal-hight">
+                <div class="icon"><img src="../imageshome/prospects-ico.png" class="img-responsive" alt=""></div>
+                <div class="detail">
+                    <h3><span>Download</span> CV</h3>
+                    <p>Dowload information of student that are quickly...</p>
+                    <a href="#" class="more"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                </div>
+            </li>
+            <li class="col-sm-4 certification clearfix equal-hight">
+                <div class="icon"><img src="../imageshome/certification-ico.png" class="img-responsive" alt=""></div>
+                <div class="detail">
+                    <h3>Certification good Recruiter</h3>
+                    <p>Recruiter will be carefully selected to meet the criteria...</p>
+                    <a href="#" class="more"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                </div>
+            </li>
+        </ul>
+    </div>
 
-        <table>
+</section>
+<!-- End About Section -->
+<!-- Start Cources Section -->
+<section class="our-cources padding-lg" style="display: block;
+    background: url(../../imageshome/cources-bg.jpg) no-repeat center top / cover;
+    position: relative;">
+    <div class="container">
+        <h2> Top Recruiter</h2>
+        <ul class="course-list owl-carousel">
+
             @{
                 var ListRecruiter = ViewBag.TopRecruiter;
                 var Location = ViewBag.TopLocation;
                 var Image = ViewBag.TopImage;
-                int count = 0;
                 foreach (var user in ListRecruiter)
                 {
-                    if (count == 0)
-                    {
-                        @Html.Raw(ViewBag.StartUL);
-                    }
-                    <td style="padding:30px; ">
-                        <a href="#">
-                            <div class="placeholder" style="height:50px; ">
-                                <img style="width: 110px;" src="@Url.Content(Image[user.Key])" alt="" />
-                                <div style=" background-color: white;"></div>
-                            </div>
-                            <div style="margin-top: 10px;  height: 56px; text-align:center;">
-                                <p >@user.Key.Name</p>
-                                <p >@user.Value Job - @Location[user.Key]</p>
-                            </div>
-                        </a>
-                    </td>
-                    if (count == 5)
-                    {
-                        @Html.Raw(ViewBag.EndUL);
-                        count = 0;
-                        continue;
-                    }
-                    count++;
+                    <li style="display: block;background: url() no-repeat center top;position: relative;">
+                        <div class="inner">
+                            <figure><img src="@Url.Content(Image[user.Key])" alt=""></figure>
 
+                            <div class="bottom-txt clearfix">
+                                <div class="duration">
+                                    <h4>@user.Key.Name</h4>
+                                    @*<span>@user.Value Job - @Location[user.Key.LocationID] </span>*@
+                                    <span>@user.Value Job  </span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
                 }
             }
-        </table>
 
-
-
-        <p style="text-align:center;"><button type="button" class="btn btn-primary">Xem Thêm</button></p>
-        <br>
+        </ul>
     </div>
-</div>
-<!-- //partners -->
-<!-- job roles -->
-<div class="wthreepvt-pos py-md-5 py-5" id="positions">
-	<div class="container py-lg-5">
-		<div class="wthreepvt-pos-row row  text-center">
-			@{
-				var data = ViewBag.KeyValues;
-				foreach (var keyvalue in data)
-				{
-					<div class="col-lg-4 col-sm-6 wthreepvt-pos-grids">
-						<div class="p-md-5 p-sm-3">
-							<span class="fa fa-check-square" aria-hidden="true"></span>
-							<h4 class="mt-2 mb-3">@keyvalue.Key</h4>
-							<p>@keyvalue.Value</p>
-						</div>
-					</div>
-				}
-			}
-		</div>
-	</div>
-</div>
-<!-- //job roles -->
-<!-- login modal -->
+</section>
+<!-- End Cources Section -->
+<!-- Start Our Importance Section -->
+<section class="our-impotance padding-lg">
+    <div class="container">
+        <ul class="row">
+            <li class="col-sm-4 equal-hight">
+                <div class="inner">
+                    <img src="~/Assets/images/course_8.png" alt="Malleable Study Time">
+                    <h3>Software Engineer</h3>
+                </div>
+            </li>
+            <li class="col-sm-4 equal-hight">
+                <div class="inner">
+                    <img src="~/Assets/images/course_11056.png" alt="Placement Assistance">
+                    <h3>Business Administration</h3>
+                </div>
+            </li>
+            <li class="col-sm-4 equal-hight">
+                <div class="inner">
+                    <img src="~/Assets/images/spyware.png" style="width:165px; height:165px;" alt="Easy To Access">
+                    <h3>Information Assurance</h3>
+                </div>
+            </li>
+            <li class="col-sm-4 equal-hight">
+                <div class="inner">
+                    <img src="~/Assets/images/course_27.png" alt="Study on the Go">
+                    <h3>English language</h3>
+                </div>
+            </li>
+            <li class="col-sm-4 equal-hight">
+                <div class="inner">
+                    <img src="~/Assets/images/course_28.png" alt="Get an Innovative, In-depth Transition">
+                    <h3>Japanese Language</h3>
+                </div>
+            </li>
+            <li class="col-sm-4 equal-hight">
+                <div class="inner">
+                    <img src="~/Assets/images/panel.png" style="width:165px; height:165px;" alt="Get an Innovative, In-depth Transition">
+                    <h3>Graphic Design</h3>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- End Our Importance Section -->
+<!-- Start How Study Section -->
+<section class="how-study padding-lg">
+    <div class="container">
+        <h2> <span>There are many ways to learn</span> How do you want to study?</h2>
+        <ul class="row">
+            <li class="col-sm-4">
+                <div class="overly">
+                    <div class="cnt-block">
+                        <h3>
+                            Self-paced distance
+                            learning
+                        </h3>
+                        <p>FPT is simply dummy text of the printing...</p>
+                    </div>
+                    <a href="#" class="more"><i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                </div>
+                <figure><img src="../imageshome/how-study-img1.jpg" class="img-responsive" alt=""></figure>
+            </li>
+            <li class="col-sm-4">
+                <div class="overly">
+                    <div class="cnt-block">
+                        <h3>
+                            Study on
+                            campus
+                        </h3>
+                        <p>FPT is simply dummy text of the printing...</p>
+                    </div>
+                    <a href="#" class="more"><i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                </div>
+                <figure><img src="../imageshome/how-study-img2.jpg" class="img-responsive" alt=""></figure>
+            </li>
+            <li class="col-sm-4">
+                <div class="overly">
+                    <div class="cnt-block">
+                        <h3>
+                            Our Learning
+                            Partners
+                        </h3>
+                        <p>FPT is simply dummy text of the printing...</p>
+                    </div>
+                    <a href="#" class="more"><i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                </div>
+                <figure><img src="../imageshome/how-study-img3.jpg" class="img-responsive" alt=""></figure>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- End How Study Section -->
+<!-- Start Why Choose Section -->
+<section class="why-choose padding-lg" style="background: url(../../imageshome/why-choose-bg.jpg) no-repeat center center/cover;position: relative;">
+    <div class="container">
+        <h2><span>The Numbers Say it All</span>Why did 20,000 students choose FPT university?</h2>
+        <ul class="our-strength">
+            <li>
+                <div class="icon"><span class="icon-certification-icon"> </span></div>
+                <div><span><span>96%</span></span></div>
+                <div class="title">STUDENTS HAVE JOB NOW At FPT University</div>
+            </li>
+            <li>
+                <div class="icon"><span class="icon-student-icon"></span></div>
+                <div><span><span>5★</span></span></div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-	 aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content">
-			<div class="modal-header bg-theme1">
-				<h5 class="modal-title" id="exampleModalLabel">Đăng nhập</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				@using (Html.BeginForm("Autherize", "Login", FormMethod.Post, new { @id = "login-form" }))
-				{
-					@Html.ValidationSummary(true)
-					<label class="text-danger">@TempData["LoginErrorMessage"]</label>
-					<div class="form-group">
-						<label for="recipient-name" class="col-form-label">Tên tài khoản</label>
-						@Html.EditorFor(Model => Model.Username, new { htmlAttributes = new { @class = "form-control" } })
-						@Html.ValidationMessageFor(Model => Model.Username, "", new { @class = "text-danger" })
-					</div>
-					<div class="form-group">
-						<label for="password" class="col-form-label">Mật khẩu</label>
-						@Html.EditorFor(Model => Model.Password, new { htmlAttributes = new { @class = "form-control" } })
-						@Html.ValidationMessageFor(Model => Model.Password, "", new { @class = "text-danger" })
-					</div>
-					<div class="right-w3l">
-						<input type="submit" class="form-control bg-theme" value="Đăng Nhập">
-					</div>
-					<div class="row sub-w3l my-3">
-						<div class="col forgot-w3l text-right">
-							<a href="#" class="text-dark">Quên mật khẩu?</a>
-						</div>
-					</div>
-					<p class="text-center dont-do">
-						Bạn chưa có tài khoản?
-						<a href="#" data-toggle="modal" data-target="#exampleModal1" class="text-dark">
-							<strong>Đăng Ký Ngay</strong>
-						</a>
-					</p>
-				}
-			</div>
-		</div>
-	</div>
-</div>
-<!-- //login modal -->
-<!-- register modal -->
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
-	 aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content">
-			<div class="modal-header bg-theme1">
-				<h5 class="modal-title" id="exampleModalLabel1">Đăng Ký</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<form action="#" method="post" class="p-3">
-					<div class="form-group">
-						<label for="recipient-name" class="col-form-label">Họ Tên</label>
-						<input type="text" class="form-control" placeholder=" " name="Name" id="recipient-rname"
-							   required="">
-					</div>
-					<div class="form-group">
-						<label for="recipient-email" class="col-form-label">Email</label>
-						<input type="email" class="form-control" placeholder=" " name="Email" id="recipient-email"
-							   required="">
-					</div>
-					<div class="form-group">
-						<label for="password1" class="col-form-label">Mật khẩu</label>
-						<input type="password" class="form-control" placeholder=" " name="Password" id="password1"
-							   required="">
-					</div>
-					<div class="form-group">
-						<label for="password2" class="col-form-label">Nhập lại mật khẩu</label>
-						<input type="password" class="form-control" placeholder=" " name="Confirm Password" id="password2"
-							   required="">
-					</div>
-					<div class="sub-w3l">
-						<div class="sub-w3ltd">
-							<input type="checkbox" id="brand2" value="">
-							<label for="brand2" class="mb-3 text-dark">
-								<span></span>Tôi đồng ý với điều khoản và chính sách!
-							</label>
-						</div>
-					</div>
-					<div class="right-w3l">
-						<input type="submit" class="form-control bg-theme" value="Đăng Ký">
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
-@Html.Raw(TempData["Script"])
-<!-- //register modal -->
+                <div class="title">EDUCATION QUALITY  At FPT University</div>
+            </li>
+            <li>
+                <div class="icon"><span class="icon-book-icon"></span></div>
+                <div><span>TOP 2</span></div>
+                <div class="title">BEST BUSINESS MANAGEMENT IN VIETNAM</div>
+            </li>
+            <li>
+                <div class="icon"><span class="icon-parents-icon"></span></div>
+                <div class="couter-outer"><span>19%</span></div>
+                <div class="title">STUDENTS HAVE WORKING OVERSEAS</div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- Start Campus Tour Section -->
+<section class="campus-tour padding-lg">
+    <div class="container">
+        <h2><span>Our campus have a lot to offer for our students</span>TAKE A CAMPUS TOUR</h2>
+    </div>
+    <ul class="gallery clearfix">
+        <li>
+            <div class="overlay">
+                <h3>FPT University</h3>
+                <p>FPT University</p>
+                <a class="galleryItem" href="../imageshome/tour-lg1.jpg"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+            </div>
+            <figure><img src="../imageshome/tour1.jpg" class="img-responsive" alt=""></figure>
+        </li>
+        <li>
+            <div class="overlay">
+                <h3>FPT University</h3>
+                <p>FPT University</p>
+                <a class="galleryItem" href="../imageshome/tour-lg2.jpg"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+            </div>
+            <figure><img src="../imageshome/tour2.jpg" class="img-responsive" alt=""></figure>
+        </li>
+        <li>
+            <div class="overlay">
+                <h3>FPT University</h3>
+                <p>FPT University</p>
+                <a class="galleryItem" href="../imageshome/tour-lg3.jpg"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+            </div>
+            <figure><img src="../imageshome/tour3.jpg" class="img-responsive" alt=""></figure>
+        </li>
+        <li>
+            <div class="overlay">
+                <h3>FPT University</h3>
+                <p>FPT University</p>
+                <a class="galleryItem" href="../imageshome/tour-lg4.jpg"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+            </div>
+            <figure><img src="../imageshome/tour4.jpg" class="img-responsive" alt=""></figure>
+        </li>
+        <li>
+            <div class="overlay">
+                <h3>FPT University</h3>
+                <p>FPT University</p>
+                <a class="galleryItem" href="../imageshome/tour-lg5.jpg"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+            </div>
+            <figure><img src="../imageshome/tour5.jpg" class="img-responsive" alt=""></figure>
+        </li>
+        <li>
+            <div class="overlay">
+                <h3>FPT University</h3>
+                <p>FPT University</p>
+                <a class="galleryItem" href="../imageshome/tour-lg6.jpg"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+            </div>
+            <figure><img src="../imageshome/tour6.jpg" class="img-responsive" alt=""></figure>
+        </li>
+        <li>
+            <div class="overlay">
+                <h3>FPT University</h3>
+                <p>FPT University</p>
+                <a class="galleryItem" href="../imageshome/tour-lg7.jpg"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+            </div>
+            <figure><img src="../imageshome/tour7.jpg" class="img-responsive" alt=""></figure>
+        </li>
+        <li>
+            <div class="overlay">
+                <h3>FPT University</h3>
+                <p>FPT University</p>
+                <a class="galleryItem" href="../imageshome/tour-lg8.jpg"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+            </div>
+            <figure><img src="../imageshome/tour8.jpg" class="img-responsive" alt=""></figure>
+        </li>
+        <li>
+            <div class="overlay">
+                <h3>FPT University</h3>
+                <p>FPT University</p>
+                <a class="galleryItem" href="../imageshome/tour-lg9.jpg"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+            </div>
+            <figure><img src="../imageshome/tour9.jpg" class="img-responsive" alt=""></figure>
+        </li>
+        <li>
+            <div class="overlay">
+                <h3>FPT University</h3>
+                <p>FPT University</p>
+                <a class="galleryItem" href="../imageshome/tour-lg10.jpg"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+            </div>
+            <figure><img src="../imageshome/tour10.jpg" class="img-responsive" alt=""></figure>
+        </li>
+    </ul>
+</section>
+<!-- End Campus Tour Section -->
+<!-- Start logos Section -->
+<!-- End logos Section -->
+<!-- Start Testimonial -->
+<!-- End Testimonial -->
+<!-- Start Footer -->

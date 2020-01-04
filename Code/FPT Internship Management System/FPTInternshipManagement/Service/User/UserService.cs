@@ -20,5 +20,15 @@ namespace Service
 		{
 			return repository.GetUserByName(username);
 		}
+
+		public User GetUserById(int id)
+		{
+			return repository.GetUserById(id);
+		}
+
+		public void UpdateStudent(User newStudent)
+		{
+			 repository.UpdateStudent(newStudent);
+		}
 	}
 }

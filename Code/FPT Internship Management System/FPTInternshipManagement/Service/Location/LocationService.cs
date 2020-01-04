@@ -22,5 +22,11 @@ namespace Service
             }
             return "";
 		}
-	}
+
+        public List<Location> GetAllLocation()
+        {
+            List<Location> a = locationRepository.GetAllLocation();
+            return a;
+        }
+    }
 }

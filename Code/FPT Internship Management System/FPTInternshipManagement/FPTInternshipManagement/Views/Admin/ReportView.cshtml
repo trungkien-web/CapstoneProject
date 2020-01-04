@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "ReportView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="inner-banner contact" style="background: url(../../imageshome/inner-banner-bg.jpg) no-repeat center top / cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="col-sm-12">
+                    <h1>  Report</h1>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container" style="padding-top:30px;">
+    <div class="s-subpage">
+        <div id="NewSearchJob" style="padding: 0px 10%;">
+            <div class="row justify-content-between bnr-form-w3ls">
+                <div class="w-100">
+                    <div class="row">
+                        <div class="row col-md-12">
+                            <a href="@Url.Action("DownloadExcelReport","Admin")">Download Excel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <table id="lsStudent" class="table table-striped table-bordered table-hover" cellspacing="0" width="80%" align="center">
+            <thead>
+                <tr style="background: #234a66; color: white;">
+                    <th class="th">No</th>
+                    <th class="th">Recruiter Name</th>
+                    <th class="th">Student Name</th>
+                    <th class="th">Course</th>
+                    <th class="th">Grade</th>
+                    <th class="th">Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var count = 1;
+
+                    foreach (var acc in ViewBag.Data)
+                    {
+                        <tr>
+                            <td>
+                                @count
+                            </td>
+                            <td>
+                                @acc.recruitername
+                            </td>
+                            <td>
+                                @acc.studentname
+                            </td>
+
+                            <td>
+                                @acc.Course
+                            </td>
+                            <td>
+                                @acc.Grade
+                            </td>
+                            <td>
+                                @acc.Comment
+                            </td>
+                          
+                        </tr>
+                        count += 1;
+                    }
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+

@@ -10,5 +10,6 @@ namespace Service
 	public interface ILocationService
     {
 		string GetLocation(int id);
+		List<Model.Location> GetAllLocation();
 	}
 }

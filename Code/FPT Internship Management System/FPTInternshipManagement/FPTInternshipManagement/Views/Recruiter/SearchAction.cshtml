@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "";
+}
+
+@model List<FPTInternshipManagement.Models.StudentModel>
+@if (Model.Count() == 0)
+{
+    <tr>
+        <td colspan="9" style="text-align:center"><b>No data matching the search criteria were found</b></td>
+    </tr>
+}
+else
+{
+    foreach (var student in Model)
+    {
+<tr>
+    <td>
+        @student.no
+    </td>
+    <td>
+        @student.name
+    </td>
+    <td>
+        <img width="120" height="150" src="@Url.Content(@student.image)" />
+    </td>
+    <td>
+        @student.code
+    </td>
+
+    <td>
+        @student.email
+    </td>
+    <td>
+        @student.phoneNumb
+    </td>
+    @*<td>
+            @student.specialized
+        </td>*@
+    <td>
+        @student.course
+    </td>
+    <td>
+        @{
+            if (student.cv != null && student.cv != "")
+            {
+                
+                <a href="../../Assets/upload/@student.cv"  download="1231">Download</a>
+            }
+        }
+    </td>
+    @*<td>
+            <a href="CallModalConfirmDeleteStudent?studentId" class="btn btn-danger">@student.cv</a>
+        </td>
+        <td>
+            @student.status
+            <a href="CallModalConfirmDeleteStudent?studentId" class="btn btn-danger">&nbsp; Xóa &nbsp;</a>
+        </td>*@
+</tr>
+    }
+}
+
+

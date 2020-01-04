@@ -1,251 +1,171 @@
 ﻿@model List<FPTInternshipManagement.Models.StudentModel>
 @{
-	ViewBag.Title = "SearchStudent";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "SearchStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
 <div id="top_ad">
-	<div class="wrapper">
-		<a id="fancybox-close" class="close_top_ad" style="display: inline;"></a>
-	</div>
+    <div class="wrapper">
+        <a id="fancybox-close" class="close_top_ad" style="display: inline;"></a>
+    </div>
 </div>
-<div id="uni_wrapper">
-	<div class="top-head" id="top-head">
-		<div class="cb-wrapper">
-			<ul class="head-left">
-				<li><i class="fa fa-globe"></i><a>Việt Nam</a></li>
-				<li><i class="fa fa-phone"></i>HCM: 035 655 1659</li>
-				<li><i class="fa fa-phone"></i>HN: 035 655 1659</li>
-				<li><i class="fa fa-comments"></i><a>Liên hệ</a></li>
-			</ul>
-			<div class="head-right">
-				<div class="kv_login">
-					<div class="bpo"><i class="fa fa-user-plus"></i><a href="DangKy.html">Đăng ký</a></div>
-					<div class="bpo hoverlogin">
-						<form>
-							<span class="text" id="Head_Login"><i class="fa fa-user"></i>Đăng nhập</span>
-							<div id="login-area" class="frm-login shadow logjobseek btnSub">
-								<ul class="box_login">
-									<li>
-										<input type="text" id="username_box" class="username" name="username"
-											   style="width: 190px" value="Email/Tên đăng nhập"
-											   onfocus="javascript:if(this.value=='Email/Tên đăng nhập') this.value='';"
-											   onblur="if(this.value=='') this.value='Email/Tên đăng nhập';"
-											   autocomplete="off" />
-									</li>
-									<li>
-										<div id="password_area">
-											<input type="text" id="password_box" name="password"
-												   class="fl_left pass" style="width: 105px" value="Mật khẩu"
-												   onfocus="changeFieldPas()" autocomplete="off" />
-										</div>
-										<span class="btn_submit">
-											<input type="submit" value="Đăng nhập" />
-										</span>
-									</li>
-									<li>
-										<div class="clear mar_top6">
-											<a class="forget_pass">Quên mật khẩu</a> <a style="padding-left:10px" class="forget_pass">Đăng ký</a>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</form>
-					</div>
-				</div>
-				<div class="cb_link">
-					<a href="DanhChoUngVien.html" class="radius2px">Dành cho Sinh Viên</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div id="cb-header">
-	<div id="head_emp_pc">
-		<div class="logo_nav">
-			<ul class="nav m_emp">
-				<li><a href="index.html">Trang Chủ</a></li>
-				<li>
-					<a>Tìm Hồ Sơ Sinh Viên</a>
-					<ul class="MyKv highZIndex" id="menu_product_pc">
-						<li><a>Đăng Tuyển Dụng</a></li>
-						<li><a>Tìm Hồ Sơ Ứng Viên</a></li>
-					</ul>
-					<ul class="postresumes highZIndex" style="display: none;">
-						<li><a>Đăng Tuyển Dụng</a></li>
-						<li><a>Tìm Hồ Sơ</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</div>
-</div>
+
 <style>
-	.search-box {
-		width: 300px !important;
-		height: 42px !important;
-	}
 
-	.search-horizontal select {
-		opacity: 1;
-	}
+    .search-box {
+        width: 300px !important;
+        height: 42px !important;
+    }
 
-	.chosen {
-		width: 100%;
-		height: 100%;
-		border-radius: 3px;
-	}
+    .search-horizontal select {
+        opacity: 1;
+    }
+
+    .chosen {
+        width: 100%;
+        height:36px;
+        border-radius: 3px;
+    }
 </style>
+<div class="inner-banner contact" style="background: url(../../imageshome/inner-banner-bg.jpg) no-repeat center top / cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="col-sm-12">
+                    <h1> SEARCH STUDENT</h1>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 <!-- container for search SV -->
-<div id="uni_container">
-	<div class="s-subpage">
-		<div id="NewSearchJob">
-			<form>
-				<div class="search-horizontal" style="position:static" id="box_search_resume">
-					<div class="search_keyword">
-						<label>Từ khóa </label>
-						<div id="tip_search_exp">
-							<label>(Hướng dẫn tìm kiếm)</label>
-						</div>
-					</div>
-					<input type="text" name="keyword" id="keyword"
-						   class="width_360 CBTextInput fl_left box_multiSelect_location search-box"
-						   autocomplete='off'>
-					<a href=" javascript:void(0);" class="closex" id="close_keyword"></a>
-					<div class="fl_left box_multiSelect_industry">
-						<div name="list_industries[]" id="industry" class="chosen"
-								data-placeholder="Tất cả ngành nghề" size="1">
-							<select label="Công Nghệ Thông Tin" class="option-title">
-								<option value="cong-nghe-thong-tin">Công Nghệ Thông Tin</option>
-								<option value="IoT" class="option">IoT</option>
-								<option value="tri-tue-nhan-tao" class="option">Trí Tuệ Nhân Tạo</option>
-								<option value=" ky-thuat-phan-mem" class="option">Kỹ Thuật Phần Mềm</option>
-								<option value=" he-thong-thong-tin" class="option">Hệ Thống Thông Tin</option>
-								<option value="an-toan-thong-tin" class="option">An Toàn Thông Tin</option>
-								<option value=" thiet-ke-my-thuat-so" class="option">Thiết Kế Mỹ Thuật Số</option>
-							</select>
-							<select label="Quản Trị Kinh Doanh" class="option-title">
-								<option value="digital-marketing" class="option">Digital Marketing</option>
-								<option value="kinh-doanh-quoc-te" class="option">Kinh Doanh Quốc Tế</option>
-								<option value="quan-tri-khach-san" class="option">Quản Trị Khách Sạn</option>
-								<option value="quan-tri-du-lich-lu-hanh" class="option">Quản Trị Du Lịch Và Lữ Hành</option>
-								<option value="quan-ly-truyen-thong-da-phuong-tien" class="option">
-									Quản Lý Truyền Thông Đa Phương
-									Tiện
-								</option>
-							</select>
-							<select label="Ngôn Ngữ Học" class="option-title">
-								<option value="ngon-ngu-anh" class="option">Ngôn Ngữ Anh</option>
-								<option value="ngon-ngu-nhat" class="option">Ngôn Ngữ Nhật</option>
-								<option value="ngon-ngu-han-quoc" class="option">Ngôn Ngữ Hàn Quốc</option>
-							</select>
-						</div>
-					</div>
-					<div class="fl_left box_multiSelect_location">
-						<select name="list_location[]" id="location" class="chosen"
-								data-placeholder="Tất cả địa điểm" size="1">
-							<optgroup label="Việt Nam" class="option-title">
-								<option value="ha-noi">Hà Nội</option>
-								<option value="ho-chi-minh">Hồ Chí Minh</option>
-								<option value="da-nang">Đà Nẵng</option>
-							</optgroup>
-						</select>
-					</div>
-					<input type="submit" class="searchvt1  BtnButton" value="Tìm">
-					<div id="option_keyword" class="search_option" style="display:none;">
-						<span>Tìm</span>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
+<div class="container" id="uni_container" style="padding-top:30px;">
+    <div class="s-subpage">
+        <div id="NewSearchJob" style="padding: 0px 10%;">
+                <div class="row justify-content-between bnr-form-w3ls">
+                    <div class="w-100">
+                        <div class="row">
+                            <div class="row col-md-10">
+                                <div class="col-md-12 form-group mb-md-0">
+                                    <label class="text-capitalize">
+                                        Find
+                                    </label>
+                                    <input class="form-control"  id="txtKeyword" type="text" name="name" placeholder="Name Student">
+                                </div>
+                            </div>
+                            <div class="col-md-2 d-flex align-items-end">
+                                <button type="submit" id="btnSearch" style="margin-top:20px;" class="btn btn-w3ltd btn-block w-100 bg-theme font-weight-bold text-uppercase">
+                                    <span class="fa fa-search"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
 </div>
 
-<div id="main">
-	<div style="background-color:coral;">
-		<select label="Công Nghệ Thông Tin" class="output">
-			<option value="IoT" class="option-title">IoT</option>
-			<option value="tri-tue-nhan-tao" class="option">Trí Tuệ Nhân Tạo</option>
-			<option value=" ky-thuat-phan-mem" class="option">Kỹ Thuật Phần Mềm</option>
-			<option value=" he-thong-thong-tin" class="option">Hệ Thống Thông Tin</option>
-			<option value="an-toan-thong-tin" class="option">An Toàn Thông Tin</option>
-			<option value=" thiet-ke-my-thuat-so" class="option">Thiết Kế Mỹ Thuật Số</option>
-		</select>
-	</div>
-	<div style="background-color:lightblue;">
-		<select label="Quản Trị Kinh Doanh" class="output">
-			<option value="digital-marketing" class="option-title">Digital Marketing</option>
-			<option value="kinh-doanh-quoc-te" class="option">Kinh Doanh Quốc Tế</option>
-			<option value="quan-tri-khach-san" class="option">Quản Trị Khách Sạn</option>
-			<option value="quan-tri-du-lich-lu-hanh" class="option">Quản Trị Du Lịch Và Lữ Hành</option>
-			<option value="quan-ly-truyen-thong-da-phuong-tien" class="option">
-				Quản Lý Truyền Thông Đa Phương Tiện
-			</option>
-		</select>
-	</div>
-	<div style="background-color:lightgreen;">
-		<select label="Ngôn Ngữ Học" class="output">
-			<option value="ngon-ngu-anh" class="option-title">Ngôn Ngữ Anh</option>
-			<option value="ngon-ngu-nhat" class="option">Ngôn Ngữ Nhật</option>
-			<option value="ngon-ngu-han-quoc" class="option">Ngôn Ngữ Hàn Quốc</option>
-		</select>
-	</div>
+<div id="main" class="container">
+  
     <div>
         <table id="lsStudent" class="table table-striped table-bordered table-hover" cellspacing="0" width="80%" align="center">
             <thead>
-                <tr>
-                    <th class="th">STT</th>
-                    <th class="th">Tên Sinh Viên</th>
-                    <th class="th">Mã Sinh Viên</th>
+                <tr  style="background: #234a66; color: white;">
+                    <th class="th">No</th>
+                    <th class="th">Name</th>
+                    <th class="th">Images</th>
+                    <th class="th">Code</th>
 
                     <th class="th">Email</th>
-                    <th class="th">Số điện thoại</th>
-                    <th class="th">Chuyên Ngành</th>
-                    <th class="th">Khóa</th>
-                    <th class="th">CV Ứng Tuyển</th>
-                    <th class="th">Tình Trạng</th>
+                    <th class="th">Phone</th>
+                    @*<th class="th">Chuyên Ngành</th>*@
+                    <th class="th">Course</th>
+                    <th class="th">CV</th>
+                    @*<th class="th">Tình Trạng</th>*@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var student in Model)
-                {
-                    <tr>
-                        <td>
-                            @student.no
-                        </td>
-                        <td>
-                            @student.name
-                        </td>
-                        <td>
-                            @student.code
-                        </td>
+                @{ 
+                    var count = 0;
+                    foreach (var student in Model)
+                    {
+                                <tr>
+                                    <td>
+                                        @count
+                                    </td>
+                                    <td>
+                                        @student.name
+                                    </td>
+                                    <td>
+                                        <img width="120" height="150" src="@Url.Content(@student.image)" />
+                                    </td>
+                                    <td>
+                                        @student.code
+                                    </td>
 
-                        <td>
-                            @student.email
-                        </td>
-                        <td>
-                            @student.phoneNumb
-                        </td>
-                        <td>
-                            @student.specialized
-                        </td>
-                        <td>
-                            @student.course
-                        </td>
-                        <td>
-                            <a href="CallModalConfirmDeleteStudent?studentId" class="btn btn-danger">@student.cv</a>
-                        </td>
-                        <td>
-                            @student.status
-                            <a href="CallModalConfirmDeleteStudent?studentId" class="btn btn-danger">&nbsp; Xóa &nbsp;</a>
-                        </td>
-                    </tr>
+                                    <td>
+                                        @student.email
+                                    </td>
+                                    <td>
+                                        @student.phoneNumb
+                                    </td>
+                                    <td>
+                                        @student.course
+                                    </td>
+                                    <td>
+                                        @{
+                                            if (student.cv != null && student.cv != "")
+                                            {
+
+                                                <a href="../../Assets/upload/@student.cv" download="@student.cv">Download</a>
+                                            }
+                                        }
+                                    </td>
+                                    @*<td>
+            <a href="CallModalConfirmDeleteStudent?studentId" class="btn btn-warning">Xem CV</a>
+        </td>*@
+                                    @*<td>
+            <a onclick="Reject(@student.id)" class="btn btn-danger">&nbsp; Xóa &nbsp;</a>
+        </td>*@
+                                </tr>
+
+                        count += 1;
+                    }
+
                 }
             </tbody>
         </table>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $('#btnSearch').on('click', function () {
+            var serviceURL = '/Recruiter/SearchAction';
+            var location = $("#location option:selected").text();
+            var studenName = $('#txtKeyword').val();
+            $.ajax({
+                type: "POST",
+                url: serviceURL,
+                data: JSON.stringify({location:location,StudentName:studenName}),
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: successFunc,
+                error: errorFunc
+            });
+            function successFunc(data, status) { 
+                $("#lsStudent tbody").html("");
+                $("#lsStudent tbody").append(data);
+            }
+            function errorFunc() {
+                alert('error');
+            }
+        })
+
+});
+</script>
 
 
 
