@@ -27,12 +27,13 @@ namespace Model
         public Nullable<int> JobID { get; set; }
         public string Description { get; set; }
         public string Status { get; set; }
-        public string RecruiterName { get; set; }
+    
         public virtual Experience Experience { get; set; }
         public virtual Job Job { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SkillDetail> SkillDetails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserAspiration> UserAspirations { get; set; }
+        public string RecruiterName { get; set; }
     }
 }
