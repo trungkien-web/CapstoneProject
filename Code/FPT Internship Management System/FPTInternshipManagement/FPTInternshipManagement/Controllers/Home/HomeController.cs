@@ -247,25 +247,7 @@ namespace FPTInternshipManagement.Controllers
         }
 
 
-		public ActionResult JobDetail(int id)
-		{
-
-			var Asp = ctx.Aspirations.Where(x => x.AspirationsID == id).FirstOrDefault();
-			var Aspskill = ctx.AspirationSkills.Where(x => x.AspirationID == Asp.AspirationsID).ToList();
-			var lstJob = new List<Job>();
-			foreach (var item in Aspskill)
-			{
-				var job = ctx.Jobs.Where(x => x.JobID == item.SkillID).FirstOrDefault();
-				job.SkillGen = ListSkillInJob(job.JobID);
-				lstJob.Add(job);
-				
-			}
-
-			ViewBag.AspName = Asp.AspirationsName;
-			ViewBag.AspDes = Asp.Description;
-			ViewBag.job = lstJob;
-			return View();
-		}
+		
 
 		public string ListSkillInJob(int jobid)
 		{
@@ -280,11 +262,29 @@ namespace FPTInternshipManagement.Controllers
 			return listskill;
 		}
 
+        public ActionResult JobDetail(int id)
+        {
 
-	
+            var Asp = ctx.Aspirations.Where(x => x.AspirationsID == id).FirstOrDefault();
+            var Aspskill = ctx.AspirationSkills.Where(x => x.AspirationID == Asp.AspirationsID).ToList();
+            var lstJob = new List<Job>();
+            foreach (var item in Aspskill)
+            {
+                var job = ctx.Jobs.Where(x => x.JobID == item.SkillID).FirstOrDefault();
+                job.SkillGen = ListSkillInJob(job.JobID);
+                lstJob.Add(job);
+
+            }
+
+            ViewBag.AspName = Asp.AspirationsName;
+            ViewBag.AspDes = Asp.Description;
+            ViewBag.job = lstJob;
+            return View();
+        }
 
 
-		[HttpPost]
+
+        [HttpPost]
 		public bool Registry(string name, string username, string email, int location, string password)
 		{
 			var obj = new User();
