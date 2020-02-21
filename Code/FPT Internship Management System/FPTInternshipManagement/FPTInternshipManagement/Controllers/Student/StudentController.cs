@@ -541,48 +541,6 @@ namespace FPTInternshipManagement.Controllers.Student
             return true;
         }
 
-        //
-        public ActionResult RecommendOfStudent()
-        {
-            var userId = SessionHelper.GetSession().UserID;
-            var skill = (from skil in ctx.Skills
-                         join exp in ctx.Experiences
-                         on skil.SkillID equals exp.SkillID
-                         where exp.UserID == userId
-                         select skil).ToList();
-            var ListAsp = new List<Aspiration>();
-            foreach (var item in skill)
-            {
-                var objAsp = (from Asp in ctx.Aspirations
-                              join AspSkill in ctx.AspirationSkills
-                              on Asp.AspirationsID equals AspSkill.AspirationID
-                              join Job in ctx.Jobs
-                              on AspSkill.SkillID equals Job.JobID
-                              join skilldetail in ctx.SkillDetails
-                              on Job.JobID equals skilldetail.JobID
-                              join skillb in ctx.Skills
-                              on skilldetail.SkillID equals skillb.SkillID
-                              where skilldetail.SkillID == item.SkillID && Asp.Status == "Approve"
-                              select Asp).ToList();
-                foreach (var item2 in objAsp)
-                {
-                    ListAsp.Add(item2);
-                }
-            }
-            foreach (var item in ListAsp)
-            {
-                item.Description = ListSkill(item.AspirationsID);
-                item.Status = GetRecruiter(item.AspirationsID);
-                var userjob = ctx.UserJobs.Where(x => x.JobID == item.AspirationsID && x.UserID == userId).FirstOrDefault();
-                if (userjob != null)
-                {
-                    item.JobID = 1;
-                }
-
-            }
-            ViewBag.Recommend = ListAsp.Distinct();
-            return View();
-        }
     }
 
     public class ViewJob
