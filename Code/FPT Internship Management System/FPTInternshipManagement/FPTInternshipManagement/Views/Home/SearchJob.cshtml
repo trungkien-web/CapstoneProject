@@ -1,0 +1,75 @@
+﻿@model List<FPTInternshipManagement.Models.JobListModel>
+
+@{
+    Layout = "";
+}
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-12 float-left row" style="border-bottom: dashed;padding: 10px;">
+                <div class="col-sm-3  float-left">
+                    <a href="/Home/JobDetail/@item.JobID"><img src="/Assets/images/job-application-form-resized-600-jpg.png" alt="" style="width: 100%; height: 180px"></a>
+                </div>
+                <div class="e-desc col-sm-6  float-left">
+                    <h6>
+                        <a href="/Home/JobDetail/@item.JobID">
+                            @item.JobName
+                        </a>
+                    </h6>
+
+                    <ul class="e-tags">
+                        @Html.Raw(item.ListSkill)
+                    </ul>
+                    <hr>
+                    <ul class="desc-list">
+                        <li>
+                            <span>Location:</span>
+                            @item.LocationName
+                        </li>
+                        <li>
+                            <span>Salary:</span>
+                            Negotiable
+                        </li>
+                        <li>
+                            <span>Experience</span>
+                            Expert
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-sm-2 float-left">
+                    @if (Session["loggeduser"] != null && Session["role"] != null && Session["role"].ToString().Contains("Student"))
+                    {
+                        if (item.Status == "Applyed")
+                        {
+                            <a class="btn wthree-bnr-btn text-capitalize" role="button" style="        padding: 4px 10px;
+        background: #b3a7a7;">
+                                Applyed
+                            </a>
+                        }
+                        else
+                        {
+                            <a onclick="ApplyJob(@item.JobID)" data-toggle="modal" style="padding: 4px 10px" data-target="#tks" class="btn wthree-bnr-btn text-capitalize" role="button">
+                                Apply
+                                for job
+                            </a>
+                        }
+
+
+                    }
+                    else
+                    {
+                        <a data-toggle="modal" data-target="#myModal" class="btn wthree-bnr-btn text-capitalize" role="button">
+                            Apply
+                            for job
+                        </a>
+                    }
+                </div>
+            </div>
+        }
+
+    </div>
+
+
+

@@ -1,0 +1,95 @@
+﻿
+@{ Layout = "";}
+<table id="lsStudent" class="table table-striped table-bordered table-hover" cellspacing="0" width="80%" align="center">
+    <thead>
+        <tr style="background: #234a66; color: white;">
+            <th class="th">No</th>
+            <th class="th">Name</th>
+            <th class="th">Image</th>
+            <th class="th">Code</th>
+
+            <th class="th">Email</th>
+            <th class="th">Phone</th>
+            <th class="th">Specialized</th>
+            <th class="th">Semester</th>
+            <th class="th">GPA</th>
+            <th class="th">Status</th>
+            <th class="th">CV</th>
+            <th class="th">InternshipStatus</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ 
+            var count = 1;
+
+            foreach (var acc in ViewBag.User)
+            {
+                <tr>
+                    <td>
+                        @count
+                    </td>
+                    <td>
+                        @acc.Name
+                    </td>
+                    <td>
+                        <img width="120" height="150" src="@Url.Content(acc.Username)" />
+                    </td>
+                    <td>
+                        @acc.Code
+                    </td>
+
+                    <td>
+                        @acc.Email
+                    </td>
+                    <td>
+                        @acc.Phone
+                    </td>
+                    <td>
+                        @acc.Specialized
+                    </td>
+                    <td>
+                        @acc.Semester
+                    </td>
+                    <td>
+                        @acc.GPA
+                    </td>
+                    <td>
+                        @acc.Status
+                    </td>
+                    <td>
+                        @{
+                            if (acc.CV != null && acc.CV != "")
+                            {
+
+                                <a href="../../Assets/upload/@acc.CV" download="1231">Download</a>
+                            }
+                        }
+                    </td>
+                    <td>
+                        @acc.Password
+                    </td>
+                    @*@{
+            if (acc.Status == "Not Activated")
+            {
+                <a onclick="Accept(@acc.UserID)" class="btn btn-success">Accept</a>
+                <a onclick="Reject(@acc.UserID)" class="btn btn-danger">&nbsp; Reject &nbsp;</a>
+                <a onclick="Del(@acc.UserID)" class="btn btn-danger">&nbsp; Delete &nbsp;</a>
+            }
+
+            else if (acc.Status == "Reject")
+            {
+                <a onclick="Del(@acc.UserID)" class="btn btn-danger">&nbsp; Delete &nbsp;</a>
+            }
+            else
+            {
+                <a onclick="Reject(@acc.UserID)" class="btn btn-danger">&nbsp; Reject &nbsp;</a>
+                <a onclick="Del(@acc.UserID)" class="btn btn-danger">&nbsp; Delete &nbsp;</a>
+            }
+
+        }*@
+                </tr>
+                count += 1;
+            }
+        }
+    </tbody>
+</table>

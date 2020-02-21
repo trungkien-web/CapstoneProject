@@ -14,6 +14,9 @@ namespace Model
     
     public partial class Report
     {
+        public string recruitername;
+        public string studentcode;
+
         public int ReportID { get; set; }
         public Nullable<int> RecruiterID { get; set; }
         public Nullable<int> StudentID { get; set; }
@@ -29,5 +32,6 @@ namespace Model
         public virtual Rate Rate { get; set; }
         public virtual User User { get; set; }
         public virtual User User1 { get; set; }
+        public string studentname { get; set; }
     }
 }

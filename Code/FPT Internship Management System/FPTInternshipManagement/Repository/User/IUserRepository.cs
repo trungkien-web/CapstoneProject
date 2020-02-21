@@ -22,7 +22,7 @@ namespace Repository
 		List<User> SearchStudentsNameOnly(string studentName);
 
 		// Get all student is active with userid, name, location
-		List<User> SearchStudents(string location, int userID, string userName);
+		List<User> SearchStudents(string location, string userID, string userName);
 
 		List<User> SearchStudentsWithId(int userID);
 

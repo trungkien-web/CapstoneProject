@@ -11,5 +11,8 @@ namespace Service
 	{
 		string GetRole(User user);
 		User GetUserByName(string username);
+
+		void UpdateStudent(User newStudent);
+		User GetUserById(int id);
 	}
 }

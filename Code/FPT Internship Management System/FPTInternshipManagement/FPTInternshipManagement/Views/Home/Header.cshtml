@@ -1,0 +1,120 @@
+﻿<!-- login modal -->
+@model Model.User
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-theme1">
+                <h5 class="modal-title" id="exampleModalLabel">Sign in</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("Autherize", "Login", FormMethod.Post, new { @id = "login-form" }))
+                {
+                    @Html.ValidationSummary(true)
+                    <label class="text-danger">@TempData["LoginErrorMessage"]</label>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Account</label>
+                        @Html.EditorFor(Model => Model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(Model => Model.Username, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-form-label">Password</label>
+                        @Html.EditorFor(Model => Model.Password, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+                        @Html.ValidationMessageFor(Model => Model.Password, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="right-w3l">
+                        <input type="submit" class="form-control bg-theme" value="Login">
+                    </div>
+                    <div class="row sub-w3l my-3">
+                        <div class="col forgot-w3l text-right">
+                            @*<a  class="text-dark">Forgot password?</a>*@
+                        </div>
+                    </div>
+                    <p class="text-center dont-do">
+                        Do not have an account?
+                        <a data-toggle="modal" data-target="#exampleModal1" data-dismiss="modal" class="text-dark">
+                            <strong>Register</strong>
+                        </a>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //login modal -->
+<!-- register modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-theme1">
+                <h5 class="modal-title" id="exampleModalLabel1">Register</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="ResForm" class="p-3">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Name</label>
+                        <input type="text" class="form-control" placeholder=" " name="Name" id="name"
+                               required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">User Name</label>
+                        <input type="text" class="form-control" placeholder=" " name="Name" id="username"
+                               required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-email" class="col-form-label">Email</label>
+                        <input type="email" class="form-control" placeholder=" " name="Email" id="email"
+                               required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="password1" class="col-form-label">Password</label>
+                        <input type="password" class="form-control" placeholder=" " name="Password" id="password"
+                               required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="password2" class="col-form-label">Re-enter Password</label>
+                        <input type="password" class="form-control" placeholder=" " name="Confirm Password" id="password2"
+                               required="">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="exampleInputEmail1">Location</label>
+                        <select label="Việt Nam" id="location" class="option-title w-75 float-right" " style="height:37px">
+                            @foreach (var item in ViewBag.Location)
+                            {
+                                if (item.LocationID == ViewBag.Address)
+                                {
+                                    <option selected value="@item.LocationID">@item.LocationDetail</option>
+                                }
+                                else
+                                {
+                                    <option value="@item.LocationID">@item.LocationDetail</option>
+                                }
+
+                            }
+                        </select>
+                    </div>
+                    <div class="sub-w3l">
+                        <div class="sub-w3ltd">
+                            <input type="checkbox" id="brand2" value="">
+                            <label for="brand2" class="mb-3 text-dark">
+                                <span></span>I agree with the terms and policies!
+                            </label>
+                        </div>
+                    </div>
+                    <div class="right-w3l">
+                        <input type="button" id="btnRegistry" class="form-control bg-theme" value="Register">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

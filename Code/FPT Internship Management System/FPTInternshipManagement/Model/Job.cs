@@ -19,6 +19,7 @@ namespace Model
         {
             this.Aspirations = new HashSet<Aspiration>();
             this.SkillDetails = new HashSet<SkillDetail>();
+            this.UserJobs = new HashSet<UserJob>();
         }
     
         public int JobID { get; set; }
@@ -28,12 +29,15 @@ namespace Model
         public Nullable<int> RecruiterID { get; set; }
         public Nullable<int> AmountStudent { get; set; }
         public string Status { get; set; }
+        public string SkillGen { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Aspiration> Aspirations { get; set; }
         public virtual Location Location { get; set; }
-        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SkillDetail> SkillDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserJob> UserJobs { get; set; }
+        public virtual User User { get; set; }
     }
 }

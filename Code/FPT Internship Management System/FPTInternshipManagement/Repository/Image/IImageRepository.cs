@@ -7,7 +7,7 @@ using Model;
 
 namespace Repository
 {
-	interface IImageRepository
+ public	interface IImageRepository
 	{
 		Image GetImageById(int id);
 	}

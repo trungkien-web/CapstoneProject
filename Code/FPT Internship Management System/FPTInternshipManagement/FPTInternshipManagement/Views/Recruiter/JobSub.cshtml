@@ -1,0 +1,235 @@
+﻿@{
+    ViewBag.Title = "Jobs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="inner-banner contact" style="background: url(../../imageshome/inner-banner-bg.jpg) no-repeat center top / cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="col-sm-12">
+                    <h1>JOBS</h1>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="top_ad">
+    <div class="wrapper">
+        <a id="fancybox-close" class="close_top_ad" style="display: inline;"></a>
+    </div>
+</div>
+<style>
+   
+    .search-box {
+        width: 300px !important;
+        height: 42px !important;
+    }
+
+    .search-horizontal select {
+        opacity: 1;
+    }
+
+    .chosen {
+        width: 100%;
+        height: 36px;
+        border-radius: 3px;
+    }
+</style>
+<!-- container for search SV -->
+
+<div class="container" id="uni_container" style="padding-top:50px;">
+    <div id="main" class="row w-80 p-5 m-0 ">
+        <div class="row w-100">
+            <p><h3 class="w-100 pb-2">My List Job</h3></p>
+            <button data-toggle="modal" data-target="#myModal" style="padding:4px 10px;background:green" class="btn btn-success">Add New</button>
+        </div>
+        <div class="row w-100 pl-5">
+            <table id="lsStudent" class="table table-striped table-bordered table-hover" cellspacing="0" width="80%" align="center">
+                <thead>
+                    <tr style="background: #234a66; color: white;">
+                        <th class="th">STT</th>
+                        <th class="th">JobName</th>
+                        <th class="th">JobContent</th>
+                        <th class="th" style="width:300px;">Skills</th>
+                        <th class="th">Amount Student</th>
+                        <th class="th">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var lstJobs = ViewBag.Jobs;
+                        var count = 1;
+                        if (lstJobs != null)
+                        {
+                            foreach (var item in lstJobs)
+                            {
+                                <tr>
+                                    <td>
+                                        @count
+                                    </td>
+                                    <td>
+                                        @item.JobName
+                                    </td>
+                                    <td>
+                                        @item.ContentJob
+                                    </td>
+                                    <td>
+                                        @Html.Raw(item.SkillGen)
+                                    </td>
+                                    <td>
+                                        @item.AmountStudent
+                                    </td>
+                                    <td>
+                                        <a onclick="DeleteJob(@item.JobID)" class="btn btn-danger" style="padding:4px 10px;background:red;">&nbsp; Delete &nbsp;</a>
+                                    </td>
+                                </tr>
+                                count += 1;
+                            }
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">ADD NEW JOB</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form>
+                    Job name:<br>
+                    <input type="text" class="form-control" id="JobName"><br>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Add skill to Aspiration</label>
+                        <div class="row w-100">
+                            <ul style="padding-left:30px;width:100%;">
+                                @foreach (var item in ViewBag.Exp)
+                                {
+                                    <li style="width:25%;float:left">
+                                        <input type="checkbox" name="ckbSkill" id="@item.IdEx" value="@item.IdEx" />
+                                        <label>@item.skill</label>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    Job content:<br>
+                    <textarea type="text" class="form-control" id="ContentJob"></textarea><br />
+                    Amount student:<br>
+                    <input type="number" class="form-control" id="AmountStudent">
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <span id="AlertShow" style="color:red;"></span>
+                <button type="button" id="btnAdd" class="btn btn-success" >Save</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#AddAsp").on('show.bs.modal', function () {
+            $("#myModal input[name='ckbSkill']").prop('checked', false);
+            $('#Name').val("");
+            CKEDITOR.instances['Description'].setData("");
+        });
+
+        $('#btnAdd').on('click', function () {
+            var lstcheck = "";
+            $.each($("#myModal input[name='ckbSkill']:checked"), function () {
+                lstcheck = lstcheck + "," + $(this).val();
+            })
+            lstcheck = lstcheck.substr(1);
+            if (lstcheck == "" || lstcheck == null) {
+                $('#AlertShow').text("Please choose skills you want");
+                setInterval(function () {
+                    $('#AlertShow').text("")
+                }, 5000);
+                return;
+            }
+            var serviceURL = '/Recruiter/AddJobSub';
+            var jobname = $('#JobName').val();
+            if (jobname == "" || jobname == null) {
+                $('#AlertShow').text("Please enter Job name");
+                setInterval(function () {
+                    $('#AlertShow').text("")
+                }, 5000);
+                return;
+            }
+            var contentjob = $('#ContentJob').val();
+            if (contentjob == "" || contentjob == null) {
+                $('#AlertShow').text("Please enter  Content job");
+                setInterval(function () {
+                    $('#AlertShow').text("")
+                }, 5000);
+                return;
+            }
+            var amountstudent = $('#AmountStudent').val()
+            if (amountstudent == "" || amountstudent == null) {
+                $('#AlertShow').text("Please enter Amount student");
+                setInterval(function () {
+                    $('#AlertShow').text("")
+                }, 5000);
+                return;
+            }
+            $.ajax({
+                type: "POST",
+                url: serviceURL,
+                data: JSON.stringify({ jobname: jobname, contentjob: contentjob, amountstudent: amountstudent, skill: lstcheck }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: successFunc,
+                error: errorFunc
+            });
+            function successFunc(data, status) {
+                window.location.href = "/Recruiter/JobSub";
+            }
+            function errorFunc() {
+                alert('error');
+            }
+        })
+
+
+    });
+	function DeleteJob(id) {
+		if (confirm('Do you want to submit?')) {
+			var serviceURL = '/Recruiter/DelJobSub';
+			$.ajax({
+				type: "POST",
+				url: serviceURL,
+				data: JSON.stringify({ id: id }),
+				contentType: "application/json; charset=utf-8",
+				dataType: "html",
+				success: successFunc,
+				error: errorFunc
+			});
+			function successFunc(data, status) {
+				window.location.href = "/Recruiter/JobSub";
+			}
+			function errorFunc() {
+				alert('error');
+			}
+		} else {
+			return;
+		}
+    }
+</script>
+
+
+
+

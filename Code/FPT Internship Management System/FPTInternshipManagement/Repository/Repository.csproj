@@ -60,6 +60,8 @@
     <Compile Include="Department\IDepartmentRepository.cs" />
     <Compile Include="Image\IImageRepository.cs" />
     <Compile Include="Image\ImageRepository.cs" />
+    <Compile Include="Job\IJobRepository.cs" />
+    <Compile Include="Job\JobRepository.cs" />
     <Compile Include="Location\ILocationRepository.cs" />
     <Compile Include="Location\LocationRepository.cs" />
     <Compile Include="Login\ILoginRepository.cs" />

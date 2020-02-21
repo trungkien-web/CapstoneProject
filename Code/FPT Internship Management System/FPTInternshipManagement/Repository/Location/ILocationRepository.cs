@@ -10,5 +10,6 @@ namespace Repository
 	public interface ILocationRepository
 	{
 		Location GetLocationById(int id);
+		List<Location> GetAllLocation();
 	}
 }

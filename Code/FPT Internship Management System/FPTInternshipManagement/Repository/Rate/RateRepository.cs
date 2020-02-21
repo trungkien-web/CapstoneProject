@@ -68,7 +68,7 @@ namespace Repository
 			{
 				int id = (int) user.LocationID;
 				Location location = locationRepository.GetLocationById(id);
-				keyValuePairs.Add(user, location.City);
+				//keyValuePairs.Add(user, location.City);
 			}
 			return keyValuePairs;
 		}
@@ -98,6 +98,10 @@ namespace Repository
 			foreach (User user in list)
 			{
 				var count = ctx.Jobs.Where(j => j.RecruiterID == user.UserID && j.Status == CommonConstants.JOB_STATUS_AVAILABLE).Count();
+				var img = ctx.Images.Where(x => x.ImageID == user.ImageID).FirstOrDefault().Path;
+				user.GPA = img;
+				var location = ctx.Locations.Where(x => x.LocationID == user.LocationID).FirstOrDefault().LocationDetail;
+				user.Specialized = location;
 				keyValuePairs.Add(user, count);
 			}
 			return keyValuePairs;

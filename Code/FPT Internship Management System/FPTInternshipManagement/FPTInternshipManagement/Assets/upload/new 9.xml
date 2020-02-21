@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE retailer[
+
+<!ELEMENT retailer(product_list+,manufacturer_list+)>
+<!ELEMENT product_list(product+)>
+<!ELEMENT manufacturer_list(manufacturer+)>
+
+
+<!ELEMENT product (type, price, manufacturer)>
+<!ELEMENT type(#PCDATA)>
+<!ELEMENT price(#PCDATA)>
+<!ELEMENT manufacturer(#PCDATA)>
+
+
+<!ELEMENT manufacturer(name+,address+)>
+<!ELEMENT name(#PCDATA)>
+<!ELEMENT address(#PCDATA)>
+
+<ATTLIST product code  CDATA #REQUIRED>  
+<ATTLIST manufacturer code  CDATA #REQUIRED>
+]>
+
+
+<!-- XML Instance -->
+<retailer>
+
+	<product_list>
+		<product code="P001">
+			<type>furniture</type>
+			<price>200</price>
+			<manufacturer>Sun House</manufacturer>
+		</product>
+
+		<product code="P002">
+			<type>Electronic</type>
+			<price>600</price>
+			<manufacturer>Samsung</manufacturer>
+		</product>
+	</product_list>
+
+	<manufacturer_list>
+		<manufacturer code="M001">
+			<name>Sun House</name>
+			<address>Viet Nam</address>
+		</manufacturer>
+
+		<manufacturer code="M002">
+			<name>Electronic</name>
+			<address>Korea</address>
+		</manufacturer>
+	</manufacturer_list>
+
+</retailer>

@@ -1,306 +1,386 @@
 ﻿
-@{
-	Layout = null;
-}
 
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>Internship Student Management System</title>
-	@Scripts.Render("~/Content/css")
-	@Scripts.Render("~/bundles/modernizr")
-	@Scripts.Render("~/bundles/jquery")
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="utf-8" />
-	<script>
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
+    <title>Internship Student Management System</title>
+    @Scripts.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
 
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
-	<link href="/Assets/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
-	<link href="/Assets/css/style.css" type="text/css" rel="stylesheet" media="all">
-	<link href="/Assets/css/style_recruiment.css" type="text/css" rel="stylesheet" media="all">
-	<link href="~/Assets/css/style_student.css" type="text/css" rel="stylesheet" media="all">
-	<link href="/Assets/css/font-awesome.min.css" rel="stylesheet">
-	@*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">*@
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="./style.css">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-			integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-	</script>
-	@*<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-			integrity="sha384-apnbgh9b+y1qktv3rn7w3mgpxhu9k/scqsap7huibx39j7fakfpskvxusvfa0b4q" crossorigin="anonymous">
-	</script>*@
-	@*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-	</script>*@
-	@*<link href="css/bootstrap_tungbc.css" rel="stylesheet" type="text/css" />*@
-	<!-- online-fonts -->
-	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i"
-		  rel="stylesheet">
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="../../csshome/reset.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="../../csshome/fonts.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="../../assetshome/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="../../assetshome/select2/css/select2.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../../assetshome/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Magnific Popup -->
+    <link href="../../assetshome/magnific-popup/css/magnific-popup.css" rel="stylesheet">
+    <!-- Iconmoon -->
+    <link href="../../assetshome/iconmoon/css/iconmoon.css" rel="stylesheet">
+    <!-- Owl Carousel -->
+    <link href="../../assetshome/owl-carousel/css/owl.carousel.min.css" rel="stylesheet">
+    <!-- Animate -->
+    <link href="../../csshome/animate.css" rel="stylesheet">
+    <!-- Custom Style -->
+    <link href="../../csshome/custom.css" rel="stylesheet">
 </head>
 
 <body>
-	<!-- Slider -->
-	<div class="w3-banner-info-w3ltd position-relative">
-		<!-- header -->
-		<header>
-			<div class="container">
-				<nav class="navbar navbar-expand-lg navbar-light p-0">
-					<h2>
-							@Html.ActionLink("FIM", "Index", "Home", new { htmlAttributes = new { @class = "navbar-brand" } })
-					</h2>
-					<button class="navbar-toggler ml-lg-auto ml-sm-5 bg-light" type="button" data-toggle="collapse"
-							data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-							aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="ml-lg-5 navbar-nav mr-lg-auto">
-                            <li class="nav-item active  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
-                                @Html.ActionLink("Home", "Index", "Home")
-                            </li>
-                            <li class="nav-item  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
-                                @Html.ActionLink("Nhà Tuyển Dụng", "Index", "Recruiter")
-                            </li>
-                            <li class="nav-item  mr-lg-4 mt-lg-0 mt-sm-4 mt-3">
-                                <a href="@Url.Action("JobList", "Home")">Danh sách công việc</a>
-                            </li>
-                            @*<li class="nav-item dropdown mr-lg-4 my-lg-0 my-sm-4 my-3">
-                                <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    CV Sinh Viên
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    
-                                </div>
-                            </li>*@
-                            <li class="nav-item mr-lg-4 my-lg-0 mb-sm-4 mb-3">
-                                <a href="contact.html">Liên hệ</a>
-                            </li>
+    <!-- Start Preloader -->
+    <div id="loading">
+        <div class="element">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+    <!-- Start Header -->
+    <header>
+        <!-- Start Header top Bar -->
+        <div class="header-top">
+            <div class="container clearfix">
+                <ul class="follow-us hidden-xs">
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+                <div class="right-block clearfix">
 
+                </div>
+            </div>
+        </div>
+        <!-- End Header top Bar -->
+        <!-- Start Header Middle -->
+        <div class="container header-middle">
+            <div class="row">
+                <span class="col-xs-6 col-sm-3"><a href="@Url.Action("Index", "Home")"><img src="../../imageshome/logo.png" class="img-responsive" alt=""></a></span>
+                @*<span>
+                    @Html.ActionLink("FIM", "Index", "Home", new { htmlAttributes = new { @class = "navbar-brand" } })
+                </span>*@
+                <div class="col-xs-6 col-sm-3"></div>
+                <div class="col-xs-6 col-sm-9">
+                    <div class="contact clearfix">
+                        <ul class="hidden-xs">
+                            <li> <span>Email</span> <a href="mailto:acad.hl@fpt.edu.vn">acad.hl@fpt.edu.vn</a> </li>
+                            <li> <span>Toll Free</span> (024)66805916 </li>
                         </ul>
+                        @if (Session["loggeduser"] != null)
+                        {
 
-						@{
-							if (Session["loggeduser"] != null)
-							{
-								//UserSession user = (UserSession)HttpContext.Current.Session["loggeduser"];
-								@*<button type="button" class="btn w3ls-btn text-uppercase font-weight-bold d-block" onclick="location.href='@Url.Action("Logout", "Login")'">
-					Đăng Xuất
-				</button>*@
-								<ul class="nav-item dropdown mr-lg-4 my-lg-0 my-sm-4 my-3">
-									<style>										a {
-											color: white;
-										}
-									</style>
-									<a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-									   aria-expanded="false">
-										<span class="fa fa-github"></span> &nbsp; @Session["name"] &nbsp; <span class="fa fa-caret-down"></span>
-									</a>
-									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-										<style type="text/css">
+                            <span style="margin-top:20px">Hello!</span>
+                            <span class="fa fa-github"></span><b> @Session["name"]</b> <span class="fa fa-caret-down"></span>
 
-											a.droppro:hover {
-												background: yellow;
-												color: red;
-											}
-										</style>
-										<a class="droppro" href="@Url.Action("MyProfile", "Student")"><span class="fa fa-user"></span> &nbsp;Tài Khoản</a>
-								
-										<a class="droppro" href="#"><span class="fa fa-rss"></span> &nbsp;Thông Báo</a>
-										<a class="droppro" href="#"><span class="fa fa-save"></span> &nbsp;Đã Lưu</a>
-										<a class="droppro" href="#"><span class="fa fa-check-circle"></span> &nbsp;Đã Ứng Tuyển</a>
-										<a class="droppro" href="@Url.Action("Logout", "Login")"><span class="fa fa-power-off"></span> &nbsp;Đăng Xuất</a>
-									</div>
-									<div></div>
-								</ul>
 
-							}
-							else
-							{
-								<button type="button" class="btn w3ls-btn text-uppercase font-weight-bold d-block" data-toggle="modal"
-										aria-pressed="false" data-target="#exampleModal1">
-									Đăng Ký
-								</button>
-								<button type="button" class="btn w3ls-btn btn-2 ml-lg-1 text-uppercase font-weight-bold d-block"
-										data-toggle="modal" aria-pressed="false" data-target="#exampleModal">
-									Đăng Nhập
-								</button>
-							}
-						}
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("LoginPage", "Home")" class="login">Member Login <span class="icon-more-icon"></span></a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Header Middle -->
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar">
 
-					</div>
-				</nav>
-			</div>
-		</header>
-		<!-- //header -->
-	</div>
-	@RenderBody()
-	<!-- Footer -->
-	<footer id="footer" class="py-sm-5 py-4 bg-theme">
-		<div class="container">
-			<div class="footer-top-w3ls">
-				<h2><a href="index.html" class="navbar-brand">FPT Internship Management</a></h2>
-				<p class="text-white"> Hệ thống quản lý sinh viên thực tập là một trong những dự án của sinh viên Kỳ 9 hiện đang học tập và làm việc tại FPT. Hệ thống giúp sinh viên, nhà trường và nhà tuyển dụng có thể liên kết với nhau đem lại hiệu quả tối ưu nhất trong việc thực tập cho sinh viên. </p>
-			</div>
-			<div class="row  pt-5">
-				<div class="col-lg-3 col-sm-6 footer_grid1">
-					<h5>Address</h5>
-					<div class="d-flex align-items-center">
-						<span class="fa fa-building mr-4"></span>
-						<p>
-							20 Bà Triệu, Q.Hoàn Kiếm
-							<br>City State 100000.
-						</p>
-					</div>
-					<div class="d-flex mt-3 align-items-center">
-						<span class="fa fa-building mr-4"></span>
-						<p>
-							Km29 Đại Lộ Thăng Long
-							<br>City State 150000.
-						</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 mt-sm-0 mt-5">
-					<h5>Quick links</h5>
-					<ul class="list-unstyled quick-links">
-						<li>
-							<a href="index.html">
-								<span class="fa fa-play"></span>Home
-							</a>
-						</li>
-						<li>
-							<a href="about.html">
-								<span class="fa fa-play"></span>About
-							</a>
-						</li>
-						<li>
-							<a href="job_list.html">
-								<span class="fa fa-play"></span>Danh sách Job
-							</a>
-						</li>
-						<li>
-							<a href="job_single.html">
-								<span class="fa fa-play"></span>Job Single
-							</a>
-						</li>
-						<li>
-							<a href="contact.html">
-								<span class="fa fa-play"></span>Liên Hệ
-							</a>
-						</li>
-					</ul>
-				</div>
+                    <ul class="nav navbar-nav">
+                        <li> <a href="/">Home</a></li>
+                        <li> <a href="/Home/About">About</a></li>
+                        <li>
+                            <a href="/Home/JobList">Jobs</a>
+                        </li>
+                        <li> <a href="/Home/Contact">Contact</a></li>
+                        @if (Session["loggeduser"] != null)
+                        {
+                            <li class="dropdown">
+                                <a data-toggle="dropdown" href="#">Manager <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                <ul class="dropdown-menu" style="display: none;z-index:999999">
+                                    @if (Session["loggeduser"] != null && Session["role"] != null && Session["role"].ToString().Contains("Recruiter"))
+                                    {
+                                        <li class="">
+                                            <a class="droppro" href="@Url.Action("Index", "Recruiter")"><span class="fa fa-user"></span> &nbsp;Account</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="droppro" href="@Url.Action("Recommend", "Recruiter")"><span class="fa fa-user"></span> &nbsp;Recommend</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="droppro" href="@Url.Action("Job", "Recruiter")"><span class="fa fa-user"></span> &nbsp;Asipration</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="droppro" href="@Url.Action("JobSub", "Recruiter")"><span class="fa fa-user"></span> &nbsp;Jobs</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="droppro" href="@Url.Action("SearchStudent", "Recruiter")"><span class="fa fa-user"></span> &nbsp;Student</a>
+                                        </li>
+                                    }
+                                    else if (Session["loggeduser"] != null && Session["role"] != null && Session["role"].ToString().Contains("Student"))
+                                    {
+                                        <li class="">
+                                            <a class="droppro" href="@Url.Action("MyProfile", "Student")"><span class="fa fa-user"></span> &nbsp;Account</a>
+                                        </li>
+                                    }
+                                    else if (Session["loggeduser"] != null && Session["role"] != null && Session["role"].ToString().Contains("Admin"))
+                                    {
+                                        <li class="">
+                                            <a class="droppro" href="@Url.Action("Index", "Admin")"><span class="fa fa-user"></span> &nbsp;DashBroad</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="droppro" href="@Url.Action("AccountManagement", "Admin")"><span class="fa fa-user"></span> &nbsp;Account Management</a>
+                                        </li>
 
-				<div class="col-lg-3 col-sm-6 mt-lg-0 mt-5">
+                                    }
+                                    else if (Session["loggeduser"] != null && Session["role"] != null && Session["role"].ToString().Contains("Staff"))
+                                    {
+                                        <li class="">
+                                            <a class="droppro" href="@Url.Action("AccountManagement", "Staff")"><span class="fa fa-user"></span> &nbsp;Recruiter Management</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="droppro" href="@Url.Action("AccountManagementStudent", "Staff")"><span class="fa fa-user"></span> &nbsp;Student Management</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="droppro" href="@Url.Action("MyAspiration", "Staff")"><span class="fa fa-save"></span> &nbsp;Recruitment Manager</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="droppro" href="@Url.Action("MyNotify", "Staff")"><span class="fa fa-user"></span> &nbsp;Notifications</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="droppro" href="@Url.Action("GetFeedBack", "Staff")"><span class="fa fa-user"></span> &nbsp;Feedback</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="droppro" href="@Url.Action("ReportView", "Staff")"><span class="fa fa-user"></span> &nbsp;Report</a>
+                                        </li>
+                                    }
 
-				</div>
-				<div class="col-lg-3 col-sm-6 mt-lg-0 mt-5">
-					<h5>Nhận thông báo về email</h5>
-					<form action="#" method="post">
-						<div class="form-group">
-							<input type="email" class="form-control  border-0 border-rounded" id="emailid" placeholder="Enter email"
-								   name="email" required>
-						</div>
-						<div class="form-group">
-							<input type="Submit" class="form-control bg-light-theme  border-0 border-rounded" id="sub"
-								   value="Submit" name="sub">
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- /Footer -->
-	<div class="cpy-right text-center py-4">
-		<p class="text-dark">
-			© 2019 FPT Recruit. All rights reserved | Design by
-			<a href="" class="text-theme"> FPT Student</a>
-		</p>
-	</div>
 
-	<!-- js -->
-	<script src="/Assets/js/jquery-2.2.3.min.js"></script>
-	<!-- Slider-JavaScript -->
-	<script src="/Assets/js/responsiveslides.min.js"></script>
-	<script>
-				$(function () {
-					$("#slider, #slider1").responsiveSlides({
-						auto: true,
-						nav: false,
-						speed: 1500,
-						namespace: "callbacks",
-						pager: true,
-					});
-				});
-	</script>
-	<!-- //Slider-JavaScript -->
-	<!-- script for password match -->
-	<script>
-				window.onload = function () {
-					document.getElementById("password1").onchange = validatePassword;
-					document.getElementById("password2").onchange = validatePassword;
-				}
+                                    <li class=""><a class="droppro" href="@Url.Action("Logout", "Login")"><span class="fa fa-power-off"></span> &nbsp;Logout</a></li>
 
-				function validatePassword() {
-					var pass2 = document.getElementById("password2").value;
-					var pass1 = document.getElementById("password1").value;
-					if (pass1 != pass2)
-						document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-					else
-						document.getElementById("password2").setCustomValidity('');
-					//empty string means no validation error
-				}
-	</script>
-	<!-- script for password match -->
-	<!-- //js -->
-	<script src="/Assets/js/move-top.js"></script>
-	<script src="/Assets/js/easing.js"></script>
-	<script>
-				jQuery(document).ready(function ($) {
-					$(".scroll").click(function (event) {
-						event.preventDefault();
 
-						$('html,body').animate({
-							scrollTop: $(this.hash).offset().top
-						}, 1000);
-					});
-				});
-	</script>
-	<!-- //end-smooth-scrolling -->
-	<!-- smooth-scrolling-of-move-up -->
-	<script>
-				$(document).ready(function () {
-					/*
-					var defaults = {
-						containerID: 'toTop', // fading element id
-						containerHoverID: 'toTopHover', // fading element hover id
-						scrollSpeed: 1200,
-						easingType: 'linear'
-					};
-					*/
+                                </ul>
+                            </li>
+                        }
 
-					$().UItoTop({
-						easingType: 'easeOutQuart'
-					});
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    @RenderBody()
+    <!-- Footer -->
+    <!-- /Footer -->
+    <footer class="footer">
+        <!-- Start Footer Top -->
+        <div class="container">
+            <div class="row row1">
+                <div class="col-sm-9 clearfix">
+                    <div class="foot-nav">
+                        <h3>About US</h3>
+                        <ul>
+                            <li><a href="#">FPT Group of Institutions</a></li>
+                            <li><a href="#">Our Institutes and Universities</a></li>
+                            <li><a href="#">Management Team</a></li>
+                            <li><a href="#">Approval and Recognition</a></li>
+                            <li><a href="#">Evaluation & Assessments</a></li>
+                        </ul>
+                    </div>
+                    <div class="foot-nav">
+                        <h3>Courses</h3>
+                        <ul>
+                            <li><a href="#">2 Year Online MBA General</a></li>
+                            <li><a href="#">Certificate in HRM</a></li>
+                            <li><a href="#">Certificate in Marketing</a></li>
+                            <li><a href="#">Certificate in Finance</a></li>
+                            <li><a href="#">Corporate Programs</a></li>
+                        </ul>
+                    </div>
+                    <div class="foot-nav">
+                        <h3>Why FPT</h3>
+                        <ul>
+                            <li><a href="#">Introduction</a></li>
+                            <li><a href="#">Learn Everywhere</a></li>
+                            <li><a href="#">Modern Curriculum</a></li>
+                            <li><a href="#">Placement Assistance</a></li>
+                            <li><a href="#">Eligibility</a></li>
+                        </ul>
+                    </div>
+                    <div class="foot-nav">
+                        <h3>Learning Experience</h3>
+                        <ul>
+                            <li><a href="#">Course Preparations</a></li>
+                            <li><a href="#">Guided lessons</a></li>
+                            <li><a href="#">Interactive Practice</a></li>
+                            <li><a href="#">Virtual Classroom</a></li>
+                            <li><a href="#">Peer Learning</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="footer-logo hidden-xs"><a href="index-2.html"><img src="../imageshome/footer-logo.png" class="img-responsive" alt=""></a></div>
+                    <p>©2019 <span>FPT</span>. All rights reserved</p>
+                    <ul class="terms clearfix">
+                        <li><a href="terms.html">TERMS OF USE</a></li>
+                        <li><a href="privacy.html">PRIVACY POLICY</a></li>
+                        <li><a href="#">SITEMAP</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Top -->
+        <!-- Start Footer Bottom -->
+        <div class="bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="connect-us">
+                            <h3>Connect with Us</h3>
+                            <ul class="follow-us clearfix">
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="subscribe">
+                            <h3>Subscribe  with Us</h3>
+                            <!-- Begin MailChimp Signup Form -->
+                            <div id="mc_embed_signup">
+                                <form action="http://protechtheme.us16.list-manage.com/subscribe/post?u=cd5f66d2922f9e808f57e7d42&amp;id=ec6767feee" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                    <div id="mc_embed_signup_scroll">
+                                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="enter your email address" required>
+                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                            <input type="text" name="b_cd5f66d2922f9e808f57e7d42_ec6767feee" tabindex="-1" value="">
+                                        </div>
+                                        <div class="clear">
+                                            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!--End mc_embed_signup-->
+                        </div>
+                    </div>
 
-				});
-	</script>
-	<script src="/Assets/js/SmoothScroll.min.js"></script>
-	<!-- //smooth-scrolling-of-move-up -->
-	<!-- Bootstrap core JavaScript
-	================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="/Assets/js/bootstrap.min.js"></script>
-	<script src="/Assets/js/jquery.validate.js"></script>
-	<script src="/Assets/js/jquery.validate.unobtrusive.js"></script>
-	@RenderSection("scripts", required: false)
-	</body>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer -->
+    <!-- Scroll to top -->
+    <a href="#" class="scroll-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../jshome/jquery.min.js"></script>
+    <!-- Bootsrap JS -->
+    <script src="../../assetshome/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="../../assetshome/select2/js/select2.min.js"></script>
+    <!-- Match Height JS -->
+    <script src="../../assetshome/matchHeight/js/matchHeight-min.js"></script>
+    <!-- Bxslider JS -->
+    <script src="../../assetshome/bxslider/js/bxslider.min.js"></script>
+    <!-- Waypoints JS -->
+    <script src="../../assetshome/waypoints/js/waypoints.min.js"></script>
+    <!-- Counter Up JS -->
+    <script src="../../assetshome/counterup/js/counterup.min.js"></script>
+    <!-- Magnific Popup JS -->
+    @*<script src="../assetshome/magnific-popup/js/magnific-popup.min.js"></script>*@
+    <!-- Owl Carousal JS -->
+    <script src="../../assetshome/owl-carousel/js/owl.carousel.min.js"></script>
+    <!-- Modernizr JS -->
+    <script src="../../jshome/modernizr.custom.js"></script>
+    <!-- Custom JS -->
+    <script src="../../jshome/custom.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#btnRegistry').on('click', function () {
+                var serviceURL = '/Home/Registry';
+                var name = $('#name').val();
+                var username = $('#username').val();
+                var password = $('#password').val();
+                var email = $('#email').val();
+                var location = $('#location').val()
+                $.ajax({
+                    type: "POST",
+                    url: serviceURL,
+                    data: JSON.stringify({ name: name, username: username, password: password, email: email, location: location }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: successFunc,
+                    error: errorFunc
+                });
+                function successFunc(data, status) {
+                    alert("Account has been recorded! Pending review status");
+                    window.location.href = window.location.href;
+                }
+                function errorFunc() {
+                    alert('error');
+                }
+            })
+
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    @*<script src="/Assets/js/bootstrap.min.js"></script>
+    <script src="/Assets/js/jquery.validate.js"></script>
+    <script src="/Assets/js/jquery.validate.unobtrusive.js"></script>*@
+    <script src="/ckeditor/ckeditor.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
 
 </html>

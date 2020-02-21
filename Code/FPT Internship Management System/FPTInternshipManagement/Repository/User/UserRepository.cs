@@ -70,7 +70,9 @@ namespace Repository
                            where
                                 role.RoleID == 2
                                 && user.Status.Equals("Activated")
-                                && user.Username.Contains(studentName)
+                                && (user.Username.Contains(studentName) || user.Email.Contains(studentName)
+                                || user.Phone.ToString().Contains(studentName)
+                                )
                            orderby
                                 user.Username
                            select user;
@@ -90,17 +92,17 @@ namespace Repository
         //      and LocationDetail like @location
         //  orderby
         //      Username
-        public List<User> SearchStudents(string location, int userID, string userName)
+        public List<User> SearchStudents(string location, string userID, string userName)
         {
             var students = from user in ctx.Users
-                           join loca in ctx.Locations 
+                           join loca in ctx.Locations
                                 on user.LocationID equals loca.LocationID
                            join role in ctx.UserRoles
                                 on user.UserID equals role.UserID
-                           where  
+                           where
                                 user.Status.Equals("Activated")
                                 && role.RoleID == 2
-                                && user.UserID == userID
+                                && user.UserID.ToString().Contains(userID)
                                 && user.Username.Contains(userName)
                                 && loca.LocationDetail.Contains(location)
                            orderby

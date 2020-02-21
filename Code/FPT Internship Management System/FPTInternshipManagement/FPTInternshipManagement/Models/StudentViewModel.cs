@@ -16,12 +16,15 @@ namespace FPTInternshipManagement.Models
 		public IList<string> SelectedSkills { get; set; }
 		public IList<SelectListItem> AvailableSkills { get; set; }
 		public int SelectedDepartmentId { get; set; }
+
+		public User Infor { get; set; }
 		public StudentViewModel()
 		{
 			GetAllDepartment = new List<Department>();
 			SelectListItems = new List<SelectListItem>();
 			SelectedSkills = new List<string>();
 			AvailableSkills = new List<SelectListItem>();
+			Infor = new User();
 		}
 		
 	}

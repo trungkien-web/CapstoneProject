@@ -1,0 +1,38 @@
+﻿@model PagedList.IPagedList<FPTInternshipManagement.Models.FeedBackModel>
+@using PagedList.Mvc
+@{
+
+    Layout = null;
+}
+<table class="table">
+    <tr style="background: #234a66; color: white;">
+
+        <th>
+            From
+        </th>
+        <th>
+            Feedback To
+        </th>
+        <th style="width:600px;">
+            Content
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+
+    <td>@item.Name1</td>
+    <td>@item.Name2</td>
+    <td>@item.content</td>
+</tr>
+    }
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("GetFeedBack", new { page }),
+    PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+    {
+        HttpMethod = "GET",
+        UpdateTargetId = "main"
+    }))
+

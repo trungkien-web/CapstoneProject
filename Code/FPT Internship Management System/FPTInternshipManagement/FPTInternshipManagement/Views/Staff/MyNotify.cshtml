@@ -1,0 +1,169 @@
+﻿
+@{
+	ViewBag.Title = "Notifications";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="inner-banner contact" style="background: url(../../imageshome/inner-banner-bg.jpg) no-repeat center top / cover;">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-lg-12">
+				<div class="col-sm-12">
+					<h1>  Notifications</h1>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div class="container" id="uni_container" style="padding-top:70px;">
+	<p>
+		<a data-toggle="modal" data-target="#AddNot" style="padding:4px 10px;background:green" class="btn btn-primary" id="btnAddAsp">Add New Notify</a>
+	</p>
+	<div class="s-subpage">
+		<div id="main">
+			@{ Html.RenderAction("GetpaingNotify", "Staff");}
+		</div>
+	</div>
+
+</div>
+
+<div id="AddNot" class="modal fade" role="dialog">
+	<div class="modal-dialog" style="max-width: none !important;">
+
+		<!-- Modal content-->
+		<div class="modal-content" style="width:1000px;    margin: auto;">
+			<div class="modal-header">
+				<h4 class="modal-title">Add New Notify</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-check">
+						<label for="exampleInputEmail1">Notify Content </label>
+						<textarea type="text" id="Description"></textarea>
+					</div>
+					<script>
+						$(document).ready(function () {
+							CKEDITOR.replace('Description');
+						});
+
+					</script>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<span id="AlertShow" style="color:red;"></span>
+				<button type="button" id="btnSaveNot" class="btn btn-success">Save</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div id="ViewNot" class="modal fade" role="dialog">
+	<div class="modal-dialog" style="max-width: none !important;">
+
+		<!-- Modal content-->
+		<div class="modal-content" style="width:1000px;    margin: auto;">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-check">
+						<label for="exampleInputEmail1">Notify Content </label>
+						<textarea type="text" id="sDescription"></textarea>
+					</div>
+					<script>
+						$(document).ready(function () {
+							CKEDITOR.replace('sDescription');
+						});
+
+					</script>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<script>
+	function ViewNot(id) {
+		var serviceURL = '/Staff/ViewNot';
+		$.ajax({
+			type: "POST",
+			url: serviceURL,
+			data: JSON.stringify({ Id: id }),
+			contentType: "application/json; charset=utf-8",
+			dataType: "html",
+			success: successFunc,
+			error: errorFunc
+		});
+		function successFunc(data) {
+			CKEDITOR.instances['sDescription'].setData(data);
+		}
+		function errorFunc() {
+			alert('error');
+		}
+	}
+
+	function DelNot(id) {
+		if (confirm('Do you want to reject?')) {
+			var serviceURL = '/Staff/DelNot';
+			$.ajax({
+				type: "POST",
+				url: serviceURL,
+				data: JSON.stringify({ Id: id }),
+				contentType: "application/json; charset=utf-8",
+				dataType: "html",
+				success: successFunc,
+				error: errorFunc
+			});
+			function successFunc(data, status) {
+				window.location.href = window.location.href;
+			}
+			function errorFunc() {
+				alert('error');
+			}
+		} else { return; }
+	}
+
+
+	$(document).ready(function () {
+
+
+
+		$('#btnSaveNot').on('click', function () {
+			var Desc = CKEDITOR.instances['Description'].getData();
+			if (Desc == "" || Desc == null) {
+				$('#AlertShow').text("Please enter your description");
+				setInterval(function () {
+					$('#AlertShow').text("")
+				}, 5000);
+				return;
+			}
+			var serviceURL = '/Staff/SaveNot';
+			$.ajax({
+				type: "POST",
+				url: serviceURL,
+				data: JSON.stringify({ Des: Desc }),
+				contentType: "application/json; charset=utf-8",
+				dataType: "html",
+				success: successFunc,
+				error: errorFunc
+			});
+			function successFunc(data, status) {
+				window.location.href = window.location.href;
+			}
+			function errorFunc() {
+				alert('error');
+			}
+		})
+
+	})
+</script>

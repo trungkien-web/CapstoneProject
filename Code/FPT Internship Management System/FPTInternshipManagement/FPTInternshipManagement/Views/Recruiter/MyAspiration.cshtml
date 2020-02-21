@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "";
+}
+
+<table id="lsStudent" class="table table-striped table-bordered table-hover" cellspacing="0" width="80%" align="center">
+    <thead>
+        <tr  style="background: #234a66; color: white;">
+            <th class="th">No</th>
+            <th class="th" style="width:300px;">Aspiration Name</th>
+            <th class="th" style="width:300px;">Jobs</th>
+            <th class="th" style="width:300px;">Status</th>
+            <th class="th" style="width:600px;">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ var count2 = 1;
+
+            foreach (var ex in ViewBag.Asp)
+            {
+                <tr>
+                    <td>
+                        @count2
+                    </td>
+                    <td>
+                        @ex.AspirationsName
+                    </td>
+
+                    <td>
+                        <ul>
+                            @Html.Raw(ex.Description)
+                        </ul>
+                    </td>
+                    <td>
+                        @ex.Status
+                    </td>
+
+                    <td>
+                        <a data-toggle="modal" data-target="#EditAsp" onclick="GetDataAspEdit(@ex.AspirationsID)" style="padding:4px 10px;cursor:pointer;margin-right:10px;" class="btn btn-warning">&nbsp;View/Edit Detail &nbsp;</a>
+                        <a href="/Recruiter/ViewApply/@ex.AspirationsID" style="cursor:pointer;padding:4px 10px;" class="btn btn-secondary">&nbsp;View Apply &nbsp;</a>
+                        <a onclick="DelAps(@ex.AspirationsID)" style="cursor:pointer;padding:4px 10px;background:red;" class="btn btn-danger">&nbsp;Delete &nbsp;</a>
+
+                    </td>
+                </tr>
+                count2 += 1;
+            }
+
+        }
+
+    </tbody>
+</table>
+

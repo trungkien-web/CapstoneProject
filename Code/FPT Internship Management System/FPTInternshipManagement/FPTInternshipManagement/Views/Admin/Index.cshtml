@@ -1,7 +1,293 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Admin";
 }
 
-<h2>Admin</h2>
+<style>
+    .card-counter {
+        box-shadow: 2px 2px 10px #DADADA;
+        margin: 5px;
+        padding: 20px 10px;
+        background-color: #fff;
+        height: 100px;
+        border-radius: 5px;
+        transition: .3s linear all;
+    }
 
+        .card-counter:hover {
+            box-shadow: 4px 4px 20px #DADADA;
+            transition: .3s linear all;
+        }
+
+        .card-counter.primary {
+            background-color: #007bff;
+            color: #FFF;
+        }
+
+        .card-counter.danger {
+            background-color: #ef5350;
+            color: #FFF;
+        }
+
+        .card-counter.success {
+            background-color: #66bb6a;
+            color: #FFF;
+        }
+
+        .card-counter.info {
+            background-color: #26c6da;
+            color: #FFF;
+        }
+
+        .card-counter i {
+            font-size: 5em;
+            opacity: 0.2;
+        }
+
+        .card-counter .count-numbers {
+            position: absolute;
+            right: 35px;
+            top: 20px;
+            font-size: 32px;
+            display: block;
+        }
+
+        .card-counter .count-name {
+            position: absolute;
+            right: 35px;
+            top: 65px;
+            font-style: italic;
+            text-transform: capitalize;
+            opacity: 0.5;
+            display: block;
+            font-size: 18px;
+        }
+
+    article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+        display: block;
+    }
+
+    audio, canvas, progress, video {
+        display: inline-block;
+        vertical-align: baseline;
+    }
+
+        audio:not([controls]) {
+            display: none;
+            height: 0;
+        }
+
+    a {
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+        a:active, a:hover {
+            outline: 0;
+        }
+
+    h1, h2, h3, h4, h5, h6, p, ul, ol {
+        margin: 0px;
+        padding: 0px;
+    }
+
+
+    /***********************  TOP Bar ********************/
+    .sidebar {
+        width: 220px;
+        background-color: #000;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .bg-defoult {
+        background-color: #222;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .sidebar li a, .sidebar li a.collapsed.active {
+        display: block;
+        padding: 8px 12px;
+        color: #fff;
+        border-left: 0px solid #dedede;
+        text-decoration: none
+    }
+
+        .sidebar li a.active {
+            background-color: #000;
+            border-left: 5px solid #dedede;
+            transition: all 0.5s ease-in-out
+        }
+
+        .sidebar li a:hover {
+            background-color: #000 !important;
+        }
+
+        .sidebar li a i {
+            padding-right: 5px;
+        }
+
+    .sidebar ul li .sub-menu li a {
+        position: relative
+    }
+
+        .sidebar ul li .sub-menu li a:before {
+            font-family: FontAwesome;
+            content: "\f105";
+            display: inline-block;
+            padding-left: 0px;
+            padding-right: 10px;
+            vertical-align: middle;
+        }
+
+        .sidebar ul li .sub-menu li a:hover:after {
+            content: "";
+            position: absolute;
+            left: -5px;
+            top: 0;
+            width: 5px;
+            background-color: #111;
+            height: 100%;
+        }
+
+        .sidebar ul li .sub-menu li a:hover {
+            background-color: #222;
+            padding-left: 20px;
+            transition: all 0.5s ease-in-out
+        }
+
+    .sub-menu {
+        border-left: 5px solid #dedede;
+    }
+
+    .sidebar li a .nav-label, .sidebar li a .nav-label + span {
+        transition: all 0.5s ease-in-out
+    }
+
+
+    .sidebar.fliph li a .nav-label, .sidebar.fliph li a .nav-label + span {
+        display: none;
+        transition: all 0.5s ease-in-out
+    }
+
+    .sidebar.fliph {
+        width: 42px;
+        transition: all 0.5s ease-in-out;
+    }
+
+        .sidebar.fliph li {
+            position: relative
+        }
+
+        .sidebar.fliph .sub-menu {
+            position: absolute;
+            left: 39px;
+            top: 0;
+            background-color: #222;
+            width: 150px;
+            z-index: 100;
+        }
+</style>
+<div class="container" style=" width: 80%; margin-top:50px; margin-bottom:50px;">
+    <div class="row">
+        <div class="col-md-3" style="border-right: dashed 1px;">
+            <div class="sidebar left " style="margin-top:10px;">
+                <ul class="list-sidebar bg-defoult">
+
+                    <li>
+                        <a href="/Admin/Index" data-toggle="collapse" data-target="#dashboard" class="collapsed active"> <i class="fa fa-th-large"></i> <span class="nav-label"> Dashboards </span> <span class="fa fa-chevron-left pull-right"></span> </a>
+
+                    </li>
+                    <li> <a href="/Admin/AccountManagement"><i class="fa fa-user"></i> <span class="nav-label">Account Management</span></a> </li>
+                    <li> <a href="/Admin/ReportView"><i class="fa fa-bar-chart"></i> <span class="nav-label">Report</span></a> </li>
+                </ul>
+            </div>
+            <div class="row"  style="margin-top:50px;">
+                <h3 style="margin-top:5px;">What News?</h3>
+                <ul style="list-style: disc; color: blue;">
+                    @foreach (var item in ViewBag.Notify)
+                    {
+                        <li style="word-wrap: break-word;">
+                            <a style="color: #0c84ca;text-transform: uppercase;" target="_blank" href="/Home/NotifyDetail/@item.NotificationID">@Html.Raw(!String.IsNullOrEmpty(item.Content) ? item.Content.Substring(0, Math.Min(item.Content.Length, 50)) : "No thing")</a>
+                        </li>
+                    }
+                    <a href="/Home/NotifyAll">View more</a>
+                </ul>
+            </div>
+        </div>
+       
+        <div class="col-md-9">
+            <div class="col-md-6">
+                <div class="card-counter primary">
+                    <i class="fa fa-code-fork"></i>
+                    <span class="count-numbers">@ViewBag.CountStudent</span>
+                    <span class="count-name">Student</span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <a href="@Url.Action("AccountManagement", "Admin")">
+                <div class="card-counter danger">
+                    <i class="fa fa-ticket"></i>
+                    <span class="count-numbers">@ViewBag.CountRecruiter</span>
+                    <span class="count-name">Recruiter</span>
+                </div>
+                </a>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-counter success">
+                    <i class="fa fa-database"></i>
+                    <span class="count-numbers">@ViewBag.Feedback</span>
+                    <span class="count-name">Feedback</span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <a href="@Url.Action("ReportView", "Admin")">
+                    <div class="card-counter info">
+                        <i class="fa fa-users"></i>
+                        <span class="count-numbers">@ViewBag.Report</span>
+                        <span class="count-name">Report</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="@Url.Action("AccountManagement", "Admin")">
+                    <div class="card-counter info">
+                        <i class="fa fa-users"></i>
+                        <span class="count-numbers">@ViewBag.UserDangThucTap</span>
+                        <span class="count-name">Is Interning</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="@Url.Action("JobList", "Home")">
+                    <div class="card-counter info">
+                        <i class="fa fa-users"></i>
+                        <span class="count-numbers">@ViewBag.AspRecruiter</span>
+                        <span class="count-name">Jobs</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+   $('button').click(function(){
+       $('.sidebar').toggleClass('fliph');
+   });
+  
+  
+   
+});
+</script>

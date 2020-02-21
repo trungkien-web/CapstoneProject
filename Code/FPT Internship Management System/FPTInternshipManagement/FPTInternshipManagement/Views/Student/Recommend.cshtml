@@ -1,0 +1,83 @@
+﻿
+@{
+    Layout = "";
+}
+
+
+@foreach (var item in ViewBag.Recommend)
+{
+    <div class="col-sm-12 float-left row" style="padding: 10px; border-bottom: dashed;">
+        <div class="col-sm-3  float-left">
+            <a href="/Home/JobDetail/@item.AspirationsID"><img src="~/Assets/images/job-application-form-resized-600-jpg.png" alt="" style="width: 100%; height: 180px"></a>
+        </div>
+        <div class="e-desc col-sm-6  float-left">
+            <h6>
+                <a href="/Home/JobDetail/@item.AspirationsID">
+                    @item.AspirationsName
+                </a>
+            </h6>
+
+            <ul class="e-tags">
+                @Html.Raw(item.Description)
+            </ul>
+
+            <ul class="desc-list">
+                <li>
+                    <span>Recruiter Name:</span>
+                    @item.Status
+                </li>
+                <li>
+                    <span>Salary:</span>
+                    Negotiable
+                </li>
+                <li>
+                    <span>Experience</span>
+                    Expert
+                </li>
+
+            </ul>
+
+        </div>
+        <div class="col-sm-2 float-left">
+            @if (item.JobID == 1)
+            {
+                <a class="btn wthree-bnr-btn text-capitalize" style="padding:3px 20px;background: #a9a8a8;padding: 6px 10px;
+    border-radius: 0;margin-top: 40%;">
+                    Applied
+                </a>
+
+            }
+            else
+            {
+                <a onclick="ApplyJob(@item.AspirationsID)" data-toggle="modal" data-target="#tks" class="btn wthree-bnr-btn text-capitalize" role="button" style="    padding: 6px 10px;
+    border-radius: 0;margin-top: 40%;">
+                    Apply
+                    for job
+                </a>
+            }
+        </div>
+    </div>
+}
+
+<script>
+    function ApplyJob(id) {
+        var serviceURL = '/Student/ApplyJob';
+        $.ajax({
+            type: "POST",
+            url: serviceURL,
+            data: JSON.stringify({ id: id }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: successFunc,
+            error: errorFunc
+        });
+        function successFunc(data, status) {
+            setInterval(function () {
+                window.location.href = window.location.href
+            }, 3000);
+        }
+        function errorFunc() {
+            alert('error');
+        }
+    }
+    </script>

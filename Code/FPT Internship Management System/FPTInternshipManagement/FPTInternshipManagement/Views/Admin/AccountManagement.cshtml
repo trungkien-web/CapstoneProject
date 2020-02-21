@@ -1,0 +1,359 @@
+﻿
+@{
+	ViewBag.Title = "AccountManagement";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="inner-banner contact" style="background: url(../../imageshome/inner-banner-bg.jpg) no-repeat center top / cover;">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-lg-12">
+				<div class="col-sm-12">
+					<h1>  Account Manager</h1>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div class="container" style="padding-top:30px;">
+	<div class="s-subpage">
+		<div id="NewSearchJob" style="padding: 0px 10%;">
+			<div class="row justify-content-between bnr-form-w3ls">
+				<div class="w-100">
+					<div class="row">
+						<div class="row col-md-12">
+							<div class="col-md-5 form-group mb-md-0">
+								<label class="text-capitalize">
+									Find
+								</label>
+								<input class="form-control" id="txtKeyword" type="text" name="name" placeholder="">
+							</div>
+							<div class="col-md-4 mb-md-0 form-group">
+								<label class="text-capitalize">
+									Role
+								</label>
+								<select id="role" class="chosen form-control"
+										data-placeholder="Location" size="1">
+									<option value="3" selected>Recruiter</option>
+									<option value="4">Staff</option>
+									<option value="2">Student</option>
+									<option value="1">Admin</option>
+								</select>
+							</div>
+
+							<div class="col-md-3 d-flex align-items-end" style="padding-top:20px;">
+								<button type="submit" id="btnSearch" style="padding:2px 8px;width:100px;height:40px;" class="btn btn-w3ltd btn-block w-100 bg-theme font-weight-bold text-uppercase">
+									<span class="fa fa-search"></span>
+								</button>
+
+								<a style="width:100px;height:40px;" data-toggle="modal" data-target="#AddAsp" id="btnAdd" class="btn btn-w3ltd btn-block bg-theme font-weight-bold text-uppercase">
+									<span class="fa fa-plus"></span>
+								</a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="main">
+
+
+	</div>
+	<div class="modal" id="AddAsp">
+		<div class="modal-dialog" style="max-width: none !important;">
+			<div class="modal-content" style="width:1000px;margin:auto;">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">ADD NEW ACCOUNT</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body row w-100">
+					<div class="form-group col-sm-6">
+						<label for="exampleInputEmail1">Name</label>
+						<input type="text" class="form-control" required id="Name">
+					</div>
+					<div class="form-group  col-sm-6">
+						<label for="exampleInputEmail1">User Name</label>
+						<input type="text" class="form-control" required id="UserName">
+					</div>
+					<div class="form-group col-sm-6">
+						<label for="exampleInputEmail1">Password</label>
+						<input type="password" class="form-control" required id="Password">
+					</div>
+					<div class="form-group col-sm-6">
+						<label for="exampleInputEmail1">Confirm Password</label>
+						<input type="password" class="form-control" required id="ConfirmPassword">
+					</div>
+					<div class="form-group col-sm-6">
+						<label for="exampleInputEmail1">Phone</label>
+						<input type="text" class="form-control" required id="Phone">
+					</div>
+					<div class="form-group col-sm-6">
+						<label for="exampleInputEmail1">Email</label>
+						<input type="text" class="form-control" required id="Email">
+					</div>
+
+					<div class="form-group col-sm-6">
+						<label for="exampleInputEmail1">Location</label>
+						<select label="Việt Nam" id="location" class="option-title w-75 float-right" " style="height:37px;width:100%;">
+							@foreach (var item in ViewBag.Location)
+							{
+								if (item.LocationID == ViewBag.Address)
+								{
+									<option selected value="@item.LocationID">@item.LocationDetail</option>
+								}
+								else
+								{
+									<option value="@item.LocationID">@item.LocationDetail</option>
+								}
+
+							}
+						</select>
+					</div>
+
+					<div class="form-group col-sm-6">
+						<label for="exampleInputEmail1">Role</label>
+						<select label="Việt Nam" id="RoleAdd" required class="option-title w-75 float-right" " style="height:37px;width:100%;">
+							<option value="3" selected>Recruiter</option>
+							<option value="4">Staff</option>
+
+							<option value="1">Admin</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<span id="AlertShow" style="color:red;"></span>
+					<button type="button" id="btnSave" class="btn btn-success">Save</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" id="UploadExcel">
+		<div class="modal-dialog" style="max-width: none !important;">
+			<div class="modal-content" style="width:1000px;margin:auto;">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">ADD NEW ACCOUNT</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body row w-100">
+					@using (Html.BeginForm("UploadExcel", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "return myFunction()" }))
+					{
+						<div class="form-horizontal">
+							<div class="form-group">
+
+								<div class="control-label col-md-2">Excel:</div>
+								<div class="col-md-10">
+									<input type="file" id="FileUpload" name="FileUpload" class="" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-offset-2 col-md-10">
+									<input type="submit" value="Upload" id="btnSubmit" class="btn btn-primary" />
+
+								</div>
+							</div>
+						</div>
+					}
+					<!-- Modal footer -->
+					<div class="modal-footer">
+
+						<button type="button" id="btnSave" class="btn btn-success" data-dismiss="modal">Save</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function () {
+				GetDataUser();
+			});
+
+			$('#btnSearch').on('click', function () {
+				GetDataUser();
+			})
+
+
+			function GetDataUser() {
+				var serviceURL = '/Admin/AccountSearch';
+				var keyword = $('#txtKeyword').val();
+				var role = $('#role :selected').val();
+				$.ajax({
+					type: "POST",
+					url: serviceURL,
+					data: JSON.stringify({ keyword: keyword, role: role }),
+					contentType: "application/json; charset=utf-8",
+					dataType: "html",
+					success: successFunc,
+					error: errorFunc
+				});
+				function successFunc(data, status) {
+					$('#main').html(data)
+				}
+				function errorFunc() {
+					alert('error');
+				}
+			}
+
+			function Accept(id) {
+				if (confirm('Do you want to submit?')) {
+					var serviceURL = '/Admin/Accept';
+					var UserId = id;
+					$.ajax({
+						type: "POST",
+						url: serviceURL,
+						data: JSON.stringify({ UserId: UserId }),
+						contentType: "application/json; charset=utf-8",
+						dataType: "html",
+						success: successFunc,
+						error: errorFunc
+					});
+					function successFunc(data, status) {
+						GetDataUser();
+					}
+					function errorFunc() {
+						alert('error');
+					}
+				}
+				else {
+
+					return;
+				}
+			}
+
+
+			function Reject(id) {
+				if (confirm('Do you want to reject?')) {
+					var serviceURL = '/Admin/Reject';
+					var UserId = id;
+					$.ajax({
+						type: "POST",
+						url: serviceURL,
+						data: JSON.stringify({ UserId: UserId }),
+						contentType: "application/json; charset=utf-8",
+						dataType: "html",
+						success: successFunc,
+						error: errorFunc
+					});
+					function successFunc(data, status) {
+						GetDataUser();
+					}
+					function errorFunc() {
+						alert('error');
+					}
+				}
+				else {
+
+					return;
+				}
+			}
+
+			function Del(id) {
+				var serviceURL = '/Admin/Delete';
+				var UserId = id;
+				$.ajax({
+					type: "POST",
+					url: serviceURL,
+					data: JSON.stringify({ UserId: UserId }),
+					contentType: "application/json; charset=utf-8",
+					dataType: "html",
+					success: successFunc,
+					error: errorFunc
+				});
+				function successFunc(data, status) {
+					GetDataUser();
+				}
+				function errorFunc() {
+					alert('error');
+				}
+			}
+
+			$('#btnSave').on('click', function () {
+				var Name = $('#Name').val();
+				if (Name == "" || Name == null) {
+					$('#AlertShow').text("Please enter name");
+					setInterval(function () {
+						$('#AlertShow').text("")
+					}, 5000);
+					return;
+				}
+				var UserName = $('#UserName').val();
+				if (UserName == "" || UserName == null) {
+					$('#AlertShow').text("Please enter UserName");
+					setInterval(function () {
+						$('#AlertShow').text("")
+					}, 5000);
+					return;
+				}
+				var Password = $('#Password').val();
+				if (Password == "" || Password == null) {
+					$('#AlertShow').text("Please enter Password");
+					setInterval(function () {
+						$('#AlertShow').text("")
+					}, 5000);
+					return;
+				}
+				var ConfirmPassword = $('#ConfirmPassword').val();
+				if (ConfirmPassword == "" || ConfirmPassword == null) {
+					$('#AlertShow').text("Please enter confirm Password");
+					setInterval(function () {
+						$('#AlertShow').text("")
+					}, 5000);
+					return;
+				}
+				if (Password != ConfirmPassword) {
+					$('#AlertShow').text("ConfirmPassword not exactly");
+					setInterval(function () {
+						$('#AlertShow').text("")
+					}, 5000);
+					return;
+				}
+				var Email = $('#Email').val();
+				if (Email == "" || Email == null) {
+					$('#AlertShow').text("Please enter  Email");
+					setInterval(function () {
+						$('#AlertShow').text("")
+					}, 5000);
+					return;
+				}
+				//var Phone = $('#Phone').val();
+
+				var Location = $('#location').val();
+
+				var RoleAdd = $('#RoleAdd').val();
+				var serviceURL = '/Admin/AddNew';
+				$.ajax({
+					type: "POST",
+					url: serviceURL,
+					data: JSON.stringify({ Name: Name, UserName: UserName, Password: Password, Email: Email, Location: Location, RoleAdd: RoleAdd }),
+					contentType: "application/json; charset=utf-8",
+					dataType: "html",
+					success: successFunc,
+					error: errorFunc
+				});
+				function successFunc(data, status) {
+					$('#AddAsp').modal('toggle');
+					GetDataUser();
+				}
+				function errorFunc() {
+					alert('error');
+				}
+			})
+
+		</script>

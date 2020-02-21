@@ -25,24 +25,25 @@ namespace Repository
 
 		public void InsertListSkillsAspiration(List<string> listId, int aspirationId)
 		{
-			//SkillList skillList;
-			//foreach (var id in listId)
-			//{
-			//	skillList = new SkillList();
-			//	skillList.SkillID = Int32.Parse(id);
-			//	skillList.AspirationsID = aspirationId;
-			//	ctx.SkillLists.Add(skillList);
-			//	ctx.SaveChanges();
-			//}
+			SkillDetail skillList;
+			foreach (var id in listId)
+			{
+				skillList = new SkillDetail();
+				skillList.SkillID = Int32.Parse(id);
+				skillList.AspirationsID = aspirationId;
+				ctx.SkillDetails.Add(skillList);
+				ctx.SaveChanges();
+			}
 		}
 
 		public void InsertStudentAspiration(Aspiration aspiration, int userId, List<string> listId)
 		{
 			try
 			{
+				aspiration.Status = "Available";
 				ctx.Aspirations.Add(aspiration);
 				ctx.SaveChanges();
-				InsertStudentAspirationId(aspiration.AspirationsID, userId);
+				InsertUserAspiration(aspiration, userId);
 				InsertListSkillsAspiration(listId, aspiration.AspirationsID);
 			}
 			catch (Exception ex)
@@ -51,8 +52,13 @@ namespace Repository
 			}
 		}
 
-		public void InsertStudentAspirationId(int id, int userId)
+		public void InsertUserAspiration(Aspiration aspiration, int userId)
 		{
+			UserAspiration userAspiration = new UserAspiration();
+			userAspiration.AspirationsID = aspiration.AspirationsID;
+			userAspiration.UserID = userId;
+			ctx.UserAspirations.Add(userAspiration);
+			ctx.SaveChanges();
 			//var user = ctx.Users.Where(u => u.UserID == userId).FirstOrDefault();
 			//user.AspirationsID = id;
 			//ctx.SaveChanges();
