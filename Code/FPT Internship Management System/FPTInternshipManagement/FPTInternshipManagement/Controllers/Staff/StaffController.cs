@@ -677,33 +677,6 @@ namespace FPTInternshipManagement.Controllers.Admin
             Response.End();
         }
 
-        public ActionResult GetFeedBackByAdmin()
-        {
-            lstFB = new List<Models.FeedBackModel>();
-            var lstFB2 = ctx.Feedbacks.ToList();
-            foreach (var item in lstFB2)
-            {
-                if (item.FeedbackTypeID == 1) //nhà trường fb sinh viên
-                {
-                    var obj = new Models.FeedBackModel();
-                    obj.content = item.Content;
-                    obj.Name1 = "Recruter: " + ctx.Users.Where(x => x.UserID == item.RecruiterID).FirstOrDefault().Name;
-                    obj.Name2 = "Student: " + ctx.Users.Where(x => x.UserID == item.StudentID).FirstOrDefault().Name;
-                    lstFB.Add(obj);
-                }
-                else //sinh viên fb nhà trường
-                {
-                    var obj = new Models.FeedBackModel();
-                    obj.content = item.Content;
-                    obj.Name2 = "Recruter: " + ctx.Users.Where(x => x.UserID == item.RecruiterID).FirstOrDefault().Name;
-                    obj.Name1 = "Student: " + ctx.Users.Where(x => x.UserID == item.StudentID).FirstOrDefault().Name;
-                    lstFB.Add(obj);
-                }
-
-            }
-            return View();
-        }
-
     }
 
 }
