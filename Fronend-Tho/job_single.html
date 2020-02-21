@@ -7,13 +7,13 @@
     <meta charset="utf-8" />
 
     <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
-
-        function hideURLbar() {
+     
             window.scrollTo(0, 1);
         }
+        (function($){$.fn.UItoTop=function(options){var defaults={text:'To Top',min:200,inDelay:600,outDelay:400,containerID:'toTop',containerHoverID:'toTopHover',scrollSpeed:1000,easingType:'linear'},settings=$.extend(defaults,options),containerIDhash='#'+settings.containerID,containerHoverIDHash='#'+settings.containerHoverID;$('body').append('<a href="#" id="'+settings.containerID+'">'+settings.text+'</a>');$(containerIDhash).hide().on('click.UItoTop',function(){$('html, body').animate({scrollTop:0},settings.scrollSpeed,settings.easingType);$('#'+settings.containerHoverID,this).stop().animate({'opacity':0},settings.inDelay,settings.easingType);return false;}).prepend('<span id="'+settings.containerHoverID+'"></span>').hover(function(){$(containerHoverIDHash,this).stop().animate({'opacity':1},600,'linear');},function(){$(containerHoverIDHash,this).stop().animate({'opacity':0},700,'linear');});$(window).scroll(function(){var sd=$(window).scrollTop();if(typeof document.body.style.maxHeight==="undefined"){$(containerIDhash).css({'position':'absolute','top':sd+$(window).height()-50});}
+if(sd>settings.min)
+$(containerIDhash).fadeIn(settings.inDelay);else
+$(containerIDhash).fadeOut(settings.Outdelay);});};})(jQuery);
     </script>
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
@@ -75,8 +75,7 @@
     </div>
     <!-- breadcrumbs -->
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb d-flex justify-content-center bg-theme">
-            <li class="breadcrumb-item">
+        <ol clas
                 <a href="index.html" class="text-white">Home</a>
             </li>
             <li class="breadcrumb-item">
@@ -87,6 +86,8 @@
     </nav>
     <!-- //breadcrumbs -->
     <!-- job description -->
+      <!-- //breadcrumbs -->
+    <!-- job description -->
     <section class="employ-sec">
         <div class="container">
             <div class="row">
@@ -94,13 +95,20 @@
                     <div class="title-sec-w3layouts_pvt text-center pb-4">
                         <span class="title-wthree">Web Developer (Nodejs, HTML5, AngularJS)</span>
                         <h4 class="w3layouts_pvt-head">FPT Software</h4>
-                        <p class="my-lg-4 mt-4 js_txt">- Lập trình phần mềm quản lý bệnh viện theo sự phân công của quản lý dự án <br>
-- Vận hành sản phẩm, hỗ trợ hướng dẫn người dùng <br>
-
-- Xử lý sự cố phát sinh khi vận hành phần mềm <br>
-
-- Báo cáo công việc cho quản lý dự án <br>
- </p>
+                        <p clas
+                        <a href="#job-desc" class="btn wthree-bnr-btn scroll ">Đọc Thêm</a>
+                    </div>
+                    <div class="e-left pt-lg-5">
+                        <img src="images/fe.png" alt="" class="img-fluid">
+                        <hr>
+    <section class="employ-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9  mx-auto" id="job-desc">
+                    <div class="title-sec-w3layouts_pvt text-center pb-4">
+                        <span class="title-wthree">Web Developer (Nodejs, HTML5, AngularJS)</span>
+                        <h4 class="w3layouts_pvt-head">FPT Software</h4>
+                        <p clas
                         <a href="#job-desc" class="btn wthree-bnr-btn scroll ">Đọc Thêm</a>
                     </div>
                     <div class="e-left pt-lg-5">
@@ -218,22 +226,7 @@
                             <a href="contact.html">
                                 <span class="fa fa-play"></span>Liên Hệ</a>
                         </li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-sm-6 mt-lg-0 mt-5">
-                    
-                </div>
-                <div class="col-lg-3 col-sm-6 mt-lg-0 mt-5">
-                    <h5>Nhận thông báo về email</h5>
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <input type="email" class="form-control  border-0 border-rounded" id="emailid" placeholder="Enter email"
-                                name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="Submit" class="form-control bg-light-theme  border-0 border-rounded" id="sub"
-                                value="Submit" name="sub">
+b">
                         </div>
                     </form>
                 </div>
@@ -266,27 +259,7 @@
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-form-label">Password</label>
-                            <input type="password" class="form-control" placeholder=" " name="Password" id="password"
-                                required="">
-                        </div>
-                        <div class="right-w3l">
-                            <input type="submit" class="form-control bg-theme" value="Login">
-                        </div>
-                        <div class="row sub-w3l my-3">
-                            <div class="col sub-w3ltd">
-                                <input type="checkbox" id="brand1" value="">
-                                <label for="brand1" class="text-dark">
-                                    <span></span>Remember me?</label>
-                            </div>
-                            <div class="col forgot-w3l text-right">
-                                <a href="#" class="text-dark">Forgot Password?</a>
-                            </div>
-                        </div>
-                        <p class="text-center dont-do">Don't have an account?
-                            <a href="#" data-toggle="modal" data-target="#exampleModal1" class="text-dark">
-                                <strong>Register Now</strong></a>
-                        </p>
-                    </form>
+                  
                 </div>
             </div>
         </div>
