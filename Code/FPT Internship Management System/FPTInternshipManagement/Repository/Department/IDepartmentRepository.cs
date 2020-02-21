@@ -9,6 +9,7 @@ namespace Repository
 {
 	public interface IDepartmentRepository
 	{
+        //get all Department
 		List<Department> GetAllDepartments();
 		Dictionary<int, List<Skill>> GetToDictionary();
 		Department GetDepartmentById(int id);
