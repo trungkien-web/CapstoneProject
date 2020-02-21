@@ -25,6 +25,25 @@ namespace FPTInternshipManagement.Controllers
             }
         }
 
+        
+
+        [HttpPost]
+        public JsonResult DeleteEvent(int eventID)
+        {
+            var status = false;
+            using (FPTInternshipManagermentEntities dc = new FPTInternshipManagermentEntities())
+            {
+                var v = dc.InterviewSchedules.Where(a => a.InterviewID == eventID).FirstOrDefault();
+                if (v != null)
+                {
+                    dc.InterviewSchedules.Remove(v);
+                    dc.SaveChanges();
+                    status = true;
+                }
+            }
+            return new JsonResult { Data = new { status = status } };
+        }
+
         [HttpPost]
         public JsonResult SaveEvent(InterviewSchedule e)
         {
@@ -45,7 +64,7 @@ namespace FPTInternshipManagement.Controllers
                         v.StartTime = e.StartTime;
                         v.EndTime = e.EndTime;
                         v.Status = e.Status;
-                        
+
                     }
                 }
                 else
@@ -60,22 +79,5 @@ namespace FPTInternshipManagement.Controllers
             return new JsonResult { Data = new { status = status } };
         }
 
-        [HttpPost]
-        public JsonResult DeleteEvent(int eventID)
-        {
-            var status = false;
-            using (FPTInternshipManagermentEntities dc = new FPTInternshipManagermentEntities())
-            {
-                var v = dc.InterviewSchedules.Where(a => a.InterviewID == eventID).FirstOrDefault();
-                if (v != null)
-                {
-                    dc.InterviewSchedules.Remove(v);
-                    dc.SaveChanges();
-                    status = true;
-                }
-            }
-            return new JsonResult { Data = new { status = status } };
-        }
-    
-}
+    }
 }
