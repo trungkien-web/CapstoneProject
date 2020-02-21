@@ -203,8 +203,7 @@ namespace FPTInternshipManagement.Controllers.Admin
                 lstAps.Add(obj);
             }
 
-            //reload data 
-            ctx.SaveChanges();
+         
 
             foreach (var item in lstAps)
             {
@@ -222,9 +221,6 @@ namespace FPTInternshipManagement.Controllers.Admin
 
                     }
                 }
-
-                //reload data 
-                ctx.SaveChanges();
 
                 item.Description = nameskil;
 
