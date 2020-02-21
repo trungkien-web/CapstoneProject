@@ -11,21 +11,20 @@ namespace Repository
 	{
 		FPTInternshipManagermentEntities ctx = new FPTInternshipManagermentEntities();
 		ISkillRepository skillRepository = new SkillRepository();
-		public List<Department> GetAllDepartments()
-		{
-			var list = ctx.Departments.ToList();
-			return list;
-		}
-
+		
 		public Department GetDepartmentById(int id)
 		{
 			var department = ctx.Departments.Where(d => d.DepartmentID == id).FirstOrDefault<Department>();
 			return department;
 		}
 
-		
+        public List<Department> GetAllDepartments()
+        {
+            var list = ctx.Departments.ToList();
+            return list;
+        }
 
-		public Dictionary<int, List<Skill>> GetToDictionary()
+        public Dictionary<int, List<Skill>> GetToDictionary()
 		{
 			Dictionary<int, List<Skill>> keyValuePairs = new Dictionary<int, List<Skill>>();
 			foreach (Department department in GetAllDepartments())
