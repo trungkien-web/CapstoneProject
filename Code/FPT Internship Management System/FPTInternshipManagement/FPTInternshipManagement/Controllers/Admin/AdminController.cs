@@ -475,41 +475,6 @@ namespace FPTInternshipManagement.Controllers.Admin
             Response.End();
         }
 
-        //Phan quyen Admin
-        [Authorize(Roles = "Admin1")]
-        public class AdminController : Controller
-        {
-            // GET: Admin
-
-            IImageService imgService = new ImageService();
-            FPTInternshipManagermentEntities ctx = new FPTInternshipManagermentEntities();
-            ILocationService locationService = new LocationService();
-            public ActionResult Index()
-            {
-                ViewBag.CountStudent = (from user in ctx.Users
-                                        join userrole in ctx.UserRoles
-                                        on user.UserID equals userrole.UserID
-                                        where userrole.RoleID == 2
-                                        select user).ToList().Count();
-                ViewBag.CountRecruiter = (from user in ctx.Users
-                                          join userrole in ctx.UserRoles
-                                          on user.UserID equals userrole.UserID
-                                          where userrole.RoleID == 3
-                                          select user).ToList().Count();
-                ViewBag.Report = ctx.Reports.ToList().Count();
-                ViewBag.FeedBack = ctx.Feedbacks.ToList().Count();
-                ViewBag.UserDangThucTap = ctx.UserJobs.Where(x => x.Status == "Activated").ToList().Count();
-                ViewBag.AspRecruiter = (from asp in ctx.Aspirations
-                                        join userasp in ctx.UserAspirations
-                                        on asp.AspirationsID equals userasp.AspirationsID
-                                        join user in ctx.Users
-                                        on userasp.UserID equals user.UserID
-                                        join userrole in ctx.UserRoles
-                                        on user.UserID equals userrole.UserID
-                                        where userrole.RoleID == 3
-                                        select user).ToList().Count();
-                ViewBag.Notify = ctx.Notifications.ToList();
-                return View();
-            }
+      
         }
 }
