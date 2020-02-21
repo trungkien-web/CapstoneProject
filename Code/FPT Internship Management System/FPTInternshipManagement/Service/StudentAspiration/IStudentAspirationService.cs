@@ -9,6 +9,7 @@ namespace Service
 {
 	public interface IStudentAspirationService
 	{
-		void InsertStudentAspiration(Aspiration aspiration, int userId, List<string> listId);
+        //get Aspiration by Student
+        void InsertStudentAspiration(Aspiration aspiration, int userId, List<string> listId);
 	}
 }

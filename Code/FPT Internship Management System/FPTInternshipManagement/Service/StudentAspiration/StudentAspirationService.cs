@@ -10,8 +10,8 @@ namespace Service
 {
 	public class StudentAspirationService : IStudentAspirationService
 	{
-
-		IStudentAspirationRepository repository = new StudentAspirationRepository();
+        //get Aspiration by Student
+        IStudentAspirationRepository repository = new StudentAspirationRepository();
 
 		public void InsertStudentAspiration(Aspiration aspiration, int userId, List<string> listId)
 		{
