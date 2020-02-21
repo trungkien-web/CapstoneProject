@@ -26,6 +26,7 @@ namespace Service
 			return repository.GetUserById(id);
 		}
 
+        //TUNGBC update student by user
 		public void UpdateStudent(User newStudent)
 		{
 			 repository.UpdateStudent(newStudent);
