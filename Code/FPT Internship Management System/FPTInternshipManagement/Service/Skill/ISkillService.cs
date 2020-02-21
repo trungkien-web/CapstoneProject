@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace Service
 {
+    //
 	public interface ISkillService
 	{
 		List<Skill> GetAllSkills();
 		Skill GetSkillById(int id);
+
+        //get skill by department
 		List<Skill> GetSkillsByDepartmentId(int id);
 	}
 }

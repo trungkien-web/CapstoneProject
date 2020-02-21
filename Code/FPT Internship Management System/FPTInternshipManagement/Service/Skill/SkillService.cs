@@ -21,6 +21,7 @@ namespace Service
 			return repository.GetSkillById(id);
 		}
 
+        //get skill by departmentID
 		public List<Skill> GetSkillsByDepartmentId(int id)
 		{
 			return repository.GetSkillsByDepartmentId(id);
