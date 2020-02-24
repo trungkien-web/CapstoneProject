@@ -14,6 +14,31 @@
 if(sd>settings.min)
 $(containerIDhash).fadeIn(settings.inDelay);else
 $(containerIDhash).fadeOut(settings.Outdelay);});};})(jQuery);
+
+
+
+        public void SendGmail(string from, string password, string to, string body)
+        {
+            try
+            {
+                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                client.EnableSsl = true;
+                client.Timeout = 100000;
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.UseDefaultCredentials = false;
+                client.Credentials = new NetworkCredential(from, password);
+                MailMessage mail = new MailMessage(from, to, "Thông báo kích hoạt tài khoản thành công", body);
+                mail.IsBodyHtml = true;
+                mail.BodyEncoding = UTF8Encoding.UTF8;
+                client.Send(mail);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
     </script>
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
