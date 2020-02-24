@@ -28,3 +28,18 @@ namespace Model
         public virtual Student Student { get; set; }
     }
 }
+
+namespace Service
+{
+    //Get all Job
+    public class JobListService : IJobListService
+    {
+        IJobRepository jobRepository = new JobRepository();
+
+        public List<Job> GetAllJob()
+        {
+            //Return all job
+            return jobRepository.GetAllJobs();
+        }
+    }
+}
