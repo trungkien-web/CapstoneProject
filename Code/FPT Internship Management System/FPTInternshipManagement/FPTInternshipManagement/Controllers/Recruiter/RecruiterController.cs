@@ -685,34 +685,28 @@ namespace FPTInternshipManagement.Controllers.Recruiter
         }
 
         //them moi pdf
-        public static void DownloadFile(HttpResponse response, string fileRelativePath)
+        public void DownloadTeamPhoto(string fileName)
         {
-            try
-            {
-                string contentType = "";
-                //Get the physical path to the file.
-                string FilePath = HttpContext.Current.Server.MapPath(fileRelativePath);
+            string mimeType = MimeAssistance.GetMimeFromRegistry(fileName);
+            Response.ContentType = mimeType;
+            Response.AppendHeader("Content-Disposition", "attachment; filename=" +
+            Path.GetFileName(basePath + fileName)); //basePath= @"~/Content/
+            Response.WriteFile(basePath + fileName); //basePath= @"~/Content/
+            Response.End();
 
-                string fileExt = Path.GetExtension(fileRelativePath).Split('.')[1].ToLower();
+        }
 
-                if (fileExt == "pdf")
-                {
-                    //Set the appropriate ContentType.
-                    contentType = "Application/pdf";
-                }
+        public static string GetMimeFromRegistry(string Filename)
+        {
+            string mime = "application/octetstream";
+            string ext = System.IO.Path.GetExtension(Filename).ToLower();
+            Microsoft.Win32.RegistryKey rk =
+            Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(ext);
 
-                //Set the appropriate ContentType.
-                response.ContentType = contentType;
-                response.AppendHeader("content-disposition", "attachment; filename=" + (new FileInfo(fileRelativePath)).Name);
+            if (rk != null && rk.GetValue("Content Type") != null)
+                mime = rk.GetValue("Content Type").ToString();
 
-                //Write the file directly to the HTTP content output stream.
-                response.WriteFile(FilePath);
-                response.End();
-            }
-            catch
-            {
-                //To Do
-            }
+            return mime;
         }
     }
 }
